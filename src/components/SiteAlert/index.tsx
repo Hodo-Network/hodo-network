@@ -25,7 +25,7 @@ export default function SiteAlert() {
         </div>
         <div className='ml-3'>
           <p className='text-sm text-yellow-700'>
-            Site is coming soon. You're currently viewing a working prototype.
+            Site is coming soon. You're currently viewing an early prototype.
           </p>
         </div>
         <div className='ml-auto pl-3'>
