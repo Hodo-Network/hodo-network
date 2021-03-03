@@ -7,8 +7,8 @@ import { userImg, name } from "../../data/user";
 
 export default function Navbar() {
   return (
-    <nav className='bg-white shadow'>
-      <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+    <nav className='px-4 sm:px-8'>
+      <div className='max-w-7xl mx-auto'>
         <div className='flex justify-between h-16'>
           <div className='flex'>
             <div className='flex-shrink-0 flex items-center'>
@@ -17,7 +17,7 @@ export default function Navbar() {
                 exact={true}
                 className='flex-shrink-0 flex items-center'>
                 <Logo img={ReactLogo} alt='React Logo' />
-                <span className='text-black font-medium'>
+                <span className='text-black dark:text-white font-medium'>
                   {process.env.REACT_APP_COMPANY}
                 </span>
               </NavLink>
@@ -26,15 +26,15 @@ export default function Navbar() {
               <NavLink
                 to='/'
                 exact={true}
-                className='border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium'
-                activeClassName='border-indigo-500 hover:border-indigo-500 text-gray-900 hover:text-gray-900'>
+                className='text-gray-500 dark:text-gray-200 hover:text-gray-800 dark:hover:text-indigo-300 inline-flex items-center px-1 text-sm font-medium'
+                activeClassName='text-gray-900 dark:text-white hover:text-gray-900 dark:hover:text-white'>
                 Home
               </NavLink>
               <NavLink
                 to='/browse'
                 exact={true}
-                className='border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium'
-                activeClassName='border-indigo-500 hover:border-indigo-500 text-gray-900 hover:text-gray-900'>
+                className='text-gray-500 dark:text-gray-200 hover:text-gray-800 dark:hover:text-indigo-300 inline-flex items-center px-1 text-sm font-medium'
+                activeClassName='text-gray-900 dark:text-white hover:text-gray-900 dark:hover:text-white'>
                 Browse
               </NavLink>
             </div>

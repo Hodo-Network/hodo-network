@@ -5,22 +5,22 @@ import { ApolloProvider } from "@apollo/react-hooks";
 import client from "./client";
 import reportWebVitals from "./reportWebVitals";
 import { Home, Browse } from "./pages";
-import { Navbar } from "./components";
+import { Footer, Navbar, SiteAlert } from "./components";
 
 import "./styles/tailwind.output.css";
 
 export const App: FC = () => (
   <Router>
-    <div className='h-screen flex flex-col'>
+    <SiteAlert />
+    <div className='bg-gray-100 dark:bg-gray-900'>
       <Navbar />
-      <div className='flex-grow flex bg-gray-100'>
-        <div className='w-full h-full'>
-          <Switch>
-            <Route path='/' exact component={Home} />
-            <Route path='/browse' component={Browse} />
-          </Switch>
-        </div>
+      <div>
+        <Switch>
+          <Route path='/' exact component={Home} />
+          <Route path='/browse' component={Browse} />
+        </Switch>
       </div>
+      <Footer />
     </div>
   </Router>
 );
