@@ -1,11 +1,12 @@
 import React from "react";
+import { NFTProps } from "../../typings/nft";
 import { NFTCard } from "../index";
 
-export default function FeaturedNfts(props) {
+export default function FeaturedNfts(props: { items: Array<NFTProps> }) {
   const { items } = props;
   return (
     <div className='grid gap-6 lg:grid-cols-5'>
-      {items.map((item, index) => (
+      {items.map((item: NFTProps, index: number) => (
         <NFTCard
           key={index}
           img={item.img}
