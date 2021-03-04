@@ -5,23 +5,17 @@ import { ApolloProvider } from "@apollo/react-hooks";
 import client from "./client";
 import reportWebVitals from "./reportWebVitals";
 import { Home, Browse } from "./pages";
-import { Footer, Navbar, SiteAlert } from "./components";
+import { ComingSoon } from "./components";
 
 import "./styles/tailwind.output.css";
 
 export const App: FC = () => (
   <Router>
-    <SiteAlert />
-    <div className='bg-gray-100 dark:bg-gray-900'>
-      <Navbar />
-      <div>
-        <Switch>
-          <Route path='/' exact component={Home} />
-          <Route path='/browse' component={Browse} />
-        </Switch>
-      </div>
-      <Footer />
-    </div>
+    <Switch>
+      <Route path='/' exact component={ComingSoon} />
+      <Route path='/home' exact component={Home} />
+      <Route path='/browse' component={Browse} />
+    </Switch>
   </Router>
 );
 

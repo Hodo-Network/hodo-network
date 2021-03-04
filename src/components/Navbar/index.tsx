@@ -13,7 +13,7 @@ export default function Navbar() {
           <div className='flex'>
             <div className='flex-shrink-0 flex items-center'>
               <NavLink
-                to='/'
+                to='/home'
                 exact={true}
                 className='flex-shrink-0 flex items-center'>
                 <Logo img={ReactLogo} alt='React Logo' />
@@ -24,7 +24,7 @@ export default function Navbar() {
             </div>
             <div className='hidden sm:ml-6 sm:flex sm:space-x-8'>
               <NavLink
-                to='/'
+                to='/home'
                 exact={true}
                 className='text-gray-500 dark:text-gray-200 hover:text-gray-800 dark:hover:text-indigo-300 inline-flex items-center px-1 text-sm font-medium'
                 activeClassName='text-gray-900 dark:text-white hover:text-gray-900 dark:hover:text-white'>

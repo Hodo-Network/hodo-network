@@ -5,5 +5,6 @@ import NFTCard from './NFTCard';
 import Hero from './Hero';
 import Footer from './Footer';
 import SiteAlert from './SiteAlert';
+import ComingSoon from './ComingSoon';
 
-export { Logo, Navbar, FeaturedNfts, NFTCard, Hero, Footer, SiteAlert };
+export { Logo, Navbar, FeaturedNfts, NFTCard, Hero, Footer, SiteAlert, ComingSoon };
