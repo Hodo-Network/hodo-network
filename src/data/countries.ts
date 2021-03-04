@@ -5,7 +5,7 @@ export const countries: Array<NFTProps> = [
         img:
             "https://images.unsplash.com/photo-1444850321296-e568c6a10d26?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=300&q=80",
         name: "United States",
-        rarity: 'Epic',
+        rarity: 'Rare',
         desc: 'Here is an NFT desc 1.',
         cost: 10,
     },
@@ -13,7 +13,7 @@ export const countries: Array<NFTProps> = [
         img:
             "https://images.unsplash.com/photo-1444850321296-e568c6a10d26?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=300&q=80",
         name: "Canada",
-        rarity: 'Rare',
+        rarity: 'Epic',
         desc: 'Here is an NFT desc 2.',
         cost: 15,
     },
@@ -29,7 +29,7 @@ export const countries: Array<NFTProps> = [
         img:
             "https://images.unsplash.com/photo-1444850321296-e568c6a10d26?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=300&q=80",
         name: "Guatemala",
-        rarity: 'Epic',
+        rarity: 'Rare',
         desc: 'Here is an NFT desc 4.',
         cost: 10,
     },
