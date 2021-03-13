@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { FeaturedNfts, Hero, Navbar, SiteAlert } from "../../components";
+import { FeaturedNfts, Footer, Hero, Navbar } from "../../components";
 import { countries } from "../../data/countries";
 import { monuments } from "../../data/monuments";
 import { capitals } from "../../data/capitals";
@@ -9,7 +9,6 @@ const featured = capitals;
 
 const Home: FC = () => (
   <>
-    <SiteAlert />
     <div className='bg-gray-100 dark:bg-gray-900'>
       <Navbar />
       <div>
@@ -38,7 +37,9 @@ const Home: FC = () => (
               </NavLink>
             </div>
             {countries.length > 0 ? (
-              <FeaturedNfts items={featured} />
+              <div className='grid gap-6 grid-cols-2 lg:grid-cols-4 xl:grid-cols-5'>
+                <FeaturedNfts items={featured} />
+              </div>
             ) : (
               <div>No gNFTs available in your area.</div>
             )}
@@ -49,7 +50,7 @@ const Home: FC = () => (
               <div className='flex justify-between mb-6'>
                 <h2 className='font-bold text-xl dark:text-white'>Countries</h2>
                 <NavLink
-                  to='/browse'
+                  to='/browse/countries'
                   className='text-indigo-700 font-medium flex'>
                   <span className='whitespace-nowrap'>View All</span>
                   <svg
@@ -65,7 +66,10 @@ const Home: FC = () => (
                   </svg>
                 </NavLink>
               </div>
-              <FeaturedNfts items={countries} />
+
+              <div className='grid gap-6 grid-cols-2 lg:grid-cols-4 xl:grid-cols-5'>
+                <FeaturedNfts items={countries} />
+              </div>
             </div>
           )}
 
@@ -76,7 +80,7 @@ const Home: FC = () => (
                   Capital Cities
                 </h2>
                 <NavLink
-                  to='/browse'
+                  to='/browse/capitals'
                   className='text-indigo-700 font-medium flex'>
                   <span className='whitespace-nowrap'>View All</span>
                   <svg
@@ -92,7 +96,10 @@ const Home: FC = () => (
                   </svg>
                 </NavLink>
               </div>
-              <FeaturedNfts items={capitals} />
+
+              <div className='grid gap-6 grid-cols-2 lg:grid-cols-4 xl:grid-cols-5'>
+                <FeaturedNfts items={capitals} />
+              </div>
             </div>
           )}
 
@@ -103,7 +110,7 @@ const Home: FC = () => (
                   Monuments
                 </h2>
                 <NavLink
-                  to='/browse'
+                  to='/browse/monuments'
                   className='text-indigo-700 font-medium flex'>
                   <span className='whitespace-nowrap'>View All</span>
                   <svg
@@ -119,11 +126,15 @@ const Home: FC = () => (
                   </svg>
                 </NavLink>
               </div>
-              <FeaturedNfts items={monuments} />
+
+              <div className='grid gap-6 grid-cols-2 lg:grid-cols-4 xl:grid-cols-5'>
+                <FeaturedNfts items={monuments} />
+              </div>
             </div>
           )}
         </div>
       </div>
+      <Footer />
     </div>
   </>
 );

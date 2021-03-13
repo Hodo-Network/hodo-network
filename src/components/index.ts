@@ -6,5 +6,6 @@ import Hero from './Hero';
 import Footer from './Footer';
 import SiteAlert from './SiteAlert';
 import ComingSoon from './ComingSoon';
+import BrowseNav from './BrowseNav';
 
-export { Logo, Navbar, FeaturedNfts, NFTCard, Hero, Footer, SiteAlert, ComingSoon };
+export { Logo, Navbar, FeaturedNfts, NFTCard, Hero, Footer, SiteAlert, ComingSoon, BrowseNav };

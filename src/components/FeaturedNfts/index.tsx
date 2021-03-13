@@ -5,7 +5,7 @@ import { NFTCard } from "../index";
 export default function FeaturedNfts(props: { items: Array<NFTProps> }) {
   const { items } = props;
   return (
-    <div className='grid gap-6 lg:grid-cols-5'>
+    <>
       {items.map((item: NFTProps, index: number) => (
         <NFTCard
           key={index}
@@ -16,6 +16,6 @@ export default function FeaturedNfts(props: { items: Array<NFTProps> }) {
           cost={item.cost}
         />
       ))}
-    </div>
+    </>
   );
 }
