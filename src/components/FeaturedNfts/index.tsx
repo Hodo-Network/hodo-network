@@ -9,6 +9,7 @@ export default function FeaturedNfts(props: { items: Array<NFTProps> }) {
       {items.map((item: NFTProps, index: number) => (
         <NFTCard
           key={index}
+          id={item.id}
           img={item.img}
           name={item.name}
           rarity={item.rarity}

@@ -7,5 +7,6 @@ import Footer from './Footer';
 import SiteAlert from './SiteAlert';
 import ComingSoon from './ComingSoon';
 import BrowseNav from './BrowseNav';
+import RarityBadge from './RarityBadge';
 
-export { Logo, Navbar, FeaturedNfts, NFTCard, Hero, Footer, SiteAlert, ComingSoon, BrowseNav };
+export { Logo, Navbar, FeaturedNfts, NFTCard, Hero, Footer, SiteAlert, ComingSoon, BrowseNav, RarityBadge };

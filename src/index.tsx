@@ -4,7 +4,7 @@ import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import { ApolloProvider } from "@apollo/react-hooks";
 import client from "./client";
 import reportWebVitals from "./reportWebVitals";
-import { Home, Browse } from "./pages";
+import { Home, Browse, Collectible } from "./pages";
 import { ComingSoon } from "./components";
 
 import "./styles/tailwind.output.css";
@@ -15,6 +15,7 @@ export const App: FC = () => (
       <Route path='/' exact component={ComingSoon} />
       <Route path='/home' exact component={Home} />
       <Route path='/browse' component={Browse} />
+      <Route path='/view/:id' component={Collectible} />
     </Switch>
   </Router>
 );

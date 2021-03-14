@@ -1,4 +1,5 @@
 export type NFTProps = {
+    id: string;
     img: string;
     name: string;
     rarity: string;
