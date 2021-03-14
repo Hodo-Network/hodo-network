@@ -8,5 +8,6 @@ import SiteAlert from './SiteAlert';
 import ComingSoon from './ComingSoon';
 import BrowseNav from './BrowseNav';
 import RarityBadge from './RarityBadge';
+import ThemeSwitcher from './ThemeSwitcher';
 
-export { Logo, Navbar, FeaturedNfts, NFTCard, Hero, Footer, SiteAlert, ComingSoon, BrowseNav, RarityBadge };
+export { Logo, Navbar, FeaturedNfts, NFTCard, Hero, Footer, SiteAlert, ComingSoon, BrowseNav, RarityBadge, ThemeSwitcher };

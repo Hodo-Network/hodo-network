@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { Logo } from "../index";
+import { Logo, ThemeSwitcher } from "../index";
 import { ReactLogo } from "../../assets";
 import ProfileLink from "../ProfileLink";
 import { userImg, name } from "../../data/user";
@@ -40,7 +40,10 @@ export default function Navbar() {
             </div>
           </div>
           <div className='hidden sm:ml-6 sm:flex sm:items-center'>
-            <ProfileLink img={userImg} name={name} />
+            <ThemeSwitcher />
+            <div className='ml-4'>
+              <ProfileLink img={userImg} name={name} />
+            </div>
           </div>
         </div>
       </div>
