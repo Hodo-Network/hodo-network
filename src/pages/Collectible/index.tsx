@@ -14,6 +14,10 @@ const props = {
 export default function Collectible() {
   const { id, img, name, rarity, desc, cost } = props;
 
+  const buyCollectible = () => {
+    alert("Buy coming soon");
+  };
+
   return (
     <div className='bg-gray-100 dark:bg-gray-900'>
       <Navbar />
@@ -35,21 +39,40 @@ export default function Collectible() {
             </div>
 
             <div className='mt-8'>
-              <h1 className='text-sm uppercase font-medium text-gray-500'>Description</h1>
+              <h1 className='text-sm uppercase font-medium text-gray-500'>
+                Description
+              </h1>
               <p className='mt-2 font-medium text-gray-900 overflow-hidden overflow-ellipsis'>
                 {desc}
               </p>
             </div>
 
             <div className='mt-8'>
-              <h1 className='text-sm uppercase font-medium text-gray-500'>Cost</h1>
-              <p className='mt-2 font-medium text-gray-900 overflow-hidden overflow-ellipsis'>
-                {cost}
-              </p>
+              <div className='max-w-7xl mx-auto lg:flex lg:items-center lg:justify-between'>
+                <div>
+                  <h1 className='text-sm uppercase font-medium text-gray-500'>
+                    Cost
+                  </h1>
+                  <p className='mt-2 font-medium text-gray-900 overflow-hidden overflow-ellipsis'>
+                    {cost}
+                  </p>
+                </div>
+                <div className='mt-8 flex lg:mt-0 lg:flex-shrink-0'>
+                  <div className='inline-flex rounded-md shadow'>
+                    <button
+                      onClick={buyCollectible}
+                      className='inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700'>
+                      Buy
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div className='mt-8'>
-              <h1 className='text-sm uppercase font-medium text-gray-500'>ID</h1>
+              <h1 className='text-sm uppercase font-medium text-gray-500'>
+                ID
+              </h1>
               <p className='mt-2 font-medium text-gray-900 overflow-hidden overflow-ellipsis'>
                 {id}
               </p>
