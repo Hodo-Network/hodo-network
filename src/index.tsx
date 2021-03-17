@@ -6,16 +6,22 @@ import client from "./client";
 import reportWebVitals from "./reportWebVitals";
 import { Home, Browse, Collectible } from "./pages";
 import { ComingSoon } from "./components";
+import {
+  DEFAULT_ROUTE,
+  BROWSE_ALL_ROUTE,
+  ASSET_ROUTE,
+  COMING_SOON_ROUTE,
+} from "./constants/routes";
 
 import "./styles/tailwind.output.css";
 
 export const App: FC = () => (
   <Router>
     <Switch>
-      <Route path='/' exact component={ComingSoon} />
-      <Route path='/home' exact component={Home} />
-      <Route path='/browse' component={Browse} />
-      <Route path='/view/:id' component={Collectible} />
+      <Route path={COMING_SOON_ROUTE} exact component={ComingSoon} />
+      <Route path={DEFAULT_ROUTE} exact component={Home} />
+      <Route path={BROWSE_ALL_ROUTE} component={Browse} />
+      <Route path={`${ASSET_ROUTE}/:id`} component={Collectible} />
     </Switch>
   </Router>
 );

@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { ASSET_ROUTE } from "../../constants/routes";
 import { NFTProps } from "../../typings/nft";
 import RarityBadge from "../RarityBadge";
 
@@ -9,7 +10,7 @@ export default function NFTCard(props: NFTProps) {
 
   return (
     <NavLink
-      to={`/view/${id}`}
+      to={`${ASSET_ROUTE}/${id}`}
       className='flex flex-col rounded-md shadow overflow-hidden transition-transform duration-300 transform hover:-translate-y-2'>
       <div className='flex-shrink-0'>
         <img className='h-36 w-full object-cover' src={img} alt={name} />

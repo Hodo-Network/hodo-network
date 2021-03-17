@@ -1,9 +1,15 @@
 import React, { FC } from "react";
+import { NavLink } from "react-router-dom";
 import { FeaturedNfts, Footer, Hero, Navbar } from "../../components";
+import {
+  BROWSE_ALL_ROUTE,
+  BROWSE_CAPITALS_ROUTE,
+  BROWSE_COUNTRIES_ROUTE,
+  BROWSE_MONUMENTS_ROUTE,
+} from "../../constants/routes";
 import { countries } from "../../data/countries";
 import { monuments } from "../../data/monuments";
 import { capitals } from "../../data/capitals";
-import { NavLink } from "react-router-dom";
 
 const featured = capitals;
 
@@ -20,7 +26,7 @@ const Home: FC = () => (
                 Available in your area
               </h2>
               <NavLink
-                to='/browse'
+                to={BROWSE_ALL_ROUTE}
                 className='text-indigo-700 font-medium flex'>
                 <span className='whitespace-nowrap'>View All</span>
                 <svg
@@ -50,7 +56,7 @@ const Home: FC = () => (
               <div className='flex justify-between mb-6'>
                 <h2 className='font-bold text-xl dark:text-white'>Countries</h2>
                 <NavLink
-                  to='/browse/countries'
+                  to={BROWSE_COUNTRIES_ROUTE}
                   className='text-indigo-700 font-medium flex'>
                   <span className='whitespace-nowrap'>View All</span>
                   <svg
@@ -80,7 +86,7 @@ const Home: FC = () => (
                   Capital Cities
                 </h2>
                 <NavLink
-                  to='/browse/capitals'
+                  to={BROWSE_CAPITALS_ROUTE}
                   className='text-indigo-700 font-medium flex'>
                   <span className='whitespace-nowrap'>View All</span>
                   <svg
@@ -110,7 +116,7 @@ const Home: FC = () => (
                   Monuments
                 </h2>
                 <NavLink
-                  to='/browse/monuments'
+                  to={BROWSE_MONUMENTS_ROUTE}
                   className='text-indigo-700 font-medium flex'>
                   <span className='whitespace-nowrap'>View All</span>
                   <svg

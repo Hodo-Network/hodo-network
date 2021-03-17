@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { BROWSE_ALL_ROUTE } from "../../constants/routes";
 
 export default function Hero() {
   return (
@@ -16,7 +17,7 @@ export default function Hero() {
         <div className='mt-8 sm:flex sm:justify-center lg:justify-start'>
           <div className='rounded-md shadow'>
             <NavLink
-              to='/browse'
+              to={BROWSE_ALL_ROUTE}
               className='w-full flex items-center justify-center px-6 py-2 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-2 md:text-lg md:px-6'>
               Start Browsing
             </NavLink>
