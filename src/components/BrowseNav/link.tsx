@@ -1,8 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { BrowseLink } from "./types";
 
-export default function BrowseNavLink({ to, text }: BrowseLink) {
+export default function BrowseNavLink({
+  to,
+  text,
+}: {
+  to: string;
+  text: string;
+}) {
   return (
     <NavLink
       to={to}

@@ -1,7 +1,6 @@
 import React, { FC } from "react";
-import { Props } from "./types";
 
-const ProfileLink: FC<Props> = ({ img, name }) => (
+const ProfileLink: FC<{ img: string; name: string }> = ({ img, name }) => (
   <a href='#none' className='flex-shrink-0 w-full group block'>
     <div className='flex items-center'>
       <div>

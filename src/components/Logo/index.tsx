@@ -1,9 +1,7 @@
 import React, { FC } from "react";
-
-import { Props } from "./types";
 import { StyledLogo } from "./styles";
 
-const Logo: FC<Props> = ({ img, alt }) => (
+const Logo: FC<{ img: string; alt: string }> = ({ img, alt }) => (
   <StyledLogo src={img} alt={alt} className='h-8 w-auto' />
 );
 
