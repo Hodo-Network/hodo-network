@@ -33,13 +33,13 @@ export default function Browse() {
   return (
     <div className='mx-auto max-w-8xl mt-8'>
       <div className='flex flex-col md:flex-row'>
-        <div className='md:w-1/5 mb-8'>
+        <div className='md:w-1/4 lg:w-1/5 mb-8'>
           {/* TODO: Turn into dropdown on mobile */}
           <BrowseNav />
         </div>
 
-        <div className='md:w-4/5'>
-          <div className='md:pl-4 lg:pl-8 grid gap-4 md:gap-6 grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5'>
+        <div className='md:w-3/4 lg:w-4/5'>
+          <div className='md:pl-4 xl:pl-6 grid gap-4 xl:gap-6 grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5'>
             <Switch>
               <Route path={ROUTE_BROWSE_ALL} exact>
                 <FeaturedNfts getItems={getItems} type='all' />

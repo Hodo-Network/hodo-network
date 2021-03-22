@@ -24,25 +24,23 @@ export default function Navbar() {
                 </span>
               </NavLink>
             </div>
-            <div className='ml-6 flex space-x-8'>
-              <NavLink
-                to={ROUTE_DEFAULT}
-                exact={true}
-                className='text-gray-500 dark:text-gray-200 hover:text-gray-800 dark:hover:text-indigo-400 inline-flex items-center px-1 text-base font-medium'
-                activeClassName='text-gray-900 dark:text-white hover:text-gray-900 dark:hover:text-white'>
-                Home
-              </NavLink>
-              <NavLink
-                to={ROUTE_BROWSE_ALL}
-                exact={false}
-                className='text-gray-500 dark:text-gray-200 hover:text-gray-800 dark:hover:text-indigo-400 inline-flex items-center px-1 text-base font-medium'
-                activeClassName='text-gray-900 dark:text-white hover:text-gray-900 dark:hover:text-white'>
-                Browse
-              </NavLink>
-            </div>
           </div>
 
-          <div className='ml-6 flex items-center'>
+          <div className='ml-6 flex space-x-6 items-center'>
+            <NavLink
+              to={ROUTE_DEFAULT}
+              exact={true}
+              className='text-gray-500 dark:text-gray-200 hover:text-gray-800 dark:hover:text-indigo-400 inline-flex items-center px-1 text-base font-medium'
+              activeClassName='text-gray-900 dark:text-white hover:text-gray-900 dark:hover:text-white'>
+              Home
+            </NavLink>
+            <NavLink
+              to={ROUTE_BROWSE_ALL}
+              exact={false}
+              className='text-gray-500 dark:text-gray-200 hover:text-gray-800 dark:hover:text-indigo-400 inline-flex items-center px-1 text-base font-medium'
+              activeClassName='text-gray-900 dark:text-white hover:text-gray-900 dark:hover:text-white'>
+              Browse
+            </NavLink>
             <DarkToggle />
             {/* <ProfileLink img={user.img} name={user.name} /> */}
           </div>

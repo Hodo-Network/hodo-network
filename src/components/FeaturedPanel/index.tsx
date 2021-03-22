@@ -54,7 +54,7 @@ export default function FeaturedPanel({
         </NavLink>
       </div>
 
-      <div className='grid gap-6 grid-cols-2 lg:grid-cols-4 xl:grid-cols-6'>
+      <div className='grid gap-4 md:gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6'>
         <FeaturedNfts getItems={getItems} type={type} />
       </div>
     </div>
