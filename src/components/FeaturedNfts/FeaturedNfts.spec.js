@@ -1,7 +1,7 @@
 import { cleanup } from "@testing-library/react";
 import ReactDOM from "react-dom";
 import renderer from "react-test-renderer";
-import FeaturedNfts from ".";
+import FeaturedNfts from "./index";
 
 afterEach(cleanup);
 

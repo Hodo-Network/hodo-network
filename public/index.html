@@ -6,7 +6,7 @@
   <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#000000" />
-  <meta name="description" content="NFT platform for geo-referenced NFTs" />
+  <meta name="description" content="NFT platform for Georeferenced Non-Fungible Tokens (gNFT)" />
   <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
   <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -24,8 +24,8 @@
     -->
   <script>
     if (
-      localStorage.theme === "dark" ||
-      (!("theme" in localStorage) &&
+      localStorage.dark === "true" ||
+      (!("dark" in localStorage) &&
         window.matchMedia("(prefers-color-scheme: dark)").matches)
     ) {
       document.documentElement.classList.add("dark");
@@ -38,7 +38,7 @@
 
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
-  <div id="root"></div>
+  <div id="root" class="h-full"></div>
   <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.

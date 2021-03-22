@@ -1,3 +1,3 @@
-import ReactLogo from './react-logo.svg';
+import ReactLogo from './react-logo.png';
 
 export { ReactLogo };

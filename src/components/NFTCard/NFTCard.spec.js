@@ -1,7 +1,7 @@
 import { cleanup } from "@testing-library/react";
 import ReactDOM from "react-dom";
 import renderer from "react-test-renderer";
-import NFTCard from ".";
+import NFTCard from "./index";
 
 afterEach(cleanup);
 

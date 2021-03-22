@@ -1,29 +1,43 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import ReactDOM from "react-dom";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import { ApolloProvider } from "@apollo/react-hooks";
 import client from "./client";
 import reportWebVitals from "./reportWebVitals";
-import { Home, Browse, Collectible } from "./pages";
-import { ComingSoon } from "./components";
+import { Home, Collectible, Browse } from "./pages";
+import { ComingSoon, Footer, Navbar } from "./components";
 import {
-  DEFAULT_ROUTE,
-  BROWSE_ALL_ROUTE,
-  ASSET_ROUTE,
-  COMING_SOON_ROUTE,
+  ROUTE_DEFAULT,
+  ROUTE_ASSET,
+  ROUTE_COMING_SOON,
+  ROUTE_BROWSE_ALL,
 } from "./constants/routes";
 
 import "./styles/tailwind.output.css";
 
 export const App: FC = () => (
-  <Router>
-    <Switch>
-      <Route path={COMING_SOON_ROUTE} exact component={ComingSoon} />
-      <Route path={DEFAULT_ROUTE} exact component={Home} />
-      <Route path={BROWSE_ALL_ROUTE} component={Browse} />
-      <Route path={`${ASSET_ROUTE}/:id`} component={Collectible} />
-    </Switch>
-  </Router>
+  <div className='bg-gray-100 dark:bg-gray-900 min-h-full flex flex-col'>
+    <Router>
+      <Switch>
+        <Route path={ROUTE_COMING_SOON} exact component={ComingSoon} />
+        <Route component={DefaultContainer} />
+      </Switch>
+    </Router>
+  </div>
+);
+
+const DefaultContainer = () => (
+  <>
+    <Navbar />
+
+    <main className='px-4 sm:px-8 flex-grow'>
+      <Route path={ROUTE_DEFAULT} component={Home} />
+      <Route path={ROUTE_BROWSE_ALL} component={Browse} />
+      <Route path={`${ROUTE_ASSET}/:id`} component={Collectible} />
+    </main>
+
+    <Footer />
+  </>
 );
 
 ReactDOM.render(

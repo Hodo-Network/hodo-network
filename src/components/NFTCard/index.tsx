@@ -1,6 +1,5 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
-import { ASSET_ROUTE } from "../../constants/routes";
+import { ROUTE_ASSET } from "../../constants/routes";
 import { NFTProps } from "../../typings/nft";
 import RarityBadge from "../RarityBadge";
 
@@ -10,17 +9,17 @@ export default function NFTCard(props: NFTProps) {
 
   return (
     <NavLink
-      to={`${ASSET_ROUTE}/${id}`}
+      to={`${ROUTE_ASSET}/${id}`}
       className='flex flex-col rounded-md shadow overflow-hidden transition-transform duration-300 transform hover:-translate-y-2'>
       <div className='flex-shrink-0'>
         <img className='h-36 w-full object-cover' src={img} alt={name} />
       </div>
-      <div className='flex-1 bg-white dark:bg-gray-800 p-4 flex flex-col justify-between'>
+      <div className='flex-1 bg-white dark:bg-gray-700 p-4 flex flex-col justify-between'>
         <div className='flex-1'>
           <p className='text-base font-semibold text-gray-900 dark:text-gray-100'>
             {name}
           </p>
-          <p className='mt-3 text-sm text-gray-500 dark:text-gray-400'>
+          <p className='mt-3 text-sm text-gray-500 dark:text-gray-300'>
             {desc}
           </p>
         </div>
@@ -28,7 +27,7 @@ export default function NFTCard(props: NFTProps) {
           <div className='flex-shrink-0'>
             <RarityBadge rarity={rarity} />
           </div>
-          <div className='ml-3 text-sm font-medium text-green-700'>
+          <div className='ml-3 text-sm font-medium text-green-600 dark:text-green-500'>
             {cost} {units}
           </div>
         </div>
