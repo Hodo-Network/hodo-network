@@ -4,8 +4,8 @@ import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import { ApolloProvider } from "@apollo/react-hooks";
 import client from "./client";
 import reportWebVitals from "./reportWebVitals";
-import { Home, Collectible, Browse } from "./pages";
-import { ComingSoon, Footer, Navbar } from "./components";
+import { Home, Collectible, Browse, ComingSoon } from "./pages";
+import { Footer, Navbar } from "./components";
 import {
   ROUTE_DEFAULT,
   ROUTE_ASSET,

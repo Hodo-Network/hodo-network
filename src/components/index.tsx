@@ -6,7 +6,6 @@ import NFTCard from "./NFTCard";
 import Hero from "./Hero";
 import Footer from "./Footer";
 import SiteAlert from "./SiteAlert";
-import ComingSoon from "./ComingSoon";
 import BrowseNav from "./BrowseNav";
 import RarityBadge from "./RarityBadge";
 import DarkToggle from "./DarkToggle";
@@ -23,7 +22,6 @@ export {
   Hero,
   Footer,
   SiteAlert,
-  ComingSoon,
   BrowseNav,
   RarityBadge,
   DarkToggle,
