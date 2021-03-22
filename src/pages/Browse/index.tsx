@@ -31,7 +31,7 @@ export default function Browse() {
   }, []);
 
   return (
-    <div className='mx-auto max-w-8xl mt-8 md:mt-12'>
+    <div className='mx-auto max-w-8xl mt-8'>
       <div className='flex flex-col md:flex-row'>
         <div className='md:w-1/5 mb-8'>
           {/* TODO: Turn into dropdown on mobile */}

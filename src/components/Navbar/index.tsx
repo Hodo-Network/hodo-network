@@ -10,7 +10,7 @@ export default function Navbar() {
   return (
     <nav className='px-4 sm:px-8 lg:px-12'>
       <div className='mx-auto max-w-8xl'>
-        <div className='flex justify-between h-16'>
+        <div className='flex justify-between h-20'>
           <div className='flex'>
             <div className='flex-shrink-0 flex items-center'>
               <NavLink
@@ -19,24 +19,23 @@ export default function Navbar() {
                 className='flex-shrink-0 flex items-center'>
                 {/* TODO: Update logo */}
                 <Logo img={ReactLogo} alt='React Logo' />
-                <span className='text-black dark:text-white font-medium'>
+                <span className='text-black dark:text-white font-medium text-lg'>
                   {process.env.REACT_APP_COMPANY}
                 </span>
               </NavLink>
             </div>
-
             <div className='ml-6 flex space-x-8'>
               <NavLink
                 to={ROUTE_DEFAULT}
                 exact={true}
-                className='text-gray-500 dark:text-gray-200 hover:text-gray-800 dark:hover:text-indigo-400 inline-flex items-center px-1 text-sm font-medium'
+                className='text-gray-500 dark:text-gray-200 hover:text-gray-800 dark:hover:text-indigo-400 inline-flex items-center px-1 text-base font-medium'
                 activeClassName='text-gray-900 dark:text-white hover:text-gray-900 dark:hover:text-white'>
                 Home
               </NavLink>
               <NavLink
                 to={ROUTE_BROWSE_ALL}
                 exact={false}
-                className='text-gray-500 dark:text-gray-200 hover:text-gray-800 dark:hover:text-indigo-400 inline-flex items-center px-1 text-sm font-medium'
+                className='text-gray-500 dark:text-gray-200 hover:text-gray-800 dark:hover:text-indigo-400 inline-flex items-center px-1 text-base font-medium'
                 activeClassName='text-gray-900 dark:text-white hover:text-gray-900 dark:hover:text-white'>
                 Browse
               </NavLink>
@@ -45,9 +44,7 @@ export default function Navbar() {
 
           <div className='ml-6 flex items-center'>
             <DarkToggle />
-            {/* <div className='ml-4'>
-              <ProfileLink img={user.img} name={user.name} />
-            </div> */}
+            {/* <ProfileLink img={user.img} name={user.name} /> */}
           </div>
         </div>
       </div>
