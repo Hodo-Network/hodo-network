@@ -33,7 +33,7 @@ export default function FeaturedPanel({
   }, [type]);
 
   return (
-    <div className='mt-12 mx-auto max-w-md sm:max-w-lg lg:max-w-7xl'>
+    <div className='mt-12 mx-auto max-w-8xl'>
       <div className='flex justify-between mb-6'>
         <h2 className='font-bold text-xl dark:text-white'>{title}</h2>
         <NavLink

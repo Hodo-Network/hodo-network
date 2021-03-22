@@ -5,7 +5,11 @@ module.exports = {
   },
   purge: [],
   theme: {
-    extend: {},
+    extend: {
+      maxWidth: {
+        "8xl": "120rem",
+      },
+    },
   },
   variants: {},
   darkMode: "class",

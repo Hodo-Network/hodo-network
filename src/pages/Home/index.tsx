@@ -22,7 +22,7 @@ export default function Home() {
       <Hero />
 
       <div className='p-4 sm:p-8'>
-        <div className='mt-4 mx-auto max-w-md sm:max-w-lg lg:max-w-7xl dark:text-white'>
+        <div className='mt-4 mx-auto max-w-8xl dark:text-white'>
           <span className='font-bold'>{TEXT_LOCATION}: </span>
           {geoObj && JSON.stringify(geoObj)}
         </div>

@@ -37,13 +37,13 @@ export default function Collectible() {
       {asset && (
         <>
           <div className='p-4 sm:p-8 -mx-4 sm:-mx-8 bg-gray-700'>
-            <div className='mx-auto max-w-md sm:max-w-lg lg:max-w-7xl h-60 flex items-center'>
+            <div className='mx-auto max-w-8xl h-60 flex items-center'>
               <img className='max-h-full' src={asset.img} alt={asset.name} />
             </div>
           </div>
 
           <div className='p-4 sm:p-8'>
-            <div className='mx-auto max-w-md sm:max-w-lg lg:max-w-7xl'>
+            <div className='mx-auto max-w-8xl'>
               <div className='flex flex-wrap items-center'>
                 <h3 className='text-3xl uppercase font-medium text-gray-900 dark:text-white'>
                   {asset.name}
@@ -62,7 +62,7 @@ export default function Collectible() {
               </div>
 
               <div className='mt-8'>
-                <div className='max-w-7xl mx-auto lg:flex lg:items-center lg:justify-between'>
+                <div className='mx-auto max-w-8xl lg:flex lg:items-center lg:justify-between'>
                   <div>
                     <h1 className='text-sm uppercase font-medium text-gray-500 dark:text-gray-400'>
                       {TEXT_COST}

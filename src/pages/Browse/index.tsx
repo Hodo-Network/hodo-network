@@ -32,7 +32,7 @@ export default function Browse() {
 
   return (
     <>
-      <div className='py-8 mx-auto max-w-md sm:max-w-lg lg:max-w-7xl'>
+      <div className='py-8 mx-auto max-w-8xl'>
         <div className='flex'>
           {/* TODO: make mobile friendly widths */}
           <div className='w-1/5'>
