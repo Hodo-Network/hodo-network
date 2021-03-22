@@ -2,6 +2,6 @@
 
 exports[`matches snapshot 1`] = `
 <img
-  className="sc-bdfBwQ bIsOIA h-8 w-auto"
+  className="sc-bdfBwQ bIsOIA h-6 w-auto"
 />
 `;

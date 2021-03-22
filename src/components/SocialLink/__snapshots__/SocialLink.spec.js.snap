@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<a
+  className="text-gray-400 hover:text-gray-500"
+>
+  <span
+    className="sr-only"
+  />
+  <svg
+    aria-hidden="true"
+    className="h-6 w-6"
+    fill="currentColor"
+    viewBox="0 0 24 24"
+  />
+</a>
+`;
