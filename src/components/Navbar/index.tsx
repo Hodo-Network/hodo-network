@@ -24,7 +24,8 @@ export default function Navbar() {
                 </span>
               </NavLink>
             </div>
-            <div className='hidden sm:ml-6 sm:flex sm:space-x-8'>
+
+            <div className='ml-6 flex space-x-8'>
               <NavLink
                 to={ROUTE_DEFAULT}
                 exact={true}
@@ -41,7 +42,8 @@ export default function Navbar() {
               </NavLink>
             </div>
           </div>
-          <div className='hidden sm:ml-6 sm:flex sm:items-center'>
+
+          <div className='ml-6 flex items-center'>
             <DarkToggle />
             {/* <div className='ml-4'>
               <ProfileLink img={user.img} name={user.name} />
