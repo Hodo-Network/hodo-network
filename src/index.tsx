@@ -30,7 +30,7 @@ const DefaultContainer = () => (
   <>
     <Navbar />
 
-    <main className='px-4 sm:px-8 flex-grow'>
+    <main className='px-4 sm:px-8 lg:px-12 flex-grow'>
       <Route path={ROUTE_DEFAULT} component={Home} />
       <Route path={ROUTE_BROWSE_ALL} component={Browse} />
       <Route path={`${ROUTE_ASSET}/:id`} component={Collectible} />

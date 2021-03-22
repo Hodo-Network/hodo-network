@@ -2,10 +2,10 @@
 
 exports[`matches snapshot 1`] = `
 <footer
-  className="px-4 sm:px-8"
+  className="px-4 sm:px-8 lg:px-12"
 >
   <div
-    className="max-w-7xl mx-auto py-12 md:flex md:items-center md:justify-between"
+    className="mx-auto max-w-8xl py-12 md:flex md:items-center md:justify-between"
   >
     <div
       className="flex justify-center space-x-6 md:order-2"
@@ -125,9 +125,8 @@ exports[`matches snapshot 1`] = `
       <p
         className="text-center text-base text-gray-400"
       >
-        © 
-        2021 Hodo Network. All rights reserved.
-         
+        © 2021 Hodo Network. All rights reserved.
+         
         0.1.0
       </p>
     </div>

@@ -1,3 +1,4 @@
+const TEXT_COPYRIGHT = "\u00A9 2021 Hodo Network. All rights reserved.";
 const TEXT_COMING_SOON = "Coming Soon";
 const TEXT_LOCATION = "Location";
 const TEXT_AVAILABLE_TO_GEO = "Available in your area";
@@ -12,6 +13,7 @@ const TEXT_COST = "Cost";
 const TEXT_ID = "ID";
 
 export {
+  TEXT_COPYRIGHT,
   TEXT_COMING_SOON,
   TEXT_LOCATION,
   TEXT_AVAILABLE_TO_GEO,

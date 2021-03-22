@@ -1,8 +1,7 @@
+import { TEXT_COPYRIGHT } from "../../constants/text";
 import { SocialLink } from "../index";
 
 export default function Footer() {
-  const copyright: string = "2021 Hodo Network. All rights reserved.";
-
   const social = {
     facebook: {
       show: true,
@@ -32,7 +31,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className='px-4 sm:px-8'>
+    <footer className='px-4 sm:px-8 lg:px-12'>
       <div className='mx-auto max-w-8xl py-12 md:flex md:items-center md:justify-between'>
         <div className='flex justify-center space-x-6 md:order-2'>
           {social.facebook.show && (
@@ -90,8 +89,7 @@ export default function Footer() {
 
         <div className='mt-8 md:mt-0 md:order-1'>
           <p className='text-center text-base text-gray-400'>
-            &copy; {copyright}
-            &nbsp;{process.env.REACT_APP_VERSION}
+            {TEXT_COPYRIGHT} {process.env.REACT_APP_VERSION}
           </p>
         </div>
       </div>

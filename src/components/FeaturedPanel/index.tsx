@@ -20,7 +20,7 @@ export default function FeaturedPanel({
         return [...countries, ...capitals, ...monuments];
       case "region":
         // TODO: filter all items using geoObj
-        return [countries[0], capitals[0], monuments[0], capitals[3]];
+        return [countries[0], capitals[0], monuments[0]];
       case "countries":
         return countries;
       case "capitals":
@@ -33,7 +33,7 @@ export default function FeaturedPanel({
   }, [type]);
 
   return (
-    <div className='mt-12 mx-auto max-w-8xl'>
+    <div className='mx-auto max-w-8xl mt-12'>
       <div className='flex justify-between mb-6'>
         <h2 className='font-bold text-xl dark:text-white'>{title}</h2>
         <NavLink
@@ -54,7 +54,7 @@ export default function FeaturedPanel({
         </NavLink>
       </div>
 
-      <div className='grid gap-6 grid-cols-2 lg:grid-cols-4 xl:grid-cols-5'>
+      <div className='grid gap-6 grid-cols-2 lg:grid-cols-4 xl:grid-cols-6'>
         <FeaturedNfts getItems={getItems} type={type} />
       </div>
     </div>

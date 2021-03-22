@@ -31,36 +31,35 @@ export default function Browse() {
   }, []);
 
   return (
-    <>
-      <div className='py-8 mx-auto max-w-8xl'>
-        <div className='flex'>
-          {/* TODO: make mobile friendly widths */}
-          <div className='w-1/5'>
-            <BrowseNav />
-          </div>
-          <div className='w-4/5'>
-            <div className='lg:ml-8 grid gap-6 grid-cols-2 lg:grid-cols-4'>
-              <Switch>
-                <Route path={ROUTE_BROWSE_ALL} exact>
-                  <FeaturedNfts getItems={getItems} type='all' />
-                </Route>
-                <Route path={ROUTE_BROWSE_REGION} exact>
-                  <FeaturedNfts getItems={getItems} type='region' />
-                </Route>
-                <Route path={ROUTE_BROWSE_COUNTRIES} exact>
-                  <FeaturedNfts getItems={getItems} type='countries' />
-                </Route>
-                <Route path={ROUTE_BROWSE_CAPITALS} exact>
-                  <FeaturedNfts getItems={getItems} type='capitals' />
-                </Route>
-                <Route path={ROUTE_BROWSE_MONUMENTS} exact>
-                  <FeaturedNfts getItems={getItems} type='monuments' />
-                </Route>
-              </Switch>
-            </div>
+    <div className='mx-auto max-w-8xl mt-8 md:mt-12'>
+      <div className='flex flex-col md:flex-row'>
+        <div className='md:w-1/5 mb-8'>
+          {/* TODO: Turn into dropdown on mobile */}
+          <BrowseNav />
+        </div>
+
+        <div className='md:w-4/5'>
+          <div className='md:pl-4 lg:pl-8 grid gap-4 md:gap-6 grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5'>
+            <Switch>
+              <Route path={ROUTE_BROWSE_ALL} exact>
+                <FeaturedNfts getItems={getItems} type='all' />
+              </Route>
+              <Route path={ROUTE_BROWSE_REGION} exact>
+                <FeaturedNfts getItems={getItems} type='region' />
+              </Route>
+              <Route path={ROUTE_BROWSE_COUNTRIES} exact>
+                <FeaturedNfts getItems={getItems} type='countries' />
+              </Route>
+              <Route path={ROUTE_BROWSE_CAPITALS} exact>
+                <FeaturedNfts getItems={getItems} type='capitals' />
+              </Route>
+              <Route path={ROUTE_BROWSE_MONUMENTS} exact>
+                <FeaturedNfts getItems={getItems} type='monuments' />
+              </Route>
+            </Switch>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

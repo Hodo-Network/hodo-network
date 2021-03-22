@@ -8,8 +8,8 @@ import { ROUTE_BROWSE_ALL, ROUTE_DEFAULT } from "../../constants/routes";
 
 export default function Navbar() {
   return (
-    <nav className='px-4 sm:px-8'>
-      <div className='max-w-7xl mx-auto'>
+    <nav className='px-4 sm:px-8 lg:px-12'>
+      <div className='mx-auto max-w-8xl'>
         <div className='flex justify-between h-16'>
           <div className='flex'>
             <div className='flex-shrink-0 flex items-center'>
@@ -34,7 +34,7 @@ export default function Navbar() {
               </NavLink>
               <NavLink
                 to={ROUTE_BROWSE_ALL}
-                exact={true}
+                exact={false}
                 className='text-gray-500 dark:text-gray-200 hover:text-gray-800 dark:hover:text-indigo-400 inline-flex items-center px-1 text-sm font-medium'
                 activeClassName='text-gray-900 dark:text-white hover:text-gray-900 dark:hover:text-white'>
                 Browse
