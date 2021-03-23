@@ -25,9 +25,11 @@
     "avalanche": "^3.2.2",
     "dotenv": "^8.2.0",
     "graphql": "^15.5.0",
+    "leaflet": "^1.7.1",
     "postcss": "^8.2.6",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-leaflet": "^3.1.0",
     "react-modal": "^3.12.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
@@ -64,5 +66,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/leaflet": "^1.7.0"
   }
 }

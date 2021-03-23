@@ -12,6 +12,7 @@ import DarkToggle from "./DarkToggle";
 import LocationButton from "./LocationButton";
 import Notification from "./Notification";
 import SocialLink from "./SocialLink";
+import LeafletMap from "./LeafletMap";
 
 export {
   Logo,
@@ -28,4 +29,5 @@ export {
   LocationButton,
   Notification,
   SocialLink,
+  LeafletMap,
 };
