@@ -2,57 +2,57 @@ import { NFTProps } from '../typings/nft';
 
 export const countries: Array<NFTProps> = [
     {
-        id: 'BZTDWRaK6rQmnSLrrq4PANBeueYfDRFkpHV9KcMtjxL19wsJd7',
+        id: 'QmQBSaJvXv3SfYMpEEyVzhtUCquhTFxvo5F7gvhLRGvMuB',
         img:
-            "https://images.unsplash.com/photo-1444850321296-e568c6a10d26?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=300&q=80",
-        name: "United States",
-        rarity: 'Rare',
+            "https://gateway.pinata.cloud/ipfs/QmQBSaJvXv3SfYMpEEyVzhtUCquhTFxvo5F7gvhLRGvMuB",
+        name: "Afghanistan",
+        rarity: 'Common',
         desc: 'Here is an NFT desc 1.',
-        cost: 10,
+        cost: 1,
     },
     {
-        id: 'BZTDWRaK6rQmnSLrrq4PANBeueYfDRFkpHV9KcMtjxL19wsJd8',
+        id: 'QmWbUonVdzNyCMqAdFC2URpc9GXV5NwdeHbitxDcRzydfY',
         img:
-            "https://images.unsplash.com/photo-1444850321296-e568c6a10d26?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=300&q=80",
-        name: "Canada",
+            "https://gateway.pinata.cloud/ipfs/QmWbUonVdzNyCMqAdFC2URpc9GXV5NwdeHbitxDcRzydfY",
+        name: "Afghanistan",
         rarity: 'Epic',
         desc: 'Here is an NFT desc 2.',
-        cost: 15,
+        cost: 2,
     },
     {
-        id: 'BZTDWRaK6rQmnSLrrq4PANBeueYfDRFkpHV9KcMtjxL19wsJd9',
+        id: 'QmaLAahk2f1Qyvtz171thg85ArETnXyZm47fyepNvy9bnP',
         img:
-            "https://images.unsplash.com/photo-1444850321296-e568c6a10d26?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=300&q=80",
-        name: "South Africa",
-        rarity: 'Common',
+            "https://gateway.pinata.cloud/ipfs/QmaLAahk2f1Qyvtz171thg85ArETnXyZm47fyepNvy9bnP",
+        name: "Afghanistan",
+        rarity: 'Rare',
         desc: 'Here is an NFT desc 3.',
-        cost: 5,
+        cost: 3,
     },
     {
-        id: 'BZTDWRaK6rQmnSLrrq4PANBeueYfDRFkpHV9KcMtjxL19wsJ10',
+        id: 'QmZ8ArvpTy9J4D9gMzsPgitwBm2NrGFhkQDBkEAhRFDAxp',
         img:
-            "https://images.unsplash.com/photo-1444850321296-e568c6a10d26?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=300&q=80",
-        name: "Guatemala",
+            "https://gateway.pinata.cloud/ipfs/QmZ8ArvpTy9J4D9gMzsPgitwBm2NrGFhkQDBkEAhRFDAxp",
+        name: "Andorra",
         rarity: 'Rare',
         desc: 'Here is an NFT desc 4.',
-        cost: 10,
+        cost: 3,
     },
     {
         id: 'BZTDWRaK6rQmnSLrrq4PANBeueYfDRFkpHV9KcMtjxL19wsJ11',
         img:
-            "https://images.unsplash.com/photo-1444850321296-e568c6a10d26?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=300&q=80",
+            "https://gateway.pinata.cloud/ipfs/QmTs4qs7gzeG1ssh1DhqB7BHMbGHoj2c5YjUVcWu2QTJeN",
         name: "Australia",
         rarity: 'Common',
         desc: 'Here is an NFT desc 5.',
         cost: 5,
     },
     {
-        id: 'BZTDWRaK6rQmnSLrrq4PANBeueYfDRFkpHV9KcMtjxL19wsJ12',
+        id: 'QmQWmYPT9xGgTwDS97q6JwPoBagKcGNYoaih2x8cArRPLm',
         img:
-            "https://images.unsplash.com/photo-1444850321296-e568c6a10d26?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=300&q=80",
-        name: "Australia 2",
+            "https://gateway.pinata.cloud/ipfs/QmQWmYPT9xGgTwDS97q6JwPoBagKcGNYoaih2x8cArRPLm",
+        name: "Argentina",
         rarity: 'Common',
         desc: 'Here is an NFT desc 6.',
-        cost: 5,
+        cost: 1,
     },
 ];
