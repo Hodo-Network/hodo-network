@@ -4,15 +4,15 @@ import { NFTProps } from "../../typings/nft";
 import RarityBadge from "../RarityBadge";
 
 export default function NFTCard(props: NFTProps) {
-  const { id, img, name, rarity, desc, cost } = props;
+  const { id, img, name, rarity, desc, cost, className } = props;
   const units = "AVAX";
 
   return (
     <NavLink
       to={`${ROUTE_ASSET}/${id}`}
-      className='flex flex-col rounded-md shadow overflow-hidden transition-transform duration-300 transform hover:-translate-y-2'>
+      className={`${className} flex flex-col rounded-md shadow overflow-hidden transition-transform duration-300 transform hover:-translate-y-2`}>
       <div className='flex-shrink-0'>
-        <img className='h-36 w-full object-cover' src={img} alt={name} />
+        <img className='h-54 w-full object-scale-down' src={img} alt={name} />
       </div>
       <div className='flex-1 bg-white dark:bg-gray-700 p-4 flex flex-col justify-between'>
         <div className='flex-1'>

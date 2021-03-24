@@ -5,4 +5,5 @@ export type NFTProps = {
     rarity: string;
     desc: string;
     cost: number;
+    className?: string;
 }
