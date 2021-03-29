@@ -1,3 +1,4 @@
+import { ChevronRightIcon } from "@heroicons/react/solid";
 import { useCallback } from "react";
 import { NavLink } from "react-router-dom";
 import { FeaturedNfts } from "..";
@@ -40,17 +41,7 @@ export default function FeaturedPanel({
           to={to}
           className='text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300 font-medium flex'>
           <span className='whitespace-nowrap'>{MESSAGE_VIEW_ALL}</span>
-          <svg
-            xmlns='http://www.w3.org/2000/svg'
-            viewBox='0 0 20 20'
-            fill='currentColor'
-            className='h-6'>
-            <path
-              fillRule='evenodd'
-              d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z'
-              clipRule='evenodd'
-            />
-          </svg>
+          <ChevronRightIcon className='h-6' />
         </NavLink>
       </div>
 
