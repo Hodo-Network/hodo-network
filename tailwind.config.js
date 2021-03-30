@@ -1,9 +1,4 @@
 module.exports = {
-  future: {
-    // removeDeprecatedGapUtilities: true,
-    // purgeLayersByDefault: true,
-  },
-  purge: [],
   theme: {
     extend: {
       maxWidth: {
@@ -11,7 +6,5 @@ module.exports = {
       },
     },
   },
-  variants: {},
   darkMode: "class",
-  plugins: [],
 };
