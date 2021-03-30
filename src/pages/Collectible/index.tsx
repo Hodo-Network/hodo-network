@@ -80,9 +80,7 @@ export default function Collectible() {
 
             <div className='mt-8 sm:flex'>
               <div>
-                <button
-                  onClick={buyCollectible}
-                  className='inline-block w-full px-6 py-2 md:px-10 md:py-3 border border-transparent text-base md:text-lg font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600'>
+                <button onClick={buyCollectible} className='btn w-full'>
                   {TEXT_BUY}
                 </button>
               </div>

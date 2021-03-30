@@ -14,7 +14,7 @@ export default function LocationButton() {
         onClick={() => {
           setWhen(true);
         }}
-        className='inline-block w-full px-6 py-2 md:px-10 md:py-3 border border-transparent text-base md:text-lg font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600'>
+        className='btn w-full'>
         Get Location
       </button>
       <div className='mt-2 text-sm text-gray-500'>

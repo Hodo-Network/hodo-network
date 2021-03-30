@@ -18,9 +18,7 @@ export default function Hero() {
           </p>
           <div className='mt-8 sm:flex'>
             <div>
-              <NavLink
-                to={ROUTE_BROWSE_ALL}
-                className='inline-block w-full px-6 py-2 md:px-10 md:py-3 border border-transparent text-base md:text-lg font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600'>
+              <NavLink to={ROUTE_BROWSE_ALL} className='btn w-full'>
                 Start Browsing
               </NavLink>
             </div>
