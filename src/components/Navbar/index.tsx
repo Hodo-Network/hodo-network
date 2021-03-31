@@ -4,7 +4,11 @@ import { Logo, DarkToggle } from "../index";
 import { ReactLogo } from "../../assets";
 // import ProfileLink from "../ProfileLink";
 // import { user } from "../../data";
-import { ROUTE_BROWSE_ALL, ROUTE_DEFAULT } from "../../constants/routes";
+import {
+  ROUTE_BROWSE_ALL,
+  ROUTE_DEFAULT,
+  ROUTE_ACCOUNT,
+} from "../../constants/routes";
 
 export default function Navbar() {
   return (
@@ -40,6 +44,13 @@ export default function Navbar() {
               className='text-gray-500 dark:text-gray-200 hover:text-gray-800 dark:hover:text-indigo-400 inline-flex items-center px-1 text-base font-medium'
               activeClassName='text-gray-900 dark:text-white hover:text-gray-900 dark:hover:text-white'>
               Browse
+            </NavLink>
+            <NavLink
+              to={ROUTE_ACCOUNT}
+              exact={true}
+              className='text-gray-500 dark:text-gray-200 hover:text-gray-800 dark:hover:text-indigo-400 inline-flex items-center px-1 text-base font-medium'
+              activeClassName='text-gray-900 dark:text-white hover:text-gray-900 dark:hover:text-white'>
+              Account
             </NavLink>
             <DarkToggle />
             {/* <ProfileLink img={user.img} name={user.name} /> */}

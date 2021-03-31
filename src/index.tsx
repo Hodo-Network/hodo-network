@@ -1,16 +1,17 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import ReactDOM from "react-dom";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import { ApolloProvider } from "@apollo/react-hooks";
 import client from "./client";
 import reportWebVitals from "./reportWebVitals";
-import { Home, Collectible, Browse, ComingSoon } from "./pages";
+import { Home, Collectible, Browse, Account, ComingSoon } from "./pages";
 import { Footer, Navbar } from "./components";
 import {
   ROUTE_DEFAULT,
   ROUTE_ASSET,
   ROUTE_COMING_SOON,
   ROUTE_BROWSE_ALL,
+  ROUTE_ACCOUNT,
 } from "./constants/routes";
 
 import "./styles/tailwind.output.css";
@@ -34,6 +35,7 @@ const DefaultContainer = () => (
       <Route path={ROUTE_DEFAULT} component={Home} />
       <Route path={ROUTE_BROWSE_ALL} component={Browse} />
       <Route path={`${ROUTE_ASSET}/:id`} component={Collectible} />
+      <Route path={ROUTE_ACCOUNT} component={Account} />
     </main>
 
     <Footer />

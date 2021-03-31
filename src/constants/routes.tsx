@@ -5,6 +5,7 @@ const ROUTE_BROWSE_COUNTRIES = "/browse/countries";
 const ROUTE_BROWSE_CAPITALS = "/browse/capitals";
 const ROUTE_BROWSE_MONUMENTS = "/browse/monuments";
 const ROUTE_ASSET = "/view";
+const ROUTE_ACCOUNT = "/account";
 const ROUTE_COMING_SOON = "/";
 
 // Used to pull a convenient name for analytics tracking events. The key must
@@ -17,6 +18,7 @@ const ROUTE_COMING_SOON = "/";
 //   [ROUTE_BROWSE_CAPITALS]: "Browse Capitals",
 //   [ROUTE_BROWSE_MONUMENTS]: "Browse Monuments",
 //   [`${ROUTE_ASSET}/:id`]: `Asset Page`,
+//   [ROUTE_ACCOUNT]: "Account Page",
 //   [ROUTE_COMING_SOON]: "Coming Soon",
 // };
 
@@ -28,5 +30,6 @@ export {
   ROUTE_BROWSE_CAPITALS,
   ROUTE_BROWSE_MONUMENTS,
   ROUTE_ASSET,
+  ROUTE_ACCOUNT,
   ROUTE_COMING_SOON,
 };
