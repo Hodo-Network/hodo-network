@@ -1,6 +1,6 @@
 {
-  "short_name": "%REACT_APP_COMPANY_SHORT%",
-  "name": "%REACT_APP_COMPANY%",
+  "short_name": "Hodo",
+  "name": "Hodo Network",
   "icons": [{
       "src": "favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",

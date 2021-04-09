@@ -12,7 +12,7 @@ import {
   ROUTE_ACCOUNT,
 } from "./constants/routes";
 
-import "./styles/tailwind.output.css";
+import "./styles/tailwind.css";
 
 export const App: FC = () => (
   <div className='bg-gray-100 dark:bg-gray-900 min-h-full flex flex-col'>
