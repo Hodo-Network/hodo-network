@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { Logo, DarkToggle } from "../index";
-import { ReactLogo } from "../../assets";
+import { HodoLogo } from "../../assets";
 // import ProfileLink from "../ProfileLink";
 // import { user } from "../../data";
 import {
@@ -21,8 +21,7 @@ export default function Navbar() {
                 to={ROUTE_DEFAULT}
                 exact={true}
                 className='flex-shrink-0 flex items-center'>
-                {/* TODO: Update logo */}
-                <Logo img={ReactLogo} alt='React Logo' />
+                <Logo img={HodoLogo} alt='Logo' />
                 <span className='text-black dark:text-white font-medium text-lg'>
                   {process.env.REACT_APP_COMPANY}
                 </span>

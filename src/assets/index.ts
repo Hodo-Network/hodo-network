@@ -1,3 +1,3 @@
-import ReactLogo from './react-logo.png';
+import HodoLogo from './logo.png';
 
-export { ReactLogo };
+export { HodoLogo };
