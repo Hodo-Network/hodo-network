@@ -12,41 +12,49 @@ export default function AddChainButton(props) {
     window.ethereum?.on("chainChanged", (_chainId) => window.location.reload());
 
     const requestChain = async () => {
-      await window.ethereum
-        ?.request({ method: "eth_chainId" })
-        .then((result) => {
-          switch (result) {
-            case chainId:
-              setButtonText(TEXT_CONNECTED + label);
-              setIsDisabled(true);
-              break;
-            default:
-              setButtonText(TEXT_DEFAULT + label);
-              break;
-          }
-        });
+      try {
+        await window.ethereum
+          ?.request({ method: "eth_chainId" })
+          .then((result) => {
+            switch (result) {
+              case chainId:
+                setButtonText(TEXT_CONNECTED + label);
+                setIsDisabled(true);
+                break;
+              default:
+                setButtonText(TEXT_DEFAULT + label);
+                break;
+            }
+          });
+      } catch (error) {
+        console.error(error);
+      }
     };
 
     requestChain();
   }, [label, chainId]);
 
   const onClick = async () => {
-    await window.ethereum.request({
-      method: "wallet_addEthereumChain",
-      params: [
-        {
-          chainId,
-          rpcUrls: [rpc],
-          chainName,
-          nativeCurrency: {
-            name: "Avalanche",
-            decimals: 18,
-            symbol: "AVAX",
+    try {
+      await window.ethereum.request({
+        method: "wallet_addEthereumChain",
+        params: [
+          {
+            chainId,
+            rpcUrls: [rpc],
+            chainName,
+            nativeCurrency: {
+              name: "Avalanche",
+              decimals: 18,
+              symbol: "AVAX",
+            },
+            blockExplorerUrls: [explorer],
           },
-          blockExplorerUrls: [explorer],
-        },
-      ],
-    });
+        ],
+      });
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
