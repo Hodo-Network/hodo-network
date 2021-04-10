@@ -6,7 +6,7 @@ const ROUTE_BROWSE_CAPITALS = "/browse/capitals";
 const ROUTE_BROWSE_MONUMENTS = "/browse/monuments";
 const ROUTE_ASSET = "/view";
 const ROUTE_ACCOUNT = "/account";
-const ROUTE_COMING_SOON = "/";
+const ROUTE_ONBOARDING = "/";
 
 // Used to pull a convenient name for analytics tracking events. The key must
 // be react-router ready path, and can include params such as :id for popup windows
@@ -19,7 +19,7 @@ const ROUTE_COMING_SOON = "/";
 //   [ROUTE_BROWSE_MONUMENTS]: "Browse Monuments",
 //   [`${ROUTE_ASSET}/:id`]: `Asset Page`,
 //   [ROUTE_ACCOUNT]: "Account Page",
-//   [ROUTE_COMING_SOON]: "Coming Soon",
+//   [ROUTE_ONBOARDING]: "Onboard",
 // };
 
 export {
@@ -31,5 +31,5 @@ export {
   ROUTE_BROWSE_MONUMENTS,
   ROUTE_ASSET,
   ROUTE_ACCOUNT,
-  ROUTE_COMING_SOON,
+  ROUTE_ONBOARDING,
 };

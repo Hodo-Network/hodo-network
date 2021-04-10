@@ -2,12 +2,12 @@ import React, { FC } from "react";
 import ReactDOM from "react-dom";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
-import { Home, Collectible, Browse, Account, ComingSoon } from "./pages";
+import { Home, Collectible, Browse, Account, Onboarding } from "./pages";
 import { Footer, Navbar } from "./components";
 import {
   ROUTE_DEFAULT,
   ROUTE_ASSET,
-  ROUTE_COMING_SOON,
+  ROUTE_ONBOARDING,
   ROUTE_BROWSE_ALL,
   ROUTE_ACCOUNT,
 } from "./constants/routes";
@@ -18,7 +18,7 @@ export const App: FC = () => (
   <div className='bg-gray-100 dark:bg-gray-900 min-h-full flex flex-col'>
     <Router>
       <Switch>
-        <Route path={ROUTE_COMING_SOON} exact component={ComingSoon} />
+        <Route path={ROUTE_ONBOARDING} exact component={Onboarding} />
         <Route component={DefaultContainer} />
       </Switch>
     </Router>
@@ -40,10 +40,7 @@ const DefaultContainer = () => (
   </>
 );
 
-ReactDOM.render(
-  <App />,
-  document.getElementById("root")
-);
+ReactDOM.render(<App />, document.getElementById("root"));
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

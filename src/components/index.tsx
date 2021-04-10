@@ -13,6 +13,8 @@ import LocationButton from "./LocationButton";
 import Notification from "./Notification";
 import SocialLink from "./SocialLink";
 import LeafletMap from "./LeafletMap";
+import OnboardingButton from "./OnboardingButton";
+import AddChainButton from "./AddChainButton";
 
 export {
   Logo,
@@ -30,4 +32,6 @@ export {
   Notification,
   SocialLink,
   LeafletMap,
+  OnboardingButton,
+  AddChainButton,
 };
