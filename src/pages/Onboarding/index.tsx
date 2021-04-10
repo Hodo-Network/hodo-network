@@ -22,7 +22,7 @@ export default function Onboarding() {
               <p className='font-medium text-base'>Connect to MetaMask</p>
               <p className='mt-1'>
                 Install the extension and go through the prompts to setup a new
-                wallet. Once complete, come back and refresh this page.
+                wallet.
               </p>
               <div className='mt-4'>
                 <OnboardingButton />
