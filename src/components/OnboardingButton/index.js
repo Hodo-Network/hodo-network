@@ -29,12 +29,16 @@ export default function OnboardingButton() {
   }, [accounts]);
 
   const onClick = async () => {
-    if (MetaMaskOnboarding.isMetaMaskInstalled()) {
-      window.ethereum
-        .request({ method: "eth_requestAccounts" })
-        .then((newAccounts) => setAccounts(newAccounts));
-    } else {
-      onboarding.current.startOnboarding();
+    try {
+      if (MetaMaskOnboarding.isMetaMaskInstalled()) {
+        await window.ethereum
+          .request({ method: "eth_requestAccounts" })
+          .then((newAccounts) => setAccounts(newAccounts));
+      } else {
+        onboarding.current.startOnboarding();
+      }
+    } catch (error) {
+      console.error(error);
     }
   };
 
