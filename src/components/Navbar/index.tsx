@@ -9,6 +9,7 @@ import {
   ROUTE_DEFAULT,
   ROUTE_ACCOUNT,
 } from "../../constants/routes";
+import OnboardingButton from "../OnboardingButton";
 
 export default function Navbar() {
   return (
@@ -52,6 +53,7 @@ export default function Navbar() {
               Account
             </NavLink>
             <DarkToggle />
+            <OnboardingButton />
             {/* <ProfileLink img={user.img} name={user.name} /> */}
           </div>
         </div>

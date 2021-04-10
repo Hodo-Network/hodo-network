@@ -5,7 +5,7 @@ import { TEXT_ONBOARDING } from "../../constants/text";
 export default function Onboarding() {
   return (
     <main className='px-4 sm:px-8 lg:px-12 py-12 flex-grow'>
-      <div className='mx-auto max-w-4xl'>
+      <div className='mx-auto max-w-prose'>
         <div className='bg-white shadow overflow-hidden sm:rounded-md'>
           <div className='px-4 py-5 border-b border-gray-200 sm:px-6'>
             <h3 className='text-xl leading-7 font-medium uppercase text-indigo-700 dark:text-indigo-500'>

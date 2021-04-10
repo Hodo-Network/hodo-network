@@ -17,7 +17,6 @@ export default function OnboardingButton() {
   useEffect(() => {
     if (MetaMaskOnboarding.isMetaMaskInstalled()) {
       if (accounts.length > 0) {
-        debugger;
         setButtonText(accounts[0]);
         setDisabled(true);
         onboarding?.current?.stopOnboarding();
@@ -44,7 +43,7 @@ export default function OnboardingButton() {
 
   return (
     <button
-      className='btn disabled:opacity-50 disabled:cursor-not-allowed'
+      className='btn btn--small disabled:opacity-50 disabled:cursor-not-allowed truncate w-44'
       disabled={isDisabled}
       onClick={onClick}>
       {buttonText}
