@@ -1,5 +1,6 @@
 module.exports = {
   // mode: "jit",
+  darkMode: "class",
   purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
   theme: {
     extend: {
@@ -14,5 +15,4 @@ module.exports = {
       cursor: ["disabled"],
     },
   },
-  darkMode: "class",
 };
