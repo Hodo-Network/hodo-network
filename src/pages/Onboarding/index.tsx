@@ -1,6 +1,10 @@
 import React from "react";
 import { AddChainButton, OnboardingButton } from "../../components";
 import { TEXT_ONBOARDING } from "../../constants/text";
+import {
+  AVALANCHE_CHAIN_PARAMS,
+  FUJI_CHAIN_PARAMS,
+} from "../../constants/index";
 
 export default function Onboarding() {
   return (
@@ -37,18 +41,9 @@ export default function Onboarding() {
               <div className='mt-4 flex space-x-4'>
                 <AddChainButton
                   label='Mainnet'
-                  chainId='0xa86a'
-                  rpc='https://api.avax.network/ext/bc/C/rpc'
-                  chainName='Avalanche Mainnet'
-                  explorer='https://cchain.explorer.avax.network/'
+                  params={AVALANCHE_CHAIN_PARAMS}
                 />
-                <AddChainButton
-                  label='Testnet'
-                  chainId='0xa869'
-                  rpc='https://api.avax-test.network/ext/bc/C/rpc'
-                  chainName='Avalanche Fuji Testnet'
-                  explorer='https://cchain.explorer.avax-test.network/'
-                />
+                <AddChainButton label='Testnet' params={FUJI_CHAIN_PARAMS} />
               </div>
             </li>
 

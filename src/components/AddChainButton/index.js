@@ -4,7 +4,7 @@ const TEXT_DEFAULT = "Use ";
 const TEXT_CONNECTED = "Connected to ";
 
 export default function AddChainButton(props) {
-  const { label, chainId, rpc, chainName, explorer } = props;
+  const { label, params } = props;
   const [buttonText, setButtonText] = useState(label);
   const [isDisabled, setIsDisabled] = useState(false);
 
@@ -17,7 +17,7 @@ export default function AddChainButton(props) {
           ?.request({ method: "eth_chainId" })
           .then((result) => {
             switch (result) {
-              case chainId:
+              case params.chainId:
                 setButtonText(TEXT_CONNECTED + label);
                 setIsDisabled(true);
                 break;
@@ -32,25 +32,13 @@ export default function AddChainButton(props) {
     };
 
     requestChain();
-  }, [label, chainId]);
+  }, [label, params]);
 
   const onClick = async () => {
     try {
       await window.ethereum.request({
         method: "wallet_addEthereumChain",
-        params: [
-          {
-            chainId,
-            rpcUrls: [rpc],
-            chainName,
-            nativeCurrency: {
-              name: "Avalanche",
-              decimals: 18,
-              symbol: "AVAX",
-            },
-            blockExplorerUrls: [explorer],
-          },
-        ],
+        params: [params],
       });
     } catch (error) {
       console.error(error);
