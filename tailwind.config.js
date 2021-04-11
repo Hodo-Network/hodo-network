@@ -15,4 +15,5 @@ module.exports = {
       cursor: ["disabled"],
     },
   },
+  plugins: [require("@tailwindcss/aspect-ratio")],
 };
