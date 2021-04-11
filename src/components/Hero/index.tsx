@@ -18,7 +18,7 @@ export default function Hero() {
           </p>
           <div className='mt-8 sm:flex'>
             <div>
-              <NavLink to={ROUTE_BROWSE_ALL} className='btn w-full'>
+              <NavLink to={ROUTE_BROWSE_ALL} className='btn btn--large w-full'>
                 Start Browsing
               </NavLink>
             </div>

@@ -47,7 +47,7 @@ export default function AddChainButton(props) {
 
   return (
     <button
-      className='btn btn--small disabled:opacity-50 disabled:cursor-not-allowed'
+      className='btn disabled:opacity-50 disabled:cursor-not-allowed'
       onClick={onClick}
       disabled={isDisabled}>
       {buttonText}

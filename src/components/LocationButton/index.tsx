@@ -14,7 +14,7 @@ export default function LocationButton() {
         onClick={() => {
           setWhen(true);
         }}
-        className='btn w-full'>
+        className='btn btn--large w-full'>
         Get Location
       </button>
       <div className='mt-2 text-sm text-gray-500'>

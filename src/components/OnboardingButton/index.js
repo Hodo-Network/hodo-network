@@ -43,7 +43,7 @@ export default function OnboardingButton() {
 
   return (
     <button
-      className='btn btn--small disabled:opacity-50 disabled:cursor-not-allowed truncate w-44'
+      className='btn disabled:opacity-50 disabled:cursor-not-allowed truncate w-44'
       disabled={isDisabled}
       onClick={onClick}>
       {buttonText}
