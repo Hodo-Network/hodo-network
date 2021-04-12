@@ -1,12 +1,17 @@
 import React, { useEffect, useState, useRef } from "react";
 import MetaMaskOnboarding from "@metamask/onboarding";
-import { TEXT_INSTALL_METAMASK, TEXT_CONNECT } from "../../constants/text";
+import { useWeb3Context } from "web3-react";
+import {
+  TEXT_INSTALL_METAMASK,
+  TEXT_CONNECT,
+  TEXT_CONNECTED,
+} from "../../constants/text";
 
 export default function OnboardingButton() {
   const [buttonText, setButtonText] = useState(TEXT_INSTALL_METAMASK);
   const [isDisabled, setDisabled] = useState(false);
-  const [accounts, setAccounts] = useState([]);
   const onboarding = useRef();
+  const context = useWeb3Context();
 
   useEffect(() => {
     if (!onboarding.current) {
@@ -16,23 +21,21 @@ export default function OnboardingButton() {
 
   useEffect(() => {
     if (MetaMaskOnboarding.isMetaMaskInstalled()) {
-      if (accounts.length > 0) {
-        setButtonText(accounts[0]);
+      if (context.account) {
+        setButtonText(TEXT_CONNECTED);
         setDisabled(true);
-        onboarding?.current?.stopOnboarding();
+        onboarding.current.stopOnboarding();
       } else {
         setButtonText(TEXT_CONNECT);
         setDisabled(false);
       }
     }
-  }, [accounts]);
+  }, [context.account]);
 
   const onClick = async () => {
     try {
       if (MetaMaskOnboarding.isMetaMaskInstalled()) {
-        await window.ethereum
-          .request({ method: "eth_requestAccounts" })
-          .then((newAccounts) => setAccounts(newAccounts));
+        await window.ethereum.request({ method: "eth_requestAccounts" });
       } else {
         onboarding.current.startOnboarding();
       }
