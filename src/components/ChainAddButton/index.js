@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const TEXT_DEFAULT = "Use ";
+const TEXT_DEFAULT = "Switch to ";
 const TEXT_CONNECTED = "Connected to ";
 
 export default function ChainAddButton(props) {
@@ -9,6 +9,7 @@ export default function ChainAddButton(props) {
   const [isDisabled, setIsDisabled] = useState(false);
 
   useEffect(() => {
+    // TODO: move higher up?
     window.ethereum?.on("chainChanged", (_chainId) => window.location.reload());
 
     const requestChain = async () => {
