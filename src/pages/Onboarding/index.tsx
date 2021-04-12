@@ -1,12 +1,12 @@
 import React from "react";
 import { useWeb3React } from "@web3-react/core";
+import { CheckCircleIcon } from "@heroicons/react/solid";
 import { ChainAddButton, OnboardingButton } from "../../components";
 import { TEXT_ONBOARDING } from "../../constants/text";
 import {
   AVALANCHE_MAINNET_PARAMS,
   AVALANCHE_TESTNET_PARAMS,
 } from "../../constants/index";
-import { CheckCircleIcon } from "@heroicons/react/solid";
 
 export default function Onboarding() {
   const { active, account } = useWeb3React();
