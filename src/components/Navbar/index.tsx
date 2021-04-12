@@ -1,19 +1,16 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { useWeb3React } from "@web3-react/core";
-import { Logo, DarkToggle, AccountBadge, NetworkBadge } from "../index";
+import { Logo, DarkToggle, ConnectionBadge, OnboardingButton } from "../index";
 import { HodoLogo } from "../../assets";
-// import ProfileLink from "../ProfileLink";
-// import { user } from "../../data";
 import {
   ROUTE_BROWSE_ALL,
   ROUTE_DEFAULT,
   ROUTE_ACCOUNT,
 } from "../../constants/routes";
-import OnboardingButton from "../OnboardingButton";
 
 export default function Navbar() {
-  const { active, account } = useWeb3React();
+  const { account } = useWeb3React();
 
   return (
     <nav className='px-4 sm:px-8 lg:px-12'>
@@ -31,36 +28,35 @@ export default function Navbar() {
                 </span>
               </NavLink>
             </div>
+
+            <div className='ml-6 flex space-x-6 items-center'>
+              <NavLink
+                to={ROUTE_DEFAULT}
+                exact={true}
+                className='text-gray-500 dark:text-gray-200 hover:text-gray-800 dark:hover:text-indigo-400 inline-flex items-center px-1 text-base font-medium'
+                activeClassName='text-gray-900 dark:text-white hover:text-gray-900 dark:hover:text-white'>
+                Home
+              </NavLink>
+              <NavLink
+                to={ROUTE_BROWSE_ALL}
+                exact={false}
+                className='text-gray-500 dark:text-gray-200 hover:text-gray-800 dark:hover:text-indigo-400 inline-flex items-center px-1 text-base font-medium'
+                activeClassName='text-gray-900 dark:text-white hover:text-gray-900 dark:hover:text-white'>
+                Browse
+              </NavLink>
+              <NavLink
+                to={ROUTE_ACCOUNT}
+                exact={true}
+                className='text-gray-500 dark:text-gray-200 hover:text-gray-800 dark:hover:text-indigo-400 inline-flex items-center px-1 text-base font-medium'
+                activeClassName='text-gray-900 dark:text-white hover:text-gray-900 dark:hover:text-white'>
+                Account
+              </NavLink>
+            </div>
           </div>
 
-          <div className='ml-6 flex space-x-6 items-center'>
-            <NavLink
-              to={ROUTE_DEFAULT}
-              exact={true}
-              className='text-gray-500 dark:text-gray-200 hover:text-gray-800 dark:hover:text-indigo-400 inline-flex items-center px-1 text-base font-medium'
-              activeClassName='text-gray-900 dark:text-white hover:text-gray-900 dark:hover:text-white'>
-              Home
-            </NavLink>
-            <NavLink
-              to={ROUTE_BROWSE_ALL}
-              exact={false}
-              className='text-gray-500 dark:text-gray-200 hover:text-gray-800 dark:hover:text-indigo-400 inline-flex items-center px-1 text-base font-medium'
-              activeClassName='text-gray-900 dark:text-white hover:text-gray-900 dark:hover:text-white'>
-              Browse
-            </NavLink>
-            <NavLink
-              to={ROUTE_ACCOUNT}
-              exact={true}
-              className='text-gray-500 dark:text-gray-200 hover:text-gray-800 dark:hover:text-indigo-400 inline-flex items-center px-1 text-base font-medium'
-              activeClassName='text-gray-900 dark:text-white hover:text-gray-900 dark:hover:text-white'>
-              Account
-            </NavLink>
+          <div className='ml-6 flex space-x-4 items-center'>
+            {account ? <ConnectionBadge /> : <OnboardingButton />}
             <DarkToggle />
-            <div className='flex space-x-1 items-center'>
-              {active && <NetworkBadge />}
-              {account ? <AccountBadge /> : <OnboardingButton />}
-              {/* <ProfileLink img={user.img} name={user.name} /> */}
-            </div>
           </div>
         </div>
       </div>

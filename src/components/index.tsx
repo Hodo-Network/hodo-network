@@ -1,5 +1,4 @@
-import AccountBadge from "./AccountBadge";
-import NetworkBadge from "./NetworkBadge";
+import ConnectionBadge from "./ConnectionBadge";
 import Logo from "./Logo";
 import Navbar from "./Navbar";
 import FeaturedNfts from "./FeaturedNfts";
@@ -19,8 +18,7 @@ import OnboardingButton from "./OnboardingButton";
 import AddChainButton from "./AddChainButton";
 
 export {
-  AccountBadge,
-  NetworkBadge,
+  ConnectionBadge,
   Logo,
   Navbar,
   FeaturedNfts,
