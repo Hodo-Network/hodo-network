@@ -1,6 +1,6 @@
 import React from "react";
 import { useWeb3React } from "@web3-react/core";
-import { AddChainButton, OnboardingButton } from "../../components";
+import { ChainAddButton, OnboardingButton } from "../../components";
 import { TEXT_ONBOARDING } from "../../constants/text";
 import {
   AVALANCHE_MAINNET_PARAMS,
@@ -52,11 +52,11 @@ export default function Onboarding() {
               Avalanche isn't a default network so we'll need to add it.
             </p>
             <div className='mt-4 flex space-x-4'>
-              <AddChainButton
+              <ChainAddButton
                 label='Mainnet'
                 params={AVALANCHE_MAINNET_PARAMS}
               />
-              <AddChainButton
+              <ChainAddButton
                 label='Testnet'
                 params={AVALANCHE_TESTNET_PARAMS}
               />

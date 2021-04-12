@@ -15,7 +15,7 @@ import Notification from "./Notification";
 import SocialLink from "./SocialLink";
 import LeafletMap from "./LeafletMap";
 import OnboardingButton from "./OnboardingButton";
-import AddChainButton from "./AddChainButton";
+import ChainAddButton from "./ChainAddButton";
 
 export {
   ConnectionBadge,
@@ -35,5 +35,5 @@ export {
   SocialLink,
   LeafletMap,
   OnboardingButton,
-  AddChainButton,
+  ChainAddButton,
 };

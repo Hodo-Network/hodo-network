@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 const TEXT_DEFAULT = "Use ";
 const TEXT_CONNECTED = "Connected to ";
 
-export default function AddChainButton(props) {
+export default function ChainAddButton(props) {
   const { label, params } = props;
   const [buttonText, setButtonText] = useState(label);
   const [isDisabled, setIsDisabled] = useState(false);
