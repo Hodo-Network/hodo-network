@@ -45,8 +45,8 @@ export default function App() {
           <Switch>
             <Route path={ROUTE_ONBOARDING} exact component={Onboarding} />
             <Route path={ROUTE_DEFAULT} exact component={Home} />
-            <Route path={ROUTE_BROWSE_ALL} exact component={Browse} />
-            <Route path={`${ROUTE_ASSET}/:id`} component={Collectible} />
+            <Route path={ROUTE_BROWSE_ALL} component={Browse} />
+            <Route path={`${ROUTE_ASSET}/:id`} exact component={Collectible} />
             <Route path={ROUTE_ACCOUNT} exact component={Account} />
           </Switch>
         </main>
