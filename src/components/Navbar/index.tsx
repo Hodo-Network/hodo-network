@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { Logo, DarkToggle } from "../index";
+import { useWeb3React } from "@web3-react/core";
+import { Logo, DarkToggle, AccountBadge, NetworkBadge } from "../index";
 import { HodoLogo } from "../../assets";
 // import ProfileLink from "../ProfileLink";
 // import { user } from "../../data";
@@ -12,6 +13,8 @@ import {
 import OnboardingButton from "../OnboardingButton";
 
 export default function Navbar() {
+  const { active, account } = useWeb3React();
+
   return (
     <nav className='px-4 sm:px-8 lg:px-12'>
       <div className='mx-auto max-w-8xl'>
@@ -53,8 +56,11 @@ export default function Navbar() {
               Account
             </NavLink>
             <DarkToggle />
-            <OnboardingButton />
-            {/* <ProfileLink img={user.img} name={user.name} /> */}
+            <div className='flex space-x-1 items-center'>
+              {active && <NetworkBadge />}
+              {account ? <AccountBadge /> : <OnboardingButton />}
+              {/* <ProfileLink img={user.img} name={user.name} /> */}
+            </div>
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import MetaMaskOnboarding from "@metamask/onboarding";
-import { useWeb3Context } from "web3-react";
+import { useWeb3React } from "@web3-react/core";
 import {
   TEXT_INSTALL_METAMASK,
   TEXT_CONNECT,
@@ -11,7 +11,7 @@ export default function OnboardingButton() {
   const [buttonText, setButtonText] = useState(TEXT_INSTALL_METAMASK);
   const [isDisabled, setDisabled] = useState(false);
   const onboarding = useRef();
-  const context = useWeb3Context();
+  const { account } = useWeb3React();
 
   useEffect(() => {
     if (!onboarding.current) {
@@ -21,7 +21,7 @@ export default function OnboardingButton() {
 
   useEffect(() => {
     if (MetaMaskOnboarding.isMetaMaskInstalled()) {
-      if (context.account) {
+      if (account) {
         setButtonText(TEXT_CONNECTED);
         setDisabled(true);
         onboarding.current.stopOnboarding();
@@ -30,7 +30,7 @@ export default function OnboardingButton() {
         setDisabled(false);
       }
     }
-  }, [context.account]);
+  }, [account]);
 
   const onClick = async () => {
     try {
@@ -46,7 +46,7 @@ export default function OnboardingButton() {
 
   return (
     <button
-      className='btn disabled:opacity-50 disabled:cursor-not-allowed truncate w-44'
+      className='btn disabled:opacity-50 disabled:cursor-not-allowed'
       disabled={isDisabled}
       onClick={onClick}>
       {buttonText}

@@ -1,5 +1,6 @@
+export const NetworkContextName = "NETWORK";
 export const GAS_PRICE = 225;
-export const HODO_WALLET_ADDRESS = "0x6cBEd289596f757fC406eE3AB4aC9E83cFb48B92";
+export const WALLET_ADDRESS = "0x6cBEd289596f757fC406eE3AB4aC9E83cFb48B92";
 export const ZERO_ADDRESS = "0x0000000000000000000000000000000000000000";
 
 export const AVALANCHE_MAINNET_PARAMS = {
@@ -24,4 +25,9 @@ export const AVALANCHE_TESTNET_PARAMS = {
   },
   rpcUrls: ["https://api.avax-test.network/ext/bc/C/rpc"],
   blockExplorerUrls: ["https://cchain.explorer.avax-test.network/"],
+};
+
+export const ChainId = {
+  FUJI: 43113,
+  AVALANCHE: 43114,
 };

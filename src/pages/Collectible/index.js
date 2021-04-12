@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import Web3 from "web3";
+import { useWeb3React } from "@web3-react/core";
 import { RarityBadge } from "../../components";
 import {
   TEXT_BUY,
@@ -9,13 +9,13 @@ import {
   TEXT_ID,
 } from "../../constants/text";
 import { capitals, countries, monuments } from "../../data";
-import { HODO_WALLET_ADDRESS } from "../../constants";
+import { WALLET_ADDRESS } from "../../constants";
 // import { NFTProps } from "../../typings/nft";
 
 const assets = [...capitals, ...monuments, ...countries];
 
 export default function Collectible() {
-  const web3 = new Web3(Web3.givenProvider);
+  const { account } = useWeb3React();
   const { id } = useParams();
   const [asset, setAsset] = useState();
 
@@ -33,25 +33,9 @@ export default function Collectible() {
 
   const buyCollectible = async () => {
     // TODO: switch to AVAX network first
-    try {
-      const transactionParameters = {
-        from: window.ethereum.selectedAddress,
-        to: HODO_WALLET_ADDRESS,
-        value: web3.utils.toHex(asset.cost * 1e18),
-        gasPrice: web3.utils.toHex(225 * 1e9),
-        gas: web3.utils.toHex(21000),
-      };
-
-      await window.ethereum
-        .request({
-          method: "eth_sendTransaction",
-          params: [transactionParameters],
-        })
-        .then((txHash) => console.log(txHash))
-        .catch((error) => console.error);
-    } catch (error) {
-      console.log(error);
-    }
+    alert("Coming Soon");
+    console.log("wallet", WALLET_ADDRESS);
+    console.log("account", account);
   };
 
   return (

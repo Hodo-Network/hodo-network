@@ -1,5 +1,5 @@
 import React from "react";
-import { useWeb3Context } from "web3-react";
+import { useWeb3React } from "@web3-react/core";
 import { AddChainButton, OnboardingButton } from "../../components";
 import { TEXT_ONBOARDING } from "../../constants/text";
 import {
@@ -9,7 +9,7 @@ import {
 import { CheckCircleIcon } from "@heroicons/react/solid";
 
 export default function Onboarding() {
-  const context = useWeb3Context();
+  const { active, account } = useWeb3React();
 
   return (
     <div className='mt-12 mx-auto max-w-prose'>
@@ -26,11 +26,11 @@ export default function Onboarding() {
 
         <ul className='divide-y divide-gray-200 text-sm'>
           <li className='px-4 py-4 sm:px-6'>
-            {context.active ? (
+            {active ? (
               <p className='flex items-center text-sm'>
                 <CheckCircleIcon className='flex-shrink-0 mr-1.5 h-5 w-5 text-green-600' />
                 <span className='text-gray-500 mr-1'>Connected to </span>
-                <span className='font-medium'>{context.account}</span>
+                <span className='font-medium'>{account}</span>
               </p>
             ) : (
               <div>

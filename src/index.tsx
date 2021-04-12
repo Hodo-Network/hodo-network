@@ -1,15 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Web3Provider from "web3-react";
-import Web3 from "web3";
+import { createWeb3ReactRoot, Web3ReactProvider } from "@web3-react/core";
+import { NetworkContextName } from "./constants";
 import reportWebVitals from "./reportWebVitals";
-import { connectors } from "./connectors";
+import getLibrary from "./utils/getLibrary";
 import App from "./pages/App";
 
+const Web3ProviderNetwork = createWeb3ReactRoot(NetworkContextName);
+
 ReactDOM.render(
-  <Web3Provider connectors={connectors} libraryName={"web3.js"} web3Api={Web3}>
-    <App />
-  </Web3Provider>,
+  <Web3ReactProvider getLibrary={getLibrary}>
+    <Web3ProviderNetwork getLibrary={getLibrary}>
+      <App />
+    </Web3ProviderNetwork>
+  </Web3ReactProvider>,
   document.getElementById("root")
 );
 
