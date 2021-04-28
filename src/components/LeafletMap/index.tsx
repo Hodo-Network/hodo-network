@@ -89,8 +89,8 @@ export default function LeafletMap({
   selected: NFTProps;
   className?: string;
 }) {
-  // const tileLayerUrl = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
-  const tileLayerUrl = "http://c.tile.stamen.com/watercolor/{z}/{x}/{y}.jpg";
+  const tileLayerUrl = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
+  // const tileLayerUrl = "http://c.tile.stamen.com/watercolor/{z}/{x}/{y}.jpg";
   // const tileLayerUrl = "https://tiles.wmflabs.org/osm-no-labels/{z}/{x}/{y}.png";
 
   return (
