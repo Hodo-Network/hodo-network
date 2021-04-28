@@ -1,39 +1,41 @@
+import ChainAddButton from "./ChainAddButton";
 import ConnectionBadge from "./ConnectionBadge";
-import Logo from "./Logo";
-import Navbar from "./Navbar";
+import DarkToggle from "./DarkToggle";
 import FeaturedNfts from "./FeaturedNfts";
 import FeaturedPanel from "./FeaturedPanel";
-import NFTCard from "./NFTCard";
-import Hero from "./Hero";
 import Footer from "./Footer";
-import SiteAlert from "./SiteAlert";
-import BrowseNav from "./BrowseNav";
-import RarityBadge from "./RarityBadge";
-import DarkToggle from "./DarkToggle";
-import LocationButton from "./LocationButton";
-import Notification from "./Notification";
-import SocialLink from "./SocialLink";
+import Hero from "./Hero";
 import LeafletMap from "./LeafletMap";
+import LocationButton from "./LocationButton";
+import Logo from "./Logo";
+import Navbar from "./Navbar";
+import NFTCard from "./NFTCard";
+import Notification from "./Notification";
 import OnboardingButton from "./OnboardingButton";
-import ChainAddButton from "./ChainAddButton";
+import RarityBadge from "./RarityBadge";
+import SelectCollection from "./SelectCollection";
+import Sidebar from "./Sidebar";
+import SiteAlert from "./SiteAlert";
+import SocialLink from "./SocialLink";
 
 export {
+  ChainAddButton,
   ConnectionBadge,
-  Logo,
-  Navbar,
+  DarkToggle,
   FeaturedNfts,
   FeaturedPanel,
-  NFTCard,
-  Hero,
   Footer,
-  SiteAlert,
-  BrowseNav,
-  RarityBadge,
-  DarkToggle,
-  LocationButton,
-  Notification,
-  SocialLink,
+  Hero,
   LeafletMap,
+  LocationButton,
+  Logo,
+  Navbar,
+  NFTCard,
+  Notification,
   OnboardingButton,
-  ChainAddButton,
+  RarityBadge,
+  SelectCollection,
+  Sidebar,
+  SiteAlert,
+  SocialLink,
 };

@@ -1,19 +1,20 @@
 import { MoonIcon, SunIcon } from "@heroicons/react/solid";
 import { useDark } from "../../hooks";
 
-export default function DarkToggle() {
+export default function DarkToggle({ mini }: { mini: Boolean }) {
   const [dark, toggleDark] = useDark();
 
   return (
     <button
       type='button'
       onClick={toggleDark}
-      className='inline-flex items-center p-1 rounded-full'>
+      className='flex flex-1 items-center rounded-full text-white px-4 py-3'>
       {dark ? (
-        <SunIcon className='h-6 w-6 text-white' />
+        <SunIcon className='h-6 w-6' />
       ) : (
-        <MoonIcon className='h-6 w-6 text-gray-900' />
+        <MoonIcon className='h-6 w-6' />
       )}
+      {!mini && <span className='ml-3'>{dark ? "Light" : "Dark"}</span>}
     </button>
   );
 }

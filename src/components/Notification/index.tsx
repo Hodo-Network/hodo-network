@@ -31,14 +31,14 @@ export default function Notification() {
               <p className='w-0 flex-1 text-sm font-medium text-gray-900'>
                 {status}
               </p>
-              <button className='ml-3 flex-shrink-0 bg-white rounded-md text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'>
+              <button className='ml-3 flex-shrink-0 bg-white rounded-md text-sm font-medium text-blue-600 hover:text-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500'>
                 Undo
               </button>
             </div>
             <div className='ml-4 flex-shrink-0 flex'>
               <button
                 onClick={handleHide}
-                className='bg-white rounded-md inline-flex text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'>
+                className='bg-white rounded-md inline-flex text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500'>
                 <span className='sr-only'>Close</span>
                 <XIcon className='h-5 w-5' />
               </button>

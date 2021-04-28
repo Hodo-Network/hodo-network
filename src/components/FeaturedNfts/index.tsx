@@ -22,11 +22,13 @@ export default function FeaturedNfts({
           <NFTCard
             key={index}
             id={item.id}
+            group={item.group}
             img={item.img}
             name={item.name}
             rarity={item.rarity}
-            desc={item.desc}
+            description={item.description}
             cost={item.cost}
+            location={item.location}
           />
         ))}
     </>

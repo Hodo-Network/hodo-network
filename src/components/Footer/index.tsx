@@ -4,12 +4,12 @@ import { SocialLink } from "../index";
 export default function Footer() {
   const social = {
     facebook: {
-      show: true,
+      show: false,
       href: "#none",
       title: "Facebook",
     },
     instagram: {
-      show: true,
+      show: false,
       href: "#none",
       title: "Instagram",
     },
@@ -24,7 +24,7 @@ export default function Footer() {
       title: "GitHub",
     },
     dribbble: {
-      show: true,
+      show: false,
       href: "#none",
       title: "Dribbble",
     },

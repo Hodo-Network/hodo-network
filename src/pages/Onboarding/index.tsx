@@ -12,10 +12,10 @@ export default function Onboarding() {
   const { active, account } = useWeb3React();
 
   return (
-    <div className='mt-12 mx-auto max-w-prose'>
+    <div className='p-4 sm:p-8 mx-auto max-w-prose'>
       <div className='bg-white shadow overflow-hidden sm:rounded-md'>
         <div className='px-4 py-5 border-b border-gray-200 sm:px-6'>
-          <h3 className='text-xl leading-7 font-medium uppercase text-indigo-700 dark:text-indigo-500'>
+          <h3 className='text-xl leading-7 font-medium uppercase text-blue-700 dark:text-blue-500'>
             {TEXT_ONBOARDING}
           </h3>
           <p className='mt-2 text-sm'>
@@ -72,7 +72,7 @@ export default function Onboarding() {
                 href='https://wallet.avax.network/'
                 target='_blank'
                 rel='noreferrer'
-                className='text-indigo-600 font-medium'>
+                className='text-blue-600 font-medium'>
                 create a wallet
               </a>{" "}
               with an X-Chain address first. Then make the transfer to your
@@ -84,7 +84,7 @@ export default function Onboarding() {
                 href='https://faucet.avax-test.network/'
                 target='_blank'
                 rel='noreferrer'
-                className='text-indigo-600 font-medium'>
+                className='text-blue-600 font-medium'>
                 AVAX Test Faucet
               </a>
             </p>

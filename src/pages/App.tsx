@@ -3,14 +3,15 @@ import { useWeb3React } from "@web3-react/core";
 import { Web3Provider } from "@ethersproject/providers";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import { useEagerConnect, useInactiveListener } from "../hooks";
-import { Home, Collectible, Browse, Account, Onboarding } from ".";
-import { Footer, Navbar } from "../components";
+import { Asset, Collections, Explore, Home, Onboarding, Wallet } from ".";
+import { Navbar, Sidebar } from "../components";
 import {
   ROUTE_DEFAULT,
-  ROUTE_ASSET,
+  ROUTE_ASSETS,
   ROUTE_ONBOARDING,
-  ROUTE_BROWSE_ALL,
-  ROUTE_ACCOUNT,
+  ROUTE_COLLECTIONS,
+  ROUTE_WALLET,
+  ROUTE_EXPLORE,
 } from "../constants/routes";
 import "../styles/tailwind.output.css";
 
@@ -33,29 +34,35 @@ export default function App() {
   useInactiveListener(!triedEager || !!activatingConnector);
 
   return (
-    <div className='bg-gray-100 dark:bg-gray-900 min-h-full flex flex-col'>
+    <div className='bg-gray-100 dark:bg-gray-900 flex flex-row h-screen overflow-hidden'>
       <Router>
         <Route
           render={({ location }) =>
-            [ROUTE_ONBOARDING].includes(location.pathname) ? null : <Navbar />
+            [ROUTE_ONBOARDING].includes(location.pathname) ? null : <Sidebar />
           }
         />
 
-        <main className='px-4 sm:px-8 lg:px-12 flex-grow'>
-          <Switch>
-            <Route path={ROUTE_ONBOARDING} exact component={Onboarding} />
-            <Route path={ROUTE_DEFAULT} exact component={Home} />
-            <Route path={ROUTE_BROWSE_ALL} component={Browse} />
-            <Route path={`${ROUTE_ASSET}/:id`} exact component={Collectible} />
-            <Route path={ROUTE_ACCOUNT} exact component={Account} />
-          </Switch>
-        </main>
+        <div className='flex flex-col flex-1 min-h-0 overflow-hidden'>
+          <Route
+            render={({ location }) =>
+              [ROUTE_ONBOARDING].includes(location.pathname) ? null : <Navbar />
+            }
+          />
 
-        <Route
-          render={({ location }) =>
-            [ROUTE_ONBOARDING].includes(location.pathname) ? null : <Footer />
-          }
-        />
+          <main className='min-w-0 flex-1 overflow-y-scroll'>
+            <Switch>
+              <Route path={ROUTE_ONBOARDING} exact component={Onboarding} />
+              <Route path={ROUTE_DEFAULT} exact component={Home} />
+              <Route
+                path={`${ROUTE_COLLECTIONS}/:name`}
+                component={Collections}
+              />
+              <Route path={`${ROUTE_ASSETS}/:id`} exact component={Asset} />
+              <Route path={ROUTE_EXPLORE} exact component={Explore} />
+              <Route path={ROUTE_WALLET} exact component={Wallet} />
+            </Switch>
+          </main>
+        </div>
       </Router>
     </div>
   );

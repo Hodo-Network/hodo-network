@@ -2,12 +2,12 @@
 
 exports[`matches snapshot 1`] = `
 <button
-  className="inline-flex items-center p-1 rounded-full"
+  className="flex flex-1 items-center rounded-full text-white px-4 py-3"
   onClick={[Function]}
   type="button"
 >
   <svg
-    className="h-6 w-6 text-gray-900"
+    className="h-6 w-6"
     fill="currentColor"
     viewBox="0 0 20 20"
     xmlns="http://www.w3.org/2000/svg"
@@ -16,5 +16,10 @@ exports[`matches snapshot 1`] = `
       d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
     />
   </svg>
+  <span
+    className="ml-3"
+  >
+    Dark
+  </span>
 </button>
 `;

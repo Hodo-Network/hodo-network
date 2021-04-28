@@ -3,6 +3,7 @@ import { useWeb3React } from "@web3-react/core";
 import { ChainId } from "../../constants";
 
 const NETWORK_LABELS = {
+  [ChainId.ETHEREUM]: "Ethereum",
   [ChainId.FUJI]: "Fuji",
   [ChainId.AVALANCHE]: "Avalanche",
 };

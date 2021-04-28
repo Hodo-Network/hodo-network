@@ -3,7 +3,7 @@ import { useCallback } from "react";
 import { NavLink } from "react-router-dom";
 import { FeaturedNfts } from "..";
 import { MESSAGE_VIEW_ALL } from "../../constants/messages";
-import { countries, capitals, monuments } from "../../data";
+import { collectibles } from "../../data";
 
 export default function FeaturedPanel({
   title,
@@ -15,23 +15,13 @@ export default function FeaturedPanel({
   type: string;
 }) {
   // TODO: replace with api calls
-  const getItems = useCallback(() => {
-    switch (type) {
-      case "all":
-        return [...countries, ...capitals, ...monuments];
-      case "region":
-        // TODO: filter all items using geoObj
-        return [countries[0], capitals[0], monuments[0]];
-      case "countries":
-        return countries;
-      case "capitals":
-        return capitals;
-      case "monuments":
-        return monuments;
-      default:
-        break;
+  const getItems = useCallback((type) => {
+    if (type === "All") {
+      return collectibles;
+    } else {
+      return collectibles.filter((item) => item.group === type);
     }
-  }, [type]);
+  }, []);
 
   return (
     <div className='mx-auto max-w-8xl mt-12'>

@@ -1,35 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`matches snapshot 1`] = `
-<main
-  className="px-4 sm:px-8 lg:px-12 py-12 flex-grow"
+<div
+  className="p-4 sm:p-8 mx-auto max-w-prose"
 >
   <div
-    className="mx-auto max-w-prose"
+    className="bg-white shadow overflow-hidden sm:rounded-md"
   >
     <div
-      className="bg-white shadow overflow-hidden sm:rounded-md"
+      className="px-4 py-5 border-b border-gray-200 sm:px-6"
     >
-      <div
-        className="px-4 py-5 border-b border-gray-200 sm:px-6"
+      <h3
+        className="text-xl leading-7 font-medium uppercase text-blue-700 dark:text-blue-500"
       >
-        <h3
-          className="text-xl leading-7 font-medium uppercase text-indigo-700 dark:text-indigo-500"
-        >
-          Onboarding
-        </h3>
-        <p
-          className="mt-2 text-sm"
-        >
-          Our launch is right around the corner! In the meantime, you can setup an Avalanche wallet so you're ready when the time comes.
-        </p>
-      </div>
-      <ul
-        className="divide-y divide-gray-200 text-sm"
+        Onboarding
+      </h3>
+      <p
+        className="mt-2 text-sm"
       >
-        <li
-          className="px-4 py-4 sm:px-6"
-        >
+        Our launch is right around the corner! In the meantime, you can setup an Avalanche wallet so you're ready when the time comes.
+      </p>
+    </div>
+    <ul
+      className="divide-y divide-gray-200 text-sm"
+    >
+      <li
+        className="px-4 py-4 sm:px-6"
+      >
+        <div>
           <p
             className="font-medium text-base"
           >
@@ -44,107 +42,107 @@ exports[`matches snapshot 1`] = `
             className="mt-4"
           >
             <button
-              className="btn disabled:opacity-50 disabled:cursor-not-allowed truncate w-44"
+              className="btn disabled:opacity-50 disabled:cursor-not-allowed"
               disabled={false}
               onClick={[Function]}
             >
               Install MetaMask
             </button>
           </div>
-        </li>
-        <li
-          className="px-4 py-4 sm:px-6"
+        </div>
+      </li>
+      <li
+        className="px-4 py-4 sm:px-6"
+      >
+        <p
+          className="font-medium text-base"
         >
-          <p
-            className="font-medium text-base"
-          >
-            Add Avalanche Network
-          </p>
-          <p
-            className="mt-1"
-          >
-            Avalanche isn't a default network so we'll need to add it.
-          </p>
-          <div
-            className="mt-4 flex space-x-4"
-          >
-            <button
-              className="btn disabled:opacity-50 disabled:cursor-not-allowed"
-              disabled={false}
-              onClick={[Function]}
-            >
-              Mainnet
-            </button>
-            <button
-              className="btn disabled:opacity-50 disabled:cursor-not-allowed"
-              disabled={false}
-              onClick={[Function]}
-            >
-              Testnet
-            </button>
-          </div>
-        </li>
-        <li
-          className="px-4 py-4 sm:px-6"
+          Use Avalanche
+        </p>
+        <p
+          className="mt-1"
         >
-          <p
-            className="font-medium text-base"
-          >
-            Add Funds
-          </p>
-          <p
-            className="mt-1"
-          >
-            <b>
-              Mainnet
-            </b>
-            : purchase AVAX from an exchange and send it to your wallet address. You may need to
-             
-            <a
-              className="text-indigo-600 font-medium"
-              href="https://wallet.avax.network/"
-              rel="noreferrer"
-              target="_blank"
-            >
-              create a wallet
-            </a>
-             
-            with an X-Chain address first. Then make the transfer to your C-Chain address which is what we're creating with MetaMask.
-          </p>
-          <p
-            className="mt-4"
-          >
-            <b>
-              Testnet
-            </b>
-            : you can request test AVAX from the
-             
-            <a
-              className="text-indigo-600 font-medium"
-              href="https://faucet.avax-test.network/"
-              rel="noreferrer"
-              target="_blank"
-            >
-              AVAX Test Faucet
-            </a>
-          </p>
-        </li>
-        <li
-          className="px-4 py-4 sm:px-6"
+          Avalanche isn't a default network so we'll need to add it.
+        </p>
+        <div
+          className="mt-4 flex space-x-4"
         >
-          <p
-            className="font-medium text-base"
+          <button
+            className="btn disabled:opacity-50 disabled:cursor-not-allowed"
+            disabled={false}
+            onClick={[Function]}
           >
-            Finished
-          </p>
-          <p
-            className="mt-1"
+            Mainnet
+          </button>
+          <button
+            className="btn disabled:opacity-50 disabled:cursor-not-allowed"
+            disabled={false}
+            onClick={[Function]}
           >
-            After we launch you'll be ready to buy your first NFT from Hodo Network.
-          </p>
-        </li>
-      </ul>
-    </div>
+            Testnet
+          </button>
+        </div>
+      </li>
+      <li
+        className="px-4 py-4 sm:px-6"
+      >
+        <p
+          className="font-medium text-base"
+        >
+          Add Funds
+        </p>
+        <p
+          className="mt-1"
+        >
+          <b>
+            Mainnet
+          </b>
+          : purchase AVAX from an exchange and send it to your wallet address. You may need to
+           
+          <a
+            className="text-blue-600 font-medium"
+            href="https://wallet.avax.network/"
+            rel="noreferrer"
+            target="_blank"
+          >
+            create a wallet
+          </a>
+           
+          with an X-Chain address first. Then make the transfer to your C-Chain address which is what we're creating with MetaMask.
+        </p>
+        <p
+          className="mt-4"
+        >
+          <b>
+            Testnet
+          </b>
+          : you can request test AVAX from the
+           
+          <a
+            className="text-blue-600 font-medium"
+            href="https://faucet.avax-test.network/"
+            rel="noreferrer"
+            target="_blank"
+          >
+            AVAX Test Faucet
+          </a>
+        </p>
+      </li>
+      <li
+        className="px-4 py-4 sm:px-6"
+      >
+        <p
+          className="font-medium text-base"
+        >
+          Finished
+        </p>
+        <p
+          className="mt-1"
+        >
+          After we launch you'll be ready to buy your first NFT from Hodo Network.
+        </p>
+      </li>
+    </ul>
   </div>
-</main>
+</div>
 `;
