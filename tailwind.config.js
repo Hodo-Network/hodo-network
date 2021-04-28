@@ -1,3 +1,5 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
   // mode: "jit",
   darkMode: "class",
@@ -7,6 +9,9 @@ module.exports = {
       maxWidth: {
         "8xl": "120rem",
       },
+      fontFamily: {
+        sans: ["Inter var", ...defaultTheme.fontFamily.sans],
+      },
     },
   },
   variants: {
@@ -15,5 +20,8 @@ module.exports = {
       cursor: ["disabled"],
     },
   },
-  plugins: [require("@tailwindcss/aspect-ratio")],
+  plugins: [
+    require("@tailwindcss/aspect-ratio"),
+    require("@tailwindcss/forms"),
+  ],
 };
