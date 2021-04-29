@@ -60,7 +60,7 @@ export default function Asset() {
   return (
     <>
       {asset && (
-        <div className='p-4 sm:p-8 lg:p-12 mx-auto max-w-8xl'>
+        <div className='p-4 sm:p-8 lg:p-12 max-w-8xl'>
           <div className='md:flex'>
             <div className='md:w-1/3 md:max-w-lg mb-6'>
               <div className='w-60 md:w-auto'>

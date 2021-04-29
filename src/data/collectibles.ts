@@ -36,7 +36,7 @@ export const collectibles: Array<NFTProps> = [
         id: 'BZTDWRaK6rQmnSLrrq4PANBeueYfDRFkpHV9KcMtjxL19wsJ3',
         group: 'Capitals',
         img:
-            "https://gateway.pinata.cloud/ipfs/QmWdDjeh7R5K9w7uzh7bSMgmuDoNTMYXVY5ER69LdHwWc4",
+            "https://images.unsplash.com/photo-1452838269443-c86e6a3134f9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&q=80",
         name: "Jakarta",
         rarity: 'Rare',
         description: 'Capital City of Indonesia.',
@@ -51,7 +51,7 @@ export const collectibles: Array<NFTProps> = [
         id: 'BZTDWRaK6rQmnSLrrq4PANBeueYfDRFkpHV9KcMtjxL19wsJ4',
         group: 'Capitals',
         img:
-            "https://gateway.pinata.cloud/ipfs/QmWdDjeh7R5K9w7uzh7bSMgmuDoNTMYXVY5ER69LdHwWc4",
+            "https://images.unsplash.com/photo-1452838269443-c86e6a3134f9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&q=80",
         name: "Guatemala City",
         rarity: 'Common',
         description: 'Capital City of Guatemala.',

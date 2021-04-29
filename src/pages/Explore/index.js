@@ -27,7 +27,7 @@ export default function Explore() {
       <aside className='h-full overflow-hidden hidden lg:block lg:flex-shrink-0 lg:order-first'>
         <nav
           aria-label='Sections'
-          className='w-96 h-full bg-white dark:bg-gray-900 border-r border-gray-200 relative hidden flex xl:flex xl:flex-col'>
+          className='w-96 h-full bg-white dark:bg-gray-900 border-r border-gray-200 relative hidden lg:flex lg:flex-col'>
           <div className='flex-shrink-0 p-6 border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 flex items-center'>
             <p className='text-lg font-medium text-gray-900 dark:text-gray-100'>
               Collectibles

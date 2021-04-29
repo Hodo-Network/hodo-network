@@ -22,7 +22,7 @@ export default function Collections() {
   }, []);
 
   return (
-    <div className='p-4 sm:p-8 max-w-8xl'>
+    <div className='p-4 sm:p-8 lg:p-12 max-w-8xl'>
       <div className='mb-8'>
         <div className='inline-block w-72'>
           <SelectCollection collections={collections} />

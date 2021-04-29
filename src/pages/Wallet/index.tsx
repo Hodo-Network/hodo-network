@@ -18,7 +18,7 @@ export default function Wallet() {
   const { account, chainId } = useWeb3React();
 
   return (
-    <div className='p-4 sm:p-8 max-w-8xl'>
+    <div className='p-4 sm:p-8 lg:p-12 max-w-8xl'>
       <div>
         <h1 className='text-sm uppercase font-medium text-gray-500 dark:text-gray-400'>
           {TEXT_NETWORK}

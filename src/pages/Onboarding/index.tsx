@@ -12,7 +12,7 @@ export default function Onboarding() {
   const { active, account } = useWeb3React();
 
   return (
-    <div className='p-4 sm:p-8 mx-auto max-w-prose'>
+    <div className='p-4 sm:p-8 lg:p-12 mx-auto max-w-prose'>
       <div className='bg-white shadow overflow-hidden sm:rounded-md'>
         <div className='px-4 py-5 border-b border-gray-200 sm:px-6'>
           <h3 className='text-xl leading-7 font-medium uppercase text-blue-700 dark:text-blue-500'>

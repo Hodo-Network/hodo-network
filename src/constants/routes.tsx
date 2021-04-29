@@ -2,6 +2,7 @@ const ROUTE_ASSETS = "/assets";
 const ROUTE_COLLECTIONS = "/collections";
 const ROUTE_DEFAULT = "/home";
 const ROUTE_EXPLORE = "/explore";
+const ROUTE_FAQ = "/faq";
 const ROUTE_ONBOARDING = "/";
 const ROUTE_WALLET = "/wallet";
 
@@ -12,6 +13,7 @@ const ROUTE_WALLET = "/wallet";
 //   [`${ROUTE_COLLECTIONS}/:id`]: `Collection Page`,
 //   [ROUTE_DEFAULT]: "Home",
 //   [ROUTE_EXPLORE]: "Map Page",
+//   [ROUTE_FAQ]: "Info Page",
 //   [ROUTE_ONBOARDING]: "Onboard",
 //   [ROUTE_WALLET]: "Wallet Page",
 // };
@@ -21,6 +23,7 @@ export {
   ROUTE_COLLECTIONS,
   ROUTE_DEFAULT,
   ROUTE_EXPLORE,
+  ROUTE_FAQ,
   ROUTE_ONBOARDING,
   ROUTE_WALLET,
 };
