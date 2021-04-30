@@ -51,6 +51,7 @@ function LocationMarker({ selected }: { selected: NFTProps }) {
 }
 
 function ItemMarker({ item }: { item: NFTProps }) {
+  const { chainId } = useWeb3React<Web3Provider>();
   const center = new L.LatLng(item.location.lat, item.location.lng);
   const radiusInner = 5000;
   const radiusOuter = 25000;
@@ -65,9 +66,17 @@ function ItemMarker({ item }: { item: NFTProps }) {
   return (
     <FeatureGroup pathOptions={{ color: "purple" }}>
       <Marker position={center} icon={icon}>
-        <Popup>{item.name}</Popup>
+        <Popup>
+          <div className='font-semibold text-base'>{item.name}</div>
+          <div>
+            <span className='font-semibold'>Cost:</span> {item.cost}{" "}
+            {chainId && NATIVE_CURRENCY[chainId]}
+          </div>
+          <div>
+            <NavLink to={`${ROUTE_ASSETS}/${item.id}`}>View NFT</NavLink>
+          </div>
+        </Popup>
       </Marker>
-      <Popup>{item.name}</Popup>
       <Circle
         center={center}
         pathOptions={{ color: "blue", fillColor: "blue" }}
