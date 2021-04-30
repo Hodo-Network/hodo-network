@@ -18,7 +18,7 @@ export default function Explore() {
           Map
         </h1>
         <LeafletMap
-          className='h-full w-full object-cover'
+          className='h-full w-full object-cover z-10'
           collectibles={collectibles}
           selected={selected}
         />
