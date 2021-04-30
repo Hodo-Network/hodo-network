@@ -25,7 +25,7 @@ const sidebarNavigation = [
     icon: CollectionIcon,
     exact: false,
   },
-  { name: "Expore", href: ROUTE_EXPLORE, icon: GlobeIcon, exact: false },
+  { name: "Explore", href: ROUTE_EXPLORE, icon: GlobeIcon, exact: false },
   { name: "Wallet", href: ROUTE_WALLET, icon: CreditCardIcon, exact: true },
   { name: "FAQ", href: ROUTE_FAQ, icon: QuestionMarkCircleIcon, exact: true },
 ];
