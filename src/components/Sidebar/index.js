@@ -31,7 +31,7 @@ const sidebarNavigation = [
 ];
 
 export default function Sidebar() {
-  const [mini, setMini] = useState(true);
+  const [mini, setMini] = useState(false);
 
   return (
     <div
