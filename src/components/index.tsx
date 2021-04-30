@@ -1,3 +1,4 @@
+import Balance from "./Balance";
 import ChainAddButton from "./ChainAddButton";
 import ConnectionBadge from "./ConnectionBadge";
 import DarkToggle from "./DarkToggle";
@@ -19,6 +20,7 @@ import SiteAlert from "./SiteAlert";
 import SocialLink from "./SocialLink";
 
 export {
+  Balance,
   ChainAddButton,
   ConnectionBadge,
   DarkToggle,

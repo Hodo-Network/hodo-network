@@ -1,6 +1,6 @@
 import React from "react";
 import { useWeb3React } from "@web3-react/core";
-import { ChainAddButton } from "../../components";
+import { Balance, ChainAddButton } from "../../components";
 import { TEXT_ADDRESS, TEXT_BALANCE, TEXT_NETWORK } from "../../constants/text";
 import {
   ChainId,
@@ -46,9 +46,9 @@ export default function Wallet() {
         <h1 className='text-sm uppercase font-medium text-gray-500 dark:text-gray-400'>
           {TEXT_BALANCE}
         </h1>
-        <p className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis'>
-          {"coming soon"}
-        </p>
+        <div className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis'>
+          <Balance />
+        </div>
       </div>
     </div>
   );
