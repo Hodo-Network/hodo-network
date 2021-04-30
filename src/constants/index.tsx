@@ -50,6 +50,7 @@ export const NETWORK_LABELS_SHORT = {
 };
 
 export const NATIVE_CURRENCY = {
+  0: "AVAX", // Default fallback
   [ChainId.ETHEREUM]: "ETH",
   [ChainId.FUJI]: "AVAX",
   [ChainId.AVALANCHE]: "AVAX",

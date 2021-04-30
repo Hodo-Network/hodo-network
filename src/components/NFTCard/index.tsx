@@ -32,7 +32,7 @@ export default function NFTCard(props: NFTProps) {
             <RarityBadge rarity={rarity} />
           </div>
           <div className='ml-3 text-sm font-medium text-green-600 dark:text-green-500'>
-            {cost} {chainId && NATIVE_CURRENCY[chainId]}
+            {cost} {(chainId && NATIVE_CURRENCY[chainId]) || NATIVE_CURRENCY[0]}
           </div>
         </div>
       </div>

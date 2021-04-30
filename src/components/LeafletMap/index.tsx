@@ -40,7 +40,7 @@ function LocationMarker({ selected }: { selected: NFTProps }) {
         <div className='font-semibold text-base'>{selected.name}</div>
         <div>
           <span className='font-semibold'>Cost:</span> {selected.cost}{" "}
-          {chainId && NATIVE_CURRENCY[chainId]}
+          {(chainId && NATIVE_CURRENCY[chainId]) || NATIVE_CURRENCY[0]}
         </div>
         <div>
           <NavLink to={`${ROUTE_ASSETS}/${selected.id}`}>View NFT</NavLink>
@@ -70,7 +70,7 @@ function ItemMarker({ item }: { item: NFTProps }) {
           <div className='font-semibold text-base'>{item.name}</div>
           <div>
             <span className='font-semibold'>Cost:</span> {item.cost}{" "}
-            {chainId && NATIVE_CURRENCY[chainId]}
+            {(chainId && NATIVE_CURRENCY[chainId]) || NATIVE_CURRENCY[0]}
           </div>
           <div>
             <NavLink to={`${ROUTE_ASSETS}/${item.id}`}>View NFT</NavLink>

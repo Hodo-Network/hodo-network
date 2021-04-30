@@ -119,7 +119,8 @@ export default function Asset() {
                   {TEXT_COST}
                 </h1>
                 <p className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis'>
-                  {asset.cost} {chainId && NATIVE_CURRENCY[chainId]}
+                  {asset.cost}{" "}
+                  {(chainId && NATIVE_CURRENCY[chainId]) || NATIVE_CURRENCY[0]}
                 </p>
               </div>
 

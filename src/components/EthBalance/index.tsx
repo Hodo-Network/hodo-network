@@ -29,7 +29,7 @@ export default function EthBalance() {
   return (
     <div>
       {parseFloat(formatEther(balance))}{" "}
-      {chainId && NATIVE_CURRENCY[chainId]}
+      {(chainId && NATIVE_CURRENCY[chainId]) || NATIVE_CURRENCY[0]}
     </div>
   );
 }
