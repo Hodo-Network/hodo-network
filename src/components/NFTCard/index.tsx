@@ -1,11 +1,15 @@
+import React from "react";
 import { NavLink } from "react-router-dom";
-import { ROUTE_ASSETS } from "../../constants/routes";
+import { Web3Provider } from "@ethersproject/providers";
+import { useWeb3React } from "@web3-react/core";
 import { NFTProps } from "../../typings/nft";
-import RarityBadge from "../RarityBadge";
+import { NATIVE_CURRENCY } from "../../constants";
+import { ROUTE_ASSETS } from "../../constants/routes";
+import { RarityBadge } from "../index";
 
 export default function NFTCard(props: NFTProps) {
   const { id, img, name, rarity, description, cost, className } = props;
-  const units = "AVAX";
+  const { chainId } = useWeb3React<Web3Provider>();
 
   return (
     <NavLink
@@ -28,7 +32,7 @@ export default function NFTCard(props: NFTProps) {
             <RarityBadge rarity={rarity} />
           </div>
           <div className='ml-3 text-sm font-medium text-green-600 dark:text-green-500'>
-            {cost} {units}
+            {cost} {chainId && NATIVE_CURRENCY[chainId]}
           </div>
         </div>
       </div>

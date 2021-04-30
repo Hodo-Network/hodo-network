@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import { useWeb3React } from "@web3-react/core";
+import { Web3Provider } from "@ethersproject/providers";
 import L from "leaflet";
 import {
   MapContainer,
@@ -11,12 +13,12 @@ import {
   FeatureGroup,
 } from "react-leaflet";
 import { NFTProps } from "../../typings/nft";
+import { NATIVE_CURRENCY } from "../../constants";
 import { ROUTE_ASSETS } from "../../constants/routes";
-
-const units = "AVAX";
 
 function LocationMarker({ selected }: { selected: NFTProps }) {
   const [position, setPosition] = useState<any>(null);
+  const { chainId } = useWeb3React<Web3Provider>();
   const map = useMap();
   var icon = L.icon({
     iconUrl: selected.img,
@@ -37,7 +39,8 @@ function LocationMarker({ selected }: { selected: NFTProps }) {
       <Popup>
         <div className='font-semibold text-base'>{selected.name}</div>
         <div>
-          <span className='font-semibold'>Cost:</span> {selected.cost} {units}
+          <span className='font-semibold'>Cost:</span> {selected.cost}{" "}
+          {chainId && NATIVE_CURRENCY[chainId]}
         </div>
         <div>
           <NavLink to={`${ROUTE_ASSETS}/${selected.id}`}>View NFT</NavLink>

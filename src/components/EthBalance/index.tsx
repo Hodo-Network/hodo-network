@@ -3,11 +3,10 @@ import { useWeb3React } from "@web3-react/core";
 import { Web3Provider } from "@ethersproject/providers";
 import { formatEther } from "@ethersproject/units";
 import useSWR from "swr";
-
-const symbol = "AVAX";
+import { NATIVE_CURRENCY } from "../../constants";
 
 export default function EthBalance() {
-  const { account, library } = useWeb3React<Web3Provider>();
+  const { account, library, chainId } = useWeb3React<Web3Provider>();
   const { data: balance, mutate } = useSWR(["getBalance", account, "latest"]);
 
   useEffect(() => {
@@ -29,7 +28,8 @@ export default function EthBalance() {
   }
   return (
     <div>
-      {parseFloat(formatEther(balance))} {symbol}
+      {parseFloat(formatEther(balance))}{" "}
+      {chainId && NATIVE_CURRENCY[chainId]}
     </div>
   );
 }

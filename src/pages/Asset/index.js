@@ -5,7 +5,7 @@ import { ethers } from "ethers";
 import BN from "bn.js";
 import { RarityBadge } from "../../components";
 import { collectibles } from "../../data";
-import { WALLET_ADDRESS } from "../../constants";
+import { WALLET_ADDRESS, NATIVE_CURRENCY } from "../../constants";
 import {
   TEXT_BUY,
   TEXT_COST,
@@ -16,8 +16,7 @@ import {
 } from "../../constants/text";
 
 export default function Asset() {
-  const units = "AVAX";
-  const { account } = useWeb3React();
+  const { account, chainId } = useWeb3React();
   const { id } = useParams();
   const [asset, setAsset] = useState();
 
@@ -120,7 +119,7 @@ export default function Asset() {
                   {TEXT_COST}
                 </h1>
                 <p className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis'>
-                  {asset.cost} {units}
+                  {asset.cost} {chainId && NATIVE_CURRENCY[chainId]}
                 </p>
               </div>
 
