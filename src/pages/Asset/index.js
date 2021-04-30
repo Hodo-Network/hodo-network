@@ -125,7 +125,10 @@ export default function Asset() {
 
               <div className='mt-8 sm:flex'>
                 <div>
-                  <button onClick={buyAsset} className='btn w-full'>
+                  <button
+                    onClick={buyAsset}
+                    disabled={true}
+                    className='btn w-full btn--disabled'>
                     {TEXT_BUY}
                   </button>
                 </div>
