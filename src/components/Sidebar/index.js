@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { DarkToggle } from "../index";
+import { Footer } from "../index";
 import { MenuAlt2Icon } from "@heroicons/react/solid";
 import {
   GlobeIcon,
@@ -35,7 +35,7 @@ export default function Sidebar() {
 
   return (
     <div
-      className={`flex flex-col border-r border-gray-800 bg-gray-800 dark:bg-gray-900 ${
+      className={`hidden md:flex flex-col border-r border-gray-800 bg-gray-800 dark:bg-gray-900 ${
         mini ? "w-20" : "w-80"
       }`}>
       <div className='h-16'>
@@ -83,9 +83,7 @@ export default function Sidebar() {
         ))}
       </nav>
 
-      <div className='flex p-3'>
-        <DarkToggle mini={mini} />
-      </div>
+      {!mini && <Footer />}
     </div>
   );
 }
