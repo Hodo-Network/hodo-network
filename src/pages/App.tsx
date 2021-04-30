@@ -17,8 +17,7 @@ import {
 import "../styles/tailwind.output.css";
 
 export default function App() {
-  const context = useWeb3React<Web3Provider>();
-  const { connector } = context;
+  const { connector } = useWeb3React<Web3Provider>();
 
   // handle logic to recognize the connector currently being activated
   const [activatingConnector, setActivatingConnector] = useState<any>();

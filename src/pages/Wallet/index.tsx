@@ -1,21 +1,35 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { useWeb3React } from "@web3-react/core";
-import { Balance, ChainAddButton } from "../../components";
+import { Web3Provider } from "@ethersproject/providers";
+import { SWRConfig } from "swr";
+import fetcher from "swr-eth";
+import { EthBalance, TokenList, ChainAddButton } from "../../components";
 import { TEXT_ADDRESS, TEXT_BALANCE, TEXT_NETWORK } from "../../constants/text";
 import {
-  ChainId,
   AVALANCHE_MAINNET_PARAMS,
   AVALANCHE_TESTNET_PARAMS,
+  TOKENS_BY_NETWORK,
+  NETWORK_LABELS,
 } from "../../constants";
 
-const NETWORK_LABELS = {
-  [ChainId.ETHEREUM]: "Ethereum",
-  [ChainId.FUJI]: "Avalanche Fuji Testnet",
-  [ChainId.AVALANCHE]: "Avalanche Mainnet C-Chain",
-};
-
 export default function Wallet() {
-  const { account, chainId } = useWeb3React();
+  const { chainId, account, library, active } = useWeb3React<Web3Provider>();
+
+  // [
+  //   [ 0x00001, JSONABI ]
+  // ]
+  const ABIs: any[] = useMemo(() => {
+    if (chainId) {
+      return (
+        TOKENS_BY_NETWORK[chainId] || []
+      ).map(({ address, abi }: { address: string; abi: any }) => [
+        address,
+        abi,
+      ]);
+    } else {
+      return [];
+    }
+  }, [chainId]);
 
   return (
     <div className='p-4 sm:p-8 lg:p-12 max-w-8xl'>
@@ -47,7 +61,12 @@ export default function Wallet() {
           {TEXT_BALANCE}
         </h1>
         <div className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis'>
-          <Balance />
+          {active && chainId && library && (
+            <SWRConfig value={{ fetcher: fetcher(library, new Map(ABIs)) }}>
+              <EthBalance />
+              <TokenList chainId={chainId} />
+            </SWRConfig>
+          )}
         </div>
       </div>
     </div>
