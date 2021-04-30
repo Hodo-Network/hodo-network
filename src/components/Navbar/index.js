@@ -89,7 +89,7 @@ export default function Navbar() {
         <Dialog
           as='div'
           static
-          className='fixed inset-0 z-40 md:hidden'
+          className='fixed inset-0 z-50 md:hidden'
           open={mobileMenuOpen}
           onClose={setMobileMenuOpen}>
           <Transition.Child
@@ -112,7 +112,7 @@ export default function Navbar() {
             leaveFrom='transform opacity-100 scale-100 sm:translate-x-0 sm:scale-100 sm:opacity-100'
             leaveTo='transform opacity-0 scale-110  sm:translate-x-full sm:scale-100 sm:opacity-100'>
             <nav
-              className='fixed z-40 inset-0 h-full w-full bg-white dark:bg-gray-900 sm:inset-y-0 sm:left-auto sm:right-0 sm:max-w-sm sm:w-full sm:shadow-lg'
+              className='fixed z-50 inset-0 h-full w-full bg-white dark:bg-gray-900 sm:inset-y-0 sm:left-auto sm:right-0 sm:max-w-sm sm:w-full sm:shadow-lg'
               aria-label='Global'>
               <div className='h-16 flex items-center justify-between px-4 sm:px-6'>
                 <span className='ml-1 font-bold text-xl text-gray-900 dark:text-white'>

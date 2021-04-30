@@ -26,7 +26,7 @@ export default function SelectCollection({ collections }) {
           <Listbox.Label className='block text-sm font-medium text-gray-700 dark:text-gray-100'>
             Collection
           </Listbox.Label>
-          <div className='mt-1 relative z-50'>
+          <div className='mt-1 relative z-40'>
             <Listbox.Button className='bg-white relative w-full border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 sm:text-sm'>
               <span className='block truncate'>{selected}</span>
               <span className='absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none'>
