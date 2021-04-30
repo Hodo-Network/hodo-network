@@ -158,7 +158,8 @@ export default function Navbar() {
                     to={item.href}
                     exact={item.exact}
                     className='text-gray-800 dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-800 flex items-center rounded-md px-4 py-3'
-                    activeClassName='bg-gray-200 dark:bg-gray-800 text-white'>
+                    activeClassName='bg-gray-200 dark:bg-gray-800 text-white'
+                    onClick={() => setMobileMenuOpen(false)}>
                     <item.icon className='h-6 w-6' aria-hidden='true' />
                     <span className='ml-3'>{item.name}</span>
                   </NavLink>
