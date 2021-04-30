@@ -17,20 +17,19 @@ export default function FeaturedNfts({
 
   return (
     <>
-      {items &&
-        items.map((item: NFTProps, index: number) => (
-          <NFTCard
-            key={index}
-            id={item.id}
-            group={item.group}
-            img={item.img}
-            name={item.name}
-            rarity={item.rarity}
-            description={item.description}
-            cost={item.cost}
-            location={item.location}
-          />
-        ))}
+      {items?.map((item: NFTProps, index: number) => (
+        <NFTCard
+          key={index}
+          id={item.id}
+          group={item.group}
+          img={item.img}
+          name={item.name}
+          rarity={item.rarity}
+          description={item.description}
+          cost={item.cost}
+          location={item.location}
+        />
+      ))}
     </>
   );
 }

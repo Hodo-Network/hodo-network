@@ -4,7 +4,7 @@ import { SelectCollection, FeaturedNfts } from "../../components";
 import { collectibles } from "../../data";
 
 const collections = collectibles
-  .map((item) => item.group)
+  ?.map((item) => item.group)
   .filter((value, index, _arr) => _arr.indexOf(value) === index)
   .concat("All")
   .sort();

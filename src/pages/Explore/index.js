@@ -34,7 +34,7 @@ export default function Explore() {
             </p>
           </div>
           <div className='min-h-0 overflow-y-auto flex-1'>
-            {collectibles.map((item) => (
+            {collectibles?.map((item) => (
               <div
                 key={item.id}
                 onClick={() => setSelected(item)}

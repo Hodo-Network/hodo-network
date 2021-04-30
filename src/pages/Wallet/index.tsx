@@ -43,8 +43,11 @@ export default function Wallet() {
       </div>
 
       <div className='mt-4 flex space-x-4'>
-        <ChainAddButton label='Mainnet' params={AVALANCHE_MAINNET_PARAMS} />
-        <ChainAddButton label='Testnet' params={AVALANCHE_TESTNET_PARAMS} />
+        <ChainAddButton label='Avalanche' params={AVALANCHE_MAINNET_PARAMS} />
+        <ChainAddButton
+          label='Fuji Testnet'
+          params={AVALANCHE_TESTNET_PARAMS}
+        />
       </div>
 
       <div className='mt-8'>

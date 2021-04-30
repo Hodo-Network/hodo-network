@@ -46,7 +46,7 @@ export default function SelectCollection({ collections }) {
               <Listbox.Options
                 static
                 className='absolute mt-1 w-full bg-white shadow-lg max-h-60 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm'>
-                {collections.map((collection) => (
+                {collections?.map((collection) => (
                   <Listbox.Option
                     key={collection}
                     className={({ active }) =>
