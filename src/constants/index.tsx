@@ -43,6 +43,12 @@ export const NETWORK_LABELS = {
   [ChainId.AVALANCHE]: "Avalanche Mainnet C-Chain",
 };
 
+export const NETWORK_LABELS_SHORT = {
+  [ChainId.ETHEREUM]: "Ethereum",
+  [ChainId.FUJI]: "Fuji",
+  [ChainId.AVALANCHE]: "Avalanche",
+};
+
 export const NATIVE_CURRENCY = {
   [ChainId.ETHEREUM]: "ETH",
   [ChainId.FUJI]: "AVAX",
