@@ -6,7 +6,7 @@ const faqs = [
     id: 1,
     question: "Which blockchain does the marketplace use?",
     answer:
-      "The marketplace was built using the Avalache blockchain. Assets are minted on the C-Chain.",
+      "The marketplace was built using the Avalanche blockchain. Assets are minted on the C-Chain.",
   },
   {
     id: 2,
