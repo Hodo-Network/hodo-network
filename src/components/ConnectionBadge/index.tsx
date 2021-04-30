@@ -51,7 +51,7 @@ export default function ConnectionBadge() {
       </span>
       {showMsg && (
         <span
-          className={`absolute bg-gray-900 opacity-90 w-full h-full left-0 top-0 font-semibold text-center px-3 py-1.5 text-${messageColor}`}>
+          className={`absolute bg-gray-900 opacity-90 w-full h-full left-0 top-0 font-semibold text-center px-3 py-1.5 rounded-md text-${messageColor}`}>
           {message}
         </span>
       )}
