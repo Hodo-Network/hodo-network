@@ -64,15 +64,7 @@ export interface IERC20 {
 export const TOKENS_BY_NETWORK: {
   [key: number]: IERC20[];
 } = {
-  [Networks.Fuji]: [
-    {
-      address: "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
-      symbol: "WAVAX",
-      name: "WAVAX",
-      decimals: 18,
-      abi: ERC20ABI,
-    },
-  ],
+  [Networks.Fuji]: [],
   [Networks.Avalanche]: [
     {
       address: "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
