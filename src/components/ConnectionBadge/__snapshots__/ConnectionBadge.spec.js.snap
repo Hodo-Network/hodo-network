@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  className="flex text-xs font-medium"
+>
+  <span
+    className="inline-flex items-center px-3 py-1.5 rounded-l-md border border-green-500 bg-green-50 text-green-700"
+  >
+    <svg
+      className="-ml-0.5 mr-1.5 h-2 w-2 text-green-500 flex-shrink-0"
+      fill="currentColor"
+      viewBox="0 0 8 8"
+    >
+      <circle
+        cx="4"
+        cy="4"
+        r="3"
+      />
+    </svg>
+  </span>
+  <span
+    className="inline-flex px-3 py-1.5 w-48 overflow-hidden rounded-r-md border border-l-0 border-green-500 bg-green-50 text-green-700 hover:bg-green-100 cursor-pointer"
+    onClick={[Function]}
+  >
+    <span
+      className="truncate"
+    />
+  </span>
+</div>
+`;

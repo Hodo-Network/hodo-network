@@ -2,7 +2,7 @@
 
 exports[`matches snapshot 1`] = `
 <div
-  className="p-4 sm:p-8 max-w-8xl"
+  className="p-4 sm:p-8 lg:p-12 max-w-8xl"
 >
   <div>
     <h1
@@ -52,11 +52,13 @@ exports[`matches snapshot 1`] = `
     >
       Balance
     </h1>
-    <p
+    <div
       className="mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis"
     >
-      coming soon
-    </p>
+      <div>
+        ...
+      </div>
+    </div>
   </div>
 </div>
 `;

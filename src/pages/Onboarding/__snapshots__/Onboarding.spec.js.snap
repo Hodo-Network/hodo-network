@@ -2,7 +2,7 @@
 
 exports[`matches snapshot 1`] = `
 <div
-  className="p-4 sm:p-8 mx-auto max-w-prose"
+  className="p-4 sm:p-8 lg:p-12 mx-auto max-w-prose"
 >
   <div
     className="bg-white shadow overflow-hidden sm:rounded-md"
