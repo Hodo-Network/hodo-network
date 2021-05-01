@@ -8,12 +8,14 @@ import {
   CollectionIcon,
   HomeIcon,
   QuestionMarkCircleIcon,
+  MapIcon,
 } from "@heroicons/react/outline";
 import {
   ROUTE_COLLECTIONS,
   ROUTE_DEFAULT,
   ROUTE_EXPLORE,
   ROUTE_FAQ,
+  ROUTE_ROADMAP,
   ROUTE_WALLET,
 } from "../../constants/routes";
 
@@ -27,6 +29,12 @@ const sidebarNavigation = [
   },
   { name: "Explore", href: ROUTE_EXPLORE, icon: GlobeIcon, exact: false },
   { name: "Wallet", href: ROUTE_WALLET, icon: CreditCardIcon, exact: true },
+  {
+    name: "Roadmap",
+    href: ROUTE_ROADMAP,
+    icon: MapIcon,
+    exact: true,
+  },
   { name: "FAQ", href: ROUTE_FAQ, icon: QuestionMarkCircleIcon, exact: true },
 ];
 

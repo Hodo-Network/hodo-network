@@ -3,7 +3,7 @@ import { useWeb3React } from "@web3-react/core";
 import { Web3Provider } from "@ethersproject/providers";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import { useEagerConnect, useInactiveListener } from "../hooks";
-import { Asset, Collections, Explore, Home, Faq, Onboarding, Wallet } from ".";
+import { Asset, Collections, Explore, Home, Faq, Onboarding, Roadmap, Wallet } from ".";
 import { Navbar, Sidebar } from "../components";
 import {
   ROUTE_ASSETS,
@@ -12,6 +12,7 @@ import {
   ROUTE_EXPLORE,
   ROUTE_FAQ,
   ROUTE_ONBOARDING,
+  ROUTE_ROADMAP,
   ROUTE_WALLET,
 } from "../constants/routes";
 import "../styles/tailwind.output.css";
@@ -60,6 +61,7 @@ export default function App() {
               <Route path={`${ROUTE_ASSETS}/:id`} exact component={Asset} />
               <Route path={ROUTE_EXPLORE} exact component={Explore} />
               <Route path={ROUTE_WALLET} exact component={Wallet} />
+              <Route path={ROUTE_ROADMAP} exact component={Roadmap} />
               <Route path={ROUTE_FAQ} exact component={Faq} />
             </Switch>
           </main>
