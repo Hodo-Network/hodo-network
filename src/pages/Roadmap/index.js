@@ -89,8 +89,8 @@ export default function Roadmap() {
         {steps.map((step, stepIdx) => (
           <div key={step.heading}>
             <h2
-              className={`font-semibold text-lg pl-1 mb-4 ${
-                stepIdx !== 0 && "mt-10"
+              className={`font-semibold text-lg pl-1 mb-4 dark:text-white ${
+                stepIdx !== 0 && "mt-8"
               }`}>
               {step.heading}
             </h2>
@@ -120,10 +120,10 @@ export default function Roadmap() {
                           </span>
                         </span>
                         <span className='ml-4 min-w-0 flex flex-col'>
-                          <span className='text-xs font-semibold tracking-wide uppercase'>
+                          <span className='text-xs font-semibold tracking-wide uppercase dark:text-white'>
                             {task.name}
                           </span>
-                          <span className='text-sm text-gray-500'>
+                          <span className='text-sm text-gray-600 dark:text-gray-300'>
                             {task.description}
                           </span>
                         </span>
@@ -148,16 +148,16 @@ export default function Roadmap() {
                           </span>
                         </span>
                         <span className='ml-4 min-w-0 flex flex-col'>
-                          <span className='text-xs font-semibold tracking-wide uppercase text-blue-600'>
+                          <span className='text-xs font-semibold tracking-wide uppercase text-blue-600 dark:text-blue-500'>
                             {task.name}
                           </span>
-                          <span className='text-sm text-gray-500'>
+                          <span className='text-sm text-gray-500 dark:text-gray-400'>
                             {task.description}
                           </span>
                         </span>
                       </div>
                     </>
-                  ) : task.status === "upcoming" ? (
+                  ) : (
                     <>
                       {taskIdx !== step.tasks.length - 1 ? (
                         <div
@@ -174,34 +174,11 @@ export default function Roadmap() {
                           </span>
                         </span>
                         <span className='ml-4 min-w-0 flex flex-col'>
-                          <span className='text-xs font-semibold tracking-wide uppercase text-gray-500'>
+                          <span className='text-xs font-semibold tracking-wide uppercase text-gray-600 dark:text-gray-300'>
                             {task.name}
                           </span>
-                          <span className='text-sm text-gray-500'>
+                          <span className='text-sm text-gray-500 dark:text-gray-400'>
                             {task.description}
-                          </span>
-                        </span>
-                      </div>
-                    </>
-                  ) : (
-                    <>
-                      {taskIdx !== step.tasks.length - 1 ? (
-                        <div
-                          className='-ml-px absolute mt-0.5 top-4 left-4 w-0.5 h-full bg-gray-300'
-                          aria-hidden='true'
-                        />
-                      ) : null}
-                      <div className='relative flex items-center group'>
-                        <span
-                          className='h-9 flex items-center'
-                          aria-hidden='true'>
-                          <span className='relative z-10 w-8 h-8 flex items-center justify-center bg-white border-2 border-gray-300 rounded-full group-hover:border-gray-400'>
-                            <span className='h-2.5 w-2.5 bg-transparent rounded-full group-hover:bg-gray-300' />
-                          </span>
-                        </span>
-                        <span className='ml-4 min-w-0 flex flex-col'>
-                          <span className='text-base font-semibold tracking-wide uppercase text-gray-800'>
-                            {task.name}
                           </span>
                         </span>
                       </div>
