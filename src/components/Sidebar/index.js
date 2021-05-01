@@ -1,42 +1,8 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { Footer } from "../index";
 import { MenuAlt2Icon } from "@heroicons/react/solid";
-import {
-  GlobeIcon,
-  CreditCardIcon,
-  CollectionIcon,
-  HomeIcon,
-  QuestionMarkCircleIcon,
-  MapIcon,
-} from "@heroicons/react/outline";
-import {
-  ROUTE_COLLECTIONS,
-  ROUTE_DEFAULT,
-  ROUTE_EXPLORE,
-  ROUTE_FAQ,
-  ROUTE_ROADMAP,
-  ROUTE_WALLET,
-} from "../../constants/routes";
-
-const sidebarNavigation = [
-  { name: "Home", href: ROUTE_DEFAULT, icon: HomeIcon, exact: true },
-  {
-    name: "Collections",
-    href: `${ROUTE_COLLECTIONS}/All`,
-    icon: CollectionIcon,
-    exact: false,
-  },
-  { name: "Explore", href: ROUTE_EXPLORE, icon: GlobeIcon, exact: false },
-  { name: "Wallet", href: ROUTE_WALLET, icon: CreditCardIcon, exact: true },
-  {
-    name: "Roadmap",
-    href: ROUTE_ROADMAP,
-    icon: MapIcon,
-    exact: true,
-  },
-  { name: "FAQ", href: ROUTE_FAQ, icon: QuestionMarkCircleIcon, exact: true },
-];
+import { navigation } from "../../constants/navigation";
+import { Footer } from "../index";
 
 export default function Sidebar() {
   const [mini, setMini] = useState(false);
@@ -78,7 +44,7 @@ export default function Sidebar() {
       </div>
 
       <nav aria-label='Sidebar' className='flex-1 space-y-2 px-3 py-2 sm:py-4'>
-        {sidebarNavigation.map((item) => (
+        {navigation.map((item) => (
           <NavLink
             key={item.name}
             to={item.href}

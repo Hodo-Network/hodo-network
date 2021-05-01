@@ -3,41 +3,14 @@ import { NavLink } from "react-router-dom";
 import { useWeb3React } from "@web3-react/core";
 import { Dialog, Transition } from "@headlessui/react";
 import { SearchIcon } from "@heroicons/react/solid";
-import {
-  MenuIcon,
-  XIcon,
-  HomeIcon,
-  CollectionIcon,
-  GlobeIcon,
-  CreditCardIcon,
-  QuestionMarkCircleIcon,
-} from "@heroicons/react/outline";
+import { MenuIcon, XIcon } from "@heroicons/react/outline";
+import { navigation } from "../../constants/navigation";
 import {
   ConnectionBadge,
   DarkToggle,
   Footer,
   OnboardingButton,
 } from "../index";
-import {
-  ROUTE_COLLECTIONS,
-  ROUTE_DEFAULT,
-  ROUTE_EXPLORE,
-  ROUTE_FAQ,
-  ROUTE_WALLET,
-} from "../../constants/routes";
-
-const navigation = [
-  { name: "Home", href: ROUTE_DEFAULT, icon: HomeIcon, exact: true },
-  {
-    name: "Collections",
-    href: `${ROUTE_COLLECTIONS}/All`,
-    icon: CollectionIcon,
-    exact: false,
-  },
-  { name: "Explore", href: ROUTE_EXPLORE, icon: GlobeIcon, exact: false },
-  { name: "Wallet", href: ROUTE_WALLET, icon: CreditCardIcon, exact: true },
-  { name: "FAQ", href: ROUTE_FAQ, icon: QuestionMarkCircleIcon, exact: true },
-];
 
 export default function Navbar() {
   const { account } = useWeb3React();
