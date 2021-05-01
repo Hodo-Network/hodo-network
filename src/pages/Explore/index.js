@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import { LeafletMap } from "../../components";
 import { collectibles } from "../../data";
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
+import classNames from "../../utils/classNames";
 
 export default function Explore() {
   const [selected, setSelected] = useState(collectibles[0]);

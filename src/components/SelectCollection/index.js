@@ -2,10 +2,7 @@ import { Fragment, useState, useEffect } from "react";
 import { useHistory, useLocation } from "react-router-dom";
 import { Listbox, Transition } from "@headlessui/react";
 import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
+import classNames from "../../utils/classNames";
 
 export default function SelectCollection({ collections }) {
   const history = useHistory();

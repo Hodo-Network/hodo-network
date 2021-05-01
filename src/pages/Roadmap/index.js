@@ -1,5 +1,6 @@
 import React from "react";
 import { CheckIcon } from "@heroicons/react/solid";
+import classNames from "../../utils/classNames";
 
 const steps = [
   {
@@ -71,10 +72,6 @@ const steps = [
     ],
   },
 ];
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
 
 export default function Roadmap() {
   return (
