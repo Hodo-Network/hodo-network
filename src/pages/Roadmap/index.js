@@ -69,6 +69,12 @@ const steps = [
         description: "Allow users to bid on NFTs in an auction style format.",
         status: "upcoming",
       },
+      {
+        name: "Explore X-Chain NFTs",
+        description:
+          "Explore the idea of allowing X-Chain NFTs to be listed in the marketplace.",
+        status: "upcoming",
+      },
     ],
   },
 ];
