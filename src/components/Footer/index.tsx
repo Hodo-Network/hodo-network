@@ -1,4 +1,5 @@
 import React from "react";
+import { ChatAltIcon, MailIcon } from "@heroicons/react/solid";
 import { SocialLink } from "../index";
 
 export default function Footer() {
@@ -15,18 +16,28 @@ export default function Footer() {
     },
     twitter: {
       show: true,
-      href: "#none",
+      href: "https://twitter.com/HodoNetwork",
       title: "Twitter",
     },
     github: {
       show: true,
-      href: "#none",
+      href: "https://github.com/Hodo-Network",
       title: "GitHub",
     },
     dribbble: {
       show: false,
       href: "#none",
       title: "Dribbble",
+    },
+    discord: {
+      show: true,
+      href: "https://discord.gg/zce8FcpA",
+      title: "Discord",
+    },
+    email: {
+      show: true,
+      href: "mailto:info@hodo.network",
+      title: "Email",
     },
   };
 
@@ -79,6 +90,28 @@ export default function Footer() {
               clipRule='evenodd'
             />
           </SocialLink>
+        )}
+
+        {social.discord.show && (
+          <a
+            href={social.discord.href}
+            target='_blank'
+            rel='noreferrer'
+            className='text-gray-400 hover:text-gray-500'>
+            <span className='sr-only'>{social.discord.title}</span>
+            <ChatAltIcon className='h-6 w-6' />
+          </a>
+        )}
+
+        {social.email.show && (
+          <a
+            href={social.email.href}
+            target='_blank'
+            rel='noreferrer'
+            className='text-gray-400 hover:text-gray-500'>
+            <span className='sr-only'>{social.email.title}</span>
+            <MailIcon className='h-6 w-6' />
+          </a>
         )}
       </div>
 

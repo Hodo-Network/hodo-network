@@ -8,7 +8,11 @@ export default function SocialLink({
   children: any;
 }) {
   return (
-    <a href={href} className='text-gray-400 hover:text-gray-500'>
+    <a
+      href={href}
+      target='_blank'
+      rel='noreferrer'
+      className='text-gray-400 hover:text-gray-500'>
       <span className='sr-only'>{title}</span>
       <svg
         className='h-6 w-6'
