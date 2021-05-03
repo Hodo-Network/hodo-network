@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { NFTCard } from "../index";
-import { NFTProps } from "../../typings/nft";
+import { NFT } from "../../typings/nft";
 
 export default function FeaturedNfts({
   getItems,
@@ -9,7 +9,7 @@ export default function FeaturedNfts({
   getItems: Function;
   type: string;
 }) {
-  const [items, setItems] = useState<Array<NFTProps>>([]);
+  const [items, setItems] = useState<Array<NFT>>([]);
 
   useEffect(() => {
     setItems(getItems(type));
@@ -17,18 +17,8 @@ export default function FeaturedNfts({
 
   return (
     <>
-      {items?.map((item: NFTProps, index: number) => (
-        <NFTCard
-          key={index}
-          id={item.id}
-          group={item.group}
-          img={item.img}
-          name={item.name}
-          rarity={item.rarity}
-          description={item.description}
-          cost={item.cost}
-          location={item.location}
-        />
+      {items?.map((item: NFT, index: number) => (
+        <NFTCard key={index} nft={item} />
       ))}
     </>
   );

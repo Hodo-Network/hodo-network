@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import { useWeb3React } from "@web3-react/core";
-import { Web3Provider } from "@ethersproject/providers";
+// import { useWeb3React } from "@web3-react/core";
+// import { Web3Provider } from "@ethersproject/providers";
 import L from "leaflet";
 import {
   MapContainer,
@@ -12,16 +12,16 @@ import {
   Circle,
   FeatureGroup,
 } from "react-leaflet";
-import { NFTProps } from "../../typings/nft";
-import { NATIVE_CURRENCY } from "../../constants";
+import { NFT } from "../../typings/nft";
+// import { NATIVE_CURRENCY } from "../../constants";
 import { ROUTE_ASSETS } from "../../constants/routes";
 
-function LocationMarker({ selected }: { selected: NFTProps }) {
+function LocationMarker({ selected }: { selected: NFT }) {
   const [position, setPosition] = useState<any>(null);
-  const { chainId } = useWeb3React<Web3Provider>();
+  // const { chainId } = useWeb3React<Web3Provider>();
   const map = useMap();
   var icon = L.icon({
-    iconUrl: selected.img,
+    iconUrl: selected.image,
     iconSize: [60, 60],
     iconAnchor: [0, 0],
     popupAnchor: [30, -8],
@@ -29,9 +29,12 @@ function LocationMarker({ selected }: { selected: NFTProps }) {
   });
 
   useEffect(() => {
-    const latlng = new L.LatLng(selected.location.lat, selected.location.lng);
+    const latlng = new L.LatLng(
+      selected.data.location.lat,
+      selected.data.location.long
+    );
     setPosition(latlng);
-    map.flyTo(latlng, selected.location.zoom);
+    map.flyTo(latlng, 5);
   }, [selected]);
 
   return position === null ? null : (
@@ -39,8 +42,9 @@ function LocationMarker({ selected }: { selected: NFTProps }) {
       <Popup>
         <div className='font-semibold text-base'>{selected.name}</div>
         <div>
-          <span className='font-semibold'>Cost:</span> {selected.cost}{" "}
-          {(chainId && NATIVE_CURRENCY[chainId]) || NATIVE_CURRENCY[0]}
+          <span className='font-semibold'>Cost:</span> {selected.price.value}{" "}
+          {selected.price.units}
+          {/* {(chainId && NATIVE_CURRENCY[chainId]) || NATIVE_CURRENCY[0]} */}
         </div>
         <div>
           <NavLink to={`${ROUTE_ASSETS}/${selected.id}`}>View NFT</NavLink>
@@ -50,13 +54,13 @@ function LocationMarker({ selected }: { selected: NFTProps }) {
   );
 }
 
-function ItemMarker({ item }: { item: NFTProps }) {
-  const { chainId } = useWeb3React<Web3Provider>();
-  const center = new L.LatLng(item.location.lat, item.location.lng);
+function ItemMarker({ item }: { item: NFT }) {
+  // const { chainId } = useWeb3React<Web3Provider>();
+  const center = new L.LatLng(item.data.location.lat, item.data.location.long);
   const radiusInner = 5000;
   const radiusOuter = 25000;
   var icon = L.icon({
-    iconUrl: item.img,
+    iconUrl: item.image,
     iconSize: [48, 48],
     iconAnchor: [0, 0],
     popupAnchor: [30, -8],
@@ -69,8 +73,9 @@ function ItemMarker({ item }: { item: NFTProps }) {
         <Popup>
           <div className='font-semibold text-base'>{item.name}</div>
           <div>
-            <span className='font-semibold'>Cost:</span> {item.cost}{" "}
-            {(chainId && NATIVE_CURRENCY[chainId]) || NATIVE_CURRENCY[0]}
+            <span className='font-semibold'>Cost:</span> {item.price.value}{" "}
+            {item.price.units}
+            {/* {(chainId && NATIVE_CURRENCY[chainId]) || NATIVE_CURRENCY[0]} */}
           </div>
           <div>
             <NavLink to={`${ROUTE_ASSETS}/${item.id}`}>View NFT</NavLink>
@@ -97,8 +102,8 @@ export default function LeafletMap({
   selected,
   className,
 }: {
-  collectibles: Array<NFTProps>;
-  selected: NFTProps;
+  collectibles: Array<NFT>;
+  selected: NFT;
   className?: string;
 }) {
   const tileLayerUrl = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";

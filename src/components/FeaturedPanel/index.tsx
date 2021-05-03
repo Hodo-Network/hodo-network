@@ -16,10 +16,10 @@ export default function FeaturedPanel({
 }) {
   // TODO: replace with api calls
   const getItems = useCallback((type) => {
-    if (type === "All") {
+    if (type === "all") {
       return collectibles;
     } else {
-      return collectibles.filter((item) => item.group === type);
+      return collectibles.filter((item) => item.category === type);
     }
   }, []);
 

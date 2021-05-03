@@ -4,9 +4,9 @@ import { SelectCollection, FeaturedNfts } from "../../components";
 import { collectibles } from "../../data";
 
 const collections = collectibles
-  ?.map((item) => item.group)
+  ?.map((item) => item.category)
   .filter((value, index, _arr) => _arr.indexOf(value) === index)
-  .concat("All")
+  .concat("all")
   .sort();
 
 export default function Collections() {
@@ -14,10 +14,10 @@ export default function Collections() {
 
   // TODO: replace with api calls
   const getItems = useCallback((type) => {
-    if (type === "All") {
+    if (type === "all") {
       return collectibles;
     } else {
-      return collectibles.filter((item) => item.group === type);
+      return collectibles.filter((item) => item.category === type);
     }
   }, []);
 

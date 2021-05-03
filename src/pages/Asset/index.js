@@ -5,7 +5,7 @@ import { ethers } from "ethers";
 import BN from "bn.js";
 import { RarityBadge } from "../../components";
 import { collectibles } from "../../data";
-import { WALLET_ADDRESS, NATIVE_CURRENCY } from "../../constants";
+import { WALLET_ADDRESS } from "../../constants";
 import {
   TEXT_BUY,
   TEXT_COST,
@@ -13,10 +13,11 @@ import {
   TEXT_ID,
   TEXT_COLLECTION,
   TEXT_COORDS,
+  TEXT_OWNER,
 } from "../../constants/text";
 
 export default function Asset() {
-  const { account, chainId } = useWeb3React();
+  const { account } = useWeb3React();
   const { id } = useParams();
   const [asset, setAsset] = useState();
 
@@ -34,7 +35,7 @@ export default function Asset() {
 
   const buyAsset = async () => {
     // TODO: switch to AVAX network first
-    const val = new BN(asset.cost * 1e18);
+    const val = new BN(asset.price.value * 1e18);
     console.log("val", val);
     try {
       const transactionParameters = {
@@ -64,7 +65,7 @@ export default function Asset() {
             <div className='md:w-1/3 md:max-w-lg mb-6'>
               <div className='w-60 md:w-auto'>
                 <div className='aspect-w-1 aspect-h-1'>
-                  <img src={asset.img} alt={asset.name} />
+                  <img src={asset.image} alt={asset.name} />
                 </div>
               </div>
             </div>
@@ -75,16 +76,7 @@ export default function Asset() {
                   {asset.name}
                 </h3>
 
-                <RarityBadge rarity={asset.rarity} className='mt-1 ml-4' />
-              </div>
-
-              <div className='mt-8'>
-                <h1 className='text-sm uppercase font-medium text-gray-500 dark:text-gray-400'>
-                  {TEXT_COLLECTION}
-                </h1>
-                <p className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis'>
-                  {asset.group}
-                </p>
+                <RarityBadge rarity={asset.data.rarity} className='mt-1 ml-4' />
               </div>
 
               <div className='mt-8'>
@@ -92,16 +84,16 @@ export default function Asset() {
                   {TEXT_DESCRIPTION}
                 </h1>
                 <p className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis'>
-                  {asset.description}
+                  {asset.data.description}
                 </p>
               </div>
 
               <div className='mt-8'>
                 <h1 className='text-sm uppercase font-medium text-gray-500 dark:text-gray-400'>
-                  {TEXT_COORDS}
+                  {TEXT_COLLECTION}
                 </h1>
-                <p className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis'>
-                  [{asset.location.lat}, {asset.location.lng}]
+                <p className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis capitalize'>
+                  {asset.category}
                 </p>
               </div>
 
@@ -116,11 +108,29 @@ export default function Asset() {
 
               <div className='mt-8'>
                 <h1 className='text-sm uppercase font-medium text-gray-500 dark:text-gray-400'>
+                  {TEXT_COORDS}
+                </h1>
+                <p className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis'>
+                  [{asset.data.location.lat}, {asset.data.location.long}]
+                </p>
+              </div>
+
+              <div className='mt-8'>
+                <h1 className='text-sm uppercase font-medium text-gray-500 dark:text-gray-400'>
+                  {TEXT_OWNER}
+                </h1>
+                <p className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis capitalize'>
+                  {asset.owner}
+                </p>
+              </div>
+
+              <div className='mt-8'>
+                <h1 className='text-sm uppercase font-medium text-gray-500 dark:text-gray-400'>
                   {TEXT_COST}
                 </h1>
                 <p className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis'>
-                  {asset.cost}{" "}
-                  {(chainId && NATIVE_CURRENCY[chainId]) || NATIVE_CURRENCY[0]}
+                  {asset.price.value} {asset.price.units}
+                  {/* {(chainId && NATIVE_CURRENCY[chainId]) || NATIVE_CURRENCY[0]} */}
                 </p>
               </div>
 

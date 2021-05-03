@@ -29,18 +29,6 @@ export default function Sidebar() {
             Hodo Network
           </span>
         </div>
-        {/* 
-        <NavLink
-          to={ROUTE_ONBOARDING}
-          exact={true}
-          className={`flex items-center h-16 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 p-3 ${
-            mini && "justify-center"
-          }`}>
-          <LocationMarkerIcon className='h-8 text-gray-800' />
-          <span className={`ml-2 font-bold text-xl ${mini && "sr-only"}`}>
-            Hodo Network
-          </span>
-        </NavLink> */}
       </div>
 
       <nav aria-label='Sidebar' className='flex-1 space-y-2 px-3 py-2 sm:py-4'>

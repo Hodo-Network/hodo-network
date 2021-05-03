@@ -44,7 +44,7 @@ export default function Explore() {
                 )}>
                 <img
                   className='flex-shrink-0 -mt-0.5 h-14 w-14'
-                  src={item.img}
+                  src={item.image}
                   alt={item.name}
                 />
                 <div className='ml-3 text-sm overflow-hidden'>
@@ -52,7 +52,7 @@ export default function Explore() {
                     {item.name}
                   </p>
                   <p className='mt-1 text-sm text-gray-600 dark:text-gray-300 truncate'>
-                    {item.description}
+                    {item.data.description}
                   </p>
                 </div>
               </div>

@@ -56,8 +56,6 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile menu, show/hide this `div` based on menu open/closed state */}
-
       <Transition.Root show={mobileMenuOpen} as={Fragment}>
         <Dialog
           as='div'

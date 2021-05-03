@@ -19,6 +19,7 @@ const TEXT_LOCATION = "Location";
 const TEXT_MONUMENTS = "Monuments";
 const TEXT_NETWORK = "Network";
 const TEXT_ONBOARDING = "Onboarding";
+const TEXT_OWNER = "Owner";
 const TEXT_REGION = "My Region";
 
 export {
@@ -43,5 +44,6 @@ export {
   TEXT_MONUMENTS,
   TEXT_NETWORK,
   TEXT_ONBOARDING,
+  TEXT_OWNER,
   TEXT_REGION,
 };
