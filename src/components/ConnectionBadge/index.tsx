@@ -45,13 +45,13 @@ export default function ConnectionBadge() {
         {chainId && NETWORK_LABELS_SHORT[chainId]}
       </span>
       <span
-        className='inline-flex px-3 py-1.5 w-48 overflow-hidden rounded-r-md border border-l-0 border-green-500 bg-green-50 text-green-700 hover:bg-green-100 cursor-pointer'
+        className='inline-flex items-center px-3 py-1.5 w-48 overflow-hidden rounded-r-md border border-l-0 border-green-500 bg-green-50 text-green-700 hover:bg-green-100 cursor-pointer'
         onClick={copyToClipboard}>
         <span className='truncate'>{account}</span>
       </span>
       {showMsg && (
         <span
-          className={`absolute bg-gray-900 opacity-90 w-full h-full left-0 top-0 font-semibold text-center px-3 py-1.5 rounded-md text-${messageColor}`}>
+          className={`absolute flex items-center justify-center bg-gray-900 opacity-90 w-full h-full left-0 top-0 font-semibold px-3 py-1.5 rounded-md text-${messageColor}`}>
           {message}
         </span>
       )}
