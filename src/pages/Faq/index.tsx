@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     id: 3,
-    question: "What token standard does the NFTs use?",
+    question: "What token standard do the NFTs use?",
     answer:
       "The NFTs were minted using the ERC1155 token standard. This allows for multiple tokens to be represented by a single smart contract and unlocks some cost saving features like sending multiple tokens in a single transaction.",
   },
