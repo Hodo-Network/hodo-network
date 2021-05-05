@@ -15,6 +15,12 @@ const faqs = [
     answer:
       "The C-Chain is EVM compatible which will allow interoperability with other EVM chains in the future. Using the C-Chain also allows us to enable wallets like MetaMask for a better user experience.",
   },
+  {
+    id: 3,
+    question: "What token standard does the NFTs use?",
+    answer:
+      "The NFTs were minted using the ERC1155 token standard. This allows for multiple tokens to be represented by a single smart contract and unlocks some cost saving features like sending multiple tokens in a single transaction.",
+  },
 ];
 
 export default function Faq() {
