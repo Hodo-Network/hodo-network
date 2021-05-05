@@ -1,30 +1,28 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import { MenuAlt2Icon } from "@heroicons/react/solid";
 import { navigation } from "../../constants/navigation";
 import { Footer } from "../index";
 
-export default function Sidebar() {
-  const [mini, setMini] = useState(false);
-
+export default function Sidebar({ miniSidebar, toggle }) {
   return (
     <div
       className={`hidden md:flex flex-col border-r border-gray-800 bg-gray-800 dark:bg-gray-900 ${
-        mini ? "w-20" : "w-80"
+        miniSidebar ? "w-20" : "w-80"
       }`}>
       <div className='h-16'>
         <div
           className={`flex items-center h-full p-3 ${
-            mini && "justify-center"
+            miniSidebar && "justify-center"
           }`}>
           <button
             className='text-gray-200 rounded-md px-4 py-3 focus:outline-none'
-            onClick={() => setMini(!mini)}>
+            onClick={toggle}>
             <MenuAlt2Icon className='w-6 h-6' />
           </button>
           <span
             className={`-ml-1 font-bold text-xl text-white ${
-              mini && "sr-only"
+              miniSidebar && "sr-only"
             }`}>
             Hodo Network
           </span>
@@ -40,12 +38,12 @@ export default function Sidebar() {
             className='text-gray-400 hover:bg-gray-900 dark:hover:bg-gray-800 flex items-center rounded-md px-4 py-3'
             activeClassName='bg-gray-900 dark:bg-gray-800 text-white'>
             <item.icon className='h-6 w-6' aria-hidden='true' />
-            <span className={mini ? "sr-only" : "ml-3"}>{item.name}</span>
+            <span className={miniSidebar ? "sr-only" : "ml-3"}>{item.name}</span>
           </NavLink>
         ))}
       </nav>
 
-      {!mini && <Footer />}
+      {!miniSidebar && <Footer />}
     </div>
   );
 }

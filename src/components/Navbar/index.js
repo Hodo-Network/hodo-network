@@ -12,26 +12,22 @@ import {
   OnboardingButton,
 } from "../index";
 
-export default function Navbar() {
+export default function Navbar({ miniSidebar }) {
   const { account } = useWeb3React();
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const enableSearch = false;
 
   return (
-    <header className='flex-shrink-0 relative h-16 bg-white dark:bg-gray-900 border-b dark:border-gray-800 flex items-center'>
-      <div className='absolute inset-y-0 right-0 pr-4 flex items-center sm:pr-6 md:hidden'>
-        <button
-          type='button'
-          className='-mr-2 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-600'
-          onClick={() => setMobileMenuOpen(true)}>
-          <span className='sr-only'>Open main menu</span>
-          <MenuIcon className='block h-6 w-6' aria-hidden='true' />
-        </button>
-      </div>
+    <header className='flex-shrink-0 bg-white dark:bg-gray-900 text-gray-800 dark:text-white border-b border-gray-300 dark:border-gray-800 flex items-center'>
+      <div className='flex-1 flex items-center justify-between py-3 px-4'>
+        <div className='flex items-center'>
+          <span className={`font-bold text-xl ${!miniSidebar && "md:hidden"}`}>
+            Hodo Network
+          </span>
+        </div>
 
-      <div className='hidden md:min-w-0 md:flex-1 md:flex md:items-center md:justify-between'>
-        <div className='min-w-0 flex-1'>
-          {enableSearch && (
+        {enableSearch && (
+          <div className='min-w-0 hidden md:flex-1'>
             <div className='max-w-2xl relative text-gray-400 focus-within:text-gray-500 hidden'>
               <label htmlFor='search' className='sr-only'>
                 Search
@@ -46,23 +42,33 @@ export default function Navbar() {
                 <SearchIcon className='h-5 w-5' aria-hidden='true' />
               </div>
             </div>
-          )}
-        </div>
+          </div>
+        )}
 
-        <div className='ml-10 pr-8 flex-shrink-0 flex items-center space-x-6'>
+        <div className='ml-10 pr-3 flex-shrink-0 hidden md:flex items-center space-x-6'>
           <DarkToggle />
 
           {account ? <ConnectionBadge /> : <OnboardingButton />}
         </div>
       </div>
 
-      <Transition.Root show={mobileMenuOpen} as={Fragment}>
+      <div className='py-3 px-4 flex items-center md:hidden'>
+        <button
+          type='button'
+          className='inline-flex items-center justify-center p-2 rounded-md text-gray-800 dark:text-white hover:text-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-600'
+          onClick={() => setMenuOpen(true)}>
+          <span className='sr-only'>Open main menu</span>
+          <MenuIcon className='block h-6 w-6' aria-hidden='true' />
+        </button>
+      </div>
+
+      <Transition.Root show={menuOpen} as={Fragment}>
         <Dialog
           as='div'
           static
           className='fixed inset-0 z-50 md:hidden'
-          open={mobileMenuOpen}
-          onClose={setMobileMenuOpen}>
+          open={menuOpen}
+          onClose={setMenuOpen}>
           <Transition.Child
             as={Fragment}
             enter='transition-opacity ease-linear duration-300'
@@ -85,14 +91,14 @@ export default function Navbar() {
             <nav
               className='fixed z-50 inset-0 h-full w-full bg-white dark:bg-gray-900 sm:inset-y-0 sm:left-auto sm:right-0 sm:max-w-sm sm:w-full sm:shadow-lg'
               aria-label='Global'>
-              <div className='h-16 flex items-center justify-between px-4 sm:px-6'>
+              <div className='flex items-center justify-between py-3 px-4'>
                 <span className='ml-1 font-bold text-xl text-gray-900 dark:text-white'>
                   Hodo Network
                 </span>
                 <button
                   type='button'
-                  className='-mr-2 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-600'
-                  onClick={() => setMobileMenuOpen(false)}>
+                  className='inline-flex items-center justify-center p-2 rounded-md text-gray-800 dark:text-white hover:text-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-600'
+                  onClick={() => setMenuOpen(false)}>
                   <span className='sr-only'>Close main menu</span>
                   <XIcon className='block h-6 w-6' aria-hidden='true' />
                 </button>
@@ -118,7 +124,7 @@ export default function Navbar() {
               )}
 
               <div className='flex-1 space-y-2 p-4'>
-                <div className='flex justify-between mb-6'>
+                <div className='flex justify-between mb-6 text-gray-900 dark:text-white'>
                   {account ? <ConnectionBadge /> : <OnboardingButton />}
                   <DarkToggle />
                 </div>
@@ -130,7 +136,7 @@ export default function Navbar() {
                     exact={item.exact}
                     className='text-gray-800 dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-800 flex items-center rounded-md px-4 py-3'
                     activeClassName='bg-gray-200 dark:bg-gray-800 text-white'
-                    onClick={() => setMobileMenuOpen(false)}>
+                    onClick={() => setMenuOpen(false)}>
                     <item.icon className='h-6 w-6' aria-hidden='true' />
                     <span className='ml-3'>{item.name}</span>
                   </NavLink>

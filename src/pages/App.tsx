@@ -3,8 +3,17 @@ import { useWeb3React } from "@web3-react/core";
 import { Web3Provider } from "@ethersproject/providers";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import { useEagerConnect, useInactiveListener } from "../hooks";
-import { Asset, Collections, Explore, Home, Faq, Onboarding, Roadmap, Wallet } from ".";
 import { Navbar, Sidebar } from "../components";
+import {
+  Asset,
+  Collections,
+  Explore,
+  Home,
+  Faq,
+  Onboarding,
+  Roadmap,
+  Wallet,
+} from "./index";
 import {
   ROUTE_ASSETS,
   ROUTE_COLLECTIONS,
@@ -39,14 +48,21 @@ export default function App() {
       <Router>
         <Route
           render={({ location }) =>
-            [ROUTE_ONBOARDING].includes(location.pathname) ? null : <Sidebar />
+            [ROUTE_ONBOARDING].includes(location.pathname) ? null : (
+              <Sidebar
+                toggle={() => setMiniSidebar(!miniSidebar)}
+                miniSidebar={miniSidebar}
+              />
+            )
           }
         />
 
         <div className='flex flex-col flex-1 min-h-0 overflow-hidden'>
           <Route
             render={({ location }) =>
-              [ROUTE_ONBOARDING].includes(location.pathname) ? null : <Navbar />
+              [ROUTE_ONBOARDING].includes(location.pathname) ? null : (
+                <Navbar miniSidebar={miniSidebar} />
+              )
             }
           />
 
