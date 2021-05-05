@@ -81,19 +81,19 @@ export default function Asset() {
 
               <div className='mt-8'>
                 <h1 className='text-sm uppercase font-medium text-gray-500 dark:text-gray-400'>
-                  {TEXT_DESCRIPTION}
+                  {TEXT_COLLECTION}
                 </h1>
-                <p className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis'>
-                  {asset.data.description}
+                <p className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis capitalize'>
+                  {asset.category}
                 </p>
               </div>
 
               <div className='mt-8'>
                 <h1 className='text-sm uppercase font-medium text-gray-500 dark:text-gray-400'>
-                  {TEXT_COLLECTION}
+                  {TEXT_DESCRIPTION}
                 </h1>
-                <p className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis capitalize'>
-                  {asset.category}
+                <p className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis'>
+                  {asset.data.description}
                 </p>
               </div>
 
@@ -108,19 +108,19 @@ export default function Asset() {
 
               <div className='mt-8'>
                 <h1 className='text-sm uppercase font-medium text-gray-500 dark:text-gray-400'>
-                  {TEXT_COORDS}
+                  {TEXT_OWNER}
                 </h1>
-                <p className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis'>
-                  [{asset.data.location.lat}, {asset.data.location.long}]
+                <p className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis capitalize'>
+                  {asset.owner}
                 </p>
               </div>
 
               <div className='mt-8'>
                 <h1 className='text-sm uppercase font-medium text-gray-500 dark:text-gray-400'>
-                  {TEXT_OWNER}
+                  {TEXT_COORDS}
                 </h1>
-                <p className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis capitalize'>
-                  {asset.owner}
+                <p className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis'>
+                  [{asset.data.location.lat}, {asset.data.location.long}]
                 </p>
               </div>
 
