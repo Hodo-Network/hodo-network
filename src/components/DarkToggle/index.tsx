@@ -9,7 +9,7 @@ export default function DarkToggle() {
     <button
       type='button'
       onClick={toggleDark}
-      className='inline-flex items-center p-1 rounded-full text-gray-900 dark:text-white'>
+      className='inline-flex items-center p-2 rounded-full'>
       {dark ? (
         <SunIcon className='h-6 w-6' />
       ) : (
