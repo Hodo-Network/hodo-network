@@ -10,21 +10,20 @@ jobs:
       matrix:
         node-version: [14.x]
     steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: Change Directory
-      run: cd frontend
-    - name: Install Packages
-      run: npm install
-    - name: Build page
-      run: CI=false npm run build
-    - name: Deploy to docs
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./build
-        publish_branch: docs
-        cname: hodo.network
+      - uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+          cwd: "./frontend/"
+      - name: Install Packages
+        run: npm install
+      - name: Build page
+        run: CI=false npm run build
+      - name: Deploy to docs
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          publish_branch: docs
+          cname: hodo.network
