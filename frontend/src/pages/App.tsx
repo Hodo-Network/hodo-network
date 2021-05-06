@@ -47,25 +47,13 @@ export default function App() {
   return (
     <div className='bg-gray-100 dark:bg-gray-900 flex flex-row h-screen overflow-hidden'>
       <Router>
-        <Route
-          render={({ location }) =>
-            [ROUTE_ONBOARDING].includes(location.pathname) ? null : (
-              <Sidebar
-                toggle={() => setMiniSidebar(!miniSidebar)}
-                miniSidebar={miniSidebar}
-              />
-            )
-          }
+        <Sidebar
+          toggle={() => setMiniSidebar(!miniSidebar)}
+          miniSidebar={miniSidebar}
         />
 
         <div className='flex flex-col flex-1 min-h-0 overflow-hidden'>
-          <Route
-            render={({ location }) =>
-              [ROUTE_ONBOARDING].includes(location.pathname) ? null : (
-                <Navbar miniSidebar={miniSidebar} />
-              )
-            }
-          />
+          <Navbar miniSidebar={miniSidebar} />
 
           <main className='min-w-0 flex-1 overflow-y-scroll'>
             <Switch>

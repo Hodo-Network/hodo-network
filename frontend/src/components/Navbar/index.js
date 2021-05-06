@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useRouteMatch } from "react-router-dom";
 import { useWeb3React } from "@web3-react/core";
 import { Dialog, Transition } from "@headlessui/react";
 import { SearchIcon } from "@heroicons/react/solid";
@@ -16,6 +16,15 @@ export default function Navbar({ miniSidebar }) {
   const { account } = useWeb3React();
   const [menuOpen, setMenuOpen] = useState(false);
   const enableSearch = false;
+  // TODO: remove later. hidden for onboarding
+  const match = useRouteMatch({
+    path: "/",
+    exact: true,
+  });
+
+  if (match) {
+    return null;
+  }
 
   return (
     <header className='flex-shrink-0 bg-white dark:bg-gray-900 text-gray-800 dark:text-white border-b border-gray-300 dark:border-gray-800 flex items-center'>
