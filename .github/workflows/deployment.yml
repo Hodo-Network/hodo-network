@@ -15,13 +15,15 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-          cwd: "./frontend/"
       - name: Install Packages
+        working-directory: ./frontend
         run: npm install
       - name: Build page
+        working-directory: ./frontend
         run: CI=false npm run build
       - name: Deploy to docs
         uses: peaceiris/actions-gh-pages@v3
+        working-directory: ./frontend
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
