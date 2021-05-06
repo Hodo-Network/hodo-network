@@ -27,6 +27,7 @@ import {
 import "../styles/tailwind.output.css";
 
 export default function App() {
+  const [miniSidebar, setMiniSidebar] = useState(true);
   const { connector } = useWeb3React<Web3Provider>();
 
   // handle logic to recognize the connector currently being activated
