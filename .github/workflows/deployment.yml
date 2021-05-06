@@ -15,6 +15,8 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    - name: Change Directory
+      run: cd frontend
     - name: Install Packages
       run: npm install
     - name: Build page

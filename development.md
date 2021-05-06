@@ -1,74 +1,89 @@
-# Development
+# Hardhat Hackathon Boilerplate
 
-This document describes the process for running this application on your local computer.
+This repository contains a sample project that you can use as the starting point
+for your Ethereum project. It's also a great fit for learning the basics of
+smart contract development.
 
-## Getting Started with Create React App
+This project is intended to be used with the
+[Hardhat Beginners Tutorial](https://hardhat.org/tutorial), but you should be
+able to follow it by yourself by reading the README and exploring its
+`contracts`, `tests`, `scripts` and `frontend` directories.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Quick start
 
-## Available Scripts
+The first things you need to do are cloning this repository and installing its
+dependencies:
 
-In the project directory, you can run:
+```sh
+git clone https://github.com/nomiclabs/hardhat-hackathon-boilerplate.git
+cd hardhat-hackathon-boilerplate
+npm install
+```
 
-### `yarn start`
+Once installed, let's run Hardhat's testing network:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```sh
+npx hardhat node
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Then, on a new terminal, go to the repository's root folder and run this to
+deploy your contract:
 
-### `yarn test`
+```sh
+npx hardhat run scripts/deploy.js --network localhost
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Finally, we can run the frontend with:
 
-### `yarn build`
+```sh
+cd frontend
+npm install
+npm start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+> Note: There's [an issue in `ganache-core`](https://github.com/trufflesuite/ganache-core/issues/650) that can make the `npm install` step fail. 
+>
+> If you see `npm ERR! code ENOLOCAL`, try running `npm ci` instead of `npm install`.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Open [http://localhost:3000/](http://localhost:3000/) to see your Dapp. You will
+need to have [Metamask](https://metamask.io) installed and listening to
+`localhost 8545`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## User Guide
 
-### `yarn eject`
+You can find detailed instructions on using this repository and many tips in [its documentation](https://hardhat.org/tutorial).
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- [Project description (Token.sol)](https://hardhat.org/tutorial/4-contracts/)
+- [Setting up the environment](https://hardhat.org/tutorial/1-setup/)
+- [Testing with Hardhat, Mocha and Waffle](https://hardhat.org/tutorial/5-test/)
+- [Setting up Metamask](https://hardhat.org/tutorial/8-frontend/#setting-up-metamask)
+- [Hardhat's full documentation](https://hardhat.org/getting-started/)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+For a complete introduction to Hardhat, refer to [this guide](https://hardhat.org/getting-started/#overview).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## What’s Included?
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Your environment will have everything you need to build a Dapp powered by Hardhat and React.
 
-## Learn More
+- [Hardhat](https://hardhat.org/): An Ethereum development task runner and testing network.
+- [Mocha](https://mochajs.org/): A JavaScript test runner.
+- [Chai](https://www.chaijs.com/): A JavaScript assertion library.
+- [ethers.js](https://docs.ethers.io/ethers.js/html/): A JavaScript library for interacting with Ethereum.
+- [Waffle](https://github.com/EthWorks/Waffle/): To have Ethereum-specific Chai assertions/mathers.
+- [A sample frontend/Dapp](./frontend): A Dapp which uses [Create React App](https://github.com/facebook/create-react-app).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Troubleshooting
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- `Invalid nonce` errors: if you are seeing this error on the `npx hardhat node`
+  console, try resetting your Metamask account. This will reset the account's
+  transaction history and also the nonce. Open Metamask, click on your account
+  followed by `Settings > Advanced > Reset Account`.
 
-### Code Splitting
+## Feedback, help and news
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+We'd love to have your feedback on this tutorial. Feel free to reach us through
+this repository or [our Discord server](https://invite.gg/HardhatSupport).
 
-### Analyzing the Bundle Size
+Also you can [follow us on Twitter](https://twitter.com/HardhatHQ).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Happy _buidling_!**
