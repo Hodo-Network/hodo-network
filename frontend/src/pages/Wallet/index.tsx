@@ -3,7 +3,12 @@ import { useWeb3React } from "@web3-react/core";
 import { Web3Provider } from "@ethersproject/providers";
 import { SWRConfig } from "swr";
 import fetcher from "swr-eth";
-import { EthBalance, TokenList, ChainAddButton } from "../../components";
+import {
+  EthBalance,
+  TokenList,
+  ChainAddButton,
+  OnboardingButton,
+} from "../../components";
 import { TEXT_ADDRESS, TEXT_BALANCE, TEXT_NETWORK } from "../../constants/text";
 import {
   AVALANCHE_MAINNET_PARAMS,
@@ -31,6 +36,14 @@ export default function Wallet() {
     }
   }, [chainId]);
 
+  if (!chainId) {
+    return (
+      <div className='p-4 sm:p-8 lg:p-12 max-w-8xl'>
+        <OnboardingButton />
+      </div>
+    );
+  }
+
   return (
     <div className='p-4 sm:p-8 lg:p-12 max-w-8xl'>
       <div>
@@ -38,7 +51,7 @@ export default function Wallet() {
           {TEXT_NETWORK}
         </h1>
         <p className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis'>
-          {chainId && NETWORK_LABELS[chainId]}
+          {NETWORK_LABELS[chainId]}
         </p>
       </div>
 
