@@ -1,12 +1,17 @@
 import React from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, useRouteMatch } from "react-router-dom";
 import { HomeIcon } from "@heroicons/react/outline";
 import { ROUTE_DEFAULT } from "../../constants/routes";
 
 export default function Breadcrumbs({ crumbs }: { crumbs: any }) {
   const location = useLocation();
+  // TODO: remove after launch
+  const match = useRouteMatch({
+    path: "/home",
+    exact: true,
+  });
 
-  if (crumbs.length <= 1) {
+  if (match || crumbs.length <= 1) {
     return null;
   }
 
