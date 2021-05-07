@@ -14,7 +14,7 @@ import {
 } from "react-leaflet";
 import { NFT } from "../../typings/nft";
 // import { NATIVE_CURRENCY } from "../../constants";
-import { ROUTE_ASSETS } from "../../constants/routes";
+import { ROUTE_COLLECTIONS } from "../../constants/routes";
 
 function LocationMarker({ selected }: { selected: NFT }) {
   const [position, setPosition] = useState<any>(null);
@@ -47,7 +47,10 @@ function LocationMarker({ selected }: { selected: NFT }) {
           {/* {(chainId && NATIVE_CURRENCY[chainId]) || NATIVE_CURRENCY[0]} */}
         </div>
         <div>
-          <NavLink to={`${ROUTE_ASSETS}/${selected.id}`}>View NFT</NavLink>
+          <NavLink
+            to={`${ROUTE_COLLECTIONS}/${selected.category}/${selected.id}`}>
+            View NFT
+          </NavLink>
         </div>
       </Popup>
     </Marker>
@@ -78,7 +81,7 @@ function ItemMarker({ item }: { item: NFT }) {
             {/* {(chainId && NATIVE_CURRENCY[chainId]) || NATIVE_CURRENCY[0]} */}
           </div>
           <div>
-            <NavLink to={`${ROUTE_ASSETS}/${item.id}`}>View NFT</NavLink>
+            <NavLink to={`${ROUTE_COLLECTIONS}/${item.id}`}>View NFT</NavLink>
           </div>
         </Popup>
       </Marker>

@@ -16,9 +16,7 @@ export default function Hero() {
         </p>
         <div className='mt-8 sm:flex justify-center'>
           <div>
-            <NavLink
-              to={`${ROUTE_COLLECTIONS}/all`}
-              className='btn btn--large w-full'>
+            <NavLink to={ROUTE_COLLECTIONS} className='btn btn--large w-full'>
               Start Browsing
             </NavLink>
           </div>

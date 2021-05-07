@@ -8,7 +8,7 @@ import {
 } from "@heroicons/react/outline";
 import {
   ROUTE_COLLECTIONS,
-  ROUTE_DEFAULT,
+  ROUTE_HOME,
   ROUTE_EXPLORE,
   ROUTE_FAQ,
   ROUTE_ROADMAP,
@@ -16,10 +16,10 @@ import {
 } from "./routes";
 
 export const navigation = [
-  { name: "Home", href: ROUTE_DEFAULT, icon: HomeIcon, exact: true },
+  { name: "Home", href: ROUTE_HOME, icon: HomeIcon, exact: true },
   {
     name: "Collections",
-    href: `${ROUTE_COLLECTIONS}/all`,
+    href: ROUTE_COLLECTIONS,
     icon: CollectionIcon,
     exact: false,
   },

@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 // import { useWeb3React } from "@web3-react/core";
 import { NFT } from "../../typings/nft";
 // import { NATIVE_CURRENCY } from "../../constants";
-import { ROUTE_ASSETS } from "../../constants/routes";
+import { ROUTE_COLLECTIONS } from "../../constants/routes";
 import { RarityBadge } from "../index";
 
 export default function NFTCard({
@@ -14,12 +14,12 @@ export default function NFTCard({
   nft: NFT;
   className?: string;
 }) {
-  const { id, name, image, data, price } = nft;
+  const { id, name, category, image, data, price } = nft;
   // const { chainId } = useWeb3React<Web3Provider>();
 
   return (
     <NavLink
-      to={`${ROUTE_ASSETS}/${id}`}
+      to={`${ROUTE_COLLECTIONS}/${category}/${id}`}
       className={`${className} flex flex-col rounded-md shadow overflow-hidden transition-transform duration-300 transform hover:-translate-y-2`}>
       <div className='flex-shrink-0'>
         <img className='h-54 w-full object-scale-down' src={image} alt={name} />

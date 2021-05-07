@@ -1,4 +1,5 @@
 import React from "react";
+import ContentWrapper from "../ContentWrapper";
 
 const headline = "Frequently Asked Questions";
 const faqs = [
@@ -25,26 +26,30 @@ const faqs = [
 
 export default function Faq() {
   return (
-    <div className='p-4 sm:p-8 lg:p-12 max-w-8xl divide-y-2 divide-gray-200 dark:divide-gray-600'>
-      <h2 className='text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white'>
-        {headline}
-      </h2>
-      <div className='mt-6'>
-        <dl className='space-y-8 divide-y divide-gray-200 dark:divide-gray-700'>
-          {faqs.map((faq) => (
-            <div key={faq.id} className='pt-6 md:grid md:grid-cols-12 md:gap-8'>
-              <dt className='text-base font-medium text-gray-800 dark:text-gray-100 md:col-span-5'>
-                {faq.question}
-              </dt>
-              <dd className='mt-2 md:mt-0 md:col-span-7'>
-                <p className='text-base text-gray-700 dark:text-gray-200'>
-                  {faq.answer}
-                </p>
-              </dd>
-            </div>
-          ))}
-        </dl>
+    <ContentWrapper>
+      <div className='p-4 sm:p-8 max-w-8xl divide-y-2 divide-gray-200 dark:divide-gray-600'>
+        <h2 className='text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white'>
+          {headline}
+        </h2>
+        <div className='mt-6'>
+          <dl className='space-y-8 divide-y divide-gray-200 dark:divide-gray-700'>
+            {faqs.map((faq) => (
+              <div
+                key={faq.id}
+                className='pt-6 md:grid md:grid-cols-12 md:gap-8'>
+                <dt className='text-base font-medium text-gray-800 dark:text-gray-100 md:col-span-5'>
+                  {faq.question}
+                </dt>
+                <dd className='mt-2 md:mt-0 md:col-span-7'>
+                  <p className='text-base text-gray-700 dark:text-gray-200'>
+                    {faq.answer}
+                  </p>
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
       </div>
-    </div>
+    </ContentWrapper>
   );
 }

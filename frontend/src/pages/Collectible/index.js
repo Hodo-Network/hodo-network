@@ -15,8 +15,9 @@ import {
   TEXT_COORDS,
   TEXT_OWNER,
 } from "../../constants/text";
+import ContentWrapper from "../ContentWrapper";
 
-export default function Asset() {
+export default function Collectible() {
   const { account } = useWeb3React();
   const { id } = useParams();
   const [asset, setAsset] = useState();
@@ -24,13 +25,13 @@ export default function Asset() {
   const getAsset = (id) => {
     return collectibles.filter((asset) => {
       return asset.id === id;
-    });
+    })[0];
   };
 
   // TODO: replace api call
   useEffect(() => {
     // fetch(`${endpoint}/${id}`).then(setAsset);
-    setAsset(getAsset(id)[0]);
+    setAsset(getAsset(id));
   }, [id]);
 
   const buyAsset = async () => {
@@ -58,9 +59,9 @@ export default function Asset() {
   };
 
   return (
-    <>
+    <ContentWrapper>
       {asset && (
-        <div className='p-4 sm:p-8 lg:p-12 max-w-8xl'>
+        <div className='p-4 sm:p-8 max-w-8xl'>
           <div className='md:flex'>
             <div className='md:w-1/3 md:max-w-lg mb-6'>
               <div className='w-60 md:w-auto'>
@@ -148,6 +149,6 @@ export default function Asset() {
           </div>
         </div>
       )}
-    </>
+    </ContentWrapper>
   );
 }

@@ -1,4 +1,4 @@
-import Balance from "./EthBalance";
+import Breadcrumbs from "./Breadcrumbs";
 import ChainAddButton from "./ChainAddButton";
 import ConnectionBadge from "./ConnectionBadge";
 import DarkToggle from "./DarkToggle";
@@ -11,6 +11,7 @@ import LeafletMap from "./LeafletMap";
 import LocationButton from "./LocationButton";
 import Logo from "./Logo";
 import Navbar from "./Navbar";
+import NetworkSwitch from "./NetworkSwitch";
 import NFTCard from "./NFTCard";
 import Notification from "./Notification";
 import OnboardingButton from "./OnboardingButton";
@@ -21,9 +22,10 @@ import SiteAlert from "./SiteAlert";
 import SocialLink from "./SocialLink";
 import TokenBalance from "./TokenBalance";
 import TokenList from "./TokenList";
+import WalletAddress from "./WalletAddress";
 
 export {
-  Balance,
+  Breadcrumbs,
   ChainAddButton,
   ConnectionBadge,
   DarkToggle,
@@ -36,6 +38,7 @@ export {
   LocationButton,
   Logo,
   Navbar,
+  NetworkSwitch,
   NFTCard,
   Notification,
   OnboardingButton,
@@ -46,4 +49,5 @@ export {
   SocialLink,
   TokenBalance,
   TokenList,
+  WalletAddress,
 };

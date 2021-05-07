@@ -27,8 +27,8 @@ export default function Navbar({ miniSidebar }) {
   }
 
   return (
-    <header className='flex-shrink-0 bg-white dark:bg-gray-900 text-gray-800 dark:text-white border-b border-gray-300 dark:border-gray-800 flex items-center'>
-      <div className='flex-1 flex items-center justify-between py-3 px-4'>
+    <header className='flex-shrink-0 bg-white dark:bg-gray-900 text-gray-800 dark:text-white border-b border-gray-200 dark:border-gray-800 flex items-center'>
+      <div className='flex-1 flex items-center justify-between py-3 px-4 sm:px-8'>
         <div className='flex items-center'>
           <span className={`font-bold text-xl ${!miniSidebar && "md:hidden"}`}>
             Hodo Network
@@ -54,7 +54,7 @@ export default function Navbar({ miniSidebar }) {
           </div>
         )}
 
-        <div className='ml-10 pr-3 flex-shrink-0 hidden md:flex items-center space-x-6'>
+        <div className='ml-10 flex-shrink-0 hidden md:flex items-center space-x-6'>
           <DarkToggle />
 
           {account ? <ConnectionBadge /> : <OnboardingButton />}

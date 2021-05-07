@@ -4,8 +4,10 @@ import { Web3Provider } from "@ethersproject/providers";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useEagerConnect, useInactiveListener } from "../hooks";
 import { Navbar, Sidebar } from "../components";
+import * as paths from "../constants/routes";
 import {
-  Asset,
+  Collectible,
+  Collection,
   Collections,
   Explore,
   Home,
@@ -14,16 +16,6 @@ import {
   Roadmap,
   Wallet,
 } from "./index";
-import {
-  ROUTE_ASSETS,
-  ROUTE_COLLECTIONS,
-  ROUTE_DEFAULT,
-  ROUTE_EXPLORE,
-  ROUTE_FAQ,
-  ROUTE_ONBOARDING,
-  ROUTE_ROADMAP,
-  ROUTE_WALLET,
-} from "../constants/routes";
 import "../styles/tailwind.output.css";
 
 export default function App() {
@@ -55,21 +47,21 @@ export default function App() {
         <div className='flex flex-col flex-1 min-h-0 overflow-hidden'>
           <Navbar miniSidebar={miniSidebar} />
 
-          <main className='min-w-0 flex-1 overflow-y-scroll'>
-            <Switch>
-              <Route path={ROUTE_ONBOARDING} exact component={Onboarding} />
-              <Route path={ROUTE_DEFAULT} exact component={Home} />
-              <Route
-                path={`${ROUTE_COLLECTIONS}/:name`}
-                component={Collections}
-              />
-              <Route path={`${ROUTE_ASSETS}/:id`} exact component={Asset} />
-              <Route path={ROUTE_EXPLORE} exact component={Explore} />
-              <Route path={ROUTE_WALLET} exact component={Wallet} />
-              <Route path={ROUTE_ROADMAP} exact component={Roadmap} />
-              <Route path={ROUTE_FAQ} exact component={Faq} />
-            </Switch>
-          </main>
+          <Switch>
+            <Route path={paths.ROUTE_DEFAULT} exact component={Onboarding} />
+            <Route path={paths.ROUTE_HOME} exact component={Home} />
+            <Route
+              path={paths.ROUTE_COLLECTIONS}
+              exact
+              component={Collections}
+            />
+            <Route path={paths.ROUTE_COLLECTION} exact component={Collection} />
+            <Route path={paths.ROUTE_COLLECTIBLE} component={Collectible} />
+            <Route path={paths.ROUTE_EXPLORE} exact component={Explore} />
+            <Route path={paths.ROUTE_WALLET} exact component={Wallet} />
+            <Route path={paths.ROUTE_ROADMAP} exact component={Roadmap} />
+            <Route path={paths.ROUTE_FAQ} exact component={Faq} />
+          </Switch>
         </div>
       </Router>
     </div>
