@@ -17,7 +17,7 @@ export default function Sidebar({ miniSidebar, toggle }) {
 
   return (
     <div
-      className={`hidden md:flex flex-col border-r border-gray-800 bg-gray-800 dark:bg-gray-900 ${
+      className={`hidden md:flex flex-col border-r border-gray-700 dark:border-gray-800 bg-gray-800 dark:bg-gray-900 ${
         miniSidebar ? "w-20" : "w-80"
       }`}>
       <div className='h-16'>
