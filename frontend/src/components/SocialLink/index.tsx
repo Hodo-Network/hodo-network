@@ -1,10 +1,12 @@
 export default function SocialLink({
   href,
   title,
+  viewbox,
   children,
 }: {
   href: string;
   title: string;
+  viewbox?: string;
   children: any;
 }) {
   return (
@@ -17,7 +19,7 @@ export default function SocialLink({
       <svg
         className='h-6 w-6'
         fill='currentColor'
-        viewBox='0 0 24 24'
+        viewBox={viewbox ? viewbox : "0 0 24 24"}
         aria-hidden='true'>
         {children}
       </svg>
