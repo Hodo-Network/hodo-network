@@ -1,5 +1,6 @@
 import Breadcrumbs from "./Breadcrumbs";
 import ChainAddButton from "./ChainAddButton";
+import CollectionCard from "./CollectionCard";
 import ConnectionBadge from "./ConnectionBadge";
 import DarkToggle from "./DarkToggle";
 import EthBalance from "./EthBalance";
@@ -28,6 +29,7 @@ import WalletAddress from "./WalletAddress";
 export {
   Breadcrumbs,
   ChainAddButton,
+  CollectionCard,
   ConnectionBadge,
   DarkToggle,
   EthBalance,

@@ -59,3 +59,10 @@ export type NFT<V extends Vendor = any> = {
     price: NFTPrice;
 }
 
+export type Collection = {
+    id: string;
+    // contractAddress: string
+    // owner: string
+    name: string;
+    image: string;
+}
