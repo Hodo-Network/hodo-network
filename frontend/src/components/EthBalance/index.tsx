@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import ReactLoading from "react-loading";
 import { useWeb3React } from "@web3-react/core";
 import { Web3Provider } from "@ethersproject/providers";
 import { formatEther } from "@ethersproject/units";
@@ -24,7 +25,13 @@ export default function EthBalance() {
   }, []);
 
   if (!balance) {
-    return <div>...</div>;
+    return (
+      <ReactLoading
+        type='bubbles'
+        color='currentColor'
+        className='text-blue-600 dark:text-blue-500'
+      />
+    );
   }
   return (
     <div>

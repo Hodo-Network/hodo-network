@@ -3,7 +3,7 @@
 exports[`renders correctly 1`] = `
 <a
   aria-current={null}
-  className="undefined flex flex-col rounded-md shadow overflow-hidden transition-transform duration-300 transform hover:-translate-y-2"
+  className="undefined flex flex-col rounded-md shadow overflow-hidden transition-transform duration-300 transform hover:-translate-y-1"
   href="/collections/capital/BZTDWRaK6rQmnSLrrq4PANBeueYfDRFkpHV9KcMtjxL19wsJ1"
   onClick={[Function]}
 >

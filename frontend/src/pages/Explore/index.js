@@ -1,11 +1,15 @@
 import React, { useState } from "react";
+import { useWeb3React } from "@web3-react/core";
 import { LeafletMap } from "../../components";
 import { collectibles } from "../../data";
 import classNames from "../../utils/classNames";
 import ContentWrapper from "../ContentWrapper";
 
 export default function Explore() {
-  const [selected, setSelected] = useState(collectibles[0]);
+  const { chainId } = useWeb3React();
+  const [selected, setSelected] = useState(null);
+  // TODO: replace with API data
+  const items = chainId === 43113 ? collectibles : [];
 
   return (
     <ContentWrapper>
@@ -18,7 +22,7 @@ export default function Explore() {
           </h1>
           <LeafletMap
             className='h-full w-full object-cover z-10'
-            collectibles={collectibles}
+            collectibles={items}
             selected={selected}
           />
         </section>
@@ -33,32 +37,45 @@ export default function Explore() {
               </p>
             </div>
             <div className='min-h-0 overflow-y-auto flex-1'>
-              {collectibles?.map((item) => (
-                <div
-                  key={item.id}
-                  onClick={() => setSelected(item)}
-                  tabIndex={0}
-                  className={classNames(
-                    item === selected
-                      ? "bg-gray-100 dark:bg-gray-800"
-                      : "hover:bg-gray-100 dark:hover:bg-gray-800",
-                    "cursor-pointer flex p-4 border-b border-gray-200 dark:border-gray-800 items-center"
-                  )}>
-                  <img
-                    className='flex-shrink-0 -mt-0.5 h-14 w-14'
-                    src={item.image}
-                    alt={item.name}
-                  />
+              {items.length ? (
+                items?.map((item) => (
+                  <div
+                    key={item.id}
+                    onClick={() => setSelected(item)}
+                    tabIndex={0}
+                    className={classNames(
+                      item === selected
+                        ? "bg-gray-100 dark:bg-gray-800"
+                        : "hover:bg-gray-100 dark:hover:bg-gray-800",
+                      "cursor-pointer flex p-4 border-b border-gray-200 dark:border-gray-800 items-center"
+                    )}>
+                    <img
+                      className='flex-shrink-0 -mt-0.5 h-14 w-14'
+                      src={item.image}
+                      alt={item.name}
+                    />
+                    <div className='ml-3 text-sm overflow-hidden'>
+                      <p className='text-base font-semibold text-gray-900 dark:text-gray-100 truncate'>
+                        {item.name}
+                      </p>
+                      <p className='mt-1 text-sm text-gray-600 dark:text-gray-300 truncate'>
+                        {item.data.description}
+                      </p>
+                    </div>
+                  </div>
+                ))
+              ) : (
+                <div className='flex p-4 border-b border-gray-200 dark:border-gray-800 items-center'>
                   <div className='ml-3 text-sm overflow-hidden'>
                     <p className='text-base font-semibold text-gray-900 dark:text-gray-100 truncate'>
-                      {item.name}
+                      Empty
                     </p>
                     <p className='mt-1 text-sm text-gray-600 dark:text-gray-300 truncate'>
-                      {item.data.description}
+                      No items to display.
                     </p>
                   </div>
                 </div>
-              ))}
+              )}
             </div>
           </nav>
         </aside>

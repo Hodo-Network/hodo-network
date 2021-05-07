@@ -120,7 +120,7 @@ export default function LeafletMap({
       zoom={3}
       scrollWheelZoom={true}>
       <TileLayer url={tileLayerUrl} />
-      <LocationMarker selected={selected} />
+      {selected && <LocationMarker selected={selected} />}
       {collectibles?.map((item) => (
         <ItemMarker item={item} key={item.id} />
       ))}

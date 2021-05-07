@@ -1,3 +1,4 @@
+const TEXT_ADD_FUNDS = "Add Funds";
 const TEXT_ADDRESS = "Address";
 const TEXT_ALL = "All";
 const TEXT_AVAILABLE_TO_GEO = "Available in your area";
@@ -24,6 +25,7 @@ const TEXT_REGION = "My Region";
 const TEXT_SWITCH = "Switch Networks";
 
 export {
+  TEXT_ADD_FUNDS,
   TEXT_ADDRESS,
   TEXT_ALL,
   TEXT_AVAILABLE_TO_GEO,

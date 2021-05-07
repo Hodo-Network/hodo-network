@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useWeb3React } from "@web3-react/core";
 import { Web3Provider } from "@ethersproject/providers";
-import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useEagerConnect, useInactiveListener } from "../hooks";
 import { Navbar, Sidebar } from "../components";
 import * as paths from "../constants/routes";
@@ -12,7 +12,6 @@ import {
   Explore,
   Home,
   Faq,
-  Onboarding,
   Roadmap,
   Wallet,
 } from "./index";
@@ -48,8 +47,7 @@ export default function App() {
           <Navbar miniSidebar={miniSidebar} />
 
           <Switch>
-            <Route path={paths.ROUTE_DEFAULT} exact component={Onboarding} />
-            <Route path={paths.ROUTE_HOME} exact component={Home} />
+            <Route path={paths.ROUTE_DEFAULT} exact component={Home} />
             <Route
               path={paths.ROUTE_COLLECTIONS}
               exact
@@ -61,6 +59,9 @@ export default function App() {
             <Route path={paths.ROUTE_WALLET} exact component={Wallet} />
             <Route path={paths.ROUTE_ROADMAP} exact component={Roadmap} />
             <Route path={paths.ROUTE_FAQ} exact component={Faq} />
+            {/* {routes.map(({ path, Component, exact }, key) => (
+                <Route exact={exact} path={path} key={key} render={Component} />
+              ))} */}
           </Switch>
         </div>
       </Router>

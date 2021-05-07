@@ -3,9 +3,8 @@ import {
   Collection,
   Collections,
   Explore,
-  Home,
   Faq,
-  Onboarding,
+  Home,
   Roadmap,
   Wallet,
 } from "./index";
@@ -14,11 +13,10 @@ import * as paths from "../constants/routes";
 const routes = [
   {
     path: paths.ROUTE_DEFAULT,
-    name: "Onboarding",
-    Component: Onboarding,
+    name: "Home",
+    Component: Home,
     exact: true,
   },
-  { path: paths.ROUTE_HOME, name: "Home", Component: Home, exact: true },
   {
     path: paths.ROUTE_COLLECTIONS,
     name: "Collections",
@@ -37,7 +35,6 @@ const routes = [
     Component: Collectible,
     exact: false,
   },
-
   {
     path: paths.ROUTE_EXPLORE,
     name: "Explore",

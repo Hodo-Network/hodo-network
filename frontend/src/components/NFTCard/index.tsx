@@ -20,7 +20,7 @@ export default function NFTCard({
   return (
     <NavLink
       to={`${ROUTE_COLLECTIONS}/${category}/${id}`}
-      className={`${className} flex flex-col rounded-md shadow overflow-hidden transition-transform duration-300 transform hover:-translate-y-2`}>
+      className={`${className} flex flex-col rounded-md shadow overflow-hidden transition-transform duration-300 transform hover:-translate-y-1`}>
       <div className='flex-shrink-0'>
         <img className='h-54 w-full object-scale-down' src={image} alt={name} />
       </div>

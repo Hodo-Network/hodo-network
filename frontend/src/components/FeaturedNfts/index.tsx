@@ -1,25 +1,30 @@
-import { useEffect, useState } from "react";
-import { NFTCard } from "../index";
+import React from "react";
+import ReactLoading from "react-loading";
+import { CollectionCardEmpty, NFTCard } from "../index";
 import { NFT } from "../../typings/nft";
 
 export default function FeaturedNfts({
-  getItems,
-  type,
+  loading,
+  items,
 }: {
-  getItems: Function;
-  type: string;
+  loading: boolean;
+  items: Array<NFT>;
 }) {
-  const [items, setItems] = useState<Array<NFT>>([]);
-
-  useEffect(() => {
-    setItems(getItems(type));
-  }, [getItems, type]);
-
   return (
     <>
-      {items?.map((item: NFT, index: number) => (
-        <NFTCard key={index} nft={item} />
-      ))}
+      {loading ? (
+        <ReactLoading
+          type='bubbles'
+          color='currentColor'
+          className='text-blue-600 dark:text-blue-500'
+        />
+      ) : items.length ? (
+        items.map((item: NFT, index: number) => (
+          <NFTCard key={index} nft={item} />
+        ))
+      ) : (
+        <CollectionCardEmpty />
+      )}
     </>
   );
 }

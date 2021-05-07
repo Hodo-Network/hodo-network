@@ -1,5 +1,6 @@
 import { NFT, NFTCategory, NFTRarity, Vendor } from '../typings/nft';
 // https://www.latlong.net/
+// https://gateway.pinata.cloud/ipfs/QmWdDjeh7R5K9w7uzh7bSMgmuDoNTMYXVY5ER69LdHwWc4
 
 export const collectibles: Array<NFT> = [
     {
@@ -10,7 +11,7 @@ export const collectibles: Array<NFT> = [
         owner: '0x',
         name: "Cape Town",
         category: NFTCategory.CAPITAL,
-        image: "https://gateway.pinata.cloud/ipfs/QmWdDjeh7R5K9w7uzh7bSMgmuDoNTMYXVY5ER69LdHwWc4",
+        image: "https://images.unsplash.com/photo-1452838269443-c86e6a3134f9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&q=80",
         data: {
             description: 'Capital City of South Africa.',
             rarity: NFTRarity.EPIC,

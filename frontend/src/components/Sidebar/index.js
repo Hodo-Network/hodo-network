@@ -1,20 +1,10 @@
 import React from "react";
-import { NavLink, useRouteMatch } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { MenuAlt2Icon } from "@heroicons/react/solid";
 import { navigation } from "../../constants/navigation";
 import { Footer } from "../index";
 
 export default function Sidebar({ miniSidebar, toggle }) {
-  // TODO: remove later. hidden for onboarding
-  const match = useRouteMatch({
-    path: "/",
-    exact: true,
-  });
-
-  if (match) {
-    return null;
-  }
-
   return (
     <div
       className={`hidden md:flex flex-col border-r border-gray-700 dark:border-gray-800 bg-gray-800 dark:bg-gray-900 ${
