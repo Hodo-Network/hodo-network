@@ -4,7 +4,7 @@ import { ROUTE_COLLECTIONS } from "../../constants/routes";
 
 export default function Hero() {
   return (
-    <div className='p-4 sm:p-8 lg:p-12 -mx-4 sm:-mx-8 lg:-mx-12'>
+    <div className='p-4 sm:p-8 -mx-4 sm:-mx-8'>
       <div className='mx-auto max-w-8xl py-8 md:py-12 lg:pb-20 text-center'>
         <h1 className='tracking-tight font-extrabold text-gray-900 dark:text-white text-4xl sm:text-5xl xl:text-6xl'>
           <span>Hodo </span>
