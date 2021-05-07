@@ -3,7 +3,7 @@ import { useParams } from "react-router";
 import { useWeb3React } from "@web3-react/core";
 import { ethers } from "ethers";
 import BN from "bn.js";
-import { RarityBadge } from "../../components";
+import { RarityBadge, NFTList } from "../../components";
 import { collectibles } from "../../data";
 import { WALLET_ADDRESS } from "../../constants";
 import {
@@ -19,8 +19,11 @@ import ContentWrapper from "../ContentWrapper";
 
 export default function Collectible() {
   const { account } = useWeb3React();
-  const { id } = useParams();
+  const { id, name } = useParams();
   const [asset, setAsset] = useState();
+  const collection = collectibles.filter((item) => {
+    return item.category === name;
+  });
 
   const getAsset = (id) => {
     return collectibles.filter((asset) => {
@@ -61,91 +64,98 @@ export default function Collectible() {
   return (
     <ContentWrapper>
       {asset && (
-        <div className='p-4 sm:p-8 max-w-8xl'>
-          <div className='md:flex'>
-            <div className='md:w-1/3 md:max-w-lg mb-6'>
-              <div className='w-60 md:w-auto'>
-                <div className='aspect-w-1 aspect-h-1'>
-                  <img src={asset.image} alt={asset.name} />
+        <div className='max-w-8xl h-full'>
+          <div className='flex flex-row items-stretch h-full'>
+            <div className='flex-1 lg:flex p-4 sm:p-8'>
+              <div className='lg:w-1/3 2xl:w-1/2 lg:max-w-lg mb-6'>
+                <div className='w-60 lg:w-auto'>
+                  <div className='aspect-w-1 aspect-h-1'>
+                    <img src={asset.image} alt={asset.name} />
+                  </div>
+                </div>
+              </div>
+
+              <div className='lg:w-2/3 2xl:w-1/2 lg:pl-8'>
+                <div className='flex flex-wrap items-center'>
+                  <h3 className='text-3xl uppercase font-medium text-gray-900 dark:text-white'>
+                    {asset.name}
+                  </h3>
+
+                  <RarityBadge
+                    rarity={asset.data.rarity}
+                    className='mt-1 ml-4'
+                  />
+                </div>
+
+                <div className='mt-8'>
+                  <h1 className='text-sm uppercase font-medium text-gray-500 dark:text-gray-400'>
+                    {TEXT_COLLECTION}
+                  </h1>
+                  <p className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis capitalize'>
+                    {asset.category}
+                  </p>
+                </div>
+
+                <div className='mt-8'>
+                  <h1 className='text-sm uppercase font-medium text-gray-500 dark:text-gray-400'>
+                    {TEXT_DESCRIPTION}
+                  </h1>
+                  <p className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis'>
+                    {asset.data.description}
+                  </p>
+                </div>
+
+                <div className='mt-8'>
+                  <h1 className='text-sm uppercase font-medium text-gray-500 dark:text-gray-400'>
+                    {TEXT_ID}
+                  </h1>
+                  <p className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis'>
+                    {asset.id}
+                  </p>
+                </div>
+
+                <div className='mt-8'>
+                  <h1 className='text-sm uppercase font-medium text-gray-500 dark:text-gray-400'>
+                    {TEXT_OWNER}
+                  </h1>
+                  <p className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis capitalize'>
+                    {asset.owner}
+                  </p>
+                </div>
+
+                <div className='mt-8'>
+                  <h1 className='text-sm uppercase font-medium text-gray-500 dark:text-gray-400'>
+                    {TEXT_COORDS}
+                  </h1>
+                  <p className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis'>
+                    [{asset.data.location.lat}, {asset.data.location.long}]
+                  </p>
+                </div>
+
+                <div className='mt-8'>
+                  <h1 className='text-sm uppercase font-medium text-gray-500 dark:text-gray-400'>
+                    {TEXT_COST}
+                  </h1>
+                  <p className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis'>
+                    {asset.price.value} {asset.price.units}
+                    {/* {(chainId && NATIVE_CURRENCY[chainId]) || NATIVE_CURRENCY[0]} */}
+                  </p>
+                </div>
+
+                <div className='mt-8 sm:flex'>
+                  <div>
+                    <button
+                      onClick={buyAsset}
+                      disabled={true}
+                      className='btn w-full btn--disabled'>
+                      {TEXT_BUY}
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div className='md:w-2/3 md:pl-8'>
-              <div className='flex flex-wrap items-center'>
-                <h3 className='text-3xl uppercase font-medium text-gray-900 dark:text-white'>
-                  {asset.name}
-                </h3>
-
-                <RarityBadge rarity={asset.data.rarity} className='mt-1 ml-4' />
-              </div>
-
-              <div className='mt-8'>
-                <h1 className='text-sm uppercase font-medium text-gray-500 dark:text-gray-400'>
-                  {TEXT_COLLECTION}
-                </h1>
-                <p className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis capitalize'>
-                  {asset.category}
-                </p>
-              </div>
-
-              <div className='mt-8'>
-                <h1 className='text-sm uppercase font-medium text-gray-500 dark:text-gray-400'>
-                  {TEXT_DESCRIPTION}
-                </h1>
-                <p className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis'>
-                  {asset.data.description}
-                </p>
-              </div>
-
-              <div className='mt-8'>
-                <h1 className='text-sm uppercase font-medium text-gray-500 dark:text-gray-400'>
-                  {TEXT_ID}
-                </h1>
-                <p className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis'>
-                  {asset.id}
-                </p>
-              </div>
-
-              <div className='mt-8'>
-                <h1 className='text-sm uppercase font-medium text-gray-500 dark:text-gray-400'>
-                  {TEXT_OWNER}
-                </h1>
-                <p className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis capitalize'>
-                  {asset.owner}
-                </p>
-              </div>
-
-              <div className='mt-8'>
-                <h1 className='text-sm uppercase font-medium text-gray-500 dark:text-gray-400'>
-                  {TEXT_COORDS}
-                </h1>
-                <p className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis'>
-                  [{asset.data.location.lat}, {asset.data.location.long}]
-                </p>
-              </div>
-
-              <div className='mt-8'>
-                <h1 className='text-sm uppercase font-medium text-gray-500 dark:text-gray-400'>
-                  {TEXT_COST}
-                </h1>
-                <p className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis'>
-                  {asset.price.value} {asset.price.units}
-                  {/* {(chainId && NATIVE_CURRENCY[chainId]) || NATIVE_CURRENCY[0]} */}
-                </p>
-              </div>
-
-              <div className='mt-8 sm:flex'>
-                <div>
-                  <button
-                    onClick={buyAsset}
-                    disabled={true}
-                    className='btn w-full btn--disabled'>
-                    {TEXT_BUY}
-                  </button>
-                </div>
-              </div>
-            </div>
+            <NFTList items={collection} />
           </div>
         </div>
       )}

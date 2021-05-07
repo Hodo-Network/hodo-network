@@ -14,6 +14,7 @@ import Logo from "./Logo";
 import Navbar from "./Navbar";
 import NetworkSwitch from "./NetworkSwitch";
 import NFTCard from "./NFTCard";
+import NFTList from "./NFTList";
 import Notification from "./Notification";
 import OnboardingButton from "./OnboardingButton";
 import RarityBadge from "./RarityBadge";
@@ -43,6 +44,7 @@ export {
   Navbar,
   NetworkSwitch,
   NFTCard,
+  NFTList,
   Notification,
   OnboardingButton,
   RarityBadge,
