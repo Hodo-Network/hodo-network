@@ -16,6 +16,7 @@ import NFTCard from "./NFTCard";
 import Notification from "./Notification";
 import OnboardingButton from "./OnboardingButton";
 import RarityBadge from "./RarityBadge";
+import SearchBar from "./SearchBar";
 import SelectCollection from "./SelectCollection";
 import Sidebar from "./Sidebar";
 import SiteAlert from "./SiteAlert";
@@ -43,6 +44,7 @@ export {
   Notification,
   OnboardingButton,
   RarityBadge,
+  SearchBar,
   SelectCollection,
   Sidebar,
   SiteAlert,

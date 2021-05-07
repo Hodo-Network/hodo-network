@@ -2,7 +2,6 @@ import React, { Fragment, useState } from "react";
 import { NavLink, useRouteMatch } from "react-router-dom";
 import { useWeb3React } from "@web3-react/core";
 import { Dialog, Transition } from "@headlessui/react";
-import { SearchIcon } from "@heroicons/react/solid";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import { navigation } from "../../constants/navigation";
 import {
@@ -10,6 +9,7 @@ import {
   DarkToggle,
   Footer,
   OnboardingButton,
+  SearchBar,
 } from "../index";
 
 export default function Navbar({ miniSidebar }) {
@@ -36,21 +36,8 @@ export default function Navbar({ miniSidebar }) {
         </div>
 
         {enableSearch && (
-          <div className='min-w-0 hidden md:flex-1'>
-            <div className='max-w-2xl relative text-gray-400 focus-within:text-gray-500 hidden'>
-              <label htmlFor='search' className='sr-only'>
-                Search
-              </label>
-              <input
-                id='search'
-                type='search'
-                placeholder='Search'
-                className='block w-full border-transparent pl-12 placeholder-gray-500 focus:border-transparent sm:text-sm focus:ring-0 dark:bg-gray-900'
-              />
-              <div className='pointer-events-none absolute inset-y-0 left-0 flex items-center justify-center pl-4'>
-                <SearchIcon className='h-5 w-5' aria-hidden='true' />
-              </div>
-            </div>
+          <div className='min-w-0 hidden md:flex flex-1'>
+            <SearchBar />
           </div>
         )}
 
@@ -115,20 +102,7 @@ export default function Navbar({ miniSidebar }) {
 
               {enableSearch && (
                 <div className='mt-2 max-w-8xl mx-auto px-4 sm:px-6'>
-                  <div className='relative text-gray-400 focus-within:text-gray-500'>
-                    <label htmlFor='search' className='sr-only'>
-                      Search all assets
-                    </label>
-                    <input
-                      id='search'
-                      type='search'
-                      placeholder='Search all assets'
-                      className='block w-full border-gray-300 rounded-md pl-10 placeholder-gray-500 focus:border-blue-600 focus:ring-blue-600'
-                    />
-                    <div className='absolute inset-y-0 left-0 flex items-center justify-center pl-3'>
-                      <SearchIcon className='h-5 w-5' aria-hidden='true' />
-                    </div>
-                  </div>
+                  <SearchBar />
                 </div>
               )}
 
