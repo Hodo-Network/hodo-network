@@ -1,16 +1,19 @@
 import { cleanup } from "@testing-library/react";
-import ReactDOM from "react-dom";
-import renderer from "react-test-renderer";
+import { MemoryRouter as Router } from "react-router-dom";
+import { create } from "react-test-renderer";
 import NFTCard from "./index";
+import { collectibles } from "../../data/collectibles";
+
+const nft = collectibles[0];
 
 afterEach(cleanup);
 
-test("renders without crashing", () => {
-  const div = document.createElement("div");
-  ReactDOM.render(<NFTCard />, div);
-});
+test("renders correctly", () => {
+  let tree = create(
+    <Router initialEntries={["/"]}>
+      <NFTCard nft={nft} />
+    </Router>
+  );
 
-test("matches snapshot", () => {
-  const tree = renderer.create(<NFTCard />).toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(tree.toJSON()).toMatchSnapshot();
 });

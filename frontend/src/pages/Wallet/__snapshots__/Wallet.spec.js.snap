@@ -4,57 +4,12 @@ exports[`matches snapshot 1`] = `
 <div
   className="p-4 sm:p-8 max-w-8xl"
 >
-  <div>
-    <h1
-      className="text-sm uppercase font-medium text-gray-500 dark:text-gray-400"
-    >
-      Network
-    </h1>
-    <p
-      className="mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis"
-    />
-  </div>
-  <div
-    className="mt-4 flex space-x-4"
+  <button
+    className="btn disabled:opacity-50 disabled:cursor-not-allowed"
+    disabled={false}
+    onClick={[Function]}
   >
-    <button
-      className="btn disabled:opacity-50 disabled:cursor-not-allowed"
-      disabled={false}
-      onClick={[Function]}
-    >
-      Avalanche
-    </button>
-    <button
-      className="btn disabled:opacity-50 disabled:cursor-not-allowed"
-      disabled={false}
-      onClick={[Function]}
-    >
-      Fuji Testnet
-    </button>
-  </div>
-  <div
-    className="mt-8"
-  >
-    <h1
-      className="text-sm uppercase font-medium text-gray-500 dark:text-gray-400"
-    >
-      Address
-    </h1>
-    <p
-      className="mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis"
-    />
-  </div>
-  <div
-    className="mt-8"
-  >
-    <h1
-      className="text-sm uppercase font-medium text-gray-500 dark:text-gray-400"
-    >
-      Balance
-    </h1>
-    <div
-      className="mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis"
-    />
-  </div>
+    Install MetaMask
+  </button>
 </div>
 `;

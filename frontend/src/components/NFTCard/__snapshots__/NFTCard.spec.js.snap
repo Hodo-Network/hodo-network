@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<a
+  aria-current={null}
+  className="undefined flex flex-col rounded-md shadow overflow-hidden transition-transform duration-300 transform hover:-translate-y-2"
+  href="/collections/capital/BZTDWRaK6rQmnSLrrq4PANBeueYfDRFkpHV9KcMtjxL19wsJ1"
+  onClick={[Function]}
+>
+  <div
+    className="flex-shrink-0"
+  >
+    <img
+      alt="Cape Town"
+      className="h-54 w-full object-scale-down"
+      src="https://gateway.pinata.cloud/ipfs/QmWdDjeh7R5K9w7uzh7bSMgmuDoNTMYXVY5ER69LdHwWc4"
+    />
+  </div>
+  <div
+    className="flex-1 bg-white dark:bg-gray-800 p-4 flex flex-col justify-between"
+  >
+    <div
+      className="flex-1"
+    >
+      <p
+        className="text-base font-semibold text-gray-900 dark:text-gray-100"
+      >
+        Cape Town
+      </p>
+      <p
+        className="mt-1 text-sm text-gray-600 dark:text-gray-300"
+      >
+        Capital City of South Africa.
+      </p>
+    </div>
+    <div
+      className="mt-6 flex items-center justify-between"
+    >
+      <div
+        className="flex-shrink-0"
+      >
+        <span
+          className="inline-flex items-center px-2.5 py-1 rounded-md text-sm font-medium capitalize bg-yellow-100 text-yellow-800 undefined"
+        >
+          epic
+        </span>
+      </div>
+      <div
+        className="ml-3 text-sm font-medium text-green-600 dark:text-green-500"
+      >
+        1
+         
+        AVAX
+      </div>
+    </div>
+  </div>
+</a>
+`;
