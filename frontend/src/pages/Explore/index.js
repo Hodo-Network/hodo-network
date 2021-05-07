@@ -37,7 +37,7 @@ export default function Explore() {
                 <div
                   key={item.id}
                   onClick={() => setSelected(item)}
-                  tabIndex='0'
+                  tabIndex={0}
                   className={classNames(
                     item === selected
                       ? "bg-gray-100 dark:bg-gray-800"
