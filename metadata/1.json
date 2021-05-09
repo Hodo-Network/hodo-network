@@ -1,0 +1,12 @@
+{
+    "name": "Afghanistan Epic",
+    "description": "Epic version of the Afghanistan country NFT.",
+    "image": "https://gateway.pinata.cloud/ipfs/QmWbUonVdzNyCMqAdFC2URpc9GXV5NwdeHbitxDcRzydfY",
+    "properties": {
+        "rarity": "epic",
+        "coordinates": {
+            "lat": 33.939110,
+            "long": 67.709953
+        }
+    }
+}

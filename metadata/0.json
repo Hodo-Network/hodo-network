@@ -1,0 +1,12 @@
+{
+    "name": "Afghanistan Common",
+    "description": "Common version of the Afghanistan country NFT.",
+    "image": "https://gateway.pinata.cloud/ipfs/QmQBSaJvXv3SfYMpEEyVzhtUCquhTFxvo5F7gvhLRGvMuB",
+    "properties": {
+        "rarity": "common",
+        "coordinates": {
+            "lat": 33.939110,
+            "long": 67.709953
+        }
+    }
+}
