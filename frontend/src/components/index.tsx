@@ -5,6 +5,7 @@ import CollectionCardEmpty from "./CollectionCardEmpty";
 import ConnectionBadge from "./ConnectionBadge";
 import DarkToggle from "./DarkToggle";
 import EthBalance from "./EthBalance";
+import FaqList from "./FaqList";
 import FeaturedNfts from "./FeaturedNfts";
 import FeaturedPanel from "./FeaturedPanel";
 import Footer from "./Footer";
@@ -36,6 +37,7 @@ export {
   ConnectionBadge,
   DarkToggle,
   EthBalance,
+  FaqList,
   FeaturedNfts,
   FeaturedPanel,
   Footer,
