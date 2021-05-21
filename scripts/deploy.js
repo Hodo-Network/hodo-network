@@ -10,7 +10,7 @@ async function main() {
     );
   }
 
-  // ethers is avaialble in the global scope
+  // ethers is available in the global scope
   const [deployer] = await ethers.getSigners();
   console.log(
     "Deploying the contracts with the account:",
@@ -19,17 +19,17 @@ async function main() {
 
   console.log("Account balance:", (await deployer.getBalance()).toString());
 
-  const Token = await ethers.getContractFactory("Token");
-  const token = await Token.deploy();
-  await token.deployed();
+  const CountryCollection = await ethers.getContractFactory("CountryCollection");
+  const collection = await CountryCollection.deploy();
+  await collection.deployed();
 
-  console.log("Token address:", token.address);
+  console.log("CountryCollection address:", collection.address);
 
   // We also save the contract's artifacts and address in the frontend directory
-  saveFrontendFiles(token);
+  saveFrontendFiles(collection);
 }
 
-function saveFrontendFiles(token) {
+function saveFrontendFiles(collection) {
   const fs = require("fs");
   const contractsDir = __dirname + "/../frontend/src/contracts";
 
@@ -39,14 +39,14 @@ function saveFrontendFiles(token) {
 
   fs.writeFileSync(
     contractsDir + "/contract-address.json",
-    JSON.stringify({ Token: token.address }, undefined, 2)
+    JSON.stringify({ CountryCollection: collection.address }, undefined, 2)
   );
 
-  const TokenArtifact = artifacts.readArtifactSync("Token");
+  const CountryCollectionArtifact = artifacts.readArtifactSync("CountryCollection");
 
   fs.writeFileSync(
-    contractsDir + "/Token.json",
-    JSON.stringify(TokenArtifact, null, 2)
+    contractsDir + "/CountryCollection.json",
+    JSON.stringify(CountryCollectionArtifact, null, 2)
   );
 }
 
