@@ -13,6 +13,8 @@ import Hero from "./Hero";
 import LeafletMap from "./LeafletMap";
 import LocationButton from "./LocationButton";
 import Logo from "./Logo";
+import MenuClosedIcon from "./MenuClosedIcon";
+import MenuOpenIcon from "./MenuOpenIcon";
 import Navbar from "./Navbar";
 import NetworkSwitch from "./NetworkSwitch";
 import NFTCard from "./NFTCard";
@@ -45,6 +47,8 @@ export {
   LeafletMap,
   LocationButton,
   Logo,
+  MenuClosedIcon,
+  MenuOpenIcon,
   Navbar,
   NetworkSwitch,
   NFTCard,

@@ -1,8 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { MenuAlt2Icon } from "@heroicons/react/solid";
 import { navigation } from "../../constants/navigation";
-import { Footer } from "../index";
+import { Footer, MenuClosedIcon, MenuOpenIcon } from "../index";
 
 export default function Sidebar({ miniSidebar, toggle }) {
   return (
@@ -15,11 +14,24 @@ export default function Sidebar({ miniSidebar, toggle }) {
           className={`flex items-center h-full p-3 ${
             miniSidebar && "justify-center"
           }`}>
-          <button
-            className='text-gray-200 rounded-md px-4 py-3 focus:outline-none'
-            onClick={toggle}>
-            <MenuAlt2Icon className='w-6 h-6' />
-          </button>
+          {miniSidebar ? (
+            <button
+              type='button'
+              className='text-gray-200 px-4 py-3 focus:outline-none'
+              aria-label='Toggle sidebar'
+              onClick={toggle}>
+              <MenuClosedIcon className='w-6 h-6' />
+            </button>
+          ) : (
+            <button
+              type='button'
+              className='text-gray-200 px-4 py-3 focus:outline-none'
+              aria-label='Toggle sidebar'
+              onClick={toggle}>
+              <MenuOpenIcon className='w-6 h-6' />
+            </button>
+          )}
+
           <span
             className={`-ml-1 font-bold text-xl text-white ${
               miniSidebar && "sr-only"
