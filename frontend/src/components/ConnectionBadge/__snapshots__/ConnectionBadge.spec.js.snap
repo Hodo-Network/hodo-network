@@ -2,7 +2,7 @@
 
 exports[`matches snapshot 1`] = `
 <div
-  className="flex text-xs font-medium"
+  className="flex text-xs font-medium relative"
 >
   <span
     className="inline-flex items-center px-3 py-1.5 rounded-l-md border border-green-500 bg-green-50 text-green-700"
@@ -20,7 +20,7 @@ exports[`matches snapshot 1`] = `
     </svg>
   </span>
   <span
-    className="inline-flex px-3 py-1.5 w-48 overflow-hidden rounded-r-md border border-l-0 border-green-500 bg-green-50 text-green-700 hover:bg-green-100 cursor-pointer"
+    className="inline-flex items-center px-3 py-1.5 w-48 overflow-hidden rounded-r-md border border-l-0 border-green-500 bg-green-50 text-green-700 hover:bg-green-100 cursor-pointer"
     onClick={[Function]}
   >
     <span
