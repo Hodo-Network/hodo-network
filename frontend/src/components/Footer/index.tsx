@@ -31,7 +31,7 @@ export default function Footer() {
     },
     discord: {
       show: true,
-      href: "https://discord.gg/zce8FcpA",
+      href: "https://discord.gg/4TZNZy5Eaa",
       title: "Discord",
     },
     email: {
