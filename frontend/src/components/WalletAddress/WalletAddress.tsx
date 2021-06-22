@@ -1,7 +1,11 @@
 import React from "react";
 import { TEXT_ADDRESS } from "../../constants/text";
 
-export default function WalletAddress({ address }: { address: string }) {
+export interface WalletAddressProps {
+  address: string;
+}
+
+export const WalletAddress: React.FC<WalletAddressProps> = ({ address }) => {
   return (
     <div>
       <h1 className='text-sm uppercase font-medium text-gray-500 dark:text-gray-400'>
@@ -12,4 +16,4 @@ export default function WalletAddress({ address }: { address: string }) {
       </p>
     </div>
   );
-}
+};
