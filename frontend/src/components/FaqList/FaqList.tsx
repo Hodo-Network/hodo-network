@@ -2,7 +2,11 @@ import React from "react";
 import ReactHtmlParser from "react-html-parser";
 import { FAQ } from "../../typings/faq";
 
-export default function FaqList({ items }: { items: Array<FAQ> }) {
+export interface FaqListProps {
+  items: Array<FAQ>;
+}
+
+export const FaqList: React.FC<FaqListProps> = ({ items }) => {
   return (
     <dl className='space-y-8 divide-y divide-gray-200 dark:divide-gray-800'>
       {items.map((item) => (
@@ -19,4 +23,4 @@ export default function FaqList({ items }: { items: Array<FAQ> }) {
       ))}
     </dl>
   );
-}
+};
