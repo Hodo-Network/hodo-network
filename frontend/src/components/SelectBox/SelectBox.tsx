@@ -31,7 +31,9 @@ export const SelectBox: React.FC<SelectBoxProps> = ({
           </Listbox.Label>
           <div className='mt-1 relative z-40'>
             <Listbox.Button className='bg-white relative w-full border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 sm:text-sm'>
-              <span className='block truncate capitalize'>{selected}</span>
+              <span className='block truncate capitalize'>
+                {selected.name || selected}
+              </span>
               <span className='absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none'>
                 <SelectorIcon
                   className='h-5 w-5 text-gray-400'
@@ -49,7 +51,7 @@ export const SelectBox: React.FC<SelectBoxProps> = ({
               <Listbox.Options
                 static
                 className='absolute mt-1 w-full bg-white shadow-lg max-h-60 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm'>
-                {items?.map((item, index) => (
+                {items.map((item, index) => (
                   <Listbox.Option
                     key={index}
                     className={({ active }) =>
@@ -66,10 +68,10 @@ export const SelectBox: React.FC<SelectBoxProps> = ({
                             selected ? "font-semibold" : "font-normal",
                             "block truncate capitalize"
                           )}>
-                          {item}
+                          {item.name || item}
                         </span>
 
-                        {selected ? (
+                        {selected && (
                           <span
                             className={classNames(
                               active ? "text-white" : "text-blue-600",
@@ -77,7 +79,7 @@ export const SelectBox: React.FC<SelectBoxProps> = ({
                             )}>
                             <CheckIcon className='h-5 w-5' aria-hidden='true' />
                           </span>
-                        ) : null}
+                        )}
                       </>
                     )}
                   </Listbox.Option>
