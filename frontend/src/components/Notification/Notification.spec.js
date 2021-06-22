@@ -1,16 +1,16 @@
 import ReactDOM from "react-dom";
-import { cleanup } from "@testing-library/react";
 import renderer from "react-test-renderer";
-import Notification from "./index";
+import { cleanup } from "@testing-library/react";
+import { Default } from "./Notification.stories";
 
 afterEach(cleanup);
 
 test("renders without crashing", () => {
   const div = document.createElement("div");
-  ReactDOM.render(<Notification />, div);
+  ReactDOM.render(<Default {...Default.args} />, div);
 });
 
 test("matches snapshot", () => {
-  const tree = renderer.create(<Notification />).toJSON();
+  const tree = renderer.create(<Default {...Default.args} />).toJSON();
   expect(tree).toMatchSnapshot();
 });
