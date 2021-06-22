@@ -6,7 +6,6 @@ export interface ButtonProps {
   onClick?: () => void;
   disabled?: boolean;
   backgroundColor?: string;
-  children: any;
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -14,7 +13,6 @@ export const Button: React.FC<ButtonProps> = ({
   size = "medium",
   disabled = false,
   backgroundColor,
-  children,
   ...props
 }) => {
   const mode = primary ? "primary" : "secondary";
@@ -24,8 +22,7 @@ export const Button: React.FC<ButtonProps> = ({
       className={["btn", `btn--${mode}`, `btn--${size}`].join(" ")}
       style={{ backgroundColor }}
       disabled={disabled}
-      {...props}>
-      {children}
-    </button>
+      {...props}
+    />
   );
 };
