@@ -1,9 +1,9 @@
 import React from "react";
 import { SearchIcon } from "@heroicons/react/solid";
 
-export default function SearchBar() {
+export const SearchBar = () => {
   return (
-    <div className='max-w-2xl relative text-gray-400 focus-within:text-gray-500'>
+    <div className='relative text-gray-400 focus-within:text-gray-500'>
       <label htmlFor='search' className='sr-only'>
         Search
       </label>
@@ -18,4 +18,4 @@ export default function SearchBar() {
       </div>
     </div>
   );
-}
+};
