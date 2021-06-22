@@ -1,36 +1,35 @@
 import React from "react";
-import Avalanche from "avalanche";
+import { Button } from "../Button";
+// import Avalanche from "avalanche";
 
-let avalanche = new Avalanche("127.0.0.1", 9650, "https");
+// let avalanche = new Avalanche("127.0.0.1", 9650, "https");
 // const xchain = avalanche.XChain();
 // const cchain = avalanche.CChain();
 // const cKeychain = cchain.keyChain();
 // const cAddressStrings = cchain.keyChain().getAddressStrings();
 // const cChainBlockchainID: string = Defaults.network["12345"].C.blockchainID;
 
-export default function ChainInfo() {
-  const params = {
-    address: "0x6cBEd289596f757fC406eE3AB4aC9E83cFb48B92",
-    blk: "latest",
-    assetID: "3RvKBAmQnfYionFXMfW5P8TDZgZiogKbHjM8cjpu16LKAgF5T",
-  };
+export interface ChainInfoProps {
+  params: any;
+}
+
+export const ChainInfo: React.FC<ChainInfoProps> = ({ params }) => {
   const getBalances = async () => {
     try {
       await window.ethereum
-        .request({
+        ?.request({
           method: "eth_getAssetBalance",
           params: [params],
         })
-        .then((response) => console.log(response))
-        .catch((error) => console.error);
+        .then((response: any) => console.log(response));
     } catch (error) {
       console.log(error);
     }
   };
 
   return (
-    <button className='btn btn--large' onClick={getBalances}>
+    <Button size='large' onClick={getBalances}>
       Get Balances
-    </button>
+    </Button>
   );
-}
+};
