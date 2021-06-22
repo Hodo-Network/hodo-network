@@ -11,33 +11,29 @@ export default {
   },
 } as Meta;
 
-const Template: Story<ButtonProps> = (args) => <Button {...args} />;
+const Template: Story<ButtonProps> = (args) => (
+  <Button {...args}>Button</Button>
+);
 
 export const Primary = Template.bind({});
 Primary.args = {
   primary: true,
-  children: "Button",
 };
 
 export const Secondary = Template.bind({});
-Secondary.args = {
-  children: "Button",
-};
+Secondary.args = {};
 
 export const Large = Template.bind({});
 Large.args = {
   size: "large",
-  children: "Button",
 };
 
 export const Medium = Template.bind({});
 Medium.args = {
   size: "medium",
-  children: "Button",
 };
 
 export const Small = Template.bind({});
 Small.args = {
   size: "small",
-  children: "Button",
 };
