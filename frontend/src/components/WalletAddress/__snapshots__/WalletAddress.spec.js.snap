@@ -9,6 +9,8 @@ exports[`matches snapshot 1`] = `
   </h1>
   <p
     className="mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis"
-  />
+  >
+    0x0000000000000000000000000000000000000000
+  </p>
 </div>
 `;
