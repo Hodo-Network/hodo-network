@@ -1,16 +1,16 @@
 import ReactDOM from "react-dom";
-import { cleanup } from "@testing-library/react";
 import renderer from "react-test-renderer";
-import Breadcrumbs from "./index";
+import { cleanup } from "@testing-library/react";
+import { Home } from "./Breadcrumbs.stories";
 
 afterEach(cleanup);
 
 test("renders without crashing", () => {
   const div = document.createElement("div");
-  ReactDOM.render(<Breadcrumbs />, div);
+  ReactDOM.render(<Home {...Home.args} />, div);
 });
 
 test("matches snapshot", () => {
-  const tree = renderer.create(<Breadcrumbs />).toJSON();
+  const tree = renderer.create(<Home {...Home.args} />).toJSON();
   expect(tree).toMatchSnapshot();
 });
