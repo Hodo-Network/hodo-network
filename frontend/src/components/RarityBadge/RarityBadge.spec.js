@@ -1,16 +1,16 @@
 import ReactDOM from "react-dom";
-import { cleanup } from "@testing-library/react";
 import renderer from "react-test-renderer";
-import RarityBadge from "./index";
+import { cleanup } from "@testing-library/react";
+import { Common } from "./RarityBadge.stories";
 
 afterEach(cleanup);
 
 test("renders without crashing", () => {
   const div = document.createElement("div");
-  ReactDOM.render(<RarityBadge />, div);
+  ReactDOM.render(<Common {...Common.args} />, div);
 });
 
 test("matches snapshot", () => {
-  const tree = renderer.create(<RarityBadge />).toJSON();
+  const tree = renderer.create(<Common {...Common.args} />).toJSON();
   expect(tree).toMatchSnapshot();
 });
