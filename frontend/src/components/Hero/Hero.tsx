@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { ROUTE_COLLECTIONS } from "../../constants/routes";
 
-export default function Hero() {
+export const Hero = () => {
   return (
     <div className='p-4 sm:p-8 -mx-4 sm:-mx-8'>
       <div className='mx-auto max-w-8xl py-8 md:py-12 lg:pb-20 text-center'>
@@ -24,4 +24,4 @@ export default function Hero() {
       </div>
     </div>
   );
-}
+};
