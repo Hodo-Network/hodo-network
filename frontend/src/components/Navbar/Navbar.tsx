@@ -1,9 +1,12 @@
 import React, { Fragment, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useWeb3React } from "@web3-react/core";
+import { Web3Provider } from "@ethersproject/providers";
 import { Dialog, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import { navigation } from "../../constants/navigation";
+import { NETWORK_LABELS_SHORT } from "../../constants";
+
 import {
   ConnectionBadge,
   DarkToggle,
@@ -12,22 +15,27 @@ import {
   SearchBar,
 } from "../index";
 
-export default function Navbar({ miniSidebar }) {
-  const { account } = useWeb3React();
+export interface NavbarProps {
+  hideTitle?: boolean;
+}
+
+export const Navbar = ({ hideTitle }: NavbarProps) => {
+  const { chainId, account } = useWeb3React<Web3Provider>();
   const [menuOpen, setMenuOpen] = useState(false);
   const enableSearch = false;
+  const network = (chainId && NETWORK_LABELS_SHORT[chainId]) || "";
 
   return (
     <header className='flex-shrink-0 bg-white dark:bg-gray-900 text-gray-800 dark:text-white border-b border-gray-200 dark:border-gray-800 flex items-center'>
       <div className='flex-1 flex items-center justify-between py-3 px-4 sm:px-8'>
         <div className='flex items-center'>
-          <span className={`font-bold text-xl ${!miniSidebar && "md:hidden"}`}>
+          <span className={`font-bold text-xl ${hideTitle && "md:hidden"}`}>
             Hodo Network
           </span>
         </div>
 
         {enableSearch && (
-          <div className='min-w-0 hidden md:flex flex-1'>
+          <div className='min-w-0 max-w-2xl hidden md:flex flex-1'>
             <SearchBar />
           </div>
         )}
@@ -35,7 +43,11 @@ export default function Navbar({ miniSidebar }) {
         <div className='ml-10 flex-shrink-0 hidden md:flex items-center space-x-6'>
           <DarkToggle />
 
-          {account ? <ConnectionBadge /> : <OnboardingButton />}
+          {account ? (
+            <ConnectionBadge network={network} account={account} />
+          ) : (
+            <OnboardingButton />
+          )}
         </div>
       </div>
 
@@ -99,7 +111,11 @@ export default function Navbar({ miniSidebar }) {
 
               <div className='flex-1 space-y-2 p-4'>
                 <div className='flex justify-between mb-6 text-gray-900 dark:text-white'>
-                  {account ? <ConnectionBadge /> : <OnboardingButton />}
+                  {account ? (
+                    <ConnectionBadge network={network} account={account} />
+                  ) : (
+                    <OnboardingButton />
+                  )}
                   <DarkToggle />
                 </div>
 
@@ -124,4 +140,4 @@ export default function Navbar({ miniSidebar }) {
       </Transition.Root>
     </header>
   );
-}
+};
