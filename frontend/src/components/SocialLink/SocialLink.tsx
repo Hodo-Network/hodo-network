@@ -1,14 +1,17 @@
-export default function SocialLink({
+import React, { PropsWithChildren } from "react";
+
+export interface SocialLinkProps {
+  href: string;
+  title: string;
+  viewbox?: string;
+}
+
+export const SocialLink: React.FC<PropsWithChildren<SocialLinkProps>> = ({
   href,
   title,
   viewbox,
   children,
-}: {
-  href: string;
-  title: string;
-  viewbox?: string;
-  children: any;
-}) {
+}) => {
   return (
     <a
       href={href}
@@ -25,4 +28,4 @@ export default function SocialLink({
       </svg>
     </a>
   );
-}
+};
