@@ -1,16 +1,16 @@
 import ReactDOM from "react-dom";
-import { cleanup } from "@testing-library/react";
 import renderer from "react-test-renderer";
-import CollectionCard from "./index";
+import { cleanup } from "@testing-library/react";
+import { Default } from "./CollectionCard.stories";
 
 afterEach(cleanup);
 
 test("renders without crashing", () => {
   const div = document.createElement("div");
-  ReactDOM.render(<CollectionCard />, div);
+  ReactDOM.render(<Default {...Default.args} />, div);
 });
 
 test("matches snapshot", () => {
-  const tree = renderer.create(<CollectionCard />).toJSON();
+  const tree = renderer.create(<Default {...Default.args} />).toJSON();
   expect(tree).toMatchSnapshot();
 });

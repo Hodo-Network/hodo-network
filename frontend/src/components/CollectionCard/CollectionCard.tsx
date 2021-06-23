@@ -1,21 +1,21 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Collection } from "../../typings/nft";
 import { ROUTE_COLLECTIONS } from "../../constants/routes";
 
-export default function CollectionCard({
-  collection,
-  className,
-}: {
+export interface CollectionCardProps {
   collection: Collection;
   className?: string;
-}) {
-  const { name, image } = collection;
+}
 
+export const CollectionCard: React.FC<CollectionCardProps> = ({
+  collection: { name, image },
+  className,
+}) => {
   return (
-    <NavLink
+    <Link
       to={`${ROUTE_COLLECTIONS}/${name}`}
-      className={`${className} flex flex-col rounded-md shadow overflow-hidden transition-transform duration-300 transform hover:-translate-y-1`}>
+      className={`flex flex-col rounded-md shadow overflow-hidden transition-transform duration-300 transform hover:-translate-y-1 ${className}`}>
       <div className='flex-shrink-0'>
         <img className='h-54 w-full object-scale-down' src={image} alt={name} />
       </div>
@@ -26,6 +26,6 @@ export default function CollectionCard({
           </p>
         </div>
       </div>
-    </NavLink>
+    </Link>
   );
-}
+};
