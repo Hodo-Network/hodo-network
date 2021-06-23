@@ -3,18 +3,23 @@ import { NavLink } from "react-router-dom";
 import { navigation } from "../../constants/navigation";
 import { Footer, MenuClosedIcon, MenuOpenIcon } from "../index";
 
-export default function Sidebar({ miniSidebar, toggle }) {
+export interface SidebarProps {
+  mini: boolean;
+  toggle: () => void;
+}
+
+export const Sidebar: React.FC<SidebarProps> = ({ mini, toggle }) => {
   return (
     <div
       className={`hidden md:flex flex-col border-r border-gray-700 dark:border-gray-800 bg-gray-800 dark:bg-gray-900 ${
-        miniSidebar ? "w-20" : "w-80"
+        mini ? "w-20" : "w-80"
       }`}>
       <div className='h-16'>
         <div
           className={`flex items-center h-full p-3 ${
-            miniSidebar && "justify-center"
+            mini && "justify-center"
           }`}>
-          {miniSidebar ? (
+          {mini ? (
             <button
               type='button'
               className='text-gray-200 px-4 py-3 focus:outline-none'
@@ -34,7 +39,7 @@ export default function Sidebar({ miniSidebar, toggle }) {
 
           <span
             className={`-ml-1 font-bold text-xl text-white ${
-              miniSidebar && "sr-only"
+              mini && "sr-only"
             }`}>
             Hodo Network
           </span>
@@ -50,14 +55,12 @@ export default function Sidebar({ miniSidebar, toggle }) {
             className='text-gray-400 hover:bg-gray-900 dark:hover:bg-gray-800 flex items-center rounded-md px-4 py-3'
             activeClassName='bg-gray-900 dark:bg-gray-800 text-white'>
             <item.icon className='h-6 w-6' aria-hidden='true' />
-            <span className={miniSidebar ? "sr-only" : "ml-3"}>
-              {item.name}
-            </span>
+            <span className={mini ? "sr-only" : "ml-3"}>{item.name}</span>
           </NavLink>
         ))}
       </nav>
 
-      {!miniSidebar && <Footer />}
+      {!mini && <Footer />}
     </div>
   );
-}
+};
