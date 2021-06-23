@@ -2,7 +2,7 @@ import React from "react";
 import { MoonIcon, SunIcon } from "@heroicons/react/solid";
 import { useDark } from "../../hooks";
 
-export default function DarkToggle() {
+export const DarkToggle = () => {
   const [dark, toggleDark] = useDark();
 
   return (
@@ -17,4 +17,4 @@ export default function DarkToggle() {
       )}
     </button>
   );
-}
+};
