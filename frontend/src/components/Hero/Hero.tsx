@@ -1,8 +1,14 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { ROUTE_COLLECTIONS } from "../../constants/routes";
+import { Button } from "../Button";
 
 export const Hero = () => {
+  const history = useHistory();
+  const onClick = () => {
+    history.push(ROUTE_COLLECTIONS);
+  };
+
   return (
     <div className='p-4 sm:p-8 -mx-4 sm:-mx-8'>
       <div className='mx-auto max-w-8xl py-8 md:py-12 lg:pb-20 text-center'>
@@ -16,9 +22,9 @@ export const Hero = () => {
         </p>
         <div className='mt-8 sm:flex justify-center'>
           <div>
-            <NavLink to={ROUTE_COLLECTIONS} className='btn btn--large w-full'>
+            <Button primary={true} size='large' onClick={onClick}>
               Start Browsing
-            </NavLink>
+            </Button>
           </div>
         </div>
       </div>
