@@ -1,22 +1,25 @@
-import { useCallback, useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import React, { useCallback, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { useWeb3React } from "@web3-react/core";
 import { Web3Provider } from "@ethersproject/providers";
 import { ChevronRightIcon } from "@heroicons/react/solid";
-import { FeaturedNfts } from "..";
+
+import { NFT } from "../../typings/nft";
+import { FeaturedNfts } from "../index";
 import { MESSAGE_VIEW_ALL } from "../../constants/messages";
 import { collectibles } from "../../data";
-import { NFT } from "../../typings/nft";
+import { ROUTE_COLLECTIONS } from "../../constants/routes";
 
-export default function FeaturedPanel({
-  title,
-  to,
-  type,
-}: {
-  title: string;
-  to: string;
+export interface FeaturedPanelProps {
   type: string;
-}) {
+  title: string;
+}
+
+export const FeaturedPanel: React.FC<FeaturedPanelProps> = ({
+  type,
+  title,
+}) => {
+  // TODO: temporary to have chainId
   const { chainId } = useWeb3React<Web3Provider>();
   const [items, setItems] = useState<NFT[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
@@ -25,7 +28,7 @@ export default function FeaturedPanel({
   const getItems = useCallback((val) => {
     const items =
       chainId === 43113
-        ? collectibles.filter((item) => item.category === val)
+        ? collectibles.filter((item) => item.category === val).splice(0, 5)
         : [];
     return items;
   }, []);
@@ -39,15 +42,13 @@ export default function FeaturedPanel({
     <div className='mx-auto max-w-8xl mt-12'>
       <div className='flex justify-between mb-6'>
         <h2 className='font-bold text-xl dark:text-white'>{title}</h2>
-        <NavLink to={to} className='link flex'>
+        <Link to={`${ROUTE_COLLECTIONS}/${type}`} className='link flex'>
           <span className='whitespace-nowrap'>{MESSAGE_VIEW_ALL}</span>
           <ChevronRightIcon className='h-6' />
-        </NavLink>
+        </Link>
       </div>
 
-      <div className='grid gap-4 md:gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6'>
-        <FeaturedNfts items={items} loading={loading} />
-      </div>
+      <FeaturedNfts items={items} loading={loading} />
     </div>
   );
-}
+};
