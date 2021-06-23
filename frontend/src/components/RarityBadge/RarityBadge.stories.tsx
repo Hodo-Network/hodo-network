@@ -6,6 +6,12 @@ import { RarityBadge, RarityBadgeProps } from "./RarityBadge";
 export default {
   title: "Components/RarityBadge",
   component: RarityBadge,
+  argTypes: {
+    rarity: {
+      options: ["common", "rare", "epic"],
+      control: { type: "radio" },
+    },
+  },
 } as Meta;
 
 const Template: Story<RarityBadgeProps> = (args) => <RarityBadge {...args} />;
