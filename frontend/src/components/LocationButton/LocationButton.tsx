@@ -1,25 +1,26 @@
 import { useState } from "react";
 import useGeolocation from "@rooks/use-geolocation";
+import { Button } from "../Button";
 
-export default function LocationButton() {
+export const LocationButton = () => {
   const [when, setWhen] = useState(false);
 
   const geoObj = useGeolocation({
     when,
   });
 
+  const onClick = () => {
+    setWhen(true);
+  };
+
   return (
     <>
-      <button
-        onClick={() => {
-          setWhen(true);
-        }}
-        className='btn btn--large w-full'>
+      <Button primary={false} size='large' onClick={onClick}>
         Get Location
-      </button>
+      </Button>
       <div className='mt-2 text-sm text-gray-500'>
         {geoObj && JSON.stringify(geoObj)}
       </div>
     </>
   );
-}
+};
