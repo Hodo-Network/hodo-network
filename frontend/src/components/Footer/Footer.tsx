@@ -2,7 +2,7 @@ import React from "react";
 import { MailIcon } from "@heroicons/react/solid";
 import { SocialLink } from "../index";
 
-export default function Footer() {
+export const Footer = () => {
   const social = {
     facebook: {
       show: false,
@@ -122,4 +122,4 @@ export default function Footer() {
       </div>
     </div>
   );
-}
+};
