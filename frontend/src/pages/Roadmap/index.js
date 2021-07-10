@@ -17,15 +17,20 @@ const steps = [
         description: "Design of the first NFT series.",
         status: "complete",
       },
+    ],
+  },
+  {
+    heading: "Q2",
+    tasks: [
       {
         name: "Marketplace Development",
         description: "Development of the Marketplace UI.",
         status: "current",
       },
-    ],
+    ]
   },
   {
-    heading: "Q2",
+    heading: "Q3",
     tasks: [
       {
         name: "NFT Smart Contract Development",
@@ -46,7 +51,7 @@ const steps = [
     ],
   },
   {
-    heading: "Q3",
+    heading: "Q4",
     tasks: [
       {
         name: "Addition of more Wallets",
@@ -63,7 +68,7 @@ const steps = [
     ],
   },
   {
-    heading: "Q4",
+    heading: "Q1",
     tasks: [
       {
         name: "Bidding Service",
