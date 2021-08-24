@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "../Button";
+import Button from "../Button";
 // import Avalanche from "avalanche";
 
 // let avalanche = new Avalanche("127.0.0.1", 9650, "https");
@@ -15,9 +15,11 @@ export interface ChainInfoProps {
 
 export const ChainInfo: React.FC<ChainInfoProps> = ({ params }) => {
   const getBalances = async () => {
+    console.log("chaininfo");
     try {
-      await window.ethereum
-        ?.request({
+      // @ts-ignore
+      await ethereum
+        .request({
           method: "eth_getAssetBalance",
           params: [params],
         })

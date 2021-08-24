@@ -1,5 +1,5 @@
 import React from "react";
-import { Badge } from "../Badge/Badge";
+import Badge from "../Badge";
 import { NFTRarity } from "../../typings/nft";
 
 export const EpicBadge = {
@@ -38,5 +38,5 @@ export const RarityBadge: React.FC<RarityBadgeProps> = ({ rarity }) => {
     info = CommonBadge;
   }
 
-  return <Badge label={info.label} size={"medium"} color={info.color} />;
+  return <Badge color={info.color} label={info.label} />;
 };

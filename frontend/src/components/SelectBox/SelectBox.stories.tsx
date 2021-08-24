@@ -1,7 +1,7 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react";
 
-import { SelectBox, SelectBoxProps } from "./SelectBox";
+import SelectBox, { SelectBoxProps } from "./SelectBox";
 import { collections } from "../../data";
 
 export default {

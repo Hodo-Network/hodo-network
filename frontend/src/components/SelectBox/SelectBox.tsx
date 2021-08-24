@@ -9,11 +9,7 @@ export interface SelectBoxProps {
   onChange?: () => void;
 }
 
-export const SelectBox: React.FC<SelectBoxProps> = ({
-  label,
-  items,
-  onChange,
-}) => {
+export default function SelectBox({ label, items, onChange }: SelectBoxProps) {
   const [selected, setSelected] = useState(items[0]);
 
   useEffect(() => {
@@ -91,4 +87,4 @@ export const SelectBox: React.FC<SelectBoxProps> = ({
       )}
     </Listbox>
   );
-};
+}

@@ -1,18 +1,18 @@
 import React from "react";
 import { ExclamationIcon, XIcon } from "@heroicons/react/solid";
 
-export interface AlertProps {
-  hidden: boolean;
+export interface PureAlertProps {
   message: string;
   status: "success" | "warning" | "error";
-  onClose?: () => void;
+  hidden?: boolean;
+  onDismiss?: () => void;
 }
 
-export const Alert: React.FC<AlertProps> = ({
-  hidden,
+export const PureAlert: React.FC<PureAlertProps> = ({
   message,
   status = "warning",
-  onClose,
+  hidden = false,
+  onDismiss,
 }) => {
   let classStyles = {
     container: "",
@@ -68,7 +68,7 @@ export const Alert: React.FC<AlertProps> = ({
           <div className='-mx-1.5 -my-1.5'>
             <button
               className={`inline-flex rounded-md p-1.5 focus:outline-none focus:ring-2 focus:ring-offset-2 ${classStyles.message}`}
-              onClick={onClose}>
+              onClick={onDismiss}>
               <span className='sr-only'>Dismiss</span>
               <XIcon className='h-5 w-5' />
             </button>

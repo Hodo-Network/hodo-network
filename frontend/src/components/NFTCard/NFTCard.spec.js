@@ -1,7 +1,7 @@
-import { cleanup } from "@testing-library/react";
 import { MemoryRouter as Router } from "react-router-dom";
+import { cleanup } from "@testing-library/react";
 import { create } from "react-test-renderer";
-import NFTCard from "./index";
+import { NFTCard } from "./NFTCard";
 import { collectibles } from "../../data/collectibles";
 
 const nft = collectibles[0];

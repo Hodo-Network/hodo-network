@@ -1,20 +1,20 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react";
 
-import { Badge, BadgeProps } from "./Badge";
+import { PureBadge, PureBadgeProps } from "./Badge";
 
 export default {
   title: "UI/Badge",
-  component: Badge,
+  component: PureBadge,
   argTypes: {
     color: {
-      options: ['gray', 'red', 'yellow', 'blue'],
+      options: ["gray", "red", "yellow", "blue"],
       control: { type: "radio" },
     },
   },
 } as Meta;
 
-const Template: Story<BadgeProps> = (args) => <Badge {...args} />;
+const Template: Story<PureBadgeProps> = (args) => <PureBadge {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

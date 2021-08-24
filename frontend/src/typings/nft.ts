@@ -47,7 +47,7 @@ export type Data<V extends Vendor> = V extends Vendor.HODO_NETWORK
 export type NFT<V extends Vendor = any> = {
     id: string;
     contractAddress: string
-    // tokenId: string
+    tokenId: string
     // activeOrderId: string | null
     owner: string
     name: string;

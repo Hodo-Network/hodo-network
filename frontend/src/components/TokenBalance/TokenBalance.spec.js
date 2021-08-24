@@ -1,16 +1,16 @@
 import ReactDOM from "react-dom";
-import { cleanup } from "@testing-library/react";
 import renderer from "react-test-renderer";
-import TokenBalance from "./index";
+import { cleanup } from "@testing-library/react";
+import { Default } from "./TokenBalance.stories";
 
 afterEach(cleanup);
 
 test("renders without crashing", () => {
   const div = document.createElement("div");
-  ReactDOM.render(<TokenBalance />, div);
+  ReactDOM.render(<Default {...Default.args} />, div);
 });
 
 test("matches snapshot", () => {
-  const tree = renderer.create(<TokenBalance />).toJSON();
+  const tree = renderer.create(<Default {...Default.args} />).toJSON();
   expect(tree).toMatchSnapshot();
 });

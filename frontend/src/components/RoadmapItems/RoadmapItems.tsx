@@ -1,4 +1,3 @@
-import React from "react";
 import { CheckIcon } from "@heroicons/react/solid";
 import classNames from "../../utils/classNames";
 import { RoadmapSection } from "../../typings/roadmap";

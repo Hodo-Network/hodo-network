@@ -1,4 +1,5 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
+const colors = require("tailwindcss/colors");
 
 module.exports = {
   // mode: "jit",
@@ -6,6 +7,10 @@ module.exports = {
   purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
   theme: {
     extend: {
+      colors: {
+        gray: colors.coolGray,
+        // gray: colors.gray,
+      },
       maxWidth: {
         "8xl": "120rem",
       },
