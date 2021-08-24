@@ -1,17 +1,15 @@
-import React from "react";
-
-export interface BadgeProps {
+export interface PureBadgeProps {
   size?: "small" | "medium" | "large";
   color?: string;
   label: string;
 }
 
-export const Badge: React.FC<BadgeProps> = ({
+export const PureBadge = ({
   size = "medium",
   color = "gray",
   label,
   ...props
-}) => {
+}: PureBadgeProps) => {
   return (
     <span
       className={[

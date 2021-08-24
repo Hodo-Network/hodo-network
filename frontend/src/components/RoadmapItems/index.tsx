@@ -1,2 +1,2 @@
 import { RoadmapItems } from "./RoadmapItems";
-export { RoadmapItems };
+export default RoadmapItems;

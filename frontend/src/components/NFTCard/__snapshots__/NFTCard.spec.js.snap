@@ -40,7 +40,7 @@ exports[`renders correctly 1`] = `
         className="flex-shrink-0"
       >
         <span
-          className="inline-flex items-center px-2.5 py-1 rounded-md text-sm font-medium capitalize bg-yellow-100 text-yellow-800 undefined"
+          className="inline-flex items-center rounded-md font-medium capitalize badge badge--medium badge--red"
         >
           epic
         </span>

@@ -1,16 +1,16 @@
 import ReactDOM from "react-dom";
-import { cleanup } from "@testing-library/react";
 import renderer from "react-test-renderer";
-import ChainAddButton from "./index";
+import { cleanup } from "@testing-library/react";
+import { Default } from "./ChainAddButton.stories";
 
 afterEach(cleanup);
 
 test("renders without crashing", () => {
   const div = document.createElement("div");
-  ReactDOM.render(<ChainAddButton />, div);
+  ReactDOM.render(<Default {...Default.args} />, div);
 });
 
 test("matches snapshot", () => {
-  const tree = renderer.create(<ChainAddButton />).toJSON();
+  const tree = renderer.create(<Default {...Default.args} />).toJSON();
   expect(tree).toMatchSnapshot();
 });

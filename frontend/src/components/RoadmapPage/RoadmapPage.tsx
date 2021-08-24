@@ -1,6 +1,6 @@
 import React from "react";
 import ContentWrapper from "../../ContentWrapper";
-import { RoadmapItems } from "../RoadmapItems";
+import RoadmapItems from "../RoadmapItems";
 import { roadmap } from "../../data/roadmap";
 
 export const RoadmapPage = () => {

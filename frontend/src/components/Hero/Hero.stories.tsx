@@ -1,14 +1,14 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react";
 
-import { Hero } from "./Hero";
+import { PureHero, PureHeroProps } from "./Hero";
 
 export default {
   title: "Components/Hero",
-  component: Hero,
+  component: PureHero,
 } as Meta;
 
-const Template: Story = (args) => <Hero {...args} />;
+const Template: Story<PureHeroProps> = (args) => <PureHero {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};

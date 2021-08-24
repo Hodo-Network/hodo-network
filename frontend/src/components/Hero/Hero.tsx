@@ -1,16 +1,13 @@
-import React from "react";
-import { useHistory } from "react-router-dom";
-import { ROUTE_COLLECTIONS } from "../../constants/routes";
-import { Button } from "../Button";
+import { Globe } from "../../assets";
+import Button from "../Button";
 
-export const Hero = () => {
-  const history = useHistory();
-  const onClick = () => {
-    history.push(ROUTE_COLLECTIONS);
-  };
+export interface PureHeroProps {
+  onClick?: () => void;
+}
 
+export const PureHero = ({ onClick }: PureHeroProps) => {
   return (
-    <div className='p-4 sm:p-8 -mx-4 sm:-mx-8'>
+    <div className='p-4 sm:p-8 -mx-4 sm:-mx-8 flex items-center'>
       <div className='mx-auto max-w-8xl py-8 md:py-12 lg:pb-20 text-center'>
         <h1 className='tracking-tight font-extrabold text-gray-900 dark:text-white text-4xl sm:text-5xl xl:text-6xl'>
           <span>Hodo </span>
@@ -27,6 +24,10 @@ export const Hero = () => {
             </Button>
           </div>
         </div>
+      </div>
+
+      <div>
+        <img src={Globe} alt='Globe logo' className='max-w-lg' />
       </div>
     </div>
   );

@@ -1,20 +1,19 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
 import { HomeIcon } from "@heroicons/react/outline";
 
 export interface BreadcrumbsProps {
   crumbs: any;
-  hide: boolean;
+  hide?: boolean;
 }
 
 export interface BreadcrumbProps {
   name: string;
   path: string;
-  current: boolean;
-  isHome: boolean;
+  current?: boolean;
+  isHome?: boolean;
 }
 
-export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ crumbs, hide }) => {
+export const Breadcrumbs = ({ crumbs, hide = false }: BreadcrumbsProps) => {
   if (hide || crumbs.length === 0) {
     return null;
   }

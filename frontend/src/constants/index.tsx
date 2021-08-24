@@ -1,13 +1,15 @@
 import ERC20ABI from "../abi/ERC20.abi.json";
+import CountryCollectionABI from "../abi/CountryCollection.abi.json";
 
 export const NetworkContextName = "NETWORK";
 export const GAS_PRICE = 225;
 export const WALLET_ADDRESS = "0x6cBEd289596f757fC406eE3AB4aC9E83cFb48B92";
 export const ZERO_ADDRESS = "0x0000000000000000000000000000000000000000";
 
-export const supportedChainIds = [1, 3, 4, 5, 42, 43113, 43114];
+export const supportedChainIds = [1, 3, 4, 5, 42, 31337, 43113, 43114];
 
 export const ChainId = {
+  LOCALHOST: 31337,
   ETHEREUM: 1,
   FUJI: 43113,
   AVALANCHE: 43114,
@@ -38,12 +40,14 @@ export const AVALANCHE_TESTNET_PARAMS = {
 };
 
 export const NETWORK_LABELS = {
+  [ChainId.LOCALHOST]: "Localhost",
   [ChainId.ETHEREUM]: "Ethereum",
   [ChainId.FUJI]: "Avalanche Fuji Testnet",
   [ChainId.AVALANCHE]: "Avalanche Mainnet C-Chain",
 };
 
 export const NETWORK_LABELS_SHORT = {
+  [ChainId.LOCALHOST]: "Localhost",
   [ChainId.ETHEREUM]: "Ethereum",
   [ChainId.FUJI]: "Fuji",
   [ChainId.AVALANCHE]: "Avalanche",
@@ -51,6 +55,7 @@ export const NETWORK_LABELS_SHORT = {
 
 export const NATIVE_CURRENCY = {
   0: "AVAX", // Default fallback
+  [ChainId.LOCALHOST]: "ETH",
   [ChainId.ETHEREUM]: "ETH",
   [ChainId.FUJI]: "AVAX",
   [ChainId.AVALANCHE]: "AVAX",
@@ -62,6 +67,7 @@ export const Networks = {
   Rinkeby: 4,
   Goerli: 5,
   Kovan: 42,
+  Localhost: 31337,
   Fuji: 43113,
   Avalanche: 43114,
 };
@@ -85,6 +91,29 @@ export const TOKENS_BY_NETWORK: {
       name: "WAVAX",
       decimals: 18,
       abi: ERC20ABI,
+    },
+  ],
+};
+
+export interface IERC1155 {
+  address: string;
+  abi: any;
+}
+
+export const COLLECTIONS_BY_NETWORK: {
+  [key: number]: IERC1155[];
+} = {
+  [Networks.Localhost]: [
+    {
+      address: "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+      abi: CountryCollectionABI,
+    },
+  ],
+  [Networks.Fuji]: [],
+  [Networks.Avalanche]: [
+    {
+      address: "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+      abi: CountryCollectionABI,
     },
   ],
 };
