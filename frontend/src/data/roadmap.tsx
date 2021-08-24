@@ -14,36 +14,45 @@ export const roadmap: Array<RoadmapSection> = [
         description: "Design of the first NFT series.",
         status: "complete",
       },
-      {
-        name: "Marketplace Development",
-        description: "Development of the Marketplace UI.",
-        status: "current",
-      },
     ],
   },
   {
     heading: "Q2",
     tasks: [
       {
-        name: "NFT Smart Contract Development",
-        description: "Development of the Smart Contracts for NFTs.",
-        status: "current",
-      },
-      {
-        name: "NFT Minting",
-        description: "Minting of the NFTs.",
-        status: "upcoming",
-      },
-      {
-        name: "Platform Launch",
-        description:
-          "Launch of the MVP allowing users to buy the first series of NFTs.",
-        status: "upcoming",
+        name: "Marketplace Development",
+        description: "Development of the Marketplace UI.",
+        status: "complete",
       },
     ],
   },
   {
     heading: "Q3",
+    tasks: [
+      {
+        name: "NFT Smart Contract Development",
+        description: "Development of the Smart Contracts for NFTs.",
+        status: "complete",
+      },
+      {
+        name: "Integration of Smart Contracts with the UI",
+        description: "Development of the Smart Contracts for NFTs.",
+        status: "current",
+      },
+      {
+        name: "NFT Minting",
+        description: "Minting of the first series of NFTs.",
+        status: "upcoming",
+      },
+      {
+        name: "Platform Launch",
+        description: "Launch of Hodo Network Marketplace.",
+        status: "upcoming",
+      },
+    ],
+  },
+  {
+    heading: "Q4",
     tasks: [
       {
         name: "Addition of more Wallets",
@@ -60,7 +69,7 @@ export const roadmap: Array<RoadmapSection> = [
     ],
   },
   {
-    heading: "Q4",
+    heading: "Q1",
     tasks: [
       {
         name: "Bidding Service",
