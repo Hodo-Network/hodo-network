@@ -11,14 +11,14 @@ exports[`matches snapshot 1`] = `
     className="mt-2 flex space-x-4"
   >
     <button
-      className="btn disabled:opacity-50 disabled:cursor-not-allowed"
+      className="btn"
       disabled={false}
       onClick={[Function]}
     >
       Avalanche
     </button>
     <button
-      className="btn disabled:opacity-50 disabled:cursor-not-allowed"
+      className="btn"
       disabled={false}
       onClick={[Function]}
     >

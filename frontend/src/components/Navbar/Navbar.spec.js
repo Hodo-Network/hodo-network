@@ -1,17 +1,16 @@
-// import ReactDOM from "react-dom";
-// import { cleanup } from "@testing-library/react";
-// import renderer from "react-test-renderer";
-// import Navbar from "./index";
+import ReactDOM from "react-dom";
+import renderer from "react-test-renderer";
+import { cleanup } from "@testing-library/react";
+import { Default } from "./Navbar.stories";
 
-// afterEach(cleanup);
+afterEach(cleanup);
 
-test.todo("renders without crashing");
-// test.skip("renders without crashing", () => {
-//   const div = document.createElement("div");
-//   ReactDOM.render(<Navbar />, div);
-// });
+test("renders without crashing", () => {
+  const div = document.createElement("div");
+  ReactDOM.render(<Default {...Default.args} />, div);
+});
 
-// test("matches snapshot", () => {
-//   const tree = renderer.create(<Navbar />).toJSON();
-//   expect(tree).toMatchSnapshot();
-// });
+test("matches snapshot", () => {
+  const tree = renderer.create(<Default {...Default.args} />).toJSON();
+  expect(tree).toMatchSnapshot();
+});

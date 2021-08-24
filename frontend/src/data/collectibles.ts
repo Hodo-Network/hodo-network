@@ -6,7 +6,7 @@ export const collectibles: Array<NFT> = [
     {
         id: 'BZTDWRaK6rQmnSLrrq4PANBeueYfDRFkpHV9KcMtjxL19wsJ1',
         contractAddress: '0x0000000000000000000000000000000000000000',
-        // tokenId: 'BZTDWRaK6rQmnSLrrq4PANBeueYfDRFkpHV9KcMtjxL19wsJ1',
+        tokenId: 'BZTDWRaK6rQmnSLrrq4PANBeueYfDRFkpHV9KcMtjxL19wsJ1',
         // activeOrderId: null,
         owner: '0x',
         name: "Cape Town",
@@ -29,7 +29,7 @@ export const collectibles: Array<NFT> = [
     {
         id: 'BZTDWRaK6rQmnSLrrq4PANBeueYfDRFkpHV9KcMtjxL19wsJ2',
         contractAddress: '0x0000000000000000000000000000000000000000',
-        // tokenId: 'BZTDWRaK6rQmnSLrrq4PANBeueYfDRFkpHV9KcMtjxL19wsJ2',
+        tokenId: 'BZTDWRaK6rQmnSLrrq4PANBeueYfDRFkpHV9KcMtjxL19wsJ2',
         // activeOrderId: null,
         owner: '0x',
         name: "Bangkok",
@@ -53,7 +53,7 @@ export const collectibles: Array<NFT> = [
     {
         id: 'BZTDWRaK6rQmnSLrrq4PANBeueYfDRFkpHV9KcMtjxL19wsJ3',
         contractAddress: '0x0000000000000000000000000000000000000000',
-        // tokenId: 'BZTDWRaK6rQmnSLrrq4PANBeueYfDRFkpHV9KcMtjxL19wsJ3',
+        tokenId: 'BZTDWRaK6rQmnSLrrq4PANBeueYfDRFkpHV9KcMtjxL19wsJ3',
         // activeOrderId: null,
         owner: '0x',
         name: "Jakarta",
@@ -77,7 +77,7 @@ export const collectibles: Array<NFT> = [
     {
         id: 'BZTDWRaK6rQmnSLrrq4PANBeueYfDRFkpHV9KcMtjxL19wsJ4',
         contractAddress: '0x0000000000000000000000000000000000000000',
-        // tokenId: 'BZTDWRaK6rQmnSLrrq4PANBeueYfDRFkpHV9KcMtjxL19wsJ4',
+        tokenId: 'BZTDWRaK6rQmnSLrrq4PANBeueYfDRFkpHV9KcMtjxL19wsJ4',
         // activeOrderId: null,
         owner: '0x',
         name: "Guatemala City",
@@ -101,7 +101,7 @@ export const collectibles: Array<NFT> = [
     {
         id: 'BZTDWRaK6rQmnSLrrq4PANBeueYfDRFkpHV9KcMtjxL19wsJ5',
         contractAddress: '0x0000000000000000000000000000000000000000',
-        // tokenId: 'BZTDWRaK6rQmnSLrrq4PANBeueYfDRFkpHV9KcMtjxL19wsJ5',
+        tokenId: 'BZTDWRaK6rQmnSLrrq4PANBeueYfDRFkpHV9KcMtjxL19wsJ5',
         // activeOrderId: null,
         owner: '0x',
         name: "Jamestown",
@@ -125,7 +125,7 @@ export const collectibles: Array<NFT> = [
     {
         id: 'QmQBSaJvXv3SfYMpEEyVzhtUCquhTFxvo5F7gvhLRGvMuB',
         contractAddress: '0x0000000000000000000000000000000000000000',
-        // tokenId: 'QmQBSaJvXv3SfYMpEEyVzhtUCquhTFxvo5F7gvhLRGvMuB',
+        tokenId: 'QmQBSaJvXv3SfYMpEEyVzhtUCquhTFxvo5F7gvhLRGvMuB',
         // activeOrderId: null,
         owner: '0x',
         name: "Afghanistan",
@@ -149,7 +149,7 @@ export const collectibles: Array<NFT> = [
     {
         id: 'QmWbUonVdzNyCMqAdFC2URpc9GXV5NwdeHbitxDcRzydfY',
         contractAddress: '0x0000000000000000000000000000000000000000',
-        // tokenId: 'QmWbUonVdzNyCMqAdFC2URpc9GXV5NwdeHbitxDcRzydfY',
+        tokenId: 'QmWbUonVdzNyCMqAdFC2URpc9GXV5NwdeHbitxDcRzydfY',
         // activeOrderId: null,
         owner: '0x',
         name: "Afghanistan",
@@ -173,7 +173,7 @@ export const collectibles: Array<NFT> = [
     {
         id: 'QmaLAahk2f1Qyvtz171thg85ArETnXyZm47fyepNvy9bnP',
         contractAddress: '0x0000000000000000000000000000000000000000',
-        // tokenId: 'QmaLAahk2f1Qyvtz171thg85ArETnXyZm47fyepNvy9bnP',
+        tokenId: 'QmaLAahk2f1Qyvtz171thg85ArETnXyZm47fyepNvy9bnP',
         // activeOrderId: null,
         owner: '0x',
         name: "Afghanistan",
@@ -197,7 +197,7 @@ export const collectibles: Array<NFT> = [
     {
         id: 'QmZ8ArvpTy9J4D9gMzsPgitwBm2NrGFhkQDBkEAhRFDAxp',
         contractAddress: '0x0000000000000000000000000000000000000000',
-        // tokenId: 'QmZ8ArvpTy9J4D9gMzsPgitwBm2NrGFhkQDBkEAhRFDAxp',
+        tokenId: 'QmZ8ArvpTy9J4D9gMzsPgitwBm2NrGFhkQDBkEAhRFDAxp',
         // activeOrderId: null,
         owner: '0x',
         name: "Andorra",
@@ -221,7 +221,7 @@ export const collectibles: Array<NFT> = [
     {
         id: 'BZTDWRaK6rQmnSLrrq4PANBeueYfDRFkpHV9KcMtjxL19wsJ11',
         contractAddress: '0x0000000000000000000000000000000000000000',
-        // tokenId: 'BZTDWRaK6rQmnSLrrq4PANBeueYfDRFkpHV9KcMtjxL19wsJ11',
+        tokenId: 'BZTDWRaK6rQmnSLrrq4PANBeueYfDRFkpHV9KcMtjxL19wsJ11',
         // activeOrderId: null,
         owner: '0x',
         name: "Australia",
@@ -245,7 +245,7 @@ export const collectibles: Array<NFT> = [
     {
         id: 'QmQWmYPT9xGgTwDS97q6JwPoBagKcGNYoaih2x8cArRPLm',
         contractAddress: '0x0000000000000000000000000000000000000000',
-        // tokenId: 'QmQWmYPT9xGgTwDS97q6JwPoBagKcGNYoaih2x8cArRPLm',
+        tokenId: 'QmQWmYPT9xGgTwDS97q6JwPoBagKcGNYoaih2x8cArRPLm',
         // activeOrderId: null,
         owner: '0x',
         name: "Argentina",

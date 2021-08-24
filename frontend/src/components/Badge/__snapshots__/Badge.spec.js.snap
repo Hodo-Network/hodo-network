@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<span
+  className="inline-flex items-center rounded-md font-medium capitalize badge badge--medium badge--gray"
+>
+  Badge
+</span>
+`;

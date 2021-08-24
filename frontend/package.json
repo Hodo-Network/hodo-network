@@ -9,6 +9,7 @@
     "@ethersproject/units": "^5.1.0",
     "@headlessui/react": "^1.0.0",
     "@heroicons/react": "^1.0.0",
+    "@metamask/detect-provider": "^1.2.0",
     "@metamask/onboarding": "^1.0.0",
     "@rooks/use-geolocation": "^4.10.0",
     "@tailwindcss/aspect-ratio": "^0.2.0",
@@ -42,6 +43,7 @@
     "react-leaflet": "^3.1.0",
     "react-loading": "^2.0.3",
     "react-modal": "^3.12.1",
+    "react-redux": "^7.2.4",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "react-test-renderer": "^17.0.1",
@@ -60,7 +62,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "coverage": "npm run test -- --coverage",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
     "extends": [
@@ -73,7 +77,17 @@
     "rules": {
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "off"
-    }
+    },
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
+    ]
   },
   "browserslist": {
     "production": [
@@ -86,5 +100,14 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^6.3.7",
+    "@storybook/addon-essentials": "^6.3.7",
+    "@storybook/addon-links": "^6.3.7",
+    "@storybook/node-logger": "^6.3.7",
+    "@storybook/preset-create-react-app": "^3.2.0",
+    "@storybook/react": "^6.3.7",
+    "storybook-tailwind-dark-mode": "^1.0.11"
   }
 }

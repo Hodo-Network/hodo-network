@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<header
+  className="flex-shrink-0 bg-white dark:bg-gray-900 text-gray-800 dark:text-white border-b border-gray-200 dark:border-gray-800 flex items-center"
+>
+  <div
+    className="flex-1 flex items-center justify-between py-3 px-4 sm:px-8"
+  >
+    <div
+      className="flex items-center"
+    >
+      <span
+        className="font-bold text-xl md:hidden"
+      >
+        Hodo Network
+      </span>
+    </div>
+    <div
+      className="ml-10 flex-shrink-0 hidden md:flex items-center space-x-6"
+    >
+      <button
+        className="inline-flex items-center p-2 rounded-full"
+        onClick={[Function]}
+        type="button"
+      >
+        <svg
+          className="h-6 w-6"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+          />
+        </svg>
+      </button>
+      <button
+        className="btn"
+        disabled={false}
+        onClick={[Function]}
+      >
+        Install MetaMask
+      </button>
+    </div>
+  </div>
+  <div
+    className="py-3 px-4 flex items-center md:hidden"
+  >
+    <button
+      className="inline-flex items-center justify-center p-2 rounded-md text-gray-800 dark:text-white hover:text-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-600"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="sr-only"
+      >
+        Open main menu
+      </span>
+      <svg
+        aria-hidden="true"
+        className="block h-6 w-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4 6h16M4 12h16M4 18h16"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+        />
+      </svg>
+    </button>
+  </div>
+</header>
+`;

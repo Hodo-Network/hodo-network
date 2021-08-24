@@ -4,7 +4,7 @@ import { createWeb3ReactRoot, Web3ReactProvider } from "@web3-react/core";
 import { NetworkContextName } from "./constants";
 import reportWebVitals from "./reportWebVitals";
 import getLibrary from "./utils/getLibrary";
-import App from "./pages/App";
+import App from "./App";
 
 const Web3ProviderNetwork = createWeb3ReactRoot(NetworkContextName);
 
