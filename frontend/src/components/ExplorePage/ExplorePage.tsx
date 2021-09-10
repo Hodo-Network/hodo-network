@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useWeb3React } from "@web3-react/core";
-import { LeafletMap } from "../../components";
+// import { LeafletMap } from "../../components";
 import { collectibles } from "../../data";
 import classNames from "../../utils/classNames";
 import ContentWrapper from "../../ContentWrapper";
@@ -20,12 +20,12 @@ export const ExplorePage = () => {
           <h1 id='primary-heading' className='sr-only'>
             Map
           </h1>
-          <LeafletMap
+          {/* <LeafletMap
             className='h-full w-full object-cover z-10'
             collectibles={items}
             // @ts-ignore
             selected={selected}
-          />
+          /> */}
         </section>
 
         <aside className='h-full overflow-hidden hidden lg:block lg:flex-shrink-0 lg:order-first'>
