@@ -1,5 +1,6 @@
 import ContentWrapper from "../../ContentWrapper";
 import { FeaturedNfts } from "../../components";
+import { useAsyncEffect } from 'use-async-effect';
 
 export interface PureCollectionPageProps {
   items?: any;

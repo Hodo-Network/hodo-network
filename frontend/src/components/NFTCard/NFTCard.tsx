@@ -17,6 +17,7 @@ export const NFTCard: React.FC<NFTCardProps> = ({
   className,
 }) => {
   // const { chainId } = useWeb3React<Web3Provider>();
+  console.log("dsdasd")
 
   return (
     <NavLink

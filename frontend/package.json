@@ -52,6 +52,7 @@
     "swr-eth": "^0.1.2",
     "tailwindcss": "^2.1.1",
     "typescript": "^4.2.4",
+    "use-async-effect": "^2.2.3",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
