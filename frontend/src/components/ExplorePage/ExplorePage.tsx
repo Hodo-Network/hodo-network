@@ -1,15 +1,13 @@
 import { useState } from "react";
-import { useWeb3React } from "@web3-react/core";
 // import { LeafletMap } from "../../components";
 import { collectibles } from "../../data";
 import classNames from "../../utils/classNames";
 import ContentWrapper from "../../ContentWrapper";
 
 export const ExplorePage = () => {
-  const { chainId } = useWeb3React();
   const [selected, setSelected] = useState(null);
   // TODO: replace with API data
-  const items = chainId === 43113 ? collectibles : [];
+  const items = collectibles || [];
 
   return (
     <ContentWrapper>

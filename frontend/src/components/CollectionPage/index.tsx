@@ -17,10 +17,7 @@ const CollectionPage = () => {
 
   // // TODO: replace with api calls
   const getItems = useCallback((type: string) => {
-    const items =
-      chainId === 43113
-        ? collectibles.filter((item) => item.category === type)
-        : [];
+    const items = collectibles.filter((item) => item.category === type) || [];
     return items;
   }, []);
 
