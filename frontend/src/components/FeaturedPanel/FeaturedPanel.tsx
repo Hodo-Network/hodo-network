@@ -22,7 +22,7 @@ export const FeaturedPanel: React.FC<FeaturedPanelProps> = ({
   const [items, setItems] = useState<NFT[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
-  // TODO: replace with api calls
+  // TODO: replace with API data
   const getItems = useCallback((val) => {
     const items =
       collectibles.filter((item) => item.category === val).splice(0, 5) || [];

@@ -13,7 +13,7 @@ const CollectionPage = () => {
   const [items, setItems] = useState<Array<NFT>>([]);
   const [loading, setLoading] = useState(true);
 
-  // TODO: replace with api calls
+  // TODO: replace with API data
   const getItems = useCallback((type: string) => {
     const items = collectibles.filter((item) => item.category === type) || [];
     return items;

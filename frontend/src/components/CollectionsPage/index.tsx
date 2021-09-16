@@ -6,9 +6,9 @@ import { PureCollectionsPage } from "./CollectionsPage";
 
 const CollectionsPage = () => {
   const { chainId } = useWeb3React();
-  // const [items, setItems] = useState<Collection[]>([]);
+  const [items, setItems] = useState<any[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
-  const [fetchedItem, setFetchedItem] = useState<any>([]);
+  // const [fetchedItem, setFetchedItem] = useState<any>([]);
 
   const newItem: any = [
     {
@@ -96,13 +96,14 @@ const CollectionsPage = () => {
     const getItems = async () => {
       // setItems(collections);
 
-      let fetchNftData: any = await fetch(
-        `https://testapi.banana-coin.org/list_nfts`
-      );
-      fetchNftData = await fetchNftData.json();
+      // let fetchNftData: any = await fetch(
+      //   `https://testapi.banana-coin.org/list_nfts`
+      // );
+      // fetchNftData = await fetchNftData.json();
       // fetchNftData = fetchNftData.reverse();
-      setFetchedItem(fetchNftData.data);
-      console.log("dsadas", fetchNftData);
+      // setFetchedItem(fetchNftData.data);
+      // console.log("dsadas", fetchNftData);
+      setItems(newItem);
     };
 
     getItems().then(() => {
@@ -110,7 +111,7 @@ const CollectionsPage = () => {
     });
   }, [chainId]);
 
-  return <PureCollectionsPage items={fetchedItem} loading={loading} />;
+  return <PureCollectionsPage items={items} loading={loading} />;
 };
 
 export default CollectionsPage;
