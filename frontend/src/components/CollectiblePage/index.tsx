@@ -27,12 +27,13 @@ const CollectiblePage = () => {
     })[0];
   };
 
-  // TODO: replace api call
+  // TODO: replace with API data
   useEffect(() => {
     // fetch(`${endpoint}/${id}`).then(setAsset);
     setAsset(getAsset(id));
   }, [id]);
 
+  // TODO: implement buy button
   const onBuyAsset = async () => {
     // TODO: switch to AVAX network first
     // const val = (asset && new BN(asset.price.value * 1e18)) || 0;
