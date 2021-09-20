@@ -31,7 +31,7 @@ const routes = [
   },
   {
     path: paths.ROUTE_COLLECTIBLE,
-    name: ":id",
+    name: ":tokenId",
     Component: CollectiblePage,
     exact: false,
   },

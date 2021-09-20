@@ -1,6 +1,6 @@
 const ROUTE_COLLECTIONS = "/collections";
 const ROUTE_COLLECTION = "/collections/:name";
-const ROUTE_COLLECTIBLE = "/collections/:name/:id";
+const ROUTE_COLLECTIBLE = "/collections/:name/:tokenId";
 const ROUTE_DEFAULT = "/";
 const ROUTE_EXPLORE = "/explore";
 const ROUTE_FAQ = "/faq";
