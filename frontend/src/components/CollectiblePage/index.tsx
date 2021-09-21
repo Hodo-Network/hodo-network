@@ -93,12 +93,15 @@ const CollectiblePage = () => {
   // TODO: implement buy button
   const onBuyAsset = async () => {
     // TODO: switch to AVAX network first
-    let token_id: any = asset ? asset.tokenId : "";
-    let price: any = asset? asset.price.value : "";
-
+    let token_id: any = asset ? (asset.tokenId).toString() : "";
+    let price: any = asset? (asset.price.value).toString() : "";
+    console.log("token_id", token_id)
+    // token_id = --token_id
+    let tradeCount = await contract.methods.getTradeCount().call();
+    tradeCount = --tradeCount
     const receipt = await contract.methods
-    .executeTrade(token_id, 0x00)
-    .send({ from: accounts[0],value:price });
+    .executeTrade(tradeCount, 0x00)
+    .send({ from: accounts[0],value: price });
 console.log("after  transaction ", receipt);
 
     
