@@ -13,27 +13,27 @@ const CollectionsPage = () => {
  
 
   // TODO: replace with API data
-  // useEffect(() => {
-  //   const getItems = async () => {
-  //     // setItems(collections);
+  useEffect(() => {
+    const getItems = async () => {
+      // setItems(collections);
 
-  //     let fetchNftData: any = await fetch(
-  //       `http://localhost:8080/list_nfts`
-  //     );
-  //     fetchNftData = await fetchNftData.json();
-  //     // fetchNftData = fetchNftData.reverse();
-  //     // setFetchedItem(fetchNftData.data);
-  //     // console.log("dsadas", fetchNftData);
-  //     setItems(fetchNftData.data);
-  //     console.log("fetchNftData.data",fetchNftData.data)
-  //   };
+      let fetchNftData: any = await fetch(
+        `http://localhost:8080/list_collection`
+      );
+      fetchNftData = await fetchNftData.json();
+      // fetchNftData = fetchNftData.reverse();
+      // setFetchedItem(fetchNftData.data);
+      // console.log("dsadas", fetchNftData);
+      setItems(fetchNftData.data);
+      console.log("fetchNftData.data",fetchNftData.data)
+    };
 
-  //   getItems().then(() => {
-  //     setLoading(false);
-  //   });
-  // }, [chainId]);
-console.log("collections",collections)
-  return <PureCollectionsPage items={collections} loading={loading} />;
+    getItems().then(() => {
+      setLoading(false);
+    });
+  }, [chainId]);
+console.log("collections",items)
+  return <PureCollectionsPage items={items} loading={loading} />;
 };
 
 export default CollectionsPage;
