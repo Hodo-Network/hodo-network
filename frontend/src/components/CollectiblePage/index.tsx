@@ -4,7 +4,7 @@ import { useParams } from "react-router";
 // import { ethers } from "ethers";
 // import BN from "bn.js";
 // import { WALLET_ADDRESS } from "../../constants";
-import { collectibles } from "../../data";
+// import { collectibles } from "../../data";
 import { NFT } from "../../typings/nft";
 import { PureCollectiblePage } from "./CollectiblePage";
 import Web3 from "web3";
@@ -21,42 +21,50 @@ interface IParams {
 const CollectiblePage = () => {
   // const { account } = useWeb3React();
   const { tokenId, name } = useParams<IParams>();
+  const [itemsss, setItems] = useState<Array<NFT>>([]);
   const [asset, setAsset] = useState<NFT>();
-  const collection = collectibles.filter((item) => {
+  const collection = itemsss.filter((item) => {
     return item.category === name;
   });
 
-  const getAsset = (tokenId: string) => {
-    return collectibles.filter((asset) => {
-      return asset.id === tokenId;
+  const getAsset = (tokenId: string,arrayData: any) => {
+    return arrayData.filter((asset:any) => {
+      console.log("ss",asset)
+      return asset.id == tokenId;
     })[0];
   };
   console.log("id", tokenId)
 
-  // useEffect(() => {
-  //   const getItems = async () => {
-  //     // setItems(collections);
+  useEffect(() => {
+    const getItems = async () => {
+      // setItems(collections);
 
-  //     let fetchNftData: any = await fetch(
-  //       `http://localhost:8080/list_nfts`
-  //     );
-  //     fetchNftData = await fetchNftData.json();
-  //     // fetchNftData = fetchNftData.reverse();
-  //     // setFetchedItem(fetchNftData.data);
-  //     // console.log("dsadas", fetchNftData);
-  //     setItems(fetchNftData.data);
-  //     console.log("fetchNftData.data",fetchNftData.data)
-  //   };
+      let fetchNftData: any = await fetch(
+        `http://localhost:8080/list_nfts`
+      );
+      fetchNftData = await fetchNftData.json();
+      // fetchNftData = fetchNftData.reverse();
+      // setFetchedItem(fetchNftData.data);
+      // console.log("dsadas", fetchNftData);
+      setItems(fetchNftData.data);
+      setAsset(getAsset(tokenId,fetchNftData.data));
 
-  //   getItems().then(() => {
-  //     setLoading(false);
-  //   });
-  // }, [chainId]);
+      // let uriData = fetchNftData.data;
+      // let poo = uriData.filter((ite: any) => ite.id == tokenId);
+      // console.log("poo", poo)
+      // setAsset(poo)
+      // console.log("fetchNftData.data",fetchNftData.data)
+    };
+
+    getItems().then(() => {
+      // setAsset(getAsset(tokenId));
+    });
+  }, []);
 
   // TODO: replace with API data
   useEffect(() => {
     // fetch(`${endpoint}/${id}`).then(setAsset);
-    setAsset(getAsset(tokenId));
+    // setAsset(getAsset(tokenId));
   }, [tokenId]);
 
   const [web3State, setWeb3State] = useState<any>();
@@ -70,7 +78,7 @@ const CollectiblePage = () => {
       setWeb3State(web3)
       const contract = new web3.eth.Contract(ABI as AbiItem[], CONTRACT_ADDRESS);
       setContract(contract)
-      console.log("this is for contract", contract)
+      console.log("this is for contract", contract.methods)
       const accounts = await web3.eth.getAccounts();
       setAccounts(accounts)
     }
@@ -79,14 +87,18 @@ const CollectiblePage = () => {
     }
   }
   console.log("web3", web3State)
+  console.log("assetasset", asset)
 
 
   // TODO: implement buy button
   const onBuyAsset = async () => {
     // TODO: switch to AVAX network first
+    let token_id: any = asset ? asset.tokenId : "";
+    let price: any = asset? asset.price.value : "";
+
     const receipt = await contract.methods
-    .safeTransferFrom("0xdaF60d937a200b36688e4BfBA68Ef026231570Ef", accounts[0],15,"1000000000000000000",0x00)
-    .send({ from: accounts[0] });
+    .executeTrade(token_id, 0x00)
+    .send({ from: accounts[0],value:price });
 console.log("after  transaction ", receipt);
 
     
@@ -114,10 +126,11 @@ console.log("after  transaction ", receipt);
     alert("Buy asset");
   };
 
+  console.log("asset",asset)
   return (
     <PureCollectiblePage
       asset={asset}
-      collection={collection}
+      collection={itemsss}
       onBuyAsset={onBuyAsset}
       enableWeb3={enableWeb3}
     />
