@@ -57,7 +57,7 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "build:tailwind": "tailwindcss build src/styles/tailwind.css -o src/styles/tailwind.output.css",
+    "build:tailwind": "tailwindcss build -i src/styles/tailwind.css -o src/styles/tailwind.output.css",
     "prestart": "npm run build:tailwind",
     "prebuild": "npm run build:tailwind",
     "start": "react-scripts start",
@@ -80,16 +80,14 @@
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "off"
     },
-    "overrides": [
-      {
-        "files": [
-          "**/*.stories.*"
-        ],
-        "rules": {
-          "import/no-anonymous-default-export": "off"
-        }
+    "overrides": [{
+      "files": [
+        "**/*.stories.*"
+      ],
+      "rules": {
+        "import/no-anonymous-default-export": "off"
       }
-    ]
+    }]
   },
   "browserslist": {
     "production": [
