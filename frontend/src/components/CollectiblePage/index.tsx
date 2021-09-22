@@ -27,9 +27,9 @@ const CollectiblePage = () => {
     return item.category === name;
   });
 
-  const getAsset = (tokenId: string,arrayData: any) => {
-    return arrayData.filter((asset:any) => {
-      console.log("ss",asset)
+  const getAsset = (tokenId: string, arrayData: any) => {
+    return arrayData.filter((asset: any) => {
+      console.log("ss", asset)
       return asset.id == tokenId;
     })[0];
   };
@@ -43,21 +43,12 @@ const CollectiblePage = () => {
         `http://localhost:8080/list_nfts`
       );
       fetchNftData = await fetchNftData.json();
-      // fetchNftData = fetchNftData.reverse();
-      // setFetchedItem(fetchNftData.data);
-      // console.log("dsadas", fetchNftData);
       setItems(fetchNftData.data);
-      setAsset(getAsset(tokenId,fetchNftData.data));
+      setAsset(getAsset(tokenId, fetchNftData.data));
 
-      // let uriData = fetchNftData.data;
-      // let poo = uriData.filter((ite: any) => ite.id == tokenId);
-      // console.log("poo", poo)
-      // setAsset(poo)
-      // console.log("fetchNftData.data",fetchNftData.data)
     };
 
     getItems().then(() => {
-      // setAsset(getAsset(tokenId));
     });
   }, []);
 
@@ -92,50 +83,68 @@ const CollectiblePage = () => {
 
   // TODO: implement buy button
   const onBuyAsset = async () => {
-    // TODO: switch to AVAX network first
-    let token_id: any = asset ? (asset.tokenId).toString() : "";
-    let price: any = asset? (asset.price.value).toString() : "";
-    console.log("token_id", token_id)
-    // token_id = --token_id
-    let tradeCount = await contract.methods.getTradeCount().call();
-    tradeCount = --tradeCount
-    const receipt = await contract.methods
-    .executeTrade(tradeCount, 0x00)
-    .send({ from: accounts[0],value: price });
-console.log("after  transaction ", receipt);
+    try {
+      let ownerAddress = accounts[0];
+      let id = asset ? asset.id : "";
+      const requestOptions = {
+        method: 'POST',
+        headers: {"Content-type": "application/json;charset=UTF-8"},
+        body: JSON.stringify({
+          id, ownerAddress
+        })
+      };
+      let fetchNftData = await fetch(`http://localhost:8080/buy_nft`, requestOptions)
+      // TODO: switch to AVAX network first
+      let token_id: any = asset ? (asset.tokenId).toString() : "";
+      let price: any = asset ? (asset.price.value).toString() : "";
+      console.log("token_id", token_id)
+      // token_id = --token_id
+      let tradeCount = await contract.methods.getTradeCount().call();
+      tradeCount = --tradeCount
+      const receipt = await contract.methods
+        .executeTrade(tradeCount, 0x00)
+        .send({ from: accounts[0], value: price });
 
-    
-    // const val = (asset && new BN(asset.price.value * 1e18)) || 0;
-    // console.log("val", val);
-    // try {
-    //   const transactionParameters = {
-    //     from: account,
-    //     to: WALLET_ADDRESS,
-    //     value: ethers.utils.hexValue(0),
-    //     gasPrice: ethers.utils.hexValue(225 * 1e9),
-    //     gas: ethers.utils.hexValue(21000),
-    //   };
-    //   await ethereum
-    //     ?.request({
-    //       method: "eth_sendTransaction",
-    //       params: [transactionParameters],
-    //     })
-    //     .then((txHash) => console.log(txHash))
-    //     .catch((error) => console.error);
-    // } catch (error) {
-    //   console.log(error);
-    // }
 
-    alert("Buy asset");
+      console.log("after  transaction ", receipt);
+
+
+      // const val = (asset && new BN(asset.price.value * 1e18)) || 0;
+      // console.log("val", val);
+      // try {
+      //   const transactionParameters = {
+      //     from: account,
+      //     to: WALLET_ADDRESS,
+      //     value: ethers.utils.hexValue(0),
+      //     gasPrice: ethers.utils.hexValue(225 * 1e9),
+      //     gas: ethers.utils.hexValue(21000),
+      //   };
+      //   await ethereum
+      //     ?.request({
+      //       method: "eth_sendTransaction",
+      //       params: [transactionParameters],
+      //     })
+      //     .then((txHash) => console.log(txHash))
+      //     .catch((error) => console.error);
+      // } catch (error) {
+      //   console.log(error);
+      // }
+
+      alert("Buy asset");
+    }
+    catch (error) {
+
+    }
   };
 
-  console.log("asset",asset)
+  console.log("web3State", web3State)
   return (
     <PureCollectiblePage
       asset={asset}
       collection={itemsss}
       onBuyAsset={onBuyAsset}
       enableWeb3={enableWeb3}
+      web3State={web3State}
     />
   );
 };

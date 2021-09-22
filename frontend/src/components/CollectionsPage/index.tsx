@@ -10,29 +10,25 @@ const CollectionsPage = () => {
   const [loading, setLoading] = useState<boolean>(false);
   // const [fetchedItem, setFetchedItem] = useState<any>([]);
 
- 
+
 
   // TODO: replace with API data
   useEffect(() => {
     const getItems = async () => {
-      // setItems(collections);
 
       let fetchNftData: any = await fetch(
         `http://localhost:8080/list_collection`
       );
       fetchNftData = await fetchNftData.json();
-      // fetchNftData = fetchNftData.reverse();
-      // setFetchedItem(fetchNftData.data);
-      // console.log("dsadas", fetchNftData);
       setItems(fetchNftData.data);
-      console.log("fetchNftData.data",fetchNftData.data)
+      console.log("fetchNftData.data", fetchNftData.data)
     };
 
     getItems().then(() => {
       setLoading(false);
     });
   }, [chainId]);
-console.log("collections",items)
+  console.log("collections", items)
   return <PureCollectionsPage items={items} loading={loading} />;
 };
 

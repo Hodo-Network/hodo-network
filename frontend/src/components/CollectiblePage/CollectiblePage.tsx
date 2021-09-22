@@ -18,6 +18,7 @@ export interface PureCollectiblePageProps {
   collection?: any;
   onBuyAsset?: () => void;
   enableWeb3?: () => void;
+  web3State?: any;
 }
 
 
@@ -25,10 +26,11 @@ export const PureCollectiblePage = ({
   asset,
   collection,
   onBuyAsset,
-  enableWeb3
+  enableWeb3,
+  web3State
 }: PureCollectiblePageProps) => {
 
-
+console.log("collection web3",web3State)
 
   return (
     <ContentWrapper>
@@ -112,21 +114,27 @@ export const PureCollectiblePage = ({
 
                 <div className='mt-8 sm:flex'>
                   <div>
-                    <Button
-                      size='medium'
-                      primary={true}
-                      onClick={enableWeb3}
-                      disabled={false}>
-                      Connect Wallet
-                    </Button>
-
-                    <Button
+                    {
+                      web3State ?
+                      <Button
                       size='medium'
                       primary={true}
                       onClick={onBuyAsset}
                       disabled={false}>
                       {TEXT_BUY}
-                    </Button>
+                        </Button>
+                        :
+                        <Button
+                        size='medium'
+                        primary={true}
+                        onClick={enableWeb3}
+                        disabled={false}>
+                        Connect Wallet
+                      </Button>
+                    }
+              
+
+            
                   </div>
                 </div>
               </div>
