@@ -40,7 +40,7 @@ const CollectiblePage = () => {
       // setItems(collections);
 
       let fetchNftData: any = await fetch(
-        `http://localhost:8080/list_nfts`
+        `https://hodoapi.buildmydapp.co/list_nfts`
       );
       fetchNftData = await fetchNftData.json();
       setItems(fetchNftData.data);
@@ -93,7 +93,7 @@ const CollectiblePage = () => {
           id, ownerAddress
         })
       };
-      let fetchNftData = await fetch(`http://localhost:8080/buy_nft`, requestOptions)
+      let fetchNftData = await fetch(`https://hodoapi.buildmydapp.co/buy_nft`, requestOptions)
       // TODO: switch to AVAX network first
       let token_id: any = asset ? (asset.tokenId).toString() : "";
       let price: any = asset ? (asset.price.value).toString() : "";

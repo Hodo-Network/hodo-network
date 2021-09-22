@@ -17,7 +17,7 @@ const CollectionsPage = () => {
     const getItems = async () => {
 
       let fetchNftData: any = await fetch(
-        `http://localhost:8080/list_collection`
+        `https://hodoapi.buildmydapp.co/list_collection`
       );
       fetchNftData = await fetchNftData.json();
       setItems(fetchNftData.data);

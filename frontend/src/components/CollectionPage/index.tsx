@@ -33,7 +33,7 @@ const CollectionPage = () => {
       // setItems(collections);
 
       let fetchNftData: any = await fetch(
-        `http://localhost:8080/list_nfts`
+        `https://hodoapi.buildmydapp.co/list_nfts`
       );
       fetchNftData = await fetchNftData.json();
       // fetchNftData = fetchNftData.reverse();
