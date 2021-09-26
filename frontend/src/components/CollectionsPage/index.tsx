@@ -12,11 +12,12 @@ const CollectionsPage = () => {
   useEffect(() => {
     const getItems = async () => {
       // TODO: update typings
-      let collectionList: any = await fetch(
-        "https://hodoapi.buildmydapp.co/list_collection"
-      );
-      collectionList = await collectionList.json();
-      setItems(collectionList.data);
+      // let collectionList: any = await fetch(
+      //   "https://hodoapi.buildmydapp.co/list_collection"
+      // );
+      // collectionList = await collectionList.json();
+      // setItems(collectionList.data);
+      setItems([]);
     };
 
     getItems().then(() => {

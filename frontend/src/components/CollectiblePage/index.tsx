@@ -1,58 +1,47 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-// import { useWeb3React } from "@web3-react/core";
+import Web3 from "web3";
+import { AbiItem } from "web3-utils";
+import { useWeb3React } from "@web3-react/core";
 // import { ethers } from "ethers";
 // import BN from "bn.js";
 // import { WALLET_ADDRESS } from "../../constants";
 // import { collectibles } from "../../data";
 import { NFT } from "../../typings/nft";
 import { PureCollectiblePage } from "./CollectiblePage";
-import Web3 from "web3";
-import { CONTRACT_ADDRESS } from '../../abi/NFT';
-import { AbiItem } from 'web3-utils'
+import { CONTRACT_ADDRESS } from "../../abi/NFT";
 
-import ABI from '../../abi/NFTABI.json';
+import ABI from "../../abi/NFTABI.json";
 interface IParams {
   name: string;
   tokenId: string;
 }
 
-
 const CollectiblePage = () => {
-  // const { account } = useWeb3React();
-  const { tokenId, name } = useParams<IParams>();
-  const [itemsss, setItems] = useState<Array<NFT>>([]);
+  const { account } = useWeb3React();
+  const { tokenId } = useParams<IParams>();
+  const [items, setItems] = useState<Array<NFT>>([]);
   const [asset, setAsset] = useState<NFT>();
   const collection = itemsss.filter((item) => {
     return item.category === name;
   });
 
   const getAsset = (tokenId: string, arrayData: any) => {
-    return arrayData.filter((asset: any) => {
-      console.log("ss", asset)
-      return asset.id == tokenId;
-    })[0];
+    return arrayData.filter((asset: any) => asset.id === tokenId)[0];
   };
-  console.log("id", tokenId)
 
   useEffect(() => {
     const getItems = async () => {
-      // setItems(collections);
-
       let fetchNftData: any = await fetch(
-        `https://hodoapi.buildmydapp.co/list_nfts`
+        "https://hodoapi.buildmydapp.co/list_nfts"
       );
       fetchNftData = await fetchNftData.json();
       setItems(fetchNftData.data);
-      setAsset(getAsset(tokenId, fetchNftData.data));
-
     };
 
-    getItems().then(() => {
-    });
+    getItems();
   }, []);
 
-  // TODO: replace with API data
   useEffect(() => {
     // fetch(`${endpoint}/${id}`).then(setAsset);
     // setAsset(getAsset(tokenId));
@@ -66,48 +55,47 @@ const CollectiblePage = () => {
     try {
       const web3 = new Web3(Web3.givenProvider);
       await Web3.givenProvider.enable();
-      setWeb3State(web3)
-      const contract = new web3.eth.Contract(ABI as AbiItem[], CONTRACT_ADDRESS);
-      setContract(contract)
-      console.log("this is for contract", contract.methods)
+      setWeb3State(web3);
+      const contract = new web3.eth.Contract(
+        ABI as AbiItem[],
+        CONTRACT_ADDRESS
+      );
+      setContract(contract);
+      console.log("this is for contract", contract.methods);
       const accounts = await web3.eth.getAccounts();
-      setAccounts(accounts)
-    }
-    catch (error) {
+      setAccounts(accounts);
+    } catch (error) {}
+  };
 
-    }
-  }
-  console.log("web3", web3State)
-  console.log("assetasset", asset)
-
-
-  // TODO: implement buy button
   const onBuyAsset = async () => {
     try {
       let ownerAddress = accounts[0];
       let id = asset ? asset.id : "";
       const requestOptions = {
-        method: 'POST',
-        headers: {"Content-type": "application/json;charset=UTF-8"},
+        method: "POST",
+        headers: { "Content-type": "application/json;charset=UTF-8" },
         body: JSON.stringify({
-          id, ownerAddress
-        })
+          id,
+          ownerAddress,
+        }),
       };
-      let fetchNftData = await fetch(`https://hodoapi.buildmydapp.co/buy_nft`, requestOptions)
-      // TODO: switch to AVAX network first
-      let token_id: any = asset ? (asset.tokenId).toString() : "";
-      let price: any = asset ? (asset.price.value).toString() : "";
-      console.log("token_id", token_id)
+      let fetchNftData = await fetch(
+        "https://hodoapi.buildmydapp.co/buy_nft",
+        requestOptions
+      );
+
+      let token_id: any = asset ? asset.tokenId.toString() : "";
+      let price: any = asset ? asset.price.value.toString() : "";
+      console.log("token_id", token_id);
       // token_id = --token_id
       let tradeCount = await contract.methods.getTradeCount().call();
-      tradeCount = --tradeCount
+      tradeCount = --tradeCount;
       const receipt = await contract.methods
         .executeTrade(tradeCount, 0x00)
         .send({ from: accounts[0], value: price });
 
 
       console.log("after  transaction ", receipt);
-
 
       // const val = (asset && new BN(asset.price.value * 1e18)) || 0;
       // console.log("val", val);
@@ -131,20 +119,15 @@ const CollectiblePage = () => {
       // }
 
       alert("Buy asset");
-    }
-    catch (error) {
-
-    }
+    } catch (error) {}
   };
 
-  console.log("web3State", web3State)
   return (
     <PureCollectiblePage
       asset={asset}
-      collection={itemsss}
+      collection={items}
       onBuyAsset={onBuyAsset}
-      enableWeb3={enableWeb3}
-      web3State={web3State}
+      connected={!!account}
     />
   );
 };

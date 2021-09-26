@@ -11,27 +11,20 @@ import ContentWrapper from "../../ContentWrapper";
 import Button from "../Button";
 import NFTList from "../NFTList";
 import RarityBadge from "../RarityBadge";
-import { useState } from 'react';
 
 export interface PureCollectiblePageProps {
   asset?: any;
   collection?: any;
   onBuyAsset?: () => void;
-  enableWeb3?: () => void;
-  web3State?: any;
+  connected?: boolean;
 }
-
 
 export const PureCollectiblePage = ({
   asset,
   collection,
   onBuyAsset,
-  enableWeb3,
-  web3State
+  connected,
 }: PureCollectiblePageProps) => {
-
-console.log("collection web3",web3State)
-
   return (
     <ContentWrapper>
       {asset && (
@@ -114,27 +107,17 @@ console.log("collection web3",web3State)
 
                 <div className='mt-8 sm:flex'>
                   <div>
-                    {
-                      web3State ?
+                    {connected ? (
                       <Button
-                      size='medium'
-                      primary={true}
-                      onClick={onBuyAsset}
-                      disabled={false}>
-                      {TEXT_BUY}
-                        </Button>
-                        :
-                        <Button
                         size='medium'
                         primary={true}
-                        onClick={enableWeb3}
+                        onClick={onBuyAsset}
                         disabled={false}>
-                        Connect Wallet
+                        {TEXT_BUY}
                       </Button>
-                    }
-              
-
-            
+                    ) : (
+                      "Connect"
+                    )}
                   </div>
                 </div>
               </div>

@@ -22,15 +22,13 @@ export function CollectionCardList({
     );
   }
 
-  if (items.length === 0) {
-    return <CollectionCardEmpty />;
-  }
-
   return (
     <div className='grid gap-4 xl:gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5'>
-      {items.map((item, key) => (
-        <CollectionCard key={key} collection={item} />
-      ))}
+      {items.length === 0 ? (
+        <CollectionCardEmpty />
+      ) : (
+        items.map((item, key) => <CollectionCard key={key} collection={item} />)
+      )}
     </div>
   );
 }
