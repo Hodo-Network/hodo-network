@@ -16,12 +16,14 @@ export interface PureCollectiblePageProps {
   asset?: any;
   collection?: any;
   onBuyAsset?: () => void;
+  connected?: boolean;
 }
 
 export const PureCollectiblePage = ({
   asset,
   collection,
   onBuyAsset,
+  connected,
 }: PureCollectiblePageProps) => {
   return (
     <ContentWrapper>
@@ -105,13 +107,17 @@ export const PureCollectiblePage = ({
 
                 <div className='mt-8 sm:flex'>
                   <div>
-                    <Button
-                      size='medium'
-                      primary={true}
-                      onClick={onBuyAsset}
-                      disabled={false}>
-                      {TEXT_BUY}
-                    </Button>
+                    {connected ? (
+                      <Button
+                        size='medium'
+                        primary={true}
+                        onClick={onBuyAsset}
+                        disabled={false}>
+                        {TEXT_BUY}
+                      </Button>
+                    ) : (
+                      "Connect"
+                    )}
                   </div>
                 </div>
               </div>

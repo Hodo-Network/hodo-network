@@ -19,17 +19,13 @@ export const FeaturedPanel: React.FC<FeaturedPanelProps> = ({
   type,
   title,
 }) => {
-  // TODO: temporary to have chainId
-  const { chainId } = useWeb3React<Web3Provider>();
   const [items, setItems] = useState<NFT[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
-  // TODO: replace with api calls
+  // TODO: replace with API data
   const getItems = useCallback((val) => {
     const items =
-      chainId === 43113
-        ? collectibles.filter((item) => item.category === val).splice(0, 5)
-        : [];
+      collectibles.filter((item) => item.category === val).splice(0, 5) || [];
     return items;
   }, []);
 

@@ -23,7 +23,7 @@ import FeaturedPanel from "./FeaturedPanel";
 import Footer from "./Footer";
 import Hero from "./Hero";
 import HomePage from "./HomePage";
-import LeafletMap from "./LeafletMap";
+// import LeafletMap from "./LeafletMap";
 import LocationButton from "./LocationButton";
 import Logo from "./Logo";
 import MenuClosedIcon from "./MenuClosedIcon";
@@ -73,7 +73,7 @@ export {
   Footer,
   Hero,
   HomePage,
-  LeafletMap,
+  // LeafletMap,
   LocationButton,
   Logo,
   MenuClosedIcon,

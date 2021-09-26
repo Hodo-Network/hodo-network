@@ -1,5 +1,3 @@
-import React from "react";
-
 export const CollectionCardEmpty = () => {
   return (
     <div className='flex flex-col rounded-md overflow-hidden transition-transform duration-300 transform hover:-translate-y-1 border-dashed border border-gray-400 dark:border-gray-700'>

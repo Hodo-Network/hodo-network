@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import { NFT } from "../../typings/nft";
 // import { NATIVE_CURRENCY } from "../../constants";
 import { ROUTE_COLLECTIONS } from "../../constants/routes";
-import { RarityBadge } from "../index";
+import RarityBadge from "../RarityBadge";
 
 export interface NFTCardProps {
   nft: NFT;

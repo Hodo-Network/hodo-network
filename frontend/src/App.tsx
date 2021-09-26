@@ -2,28 +2,29 @@ import { useEffect, useState } from "react";
 import { useWeb3React } from "@web3-react/core";
 import { Web3Provider } from "@ethersproject/providers";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import { Provider } from "react-redux";
+// import { ThemeProvider } from "styled-components";
+import store from "./state/redux";
 import { useEagerConnect, useInactiveListener } from "./hooks";
-import { Navbar, Sidebar } from "./components";
 import * as paths from "./constants/routes";
 import {
   CollectiblePage,
   CollectionPage,
   CollectionsPage,
-  ExplorePage,
+  // ExplorePage,
   HomePage,
   FaqPage,
+  Navbar,
   RoadmapPage,
+  Sidebar,
   WalletPage,
 } from "./components";
 
-import { Provider } from "react-redux";
-import store from "./lib/redux";
-// import { ThemeProvider } from "styled-components";
 import "./styles/tailwind.output.css";
 
 export default function App() {
   const { connector } = useWeb3React<Web3Provider>();
-  const [miniSidebar, setMiniSidebar] = useState(true);
+  const [miniSidebar, setMiniSidebar] = useState(false);
 
   // handle logic to recognize the connector currently being activated
   const [activatingConnector, setActivatingConnector] = useState<any>();
@@ -69,7 +70,7 @@ export default function App() {
                 path={paths.ROUTE_COLLECTIBLE}
                 component={CollectiblePage}
               />
-              <Route path={paths.ROUTE_EXPLORE} exact component={ExplorePage} />
+              {/* <Route path={paths.ROUTE_EXPLORE} exact component={ExplorePage} /> */}
               <Route path={paths.ROUTE_WALLET} exact component={WalletPage} />
               <Route path={paths.ROUTE_ROADMAP} exact component={RoadmapPage} />
               <Route path={paths.ROUTE_FAQ} exact component={FaqPage} />

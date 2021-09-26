@@ -1,7 +1,6 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { useWeb3React } from "@web3-react/core";
-import { collectibles } from "../../data";
+// import { collectibles } from "../../data";
 import { NFT } from "../../typings/nft";
 import { PureCollectionPage } from "./CollectionPage";
 
@@ -10,24 +9,26 @@ interface IParams {
 }
 
 const CollectionPage = () => {
-  const { chainId } = useWeb3React();
   const { name } = useParams<IParams>();
   const [items, setItems] = useState<Array<NFT>>([]);
   const [loading, setLoading] = useState(true);
 
-  // // TODO: replace with api calls
-  const getItems = useCallback((type: string) => {
-    const items =
-      chainId === 43113
-        ? collectibles.filter((item) => item.category === type)
-        : [];
-    return items;
-  }, []);
-
   useEffect(() => {
-    setItems(getItems(name));
-    setLoading(false);
-  }, [getItems, name]);
+    const getItems = async () => {
+      let nftList: any = await fetch(
+        "https://hodoapi.buildmydapp.co/list_nfts"
+      );
+      nftList = await nftList.json();
+      nftList =
+        nftList.data.filter((item: any) => item.category === name) || [];
+      // nftList = nftList.reverse();
+      setItems(nftList);
+    };
+
+    getItems().then(() => {
+      setLoading(false);
+    });
+  }, []);
 
   return <PureCollectionPage items={items} loading={loading} />;
 };
