@@ -31,7 +31,7 @@ export const Footer = () => {
     },
     discord: {
       show: true,
-      href: "https://discord.gg/4TZNZy5Eaa",
+      href: "https://discord.gg/vYcZj5Fgfy",
       title: "Discord",
     },
     email: {
