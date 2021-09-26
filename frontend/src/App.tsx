@@ -11,7 +11,7 @@ import {
   CollectiblePage,
   CollectionPage,
   CollectionsPage,
-  ExplorePage,
+  // ExplorePage,
   HomePage,
   FaqPage,
   Navbar,
@@ -70,7 +70,7 @@ export default function App() {
                 path={paths.ROUTE_COLLECTIBLE}
                 component={CollectiblePage}
               />
-              <Route path={paths.ROUTE_EXPLORE} exact component={ExplorePage} />
+              {/* <Route path={paths.ROUTE_EXPLORE} exact component={ExplorePage} /> */}
               <Route path={paths.ROUTE_WALLET} exact component={WalletPage} />
               <Route path={paths.ROUTE_ROADMAP} exact component={RoadmapPage} />
               <Route path={paths.ROUTE_FAQ} exact component={FaqPage} />

@@ -2,7 +2,7 @@ import {
   CollectiblePage,
   CollectionPage,
   CollectionsPage,
-  ExplorePage,
+  // ExplorePage,
   FaqPage,
   HomePage,
   RoadmapPage,
@@ -35,12 +35,12 @@ const routes = [
     Component: CollectiblePage,
     exact: false,
   },
-  {
-    path: paths.ROUTE_EXPLORE,
-    name: "Explore",
-    Component: ExplorePage,
-    exact: true,
-  },
+  // {
+  //   path: paths.ROUTE_EXPLORE,
+  //   name: "Explore",
+  //   Component: ExplorePage,
+  //   exact: true,
+  // },
   {
     path: paths.ROUTE_WALLET,
     name: "Wallet",
