@@ -28,7 +28,7 @@ export const WalletAddress: React.FC<WalletAddressProps> = ({
         </p>
       ) : (
         <p className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis'>
-          Undefined
+          Not connected
         </p>
       )}
     </div>

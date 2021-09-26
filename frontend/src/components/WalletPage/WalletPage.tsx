@@ -29,52 +29,43 @@ export const PureWalletPage = ({
   address,
   chainId,
 }: PureWalletPageProps) => {
-  if (!connected) {
-    return (
-      <ContentWrapper>
-        <div className='p-4 sm:p-8 max-w-8xl'>
-          <OnboardingButton />
-          <ChainAddButton
-            label='Use Mainnet'
-            disabled={false}
-            params={AVALANCHE_MAINNET_PARAMS}
-          />
-        </div>
-      </ContentWrapper>
-    );
-  }
-
   return (
     <ContentWrapper>
       <div className='p-4 sm:p-8 max-w-8xl space-y-8'>
-        <div>
-          <h1 className='text-sm uppercase font-medium text-gray-500 dark:text-gray-400'>
-            {TEXT_NETWORK}
-          </h1>
-          <p className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis'>
-            {network}
-          </p>
-        </div>
-
-        <NetworkSwitch />
-
         <WalletAddress address={address} loading={false} />
 
         <div>
           <h1 className='text-sm uppercase font-medium text-gray-500 dark:text-gray-400'>
+            {TEXT_NETWORK}
+          </h1>
+          {connected ? (
+            <p className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis'>
+              {network}
+            </p>
+          ) : (
+            <div className='mt-2'>
+              <OnboardingButton />
+            </div>
+          )}
+        </div>
+
+        {connected && <NetworkSwitch />}
+
+        {/* <div>
+          <h1 className='text-sm uppercase font-medium text-gray-500 dark:text-gray-400'>
             {TEXT_BALANCE}
           </h1>
           <div className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis'>
-            {/* {library && (
+            {library && (
               <SWRConfig value={{ fetcher: fetcher(library, new Map(ABIs)) }}>
                 <EthBalance />
                 <TokenList chainId={chainId} />
               </SWRConfig>
-            )} */}
+            )}
           </div>
-        </div>
+        </div> */}
 
-        <div>
+        {/* <div>
           <h1 className='text-sm uppercase font-medium text-gray-500 dark:text-gray-400'>
             {TEXT_ADD_FUNDS}
           </h1>
@@ -111,7 +102,7 @@ export const PureWalletPage = ({
               Unsupported network.
             </p>
           )}
-        </div>
+        </div> */}
       </div>
     </ContentWrapper>
   );

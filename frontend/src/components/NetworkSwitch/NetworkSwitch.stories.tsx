@@ -1,14 +1,26 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react";
 
-import { NetworkSwitch } from "./NetworkSwitch";
+import { PureNetworkSwitch } from "./NetworkSwitch";
 
 export default {
   title: "Components/NetworkSwitch",
-  component: NetworkSwitch,
+  component: PureNetworkSwitch,
 } as Meta;
 
-const Template: Story = (args) => <NetworkSwitch {...args} />;
+const Template: Story = (args) => <PureNetworkSwitch {...args} />;
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  chainId: 1,
+};
+
+export const Avalanche = Template.bind({});
+Avalanche.args = {
+  chainId: 43114,
+};
+
+export const Fuji = Template.bind({});
+Fuji.args = {
+  chainId: 43113,
+};

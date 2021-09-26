@@ -22,7 +22,7 @@
   }
 
   .btn--secondary {
-    @apply border-gray-300 dark:border-gray-800 bg-transparent;
+    @apply border-gray-300 dark:border-gray-800 bg-white text-blue-600 hover:text-blue-700;
   }
 
   .link {

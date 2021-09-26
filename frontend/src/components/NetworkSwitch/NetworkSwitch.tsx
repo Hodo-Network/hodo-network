@@ -1,12 +1,16 @@
-import React from "react";
 import { ChainAddButton } from "../index";
 import { TEXT_SWITCH } from "../../constants/text";
 import {
   AVALANCHE_MAINNET_PARAMS,
   AVALANCHE_TESTNET_PARAMS,
+  ChainId,
 } from "../../constants";
 
-export const NetworkSwitch = () => {
+export interface PureNetworkSwitchProps {
+  chainId?: number;
+}
+
+export const PureNetworkSwitch = ({ chainId }: PureNetworkSwitchProps) => {
   return (
     <div>
       <h1 className='text-sm uppercase font-medium text-gray-500 dark:text-gray-400'>
@@ -15,12 +19,12 @@ export const NetworkSwitch = () => {
       <div className='mt-2 flex space-x-4'>
         <ChainAddButton
           label='Use Avalanche'
-          disabled={false}
+          disabled={chainId === ChainId.AVALANCHE}
           params={AVALANCHE_MAINNET_PARAMS}
         />
         <ChainAddButton
           label='Use Fuji Testnet'
-          disabled={false}
+          disabled={chainId === ChainId.FUJI}
           params={AVALANCHE_TESTNET_PARAMS}
         />
       </div>
