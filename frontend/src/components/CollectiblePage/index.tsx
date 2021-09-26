@@ -22,9 +22,9 @@ const CollectiblePage = () => {
   const { tokenId } = useParams<IParams>();
   const [items, setItems] = useState<Array<NFT>>([]);
   const [asset, setAsset] = useState<NFT>();
-  const collection = itemsss.filter((item) => {
-    return item.category === name;
-  });
+  const [web3State, setWeb3State] = useState<any>();
+  // const [accounts, setAccounts] = useState<any>();
+  const [contract, setContract] = useState<any>();
 
   const getAsset = (tokenId: string, arrayData: any) => {
     return arrayData.filter((asset: any) => asset.id === tokenId)[0];
@@ -43,13 +43,9 @@ const CollectiblePage = () => {
   }, []);
 
   useEffect(() => {
-    // fetch(`${endpoint}/${id}`).then(setAsset);
-    // setAsset(getAsset(tokenId));
+    enableWeb3();
+    setAsset(getAsset(tokenId, items));
   }, [tokenId]);
-
-  const [web3State, setWeb3State] = useState<any>();
-  const [accounts, setAccounts] = useState<any>();
-  const [contract, setContract] = useState<any>();
 
   const enableWeb3 = async () => {
     try {
@@ -62,14 +58,15 @@ const CollectiblePage = () => {
       );
       setContract(contract);
       console.log("this is for contract", contract.methods);
-      const accounts = await web3.eth.getAccounts();
-      setAccounts(accounts);
+      // const accounts = await web3.eth.getAccounts();
+      // setAccounts(accounts);
     } catch (error) {}
   };
 
   const onBuyAsset = async () => {
     try {
-      let ownerAddress = accounts[0];
+      // let ownerAddress = accounts[0];
+      let ownerAddress = account;
       let id = asset ? asset.id : "";
       const requestOptions = {
         method: "POST",
@@ -92,8 +89,8 @@ const CollectiblePage = () => {
       tradeCount = --tradeCount;
       const receipt = await contract.methods
         .executeTrade(tradeCount, 0x00)
-        .send({ from: accounts[0], value: price });
-
+        .send({ from: account, value: price });
+      // .send({ from: accounts[0], value: price });
 
       console.log("after  transaction ", receipt);
 
