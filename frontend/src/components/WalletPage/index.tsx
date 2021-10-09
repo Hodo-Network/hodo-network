@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+// import { useMemo } from "react";
 import { useWeb3React } from "@web3-react/core";
 import { Web3Provider } from "@ethersproject/providers";
 // import { SWRConfig } from "swr";
@@ -24,26 +24,26 @@ const WalletPage = () => {
   // [
   //   [ 0x00001, JSONABI ]
   // ]
-  const ABIs: any[] = useMemo(() => {
-    if (chainId) {
-      return (
-        TOKENS_BY_NETWORK[chainId] || []
-      ).map(({ address, abi }: { address: string; abi: any }) => [
-        address,
-        abi,
-      ]);
-    } else {
-      return [];
-    }
-  }, [chainId]);
+  // const ABIs: any[] = useMemo(() => {
+  //   if (chainId) {
+  //     return (
+  //       TOKENS_BY_NETWORK[chainId] || []
+  //     ).map(({ address, abi }: { address: string; abi: any }) => [
+  //       address,
+  //       abi,
+  //     ]);
+  //   } else {
+  //     return [];
+  //   }
+  // }, [chainId]);
 
   return (
     <PureWalletPage
-      connected={!!chainId}
       // @ts-ignore
       network={NETWORK_LABELS[chainId]}
       address={account}
       chainId={chainId}
+      connected={!!chainId}
     />
   );
 };

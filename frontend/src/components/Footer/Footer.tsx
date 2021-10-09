@@ -20,7 +20,7 @@ export const Footer = () => {
       title: "Twitter",
     },
     github: {
-      show: true,
+      show: false,
       href: "https://github.com/Hodo-Network",
       title: "GitHub",
     },

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useRouteMatch, useLocation } from "react-router-dom";
 import { ROUTE_DEFAULT } from "./constants/routes";
+// import { nftListApi } from "./http";
 import { Breadcrumbs } from "./components";
 import routes from "./routes";
 
@@ -18,7 +19,7 @@ export default function ContentWrapper({ children }) {
 
   useEffect(() => {
     const getItems = async () => {
-      // let nftList = await fetch("https://hodoapi.buildmydapp.co/list_nfts");
+      // let nftList = await fetch(nftListApi);
       // nftList = await nftList.json();
       // setItems(nftList.data);
       setItems([]);

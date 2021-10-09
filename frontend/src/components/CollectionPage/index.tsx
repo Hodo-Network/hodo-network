@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 // import { collectibles } from "../../data";
 import { NFT } from "../../typings/nft";
+import { nftListApi } from "../../http";
 import { PureCollectionPage } from "./CollectionPage";
 
 interface IParams {
@@ -15,9 +16,7 @@ const CollectionPage = () => {
 
   useEffect(() => {
     const getItems = async () => {
-      let nftList: any = await fetch(
-        "https://hodoapi.buildmydapp.co/list_nfts"
-      );
+      let nftList: any = await fetch(nftListApi);
       nftList = await nftList.json();
       nftList =
         nftList.data.filter((item: any) => item.category === name) || [];

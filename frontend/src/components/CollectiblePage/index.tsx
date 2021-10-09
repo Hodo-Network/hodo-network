@@ -7,6 +7,7 @@ import { useWeb3React } from "@web3-react/core";
 // import BN from "bn.js";
 // import { WALLET_ADDRESS } from "../../constants";
 // import { collectibles } from "../../data";
+import { buyNftApi, nftListApi } from "../../http";
 import { NFT } from "../../typings/nft";
 import { PureCollectiblePage } from "./CollectiblePage";
 import { CONTRACT_ADDRESS } from "../../abi/NFT";
@@ -32,9 +33,7 @@ const CollectiblePage = () => {
 
   useEffect(() => {
     const getItems = async () => {
-      let fetchNftData: any = await fetch(
-        "https://hodoapi.buildmydapp.co/list_nfts"
-      );
+      let fetchNftData: any = await fetch(nftListApi);
       fetchNftData = await fetchNftData.json();
       setItems(fetchNftData.data);
     };
@@ -76,10 +75,7 @@ const CollectiblePage = () => {
           ownerAddress,
         }),
       };
-      let fetchNftData = await fetch(
-        "https://hodoapi.buildmydapp.co/buy_nft",
-        requestOptions
-      );
+      let fetchNftData = await fetch(buyNftApi, requestOptions);
 
       let token_id: any = asset ? asset.tokenId.toString() : "";
       let price: any = asset ? asset.price.value.toString() : "";
