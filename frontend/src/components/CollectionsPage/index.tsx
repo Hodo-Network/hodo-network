@@ -1,22 +1,19 @@
 import { useEffect, useState } from "react";
 import { useWeb3React } from "@web3-react/core";
-// import { Collection } from "../../typings/nft";
-// import { collections } from "../../data";
+import { Collection } from "../../typings/nft";
 import { collectionsApi } from "../../http";
 import { PureCollectionsPage } from "./CollectionsPage";
 
 const CollectionsPage = () => {
   const { chainId } = useWeb3React();
-  const [items, setItems] = useState<any[]>([]);
+  const [items, setItems] = useState<Array<Collection>>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const getItems = async () => {
-      // TODO: update typings
-      // let collectionList: any = await fetch(collectionsApi);
-      // collectionList = await collectionList.json();
-      // setItems(collectionList.data);
-      setItems([]);
+      await fetch(collectionsApi)
+        .then((res) => res.json())
+        .then((res) => setItems(res.data));
     };
 
     getItems().then(() => {

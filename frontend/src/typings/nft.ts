@@ -12,12 +12,6 @@ export enum TransferType {
     TRANSFER = 2
 }
 
-export enum NFTCategory {
-    COUNTRY = 'country',
-    CAPITAL = 'capital',
-    MONUMENT = 'monument',
-}
-
 export enum NFTRarity {
     RARE = 'rare',
     EPIC = 'epic',
@@ -51,7 +45,7 @@ export type NFT<V extends Vendor = any> = {
     // activeOrderId: string | null
     owner: string
     name: string;
-    category: NFTCategory;
+    category: string;
     image: string;
     // url: string;
     vendor: Vendor;
@@ -61,8 +55,6 @@ export type NFT<V extends Vendor = any> = {
 
 export type Collection = {
     id: string;
-    // contractAddress: string
-    // owner: string
     name: string;
     image: string;
 }
