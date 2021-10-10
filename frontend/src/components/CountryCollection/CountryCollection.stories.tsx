@@ -3,6 +3,8 @@ import { Story, Meta } from "@storybook/react";
 
 import { CountryCollection, CountryCollectionProps } from "./CountryCollection";
 
+import HodoNftAbi from "../../abi/HodoNFT.abi.json";
+
 export default {
   title: "Components/CountryCollection",
   component: CountryCollection,
@@ -13,4 +15,7 @@ const Template: Story<CountryCollectionProps> = (args) => (
 );
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  address: "0x4b9b8F97305B3d266812c91715120c4EC303d812",
+  abi: HodoNftAbi,
+};

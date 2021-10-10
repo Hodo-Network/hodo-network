@@ -4,14 +4,15 @@ import { Contract } from "@ethersproject/contracts";
 import { Web3Provider } from "@ethersproject/providers";
 // import { formatUnits } from "@ethersproject/units";
 // import useSWR from "swr";
-import CountryCollectionABI from "../../abi/CountryCollection.abi.json";
 
 export interface CountryCollectionProps {
   address: string;
+  abi: any;
 }
 
 export const CountryCollection: React.FC<CountryCollectionProps> = ({
   address,
+  abi,
 }) => {
   const { account, library } = useWeb3React<Web3Provider>();
   // const { data: balance, mutate } = useSWR([address, "balanceOf", account]);
@@ -20,11 +21,7 @@ export const CountryCollection: React.FC<CountryCollectionProps> = ({
     if (library) {
       // listen for changes on an Ethereum address
       console.log("listening for Transfer...");
-      const contract = new Contract(
-        address,
-        CountryCollectionABI,
-        library.getSigner()
-      );
+      const contract = new Contract(address, abi, library.getSigner());
       contract
         .common_supply()
         .then((result: any) => {

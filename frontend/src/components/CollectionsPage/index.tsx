@@ -16,9 +16,14 @@ const CollectionsPage = () => {
         .then((res) => setItems(res.data));
     };
 
-    getItems().then(() => {
-      setLoading(false);
-    });
+    getItems()
+      .then(() => {
+        setLoading(false);
+      })
+      .catch((error) => {
+        setLoading(false);
+        console.log(error);
+      });
   }, [chainId]);
 
   return <PureCollectionsPage items={items} loading={loading} />;

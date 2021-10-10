@@ -37,7 +37,7 @@ export const ExplorePage = () => {
             </div>
             <div className='min-h-0 overflow-y-auto flex-1'>
               {items.length ? (
-                items?.map((item) => (
+                items.map((item) => (
                   <div
                     key={item.id}
                     // onClick={() => setSelected(item)}
@@ -58,7 +58,7 @@ export const ExplorePage = () => {
                         {item.name}
                       </p>
                       <p className='mt-1 text-sm text-gray-600 dark:text-gray-300 truncate'>
-                        {item.data.description}
+                        {item.description}
                       </p>
                     </div>
                   </div>

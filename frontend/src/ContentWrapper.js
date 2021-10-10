@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, useRouteMatch, useLocation } from "react-router-dom";
 import { ROUTE_DEFAULT } from "./constants/routes";
-// import { nftListApi } from "./http";
 import { Breadcrumbs } from "./components";
 import routes from "./routes";
 
@@ -9,7 +8,6 @@ export default function ContentWrapper({ children }) {
   const match = useRouteMatch();
   const params = useParams();
   const location = useLocation();
-  const [items, setItems] = useState([]);
   const [crumbs, setCrumbs] = useState([]);
 
   const matchHome = useRouteMatch({
@@ -18,21 +16,8 @@ export default function ContentWrapper({ children }) {
   });
 
   useEffect(() => {
-    const getItems = async () => {
-      // let nftList = await fetch(nftListApi);
-      // nftList = await nftList.json();
-      // setItems(nftList.data);
-      setItems([]);
-    };
-
-    getItems().then(() => {
-      setCrumbs(getCrumbs());
-    });
+    setCrumbs(getCrumbs());
   }, []);
-
-  const getAsset = (id) => {
-    return items.filter((asset) => asset.id === id)[0];
-  };
 
   const getCrumbs = () => {
     return (
@@ -53,12 +38,13 @@ export default function ContentWrapper({ children }) {
           // E.g. ":id" will become "Asset Name"
           name: Object.keys(params).length
             ? Object.keys(params).reduce((name, param) => {
-                if (param === "id") {
-                  const asset = getAsset(params[param]);
-                  return name.replace(`:${param}`, asset.name);
-                } else {
-                  return name.replace(`:${param}`, params[param]);
-                }
+                // if (param === "id") {
+                //   const asset = getAsset(params[param]);
+                //   return name.replace(`:${param}`, asset.name);
+                // } else {
+                //   return name.replace(`:${param}`, params[param]);
+                // }
+                return name.replace(`:${param}`, params[param]);
               }, name)
             : name,
           ...rest,

@@ -4,13 +4,13 @@ import { CollectionCardEmpty, NFTCard } from "../index";
 import { NFT } from "../../typings/nft";
 
 export interface FeaturedNftsProps {
-  loading?: boolean;
   items: Array<NFT>;
+  loading?: boolean;
 }
 
 export const FeaturedNfts: React.FC<FeaturedNftsProps> = ({
-  loading = "false",
   items,
+  loading = false,
 }) => {
   if (loading) {
     return (

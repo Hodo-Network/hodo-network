@@ -1,3 +1,4 @@
+import ReactLoading from "react-loading";
 import {
   TEXT_BUY,
   TEXT_COST,
@@ -7,16 +8,18 @@ import {
   TEXT_COORDS,
   TEXT_OWNER,
 } from "../../constants/text";
+import { NFT } from "../../typings/nft";
 import ContentWrapper from "../../ContentWrapper";
 import Button from "../Button";
 import NFTList from "../NFTList";
 import RarityBadge from "../RarityBadge";
 
 export interface PureCollectiblePageProps {
-  asset?: any;
-  collection?: any;
+  asset?: NFT;
+  collection: Array<NFT>;
   onBuyAsset?: () => void;
   connected?: boolean;
+  loading?: boolean;
 }
 
 export const PureCollectiblePage = ({
@@ -24,9 +27,18 @@ export const PureCollectiblePage = ({
   collection,
   onBuyAsset,
   connected,
+  loading = false,
 }: PureCollectiblePageProps) => {
   return (
     <ContentWrapper>
+      {loading && (
+        <ReactLoading
+          type='bubbles'
+          color='currentColor'
+          className='text-blue-600 dark:text-blue-500'
+        />
+      )}
+
       {asset && (
         <div className='max-w-8xl h-full'>
           <div className='flex flex-row items-stretch h-full'>
@@ -46,7 +58,7 @@ export const PureCollectiblePage = ({
                   </h3>
 
                   <span className='mt-1 ml-4'>
-                    <RarityBadge rarity={asset.data.rarity} />
+                    <RarityBadge rarity={asset.rarity} />
                   </span>
                 </div>
 
@@ -64,7 +76,7 @@ export const PureCollectiblePage = ({
                     {TEXT_DESCRIPTION}
                   </h1>
                   <p className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis'>
-                    {asset.data.description}
+                    {asset.description}
                   </p>
                 </div>
 
@@ -73,7 +85,7 @@ export const PureCollectiblePage = ({
                     {TEXT_ID}
                   </h1>
                   <p className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis'>
-                    {asset.id}
+                    {asset.tokenId}
                   </p>
                 </div>
 
@@ -82,7 +94,7 @@ export const PureCollectiblePage = ({
                     {TEXT_OWNER}
                   </h1>
                   <p className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis capitalize'>
-                    {asset.owner}
+                    {asset.owner_address}
                   </p>
                 </div>
 
@@ -91,7 +103,7 @@ export const PureCollectiblePage = ({
                     {TEXT_COORDS}
                   </h1>
                   <p className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis'>
-                    [{asset.data.location.lat}, {asset.data.location.long}]
+                    [{asset.lat}, {asset.long}]
                   </p>
                 </div>
 
@@ -100,7 +112,8 @@ export const PureCollectiblePage = ({
                     {TEXT_COST}
                   </h1>
                   <p className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis'>
-                    {asset.price.value} {asset.price.units}
+                    {asset.price}
+                    {/* {asset.price.units} */}
                     {/* {(chainId && NATIVE_CURRENCY[chainId]) || NATIVE_CURRENCY[0]} */}
                   </p>
                 </div>

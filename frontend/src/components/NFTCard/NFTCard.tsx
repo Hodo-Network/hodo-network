@@ -13,14 +13,14 @@ export interface NFTCardProps {
 }
 
 export const NFTCard: React.FC<NFTCardProps> = ({
-  nft: { id, name, category, image, data, price },
+  nft: { name, category, image, description, price, rarity, tokenId },
   className,
 }) => {
   // const { chainId } = useWeb3React<Web3Provider>();
 
   return (
     <NavLink
-      to={`${ROUTE_COLLECTIONS}/${category}/${id}`}
+      to={`${ROUTE_COLLECTIONS}/${category}/${tokenId}`}
       className={`${className} flex flex-col rounded-md shadow overflow-hidden transition-transform duration-300 transform hover:-translate-y-1`}>
       <div className='flex-shrink-0'>
         <img className='h-54 w-full object-scale-down' src={image} alt={name} />
@@ -31,15 +31,16 @@ export const NFTCard: React.FC<NFTCardProps> = ({
             {name}
           </p>
           <p className='mt-1 text-sm text-gray-600 dark:text-gray-300'>
-            {data.description}
+            {description}
           </p>
         </div>
         <div className='mt-6 flex items-center justify-between'>
           <div className='flex-shrink-0'>
-            <RarityBadge rarity={data.rarity} />
+            <RarityBadge rarity={rarity} />
           </div>
           <div className='ml-3 text-sm font-medium text-green-600 dark:text-green-500'>
-            {price.value} {price.units}
+            {price}
+            {/* {price.units} */}
             {/* {(chainId && NATIVE_CURRENCY[chainId]) || NATIVE_CURRENCY[0]} */}
           </div>
         </div>

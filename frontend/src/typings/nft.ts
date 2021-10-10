@@ -31,26 +31,41 @@ export type NFTPrice = {
 export type HodoNetworkNFT = {
     description: string;
     rarity: NFTRarity;
-    location: NFTLocation;
+    // location: NFTLocation;
+    lat: string;
+    long: string;
 }
 
 export type Data<V extends Vendor> = V extends Vendor.HODO_NETWORK
     ? HodoNetworkNFT
     : never;
 
-export type NFT<V extends Vendor = any> = {
+// export type NFT<V extends Vendor = any> = {
+export type NFT = {
     id: string;
-    contractAddress: string
-    tokenId: string
-    // activeOrderId: string | null
-    owner: string
     name: string;
-    category: string;
+    description: string;
+    // price: NFTPrice;
+    price: number;
     image: string;
+    created_at: string;
+    owner_address: string;
+    contractAddress: string;
+    creator: string;
+    tx_hash: string;
+    supply: string;
+    is_deleted: number;
+    sold: number;
+    tokenId: string;
+    category: string;
+    lat: number;
+    long: number;
+    rarity: NFTRarity;
+    amount: string;
+    // vendor: Vendor;
+    // data: Data<V>;
+    // activeOrderId: string | null;
     // url: string;
-    vendor: Vendor;
-    data: Data<V>;
-    price: NFTPrice;
 }
 
 export type Collection = {

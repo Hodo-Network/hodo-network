@@ -24,12 +24,12 @@ export const NFTList: React.FC<NFTListProps> = ({ items }) => {
           {items.map((item) => (
             <NavLink
               key={item.id}
-              to={`${ROUTE_COLLECTIONS}/${item.category}/${item.id}`}
+              to={`${ROUTE_COLLECTIONS}/${item.category}/${item.tokenId}`}
               exact={true}
               className='cursor-pointer flex p-4 border-b border-gray-200 dark:border-gray-800 items-center hover:bg-gray-100 dark:hover:bg-gray-800'
               activeClassName='bg-gray-100 dark:bg-gray-800'
               aria-current={
-                [`${ROUTE_COLLECTIONS}/${item.category}/${item.id}`].includes(
+                [`${ROUTE_COLLECTIONS}/${item.category}/${item.tokenId}`].includes(
                   location.pathname
                 )
                   ? "page"
@@ -45,7 +45,7 @@ export const NFTList: React.FC<NFTListProps> = ({ items }) => {
                   {item.name}
                 </p>
                 <p className='mt-1 text-sm text-gray-600 dark:text-gray-300 truncate'>
-                  {item.data.description}
+                  {item.description}
                 </p>
               </div>
             </NavLink>

@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-// import { collectibles } from "../../data";
 import { NFT } from "../../typings/nft";
-import { nftListApi } from "../../http";
+import { nftCategoryApi } from "../../http";
 import { PureCollectionPage } from "./CollectionPage";
 
 interface IParams {
@@ -16,18 +15,24 @@ const CollectionPage = () => {
 
   useEffect(() => {
     const getItems = async () => {
-      let nftList: any = await fetch(nftListApi);
-      nftList = await nftList.json();
-      nftList =
-        nftList.data.filter((item: any) => item.category === name) || [];
-      // nftList = nftList.reverse();
-      setItems(nftList);
+      await fetch(nftCategoryApi, {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json;charset=UTF-8",
+        },
+        body: JSON.stringify({ category: name }),
+      })
+        .then((res) => res.json())
+        .then((res) => setItems(res.data));
     };
 
-    getItems().then(() => {
-      setLoading(false);
-    });
-  }, []);
+    getItems()
+      .then(() => setLoading(false))
+      .catch((error) => {
+        setLoading(false);
+        console.log(error);
+      });
+  }, [name]);
 
   return <PureCollectionPage items={items} loading={loading} />;
 };

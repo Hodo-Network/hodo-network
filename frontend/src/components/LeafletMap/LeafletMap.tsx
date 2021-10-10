@@ -29,10 +29,7 @@ function LocationMarker({ selected }: { selected: NFT }) {
   });
 
   useEffect(() => {
-    const latlng = new L.LatLng(
-      selected.data.location.lat,
-      selected.data.location.long
-    );
+    const latlng = new L.LatLng(selected.lat, selected.long);
     setPosition(latlng);
     map.flyTo(latlng, 5);
   }, [selected]);
@@ -42,8 +39,8 @@ function LocationMarker({ selected }: { selected: NFT }) {
       <Popup>
         <div className='font-semibold text-base'>{selected.name}</div>
         <div>
-          <span className='font-semibold'>Cost:</span> {selected.price.value}{" "}
-          {selected.price.units}
+          <span className='font-semibold'>Cost:</span> {selected.price}
+          {/* {selected.price.units} */}
           {/* {(chainId && NATIVE_CURRENCY[chainId]) || NATIVE_CURRENCY[0]} */}
         </div>
         <div>
@@ -59,7 +56,7 @@ function LocationMarker({ selected }: { selected: NFT }) {
 
 function ItemMarker({ item }: { item: NFT }) {
   // const { chainId } = useWeb3React<Web3Provider>();
-  const center = new L.LatLng(item.data.location.lat, item.data.location.long);
+  const center = new L.LatLng(item.lat, item.long);
   const radiusInner = 5000;
   const radiusOuter = 25000;
   var icon = L.icon({
@@ -76,8 +73,8 @@ function ItemMarker({ item }: { item: NFT }) {
         <Popup>
           <div className='font-semibold text-base'>{item.name}</div>
           <div>
-            <span className='font-semibold'>Cost:</span> {item.price.value}{" "}
-            {item.price.units}
+            <span className='font-semibold'>Cost:</span> {item.price}
+            {/* {item.price.units} */}
             {/* {(chainId && NATIVE_CURRENCY[chainId]) || NATIVE_CURRENCY[0]} */}
           </div>
           <div>
