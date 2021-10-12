@@ -1,0 +1,12 @@
+{
+    "name": "North America",
+    "description": "North America Rare",
+    "image": "https://gateway.pinata.cloud/ipfs/QmNahJHuhorvrR5MVLDgQQ3eGSpJ9Q13fygn6v7gUyNKaz",
+    "properties": {
+        "rarity": "rare",
+        "coordinates": {
+            "lat": 63.0689693,
+            "long": -151.0074678
+        }
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "name": "Oceania",
+    "description": "Oceania Rare",
+    "image": "https://gateway.pinata.cloud/ipfs/QmeDvQjHnEnaX8PSamcLR2v8HVPxcDuccDceYWSHXMKcd9",
+    "properties": {
+        "rarity": "rare",
+        "coordinates": {
+            "lat": -4.085390455,
+            "long": 137.1861244
+        }
+    }
+}

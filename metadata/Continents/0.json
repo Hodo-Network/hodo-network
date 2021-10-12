@@ -1,0 +1,12 @@
+{
+    "name": "Africa",
+    "description": "Africa Rare",
+    "image": "https://gateway.pinata.cloud/ipfs/QmcPYCLgERJcfbSv9SxwuDtEqShtcNmq1kJo3KNPFywH2K",
+    "properties": {
+        "rarity": "rare",
+        "coordinates": {
+            "lat": -3.064382331,
+            "long": 37.35792304
+        }
+    }
+}

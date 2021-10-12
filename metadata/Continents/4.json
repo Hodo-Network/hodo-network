@@ -1,0 +1,12 @@
+{
+    "name": "Europe",
+    "description": "Europe Rare",
+    "image": "https://gateway.pinata.cloud/ipfs/QmaFovw9HrPi18smwYyFzXicmB2cFUSLYYod2z4TwV4gQv",
+    "properties": {
+        "rarity": "rare",
+        "coordinates": {
+            "lat": 43.34989076,
+            "long": 42.44586654
+        }
+    }
+}

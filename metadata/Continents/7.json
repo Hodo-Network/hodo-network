@@ -1,0 +1,12 @@
+{
+    "name": "South America",
+    "description": "South America Rare",
+    "image": "https://gateway.pinata.cloud/ipfs/QmdM378mUkfzhC8cBqZddHjNZsTu4dYV2HmYqKpnv7mW9o",
+    "properties": {
+        "rarity": "rare",
+        "coordinates": {
+            "lat": -32.65308809,
+            "long": -70.01043835
+        }
+    }
+}

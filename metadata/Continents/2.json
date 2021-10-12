@@ -1,0 +1,12 @@
+{
+    "name": "Asia",
+    "description": "Asia Rare",
+    "image": "https://gateway.pinata.cloud/ipfs/QmbNfxihyRhvPWAEoZM7aakebiNhqsZdGAvaTMeR2pR5pL",
+    "properties": {
+        "rarity": "rare",
+        "coordinates": {
+            "lat": 27.98804429,
+            "long": 86.92564028
+        }
+    }
+}
