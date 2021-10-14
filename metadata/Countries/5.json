@@ -2,11 +2,19 @@
     "name": "Albania Rare",
     "description": "Rare version of the Albania country NFT.",
     "image": "https://gateway.pinata.cloud/ipfs/QmVQKdqAQ9Xh6d2QvNSrb4MdctjDHnAt2jggpoQucC7C6x",
-    "properties": {
-        "rarity": "rare",
-        "coordinates": {
-            "lat": 41.153332,
-            "long": 20.168331
+    "attributes": [{
+            "trait_type": "Rarity",
+            "value": "Rare"
+        },
+        {
+            "display_type": "number",
+            "trait_type": "Latitude",
+            "value": 41.153332
+        },
+        {
+            "display_type": "number",
+            "trait_type": "Longitude",
+            "value": 20.168331
         }
-    }
+    ]
 }

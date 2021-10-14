@@ -1,14 +1,19 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react";
 
-import { ExplorePage } from "./ExplorePage";
+import { collectibles } from "../../data";
+import { PureExplorePage, PureExplorePageProps } from "./ExplorePage";
 
 export default {
   title: "Pages/ExplorePage",
-  component: ExplorePage,
+  component: PureExplorePage,
 } as Meta;
 
-const Template: Story = (args) => <ExplorePage {...args} />;
+const Template: Story<PureExplorePageProps> = (args) => (
+  <PureExplorePage {...args} />
+);
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  items: collectibles,
+};

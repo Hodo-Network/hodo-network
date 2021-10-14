@@ -1,5 +1,10 @@
 import ERC20ABI from "../abi/ERC20.abi.json";
-import HodoNftABI from "../abi/HodoNFT.abi.json";
+import ContinentsAbi from "../abi/Continents.abi.json";
+import {
+  CONTINENTS_LOCALHOST_ADDRESS,
+  CONTINENTS_FUJI_ADDRESS,
+  CONTINENTS_AVALANCHE_ADDRESS,
+} from "../abi/Continents";
 
 export const NetworkContextName = "NETWORK";
 export const GAS_PRICE = 225;
@@ -105,20 +110,20 @@ export const COLLECTIONS_BY_NETWORK: {
 } = {
   [Networks.Localhost]: [
     {
-      address: "0x4b9b8F97305B3d266812c91715120c4EC303d812",
-      abi: HodoNftABI,
+      address: CONTINENTS_LOCALHOST_ADDRESS,
+      abi: ContinentsAbi,
     },
   ],
   [Networks.Fuji]: [
     {
-      address: "0x4b9b8F97305B3d266812c91715120c4EC303d812",
-      abi: HodoNftABI,
+      address: CONTINENTS_FUJI_ADDRESS,
+      abi: ContinentsAbi,
     },
   ],
   [Networks.Avalanche]: [
     {
-      address: "0x4b9b8F97305B3d266812c91715120c4EC303d812",
-      abi: HodoNftABI,
+      address: CONTINENTS_AVALANCHE_ADDRESS,
+      abi: ContinentsAbi,
     },
   ],
 };

@@ -19,17 +19,17 @@ async function main() {
 
   console.log("Account balance:", (await deployer.getBalance()).toString());
 
-  const CountryCollection = await ethers.getContractFactory("CountryCollection");
-  const collection = await CountryCollection.deploy();
-  await collection.deployed();
+  const Continents = await ethers.getContractFactory("Continents");
+  const continents = await Continents.deploy();
+  await continents.deployed();
 
-  console.log("CountryCollection address:", collection.address);
+  console.log("Continents address:", continents.address);
 
   // We also save the contract's artifacts and address in the frontend directory
-  saveFrontendFiles(collection);
+  saveFrontendFiles(continents);
 }
 
-function saveFrontendFiles(collection) {
+function saveFrontendFiles(continents) {
   const fs = require("fs");
   const contractsDir = __dirname + "/../frontend/src/contracts";
 
@@ -39,14 +39,14 @@ function saveFrontendFiles(collection) {
 
   fs.writeFileSync(
     contractsDir + "/contract-address.json",
-    JSON.stringify({ CountryCollection: collection.address }, undefined, 2)
+    JSON.stringify({ Continents: continents.address }, undefined, 2)
   );
 
-  const CountryCollectionArtifact = artifacts.readArtifactSync("CountryCollection");
+  const ContinentsArtifact = artifacts.readArtifactSync("Continents");
 
   fs.writeFileSync(
-    contractsDir + "/CountryCollection.json",
-    JSON.stringify(CountryCollectionArtifact, null, 2)
+    contractsDir + "/Continents.json",
+    JSON.stringify(ContinentsArtifact, null, 2)
   );
 }
 

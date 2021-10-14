@@ -7,18 +7,16 @@ import { Provider } from "react-redux";
 import store from "./state/redux";
 import { useEagerConnect, useInactiveListener } from "./hooks";
 import * as paths from "./constants/routes";
-import {
-  CollectiblePage,
-  CollectionPage,
-  CollectionsPage,
-  // ExplorePage,
-  HomePage,
-  FaqPage,
-  Navbar,
-  RoadmapPage,
-  Sidebar,
-  WalletPage,
-} from "./components";
+import CollectiblePage from "./components/CollectiblePage";
+import CollectionPage from "./components/CollectionPage";
+import CollectionsPage from "./components/CollectionsPage";
+import ExplorePage from "./components/ExplorePage";
+import HomePage from "./components/HomePage";
+import FaqPage from "./components/FaqPage";
+import Navbar from "./components/Navbar";
+import RoadmapPage from "./components/RoadmapPage";
+import Sidebar from "./components/Sidebar";
+import WalletPage from "./components/WalletPage";
 
 import "./styles/tailwind.output.css";
 
@@ -70,7 +68,7 @@ export default function App() {
                 path={paths.ROUTE_COLLECTIBLE}
                 component={CollectiblePage}
               />
-              {/* <Route path={paths.ROUTE_EXPLORE} exact component={ExplorePage} /> */}
+              <Route path={paths.ROUTE_EXPLORE} exact component={ExplorePage} />
               <Route path={paths.ROUTE_WALLET} exact component={WalletPage} />
               <Route path={paths.ROUTE_ROADMAP} exact component={RoadmapPage} />
               <Route path={paths.ROUTE_FAQ} exact component={FaqPage} />

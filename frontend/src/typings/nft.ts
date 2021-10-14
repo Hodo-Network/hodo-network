@@ -20,7 +20,7 @@ export enum NFTRarity {
 
 export type NFTLocation = {
     lat: number;
-    long: number;
+    lng: number;
 }
 
 export type NFTPrice = {
@@ -32,22 +32,32 @@ export type HodoNetworkNFT = {
     description: string;
     rarity: NFTRarity;
     // location: NFTLocation;
-    lat: string;
-    long: string;
+    lat: number;
+    lng: number;
 }
 
 export type Data<V extends Vendor> = V extends Vendor.HODO_NETWORK
     ? HodoNetworkNFT
     : never;
 
+export type NFTData = {
+    rarity: NFTRarity;
+    lat: number;
+    lng: number;
+}
+
 // export type NFT<V extends Vendor = any> = {
 export type NFT = {
     id: string;
     name: string;
     description: string;
+    image: string;
+    // attributes: NFTData;
+    rarity: NFTRarity;
+    lat: number;
+    lng: number;
     // price: NFTPrice;
     price: number;
-    image: string;
     created_at: string;
     owner_address: string;
     contractAddress: string;
@@ -57,10 +67,7 @@ export type NFT = {
     is_deleted: number;
     sold: number;
     tokenId: string;
-    category: string;
-    lat: number;
-    long: number;
-    rarity: NFTRarity;
+    // category: string;
     amount: string;
     // vendor: Vendor;
     // data: Data<V>;
@@ -68,8 +75,9 @@ export type NFT = {
     // url: string;
 }
 
-export type Collection = {
+export interface Collection {
     id: string;
     name: string;
     image: string;
+    contractAddress: string;
 }

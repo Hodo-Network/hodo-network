@@ -1,27 +1,23 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { NFT } from "../../typings/nft";
-import { nftCategoryApi } from "../../http";
+import { getNftByContractAddressApi } from "../../http";
 import { PureCollectionPage } from "./CollectionPage";
 
 interface IParams {
-  name: string;
+  contractAddress: string;
 }
 
 const CollectionPage = () => {
-  const { name } = useParams<IParams>();
+  const { contractAddress } = useParams<IParams>();
   const [items, setItems] = useState<Array<NFT>>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const getItems = async () => {
-      await fetch(nftCategoryApi, {
-        method: "post",
-        headers: {
-          "Content-Type": "application/json;charset=UTF-8",
-        },
-        body: JSON.stringify({ category: name }),
-      })
+      await fetch(
+        `${getNftByContractAddressApi}?contractAddress=${contractAddress}`
+      )
         .then((res) => res.json())
         .then((res) => setItems(res.data));
     };
@@ -32,7 +28,7 @@ const CollectionPage = () => {
         setLoading(false);
         console.log(error);
       });
-  }, [name]);
+  }, [contractAddress]);
 
   return <PureCollectionPage items={items} loading={loading} />;
 };

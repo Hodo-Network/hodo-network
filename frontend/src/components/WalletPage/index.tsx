@@ -3,7 +3,10 @@ import { useWeb3React } from "@web3-react/core";
 import { Web3Provider } from "@ethersproject/providers";
 // import { SWRConfig } from "swr";
 // import fetcher from "swr-eth";
-import { TOKENS_BY_NETWORK, NETWORK_LABELS } from "../../constants";
+import {
+  // TOKENS_BY_NETWORK,
+  NETWORK_LABELS,
+} from "../../constants";
 import { PureWalletPage } from "./WalletPage";
 
 // We import the contract's artifacts and address here, as we are going to be

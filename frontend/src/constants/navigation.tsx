@@ -1,5 +1,5 @@
 import {
-  // GlobeIcon,
+  GlobeIcon,
   CreditCardIcon,
   CollectionIcon,
   HomeIcon,
@@ -9,7 +9,7 @@ import {
 import {
   ROUTE_COLLECTIONS,
   ROUTE_DEFAULT,
-  // ROUTE_EXPLORE,
+  ROUTE_EXPLORE,
   ROUTE_FAQ,
   ROUTE_ROADMAP,
   ROUTE_WALLET,
@@ -23,7 +23,7 @@ export const navigation = [
     icon: CollectionIcon,
     exact: false,
   },
-  // { name: "Explore", href: ROUTE_EXPLORE, icon: GlobeIcon, exact: false },
+  { name: "Explore", href: ROUTE_EXPLORE, icon: GlobeIcon, exact: false },
   { name: "Wallet", href: ROUTE_WALLET, icon: CreditCardIcon, exact: true },
   {
     name: "Roadmap",

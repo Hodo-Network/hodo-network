@@ -1,6 +1,6 @@
 import React from "react";
 import { TOKENS_BY_NETWORK } from "../../constants";
-import { TokenBalance } from "../index";
+import TokenBalance from "../TokenBalance";
 
 export interface TokenListProps {
   chainId: number;

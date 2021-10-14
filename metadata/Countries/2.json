@@ -2,11 +2,19 @@
     "name": "Afghanistan Rare",
     "description": "Rare version of the Afghanistan country NFT.",
     "image": "https://gateway.pinata.cloud/ipfs/QmaLAahk2f1Qyvtz171thg85ArETnXyZm47fyepNvy9bnP",
-    "properties": {
-        "rarity": "rare",
-        "coordinates": {
-            "lat": 33.939110,
-            "long": 67.709953
+    "attributes": [{
+            "trait_type": "Rarity",
+            "value": "Rare"
+        },
+        {
+            "display_type": "number",
+            "trait_type": "Latitude",
+            "value": 33.939110
+        },
+        {
+            "display_type": "number",
+            "trait_type": "Longitude",
+            "value": 67.709953
         }
-    }
+    ]
 }

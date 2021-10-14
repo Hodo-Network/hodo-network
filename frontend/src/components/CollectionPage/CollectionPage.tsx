@@ -1,5 +1,5 @@
 import ContentWrapper from "../../ContentWrapper";
-import { FeaturedNfts } from "../../components";
+import FeaturedNfts from "../FeaturedNfts";
 
 export interface PureCollectionPageProps {
   items?: any;

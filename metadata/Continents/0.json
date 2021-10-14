@@ -2,11 +2,19 @@
     "name": "Africa",
     "description": "Africa Rare",
     "image": "https://gateway.pinata.cloud/ipfs/QmcPYCLgERJcfbSv9SxwuDtEqShtcNmq1kJo3KNPFywH2K",
-    "properties": {
-        "rarity": "rare",
-        "coordinates": {
-            "lat": -3.064382331,
-            "long": 37.35792304
+    "attributes": [{
+            "trait_type": "Rarity",
+            "value": "Rare"
+        },
+        {
+            "display_type": "number",
+            "trait_type": "Latitude",
+            "value": -3.064382331
+        },
+        {
+            "display_type": "number",
+            "trait_type": "Longitude",
+            "value": 37.35792304
         }
-    }
+    ]
 }

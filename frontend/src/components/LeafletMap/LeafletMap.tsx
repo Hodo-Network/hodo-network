@@ -29,9 +29,9 @@ function LocationMarker({ selected }: { selected: NFT }) {
   });
 
   useEffect(() => {
-    const latlng = new L.LatLng(selected.lat, selected.long);
+    const latlng = new L.LatLng(selected.lat, selected.lng);
     setPosition(latlng);
-    map.flyTo(latlng, 5);
+    map.flyTo(latlng, 3);
   }, [selected]);
 
   return position === null ? null : (
@@ -39,13 +39,13 @@ function LocationMarker({ selected }: { selected: NFT }) {
       <Popup>
         <div className='font-semibold text-base'>{selected.name}</div>
         <div>
-          <span className='font-semibold'>Cost:</span> {selected.price}
+          {/* <span className='font-semibold'>Cost:</span> {selected.price} */}
           {/* {selected.price.units} */}
           {/* {(chainId && NATIVE_CURRENCY[chainId]) || NATIVE_CURRENCY[0]} */}
         </div>
         <div>
           <NavLink
-            to={`${ROUTE_COLLECTIONS}/${selected.category}/${selected.id}`}>
+            to={`${ROUTE_COLLECTIONS}/${selected.contractAddress}/${selected.tokenId}`}>
             View NFT
           </NavLink>
         </div>
@@ -56,9 +56,9 @@ function LocationMarker({ selected }: { selected: NFT }) {
 
 function ItemMarker({ item }: { item: NFT }) {
   // const { chainId } = useWeb3React<Web3Provider>();
-  const center = new L.LatLng(item.lat, item.long);
-  const radiusInner = 5000;
-  const radiusOuter = 25000;
+  const center = new L.LatLng(item.lat, item.lng);
+  // const radiusInner = 5000;
+  // const radiusOuter = 25000;
   var icon = L.icon({
     iconUrl: item.image,
     iconSize: [48, 48],
@@ -73,8 +73,9 @@ function ItemMarker({ item }: { item: NFT }) {
         <Popup>
           <div className='font-semibold text-base'>{item.name}</div>
           <div>
-            <span className='font-semibold'>Cost:</span> {item.price}
-            {/* {item.price.units} */}
+            {item.description}
+            {/* <span className='font-semibold'>Cost:</span> {item.price} */}
+            {/* {item.price} */}
             {/* {(chainId && NATIVE_CURRENCY[chainId]) || NATIVE_CURRENCY[0]} */}
           </div>
           <div>
@@ -82,17 +83,17 @@ function ItemMarker({ item }: { item: NFT }) {
           </div>
         </Popup>
       </Marker>
-      <Circle
+      {/* <Circle
         center={center}
         pathOptions={{ color: "blue", fillColor: "blue" }}
         radius={radiusOuter}
-      />
-      <Circle
+      /> */}
+      {/* <Circle
         center={center}
         pathOptions={{ color: "red", fillColor: "red" }}
         radius={radiusInner}
         stroke={false}
-      />
+      /> */}
     </FeatureGroup>
   );
 }
@@ -108,9 +109,10 @@ export const LeafletMap: React.FC<LeafletMapProps> = ({
   selected,
   className,
 }) => {
-  const tileLayerUrl = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
+  // const tileLayerUrl = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
   // const tileLayerUrl = "http://c.tile.stamen.com/watercolor/{z}/{x}/{y}.jpg";
-  // const tileLayerUrl = "https://tiles.wmflabs.org/osm-no-labels/{z}/{x}/{y}.png";
+  const tileLayerUrl =
+    "https://tiles.wmflabs.org/osm-no-labels/{z}/{x}/{y}.png";
 
   return (
     <MapContainer

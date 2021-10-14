@@ -1,5 +1,5 @@
 import React from "react";
-import { NetworkErrorMessage } from "../index";
+import NetworkErrorMessage from "../NetworkErrorMessage";
 
 export interface ConnectWalletProps {
   connectWallet: any;

@@ -8,11 +8,11 @@ export interface PureCollectionCardProps {
 }
 
 export const PureCollectionCard = ({
-  collection: { name, image },
+  collection: { name, image, contractAddress },
 }: PureCollectionCardProps) => {
   return (
     <Link
-      to={`${ROUTE_COLLECTIONS}/${name}`}
+      to={`${ROUTE_COLLECTIONS}/${contractAddress}`}
       className='flex flex-col rounded-md shadow overflow-hidden transition-transform duration-300 transform hover:-translate-y-1'>
       <div className='flex-shrink-0'>
         <img className='h-54 w-full object-scale-down' src={image} alt={name} />

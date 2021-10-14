@@ -2,11 +2,19 @@
     "name": "Oceania",
     "description": "Oceania Rare",
     "image": "https://gateway.pinata.cloud/ipfs/QmeDvQjHnEnaX8PSamcLR2v8HVPxcDuccDceYWSHXMKcd9",
-    "properties": {
-        "rarity": "rare",
-        "coordinates": {
-            "lat": -4.085390455,
-            "long": 137.1861244
+    "attributes": [{
+            "trait_type": "Rarity",
+            "value": "Rare"
+        },
+        {
+            "display_type": "number",
+            "trait_type": "Latitude",
+            "value": -4.085390455
+        },
+        {
+            "display_type": "number",
+            "trait_type": "Longitude",
+            "value": 137.1861244
         }
-    }
+    ]
 }

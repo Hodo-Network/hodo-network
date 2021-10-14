@@ -1,20 +1,18 @@
 // import { SWRConfig } from "swr";
 // import fetcher from "swr-eth";
-import { AVALANCHE_MAINNET_PARAMS } from "../../constants";
+// import { AVALANCHE_MAINNET_PARAMS } from "../../constants";
 import ContentWrapper from "../../ContentWrapper";
 import {
-  TEXT_BALANCE,
+  // TEXT_BALANCE,
   TEXT_NETWORK,
-  TEXT_ADD_FUNDS,
+  // TEXT_ADD_FUNDS,
 } from "../../constants/text";
-import {
-  // EthBalance,
-  // TokenList,
-  OnboardingButton,
-  WalletAddress,
-  NetworkSwitch,
-  ChainAddButton,
-} from "../../components";
+// import EthBalance from "../EthBalance";
+// import TokenList from "../TokenList";
+import OnboardingButton from "../OnboardingButton";
+import WalletAddress from "../WalletAddress";
+import NetworkSwitch from "../NetworkSwitch";
+// import ChainAddButton from "../ChainAddButton";
 
 export interface PureWalletPageProps {
   connected?: boolean;

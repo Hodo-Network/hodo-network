@@ -7,13 +7,11 @@ import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import { navigation } from "../../constants/navigation";
 import { NETWORK_LABELS_SHORT } from "../../constants";
 
-import {
-  ConnectionBadge,
-  DarkToggle,
-  Footer,
-  OnboardingButton,
-  SearchBar,
-} from "../index";
+import ConnectionBadge from "../ConnectionBadge";
+import DarkToggle from "../DarkToggle";
+import Footer from "../Footer";
+import OnboardingButton from "../OnboardingButton";
+import SearchBar from "../SearchBar";
 
 export interface NavbarProps {
   hideTitle?: boolean;

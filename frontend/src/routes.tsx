@@ -1,13 +1,11 @@
-import {
-  CollectiblePage,
-  CollectionPage,
-  CollectionsPage,
-  // ExplorePage,
-  FaqPage,
-  HomePage,
-  RoadmapPage,
-  WalletPage,
-} from "./components";
+import CollectiblePage from "./components/CollectiblePage";
+import CollectionPage from "./components/CollectionPage";
+import CollectionsPage from "./components/CollectionsPage";
+import ExplorePage from "./components/ExplorePage";
+import FaqPage from "./components/FaqPage";
+import HomePage from "./components/HomePage";
+import RoadmapPage from "./components/RoadmapPage";
+import WalletPage from "./components/WalletPage";
 import * as paths from "./constants/routes";
 
 const routes = [
@@ -25,7 +23,7 @@ const routes = [
   },
   {
     path: paths.ROUTE_COLLECTION,
-    name: ":name",
+    name: ":contractAddress",
     Component: CollectionPage,
     exact: false,
   },
@@ -35,12 +33,12 @@ const routes = [
     Component: CollectiblePage,
     exact: false,
   },
-  // {
-  //   path: paths.ROUTE_EXPLORE,
-  //   name: "Explore",
-  //   Component: ExplorePage,
-  //   exact: true,
-  // },
+  {
+    path: paths.ROUTE_EXPLORE,
+    name: "Explore",
+    Component: ExplorePage,
+    exact: true,
+  },
   {
     path: paths.ROUTE_WALLET,
     name: "Wallet",

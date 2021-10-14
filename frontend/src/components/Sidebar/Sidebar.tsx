@@ -1,7 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { navigation } from "../../constants/navigation";
-import { Footer, MenuClosedIcon, MenuOpenIcon } from "../index";
+import Footer from "../Footer";
+import MenuClosedIcon from "../MenuClosedIcon";
+import MenuOpenIcon from "../MenuOpenIcon";
 
 export interface SidebarProps {
   mini: boolean;

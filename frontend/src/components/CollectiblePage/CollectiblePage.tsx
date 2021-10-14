@@ -1,13 +1,16 @@
 import ReactLoading from "react-loading";
+import { Web3Provider } from "@ethersproject/providers";
+import { useWeb3React } from "@web3-react/core";
 import {
   TEXT_BUY,
   TEXT_COST,
   TEXT_DESCRIPTION,
-  TEXT_ID,
-  TEXT_COLLECTION,
   TEXT_COORDS,
-  TEXT_OWNER,
+  // TEXT_COLLECTION,
+  // TEXT_ID,
+  // TEXT_OWNER,
 } from "../../constants/text";
+import { NATIVE_CURRENCY } from "../../constants";
 import { NFT } from "../../typings/nft";
 import ContentWrapper from "../../ContentWrapper";
 import Button from "../Button";
@@ -16,7 +19,7 @@ import RarityBadge from "../RarityBadge";
 
 export interface PureCollectiblePageProps {
   asset?: NFT;
-  collection: Array<NFT>;
+  contractAddress?: string;
   onBuyAsset?: () => void;
   connected?: boolean;
   loading?: boolean;
@@ -24,21 +27,27 @@ export interface PureCollectiblePageProps {
 
 export const PureCollectiblePage = ({
   asset,
-  collection,
+  contractAddress,
   onBuyAsset,
   connected,
   loading = false,
 }: PureCollectiblePageProps) => {
-  return (
-    <ContentWrapper>
-      {loading && (
+  const { chainId } = useWeb3React<Web3Provider>();
+
+  if (loading) {
+    return (
+      <ContentWrapper>
         <ReactLoading
           type='bubbles'
           color='currentColor'
           className='text-blue-600 dark:text-blue-500'
         />
-      )}
+      </ContentWrapper>
+    );
+  }
 
+  return (
+    <ContentWrapper>
       {asset && (
         <div className='max-w-8xl h-full'>
           <div className='flex flex-row items-stretch h-full'>
@@ -62,14 +71,14 @@ export const PureCollectiblePage = ({
                   </span>
                 </div>
 
-                <div className='mt-8'>
+                {/* <div className='mt-8'>
                   <h1 className='text-sm uppercase font-medium text-gray-500 dark:text-gray-400'>
                     {TEXT_COLLECTION}
                   </h1>
                   <p className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis capitalize'>
                     {asset.category}
                   </p>
-                </div>
+                </div> */}
 
                 <div className='mt-8'>
                   <h1 className='text-sm uppercase font-medium text-gray-500 dark:text-gray-400'>
@@ -80,30 +89,30 @@ export const PureCollectiblePage = ({
                   </p>
                 </div>
 
-                <div className='mt-8'>
+                {/* <div className='mt-8'>
                   <h1 className='text-sm uppercase font-medium text-gray-500 dark:text-gray-400'>
                     {TEXT_ID}
                   </h1>
                   <p className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis'>
                     {asset.tokenId}
                   </p>
-                </div>
+                </div> */}
 
-                <div className='mt-8'>
+                {/* <div className='mt-8'>
                   <h1 className='text-sm uppercase font-medium text-gray-500 dark:text-gray-400'>
                     {TEXT_OWNER}
                   </h1>
                   <p className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis capitalize'>
                     {asset.owner_address}
                   </p>
-                </div>
+                </div> */}
 
                 <div className='mt-8'>
                   <h1 className='text-sm uppercase font-medium text-gray-500 dark:text-gray-400'>
                     {TEXT_COORDS}
                   </h1>
                   <p className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis'>
-                    [{asset.lat}, {asset.long}]
+                    [{asset.lat}, {asset.lng}]
                   </p>
                 </div>
 
@@ -112,9 +121,9 @@ export const PureCollectiblePage = ({
                     {TEXT_COST}
                   </h1>
                   <p className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis'>
-                    {asset.price}
-                    {/* {asset.price.units} */}
-                    {/* {(chainId && NATIVE_CURRENCY[chainId]) || NATIVE_CURRENCY[0]} */}
+                    {asset.price}{" "}
+                    {(chainId && NATIVE_CURRENCY[chainId]) ||
+                      NATIVE_CURRENCY[0]}
                   </p>
                 </div>
 
@@ -136,7 +145,7 @@ export const PureCollectiblePage = ({
               </div>
             </div>
 
-            <NFTList items={collection} />
+            <NFTList contractAddress={contractAddress} />
           </div>
         </div>
       )}

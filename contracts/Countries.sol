@@ -1,16 +1,9 @@
-//SPDX-License-Identifier: UNLICENSED
-
-// Solidity files have to start with this pragma.
-// It will be used by the Solidity compiler to validate its version.
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-// We import this library to be able to use console.log
-// import "hardhat/console.sol";
-
 import "@openzeppelin/contracts/token/ERC1155/ERC1155.sol";
-// import "github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.1.0/contracts/token/ERC1155/ERC1155.sol";
 
-contract CountryCollection is ERC1155 {
+contract Countries is ERC1155 {
     address operator = msg.sender;
 
     uint16 public common_supply = 10**4;

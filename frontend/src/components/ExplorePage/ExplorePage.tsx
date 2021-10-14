@@ -1,13 +1,16 @@
 import { useState } from "react";
-// import { LeafletMap } from "../../components";
-import { collectibles } from "../../data";
+import LeafletMap from "../LeafletMap";
+import { NFT } from "../../typings/nft";
 import classNames from "../../utils/classNames";
 import ContentWrapper from "../../ContentWrapper";
 
-export const ExplorePage = () => {
-  const [selected, setSelected] = useState(null);
-  // TODO: replace with API data
-  const items = collectibles || [];
+export interface PureExplorePageProps {
+  items: Array<any>;
+  loading?: boolean;
+}
+
+export const PureExplorePage = ({ items, loading }: PureExplorePageProps) => {
+  const [selected, setSelected] = useState<NFT>();
 
   return (
     <ContentWrapper>
@@ -18,12 +21,15 @@ export const ExplorePage = () => {
           <h1 id='primary-heading' className='sr-only'>
             Map
           </h1>
-          {/* <LeafletMap
+          <LeafletMap
             className='h-full w-full object-cover z-10'
             collectibles={items}
             // @ts-ignore
             selected={selected}
-          /> */}
+          />
+          {/* <div className='h-full w-full object-cover z-10 p-4'>
+            Map explorer coming soon
+          </div> */}
         </section>
 
         <aside className='h-full overflow-hidden hidden lg:block lg:flex-shrink-0 lg:order-first'>
@@ -40,7 +46,7 @@ export const ExplorePage = () => {
                 items.map((item) => (
                   <div
                     key={item.id}
-                    // onClick={() => setSelected(item)}
+                    onClick={() => setSelected(item)}
                     tabIndex={0}
                     className={classNames(
                       item === selected

@@ -2,11 +2,19 @@
     "name": "Australia",
     "description": "Australia Rare",
     "image": "https://gateway.pinata.cloud/ipfs/QmPsoiJ5wWksyao7gBMvXRnsnySEZzZk7RSy1WJaXVTjeP",
-    "properties": {
-        "rarity": "rare",
-        "coordinates": {
-            "lat": -36.45600042,
-            "long": 148.2641566
+    "attributes": [{
+            "trait_type": "Rarity",
+            "value": "Rare"
+        },
+        {
+            "display_type": "number",
+            "trait_type": "Latitude",
+            "value": -36.45600042
+        },
+        {
+            "display_type": "number",
+            "trait_type": "Longitude",
+            "value": 148.2641566
         }
-    }
+    ]
 }

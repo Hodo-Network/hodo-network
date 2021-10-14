@@ -1,15 +1,16 @@
-//SPDX-License-Identifier: un-licensed
-pragma solidity 0.8.0;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.7;
 
 import "@openzeppelin/contracts/token/ERC1155/ERC1155.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 
-contract HodoTokens is ERC1155 {
+contract HodoNFT is ERC1155 {
     using Counters for Counters.Counter;
-    Counters.Counter private tokenId;
+    Counters.Counter private _tokenIds;
 
+    // TODO: replace endpoint
     constructor() ERC1155("https://hodo.network/api/item/{id}.json") {
-        tokenId.increment();
+        _tokenIds.increment();
     }
 
     function mintNFT(uint256 _amount, bytes memory _data)
@@ -18,9 +19,9 @@ contract HodoTokens is ERC1155 {
     {
         require(msg.sender != address(0), "caller address cannot be zero");
         uint256 NFTid;
-        NFTid = tokenId.current();
+        NFTid = _tokenIds.current();
         _mint(msg.sender, NFTid, _amount, _data);
-        tokenId.increment();
+        _tokenIds.increment();
         return NFTid;
     }
 
@@ -37,8 +38,8 @@ contract HodoTokens is ERC1155 {
 
         uint256[] memory ids = new uint256[](_idQuantity);
         for (uint256 i = 0; i < _amount.length; i++) {
-            uint256 id = tokenId.current();
-            tokenId.increment();
+            uint256 id = _tokenIds.current();
+            _tokenIds.increment();
 
             ids[i] = (id);
         }
@@ -47,6 +48,6 @@ contract HodoTokens is ERC1155 {
     }
 
     function supply() public view returns (uint256) {
-        return tokenId.current();
+        return _tokenIds.current();
     }
 }

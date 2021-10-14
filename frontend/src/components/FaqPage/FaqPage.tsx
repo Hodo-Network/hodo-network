@@ -1,7 +1,7 @@
 import React from "react";
 import { faqs } from "../../data/faqs";
 import ContentWrapper from "../../ContentWrapper";
-import { FaqList } from "../../components";
+import FaqList from "../FaqList";
 
 export const FaqPage = () => {
   return (

@@ -1,14 +1,14 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react";
 
-import { NFTList, NFTListProps } from "./NFTList";
+import { PureNFTList, PureNFTListProps } from "./NFTList";
 
 export default {
   title: "Components/NFTList",
-  component: NFTList,
+  component: PureNFTList,
 } as Meta;
 
-const Template: Story<NFTListProps> = (args) => <NFTList {...args} />;
+const Template: Story<PureNFTListProps> = (args) => <PureNFTList {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};

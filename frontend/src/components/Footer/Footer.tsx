@@ -1,6 +1,6 @@
 import React from "react";
 import { MailIcon } from "@heroicons/react/solid";
-import { SocialLink } from "../index";
+import SocialLink from "../SocialLink";
 
 export const Footer = () => {
   const social = {

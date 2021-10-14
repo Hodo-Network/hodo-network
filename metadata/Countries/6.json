@@ -2,11 +2,19 @@
     "name": "Algeria Common",
     "description": "Common version of the Algeria country NFT.",
     "image": "https://gateway.pinata.cloud/ipfs/QmZ7YMVgaaMepx411QraphGUgtJiZbhym4sSsLWmDYoK7X",
-    "properties": {
-        "rarity": "common",
-        "coordinates": {
-            "lat": 28.033886,
-            "long": 1.659626
+    "attributes": [{
+            "trait_type": "Rarity",
+            "value": "Common"
+        },
+        {
+            "display_type": "number",
+            "trait_type": "Latitude",
+            "value": 28.033886
+        },
+        {
+            "display_type": "number",
+            "trait_type": "Longitude",
+            "value": 1.659626
         }
-    }
+    ]
 }

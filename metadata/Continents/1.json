@@ -2,11 +2,19 @@
     "name": "Antarctica",
     "description": "Antarctica Rare",
     "image": "https://gateway.pinata.cloud/ipfs/QmedUPdBL5DMNabrFpBSR4M7Lw1mXHLkjYudC6BV5sHNNi",
-    "properties": {
-        "rarity": "rare",
-        "coordinates": {
-            "lat": -78.63403894,
-            "long": -85.21323171
+    "attributes": [{
+            "trait_type": "Rarity",
+            "value": "Rare"
+        },
+        {
+            "display_type": "number",
+            "trait_type": "Latitude",
+            "value": -78.63403894
+        },
+        {
+            "display_type": "number",
+            "trait_type": "Longitude",
+            "value": -85.21323171
         }
-    }
+    ]
 }

@@ -7,58 +7,50 @@ import { useWeb3React } from "@web3-react/core";
 // import BN from "bn.js";
 // import { WALLET_ADDRESS } from "../../constants";
 // import { collectibles } from "../../data";
-import { buyNftApi, nftCategoryApi } from "../../http";
+import { buyNftApi, getNftApi } from "../../http";
 import { NFT } from "../../typings/nft";
 import { PureCollectiblePage } from "./CollectiblePage";
 import { CONTRACT_ADDRESS } from "../../abi/NFT";
 
 import ABI from "../../abi/NFTABI.json";
 interface IParams {
-  name: string;
+  contractAddress: string;
   tokenId: string;
 }
 
 const CollectiblePage = () => {
   const { account } = useWeb3React();
-  const { name, tokenId } = useParams<IParams>();
+  const { contractAddress, tokenId } = useParams<IParams>();
   const [asset, setAsset] = useState<NFT>();
-  const [items, setItems] = useState<Array<NFT>>([]);
   const [loading, setLoading] = useState(true);
-  const [web3State, setWeb3State] = useState<any>();
+  // const [web3State, setWeb3State] = useState<any>();
   // const [accounts, setAccounts] = useState<any>();
   const [contract, setContract] = useState<any>();
 
   useEffect(() => {
-    const getItems = async () => {
-      await fetch(nftCategoryApi, {
-        method: "post",
-        headers: {
-          "Content-Type": "application/json;charset=UTF-8",
-        },
-        body: JSON.stringify({ category: name }),
-      })
+    const getItem = async () => {
+      await fetch(`${getNftApi}?tokenId=${tokenId}`)
         .then((res) => res.json())
-        .then((res) => setItems(res.data));
+        .then((res) => setAsset(res.data));
     };
 
-    getItems().catch((error) => {
-      setLoading(false);
-      console.log(error);
-    });
-    enableWeb3();
-  }, []);
+    getItem()
+      .then(() => setLoading(false))
+      .catch((error) => {
+        setLoading(false);
+        console.log(error);
+      });
+  }, [tokenId]);
 
   useEffect(() => {
-    setAsset(items.filter((item) => item.tokenId === tokenId)[0]);
-    // debugger;
-    setLoading(false);
-  }, [tokenId, items]);
+    enableWeb3();
+  }, []);
 
   const enableWeb3 = async () => {
     try {
       const web3 = new Web3(Web3.givenProvider);
       await Web3.givenProvider.enable();
-      setWeb3State(web3);
+      // setWeb3State(web3);
       const contract = new web3.eth.Contract(
         ABI as AbiItem[],
         CONTRACT_ADDRESS
@@ -84,6 +76,7 @@ const CollectiblePage = () => {
         }),
       };
       let fetchNftData = await fetch(buyNftApi, requestOptions);
+      console.log(fetchNftData);
 
       let token_id: any = asset ? asset.tokenId.toString() : "";
       let price: any = asset ? asset.price.toString() : "";
@@ -127,7 +120,7 @@ const CollectiblePage = () => {
   return (
     <PureCollectiblePage
       asset={asset}
-      collection={items}
+      contractAddress={contractAddress}
       onBuyAsset={onBuyAsset}
       connected={!!account}
       loading={loading}

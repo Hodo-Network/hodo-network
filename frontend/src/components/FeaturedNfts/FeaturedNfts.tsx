@@ -1,7 +1,8 @@
 import React from "react";
 import ReactLoading from "react-loading";
-import { CollectionCardEmpty, NFTCard } from "../index";
 import { NFT } from "../../typings/nft";
+import CollectionCardEmpty from "../CollectionCardEmpty";
+import NFTCard from "../NFTCard";
 
 export interface FeaturedNftsProps {
   items: Array<NFT>;

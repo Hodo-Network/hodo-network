@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams, useRouteMatch, useLocation } from "react-router-dom";
 import { ROUTE_DEFAULT } from "./constants/routes";
-import { Breadcrumbs } from "./components";
 import routes from "./routes";
+import Breadcrumbs from "./components/Breadcrumbs";
 
 export default function ContentWrapper({ children }) {
   const match = useRouteMatch();
@@ -17,7 +17,7 @@ export default function ContentWrapper({ children }) {
 
   useEffect(() => {
     setCrumbs(getCrumbs());
-  }, []);
+  }, [location]);
 
   const getCrumbs = () => {
     return (

@@ -2,11 +2,19 @@
     "name": "Algeria Epic",
     "description": "Epic version of the Algeria country NFT.",
     "image": "https://gateway.pinata.cloud/ipfs/QmZh6LranVvLbUXLuhf1WsM4EvWtye2qsyAAKhFMH3pjuH",
-    "properties": {
-        "rarity": "epic",
-        "coordinates": {
-            "lat": 28.033886,
-            "long": 1.659626
+    "attributes": [{
+            "trait_type": "Rarity",
+            "value": "Epic"
+        },
+        {
+            "display_type": "number",
+            "trait_type": "Latitude",
+            "value": 28.033886
+        },
+        {
+            "display_type": "number",
+            "trait_type": "Longitude",
+            "value": 1.659626
         }
-    }
+    ]
 }

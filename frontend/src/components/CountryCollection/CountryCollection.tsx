@@ -41,7 +41,7 @@ export const CountryCollection: React.FC<CountryCollectionProps> = ({
       // contract.uri(1).then((result: any) => {
       //   console.log(result);
       // });
-      // debugger;
+
       // const fromMe = contract.filters.Transfer(account, null);
       // library.on(fromMe, (from, to, amount, event) => {
       //   console.log("Transfer|sent", { from, to, amount, event });

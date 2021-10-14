@@ -3,11 +3,12 @@ import { NavLink, useLocation } from "react-router-dom";
 import { NFT } from "../../typings/nft";
 import { ROUTE_COLLECTIONS } from "../../constants/routes";
 
-export interface NFTListProps {
+export interface PureNFTListProps {
   items: NFT[];
+  loading?: boolean;
 }
 
-export const NFTList: React.FC<NFTListProps> = ({ items }) => {
+export const PureNFTList: React.FC<PureNFTListProps> = ({ items, loading }) => {
   const location = useLocation();
 
   return (
@@ -17,21 +18,21 @@ export const NFTList: React.FC<NFTListProps> = ({ items }) => {
         className='w-96 h-full bg-white dark:bg-gray-900 border-l border-gray-200 dark:border-gray-800 relative hidden lg:flex lg:flex-col'>
         <div className='flex-shrink-0 p-6 border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 flex items-center'>
           <p className='text-lg font-medium text-gray-900 dark:text-gray-100'>
-            Others in this Collection
+            In this Collection
           </p>
         </div>
         <div className='min-h-0 overflow-y-auto flex-1'>
           {items.map((item) => (
             <NavLink
               key={item.id}
-              to={`${ROUTE_COLLECTIONS}/${item.category}/${item.tokenId}`}
+              to={`${ROUTE_COLLECTIONS}/${item.contractAddress}/${item.tokenId}`}
               exact={true}
               className='cursor-pointer flex p-4 border-b border-gray-200 dark:border-gray-800 items-center hover:bg-gray-100 dark:hover:bg-gray-800'
               activeClassName='bg-gray-100 dark:bg-gray-800'
               aria-current={
-                [`${ROUTE_COLLECTIONS}/${item.category}/${item.tokenId}`].includes(
-                  location.pathname
-                )
+                [
+                  `${ROUTE_COLLECTIONS}/${item.contractAddress}/${item.tokenId}`,
+                ].includes(location.pathname)
                   ? "page"
                   : undefined
               }>

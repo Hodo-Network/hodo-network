@@ -1,5 +1,5 @@
 import ContentWrapper from "../../ContentWrapper";
-import { Hero } from "../../components";
+import Hero from "../Hero";
 
 export const HomePage = () => {
   return (

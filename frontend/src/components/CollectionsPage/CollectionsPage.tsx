@@ -1,5 +1,5 @@
 import ContentWrapper from "../../ContentWrapper";
-import { CollectionCardList } from "../../components";
+import CollectionCardList from "../CollectionCardList";
 
 export interface PureCollectionsPageProps {
   items: any;
