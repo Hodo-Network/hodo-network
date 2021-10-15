@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useWeb3React } from "@web3-react/core";
 import { Web3Provider } from "@ethersproject/providers";
-import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 // import { ThemeProvider } from "styled-components";
 import store from "./state/redux";
