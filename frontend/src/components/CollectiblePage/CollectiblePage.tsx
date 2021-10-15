@@ -129,17 +129,13 @@ export const PureCollectiblePage = ({
 
                 <div className='mt-8 sm:flex'>
                   <div>
-                    {connected ? (
-                      <Button
-                        size='medium'
-                        primary={true}
-                        onClick={onBuyAsset}
-                        disabled={false}>
-                        {TEXT_BUY}
-                      </Button>
-                    ) : (
-                      "Connect"
-                    )}
+                    <Button
+                      size='medium'
+                      primary={true}
+                      onClick={onBuyAsset}
+                      disabled={false}>
+                      {TEXT_BUY}
+                    </Button>
                   </div>
                 </div>
               </div>

@@ -9,7 +9,7 @@ import {
   Marker,
   Popup,
   useMap,
-  Circle,
+  // Circle,
   FeatureGroup,
 } from "react-leaflet";
 import { NFT } from "../../typings/nft";
