@@ -5,9 +5,11 @@ import {
   HomeIcon,
   QuestionMarkCircleIcon,
   MapIcon,
+  PhotographIcon,
 } from "@heroicons/react/outline";
 import {
   ROUTE_COLLECTIONS,
+  ROUTE_CREATE,
   ROUTE_DEFAULT,
   ROUTE_EXPLORE,
   ROUTE_FAQ,
@@ -24,6 +26,7 @@ export const navigation = [
     exact: false,
   },
   { name: "Explore", href: ROUTE_EXPLORE, icon: GlobeIcon, exact: false },
+  { name: "Create", href: ROUTE_CREATE, icon: PhotographIcon, exact: false },
   { name: "Wallet", href: ROUTE_WALLET, icon: CreditCardIcon, exact: true },
   {
     name: "Roadmap",

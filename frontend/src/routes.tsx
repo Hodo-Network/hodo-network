@@ -1,6 +1,7 @@
 import CollectiblePage from "./components/CollectiblePage";
 import CollectionPage from "./components/CollectionPage";
 import CollectionsPage from "./components/CollectionsPage";
+import CreatePage from "./components/CreatePage";
 import ExplorePage from "./components/ExplorePage";
 import FaqPage from "./components/FaqPage";
 import HomePage from "./components/HomePage";
@@ -19,25 +20,31 @@ const routes = [
     path: paths.ROUTE_COLLECTIONS,
     name: "Collections",
     Component: CollectionsPage,
-    exact: false,
+    exact: true,
   },
   {
     path: paths.ROUTE_COLLECTION,
     name: ":contractAddress",
     Component: CollectionPage,
-    exact: false,
+    exact: true,
   },
   {
     path: paths.ROUTE_COLLECTIBLE,
     name: ":tokenId",
     Component: CollectiblePage,
-    exact: false,
+    exact: true,
   },
   {
     path: paths.ROUTE_EXPLORE,
     name: "Explore",
     Component: ExplorePage,
     exact: true,
+  },
+  {
+    path: paths.ROUTE_CREATE,
+    name: "Create",
+    Component: CreatePage,
+    exact: false,
   },
   {
     path: paths.ROUTE_WALLET,

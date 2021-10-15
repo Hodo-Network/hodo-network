@@ -1,6 +1,7 @@
 const ROUTE_COLLECTIONS = "/collections";
 const ROUTE_COLLECTION = "/collections/:contractAddress";
 const ROUTE_COLLECTIBLE = "/collections/:contractAddress/:tokenId";
+const ROUTE_CREATE = "/create";
 const ROUTE_DEFAULT = "/";
 const ROUTE_EXPLORE = "/explore";
 const ROUTE_FAQ = "/faq";
@@ -13,6 +14,7 @@ const ROUTE_WALLET = "/wallet";
 //   [ROUTE_COLLECTIONS]: "Collections Page",
 //   [ROUTE_COLLECTION]: "Collection Page",
 //   [ROUTE_COLLECTIBLE]: "Collectible Page",
+//   [ROUTE_CREATE]: "Create NFT Page",
 //   [ROUTE_DEFAULT]: "Home",
 //   [ROUTE_EXPLORE]: "Map Page",
 //   [ROUTE_FAQ]: "Info Page",
@@ -24,6 +26,7 @@ export {
   ROUTE_COLLECTIONS,
   ROUTE_COLLECTION,
   ROUTE_COLLECTIBLE,
+  ROUTE_CREATE,
   ROUTE_DEFAULT,
   ROUTE_EXPLORE,
   ROUTE_FAQ,

@@ -1,22 +1,20 @@
 import { useEffect, useState } from "react";
-import { useWeb3React } from "@web3-react/core";
-import { Web3Provider } from "@ethersproject/providers";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import { Provider } from "react-redux";
 // import { ThemeProvider } from "styled-components";
+import { useWeb3React } from "@web3-react/core";
+import { Web3Provider } from "@ethersproject/providers";
 import store from "./state/redux";
 import { useEagerConnect, useInactiveListener } from "./hooks";
 import * as paths from "./constants/routes";
-import CollectiblePage from "./components/CollectiblePage";
-import CollectionPage from "./components/CollectionPage";
-import CollectionsPage from "./components/CollectionsPage";
-import ExplorePage from "./components/ExplorePage";
-import HomePage from "./components/HomePage";
-import FaqPage from "./components/FaqPage";
 import Navbar from "./components/Navbar";
-import RoadmapPage from "./components/RoadmapPage";
 import Sidebar from "./components/Sidebar";
-import WalletPage from "./components/WalletPage";
+import routes from "./routes";
 
 import "./styles/tailwind.output.css";
 
@@ -53,28 +51,15 @@ export default function App() {
             <Navbar hideTitle={!miniSidebar} />
 
             <Switch>
-              <Route path={paths.ROUTE_DEFAULT} exact component={HomePage} />
-              <Route
-                path={paths.ROUTE_COLLECTIONS}
-                exact
-                component={CollectionsPage}
-              />
-              <Route
-                path={paths.ROUTE_COLLECTION}
-                exact
-                component={CollectionPage}
-              />
-              <Route
-                path={paths.ROUTE_COLLECTIBLE}
-                component={CollectiblePage}
-              />
-              <Route path={paths.ROUTE_EXPLORE} exact component={ExplorePage} />
-              <Route path={paths.ROUTE_WALLET} exact component={WalletPage} />
-              <Route path={paths.ROUTE_ROADMAP} exact component={RoadmapPage} />
-              <Route path={paths.ROUTE_FAQ} exact component={FaqPage} />
-              {/* {routes.map(({ path, Component, exact }, key) => (
-                <Route exact={exact} path={path} key={key} render={Component} />
-              ))} */}
+              {routes.map(({ path, Component, exact }, key) => (
+                <Route
+                  path={path}
+                  component={Component}
+                  exact={exact}
+                  key={key}
+                />
+              ))}
+              <Redirect to={paths.ROUTE_DEFAULT} />
             </Switch>
           </div>
         </Router>
