@@ -1,7 +1,7 @@
 {
     "name": "Africa",
-    "description": "Africa Rare",
-    "image": "https://gateway.pinata.cloud/ipfs/QmcPYCLgERJcfbSv9SxwuDtEqShtcNmq1kJo3KNPFywH2K",
+    "description": "While travelling to Mt. Kilimanjaro Ibn decides to venture off on a solo off-road safari through the plains of Africa. He encounters another set of travellers as they approach him, to enjoy the sunset together.",
+    "image": "ipfs://QmcPYCLgERJcfbSv9SxwuDtEqShtcNmq1kJo3KNPFywH2K",
     "attributes": [{
             "trait_type": "Rarity",
             "value": "Rare"

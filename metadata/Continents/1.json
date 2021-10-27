@@ -1,7 +1,7 @@
 {
     "name": "Antarctica",
-    "description": "Antarctica Rare",
-    "image": "https://gateway.pinata.cloud/ipfs/QmedUPdBL5DMNabrFpBSR4M7Lw1mXHLkjYudC6BV5sHNNi",
+    "description": "The towering peaks of Vinson Massif in Antarctica are no match for Aphra's high spirits! The deep snow may slow them down but Ibn lead's Aphra high into the mountainous terrain in the frigid temperatures of Antarctica.",
+    "image": "ipfs://QmedUPdBL5DMNabrFpBSR4M7Lw1mXHLkjYudC6BV5sHNNi",
     "attributes": [{
             "trait_type": "Rarity",
             "value": "Rare"

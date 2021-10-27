@@ -1,7 +1,7 @@
 {
     "name": "Albania Common",
     "description": "Common version of the Albania country NFT.",
-    "image": "https://gateway.pinata.cloud/ipfs/QmbnMxCAi2XF1i6uwbLA6keExwcEYxn8twgHbRvh1da2Ka",
+    "image": "ipfs://QmbnMxCAi2XF1i6uwbLA6keExwcEYxn8twgHbRvh1da2Ka",
     "attributes": [{
             "trait_type": "Rarity",
             "value": "Common"

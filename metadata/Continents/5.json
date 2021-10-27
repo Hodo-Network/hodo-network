@@ -1,7 +1,7 @@
 {
     "name": "North America",
-    "description": "North America Rare",
-    "image": "https://gateway.pinata.cloud/ipfs/QmNahJHuhorvrR5MVLDgQQ3eGSpJ9Q13fygn6v7gUyNKaz",
+    "description": "Ibn is preparing for one of the most challenging climbs of their trip. As he is studying the map he realizes that Denali may be the toughest climb yet.",
+    "image": "ipfs://QmNahJHuhorvrR5MVLDgQQ3eGSpJ9Q13fygn6v7gUyNKaz",
     "attributes": [{
             "trait_type": "Rarity",
             "value": "Rare"

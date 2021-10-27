@@ -1,7 +1,7 @@
 {
     "name": "Algeria Common",
     "description": "Common version of the Algeria country NFT.",
-    "image": "https://gateway.pinata.cloud/ipfs/QmZ7YMVgaaMepx411QraphGUgtJiZbhym4sSsLWmDYoK7X",
+    "image": "ipfs://QmZ7YMVgaaMepx411QraphGUgtJiZbhym4sSsLWmDYoK7X",
     "attributes": [{
             "trait_type": "Rarity",
             "value": "Common"

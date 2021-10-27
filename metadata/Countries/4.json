@@ -1,7 +1,7 @@
 {
     "name": "Albania Epic",
     "description": "Epic version of the Albania country NFT.",
-    "image": "https://gateway.pinata.cloud/ipfs/QmcL3TX3Z8tsyGVTATHJzf4jTuGgaaaZqXfcTmHhC4UA2a",
+    "image": "ipfs://QmcL3TX3Z8tsyGVTATHJzf4jTuGgaaaZqXfcTmHhC4UA2a",
     "attributes": [{
             "trait_type": "Rarity",
             "value": "Epic"

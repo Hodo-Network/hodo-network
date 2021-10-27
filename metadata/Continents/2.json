@@ -1,7 +1,7 @@
 {
     "name": "Asia",
-    "description": "Asia Rare",
-    "image": "https://gateway.pinata.cloud/ipfs/QmbNfxihyRhvPWAEoZM7aakebiNhqsZdGAvaTMeR2pR5pL",
+    "description": "Ibn relaxes after reaching base camp on Mt. Everest. Knowing this will be the most challenging summit of their worldly expedition, it is time to focus and enjoy the time they have before departing before sunrise the following day.",
+    "image": "ipfs://QmbNfxihyRhvPWAEoZM7aakebiNhqsZdGAvaTMeR2pR5pL",
     "attributes": [{
             "trait_type": "Rarity",
             "value": "Rare"

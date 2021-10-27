@@ -1,7 +1,7 @@
 {
     "name": "Albania Rare",
     "description": "Rare version of the Albania country NFT.",
-    "image": "https://gateway.pinata.cloud/ipfs/QmVQKdqAQ9Xh6d2QvNSrb4MdctjDHnAt2jggpoQucC7C6x",
+    "image": "ipfs://QmVQKdqAQ9Xh6d2QvNSrb4MdctjDHnAt2jggpoQucC7C6x",
     "attributes": [{
             "trait_type": "Rarity",
             "value": "Rare"

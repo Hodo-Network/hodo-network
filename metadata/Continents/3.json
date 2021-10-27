@@ -1,7 +1,7 @@
 {
     "name": "Australia",
-    "description": "Australia Rare",
-    "image": "https://gateway.pinata.cloud/ipfs/QmPsoiJ5wWksyao7gBMvXRnsnySEZzZk7RSy1WJaXVTjeP",
+    "description": "The long constant climb up Mt. Kosciuszko is no challenge for Ibn and Aphra. They play with the local wildlife as they make their way towards their multiple day journey up the mountain side.",
+    "image": "ipfs://QmPsoiJ5wWksyao7gBMvXRnsnySEZzZk7RSy1WJaXVTjeP",
     "attributes": [{
             "trait_type": "Rarity",
             "value": "Rare"

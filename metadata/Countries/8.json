@@ -1,7 +1,7 @@
 {
     "name": "Algeria Rare",
     "description": "Rare version of the Algeria country NFT.",
-    "image": "https://gateway.pinata.cloud/ipfs/QmXjwBxjfWwC9NeDvNrNzwfogVMjdf6W1jscDNCsKA1Kyi",
+    "image": "ipfs://QmXjwBxjfWwC9NeDvNrNzwfogVMjdf6W1jscDNCsKA1Kyi",
     "attributes": [{
             "trait_type": "Rarity",
             "value": "Rare"

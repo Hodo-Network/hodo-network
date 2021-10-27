@@ -1,7 +1,7 @@
 {
     "name": "South America",
-    "description": "South America Rare",
-    "image": "https://gateway.pinata.cloud/ipfs/QmdM378mUkfzhC8cBqZddHjNZsTu4dYV2HmYqKpnv7mW9o",
+    "description": "After reaching the summit of Aconcagua, Ibn decides that the team needs a few days being regular tourists. Aphra enjoys the break and they enjoy the sights near the base of Aconcagua.",
+    "image": "ipfs://QmdM378mUkfzhC8cBqZddHjNZsTu4dYV2HmYqKpnv7mW9o",
     "attributes": [{
             "trait_type": "Rarity",
             "value": "Rare"

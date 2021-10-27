@@ -1,7 +1,7 @@
 {
     "name": "Europe",
-    "description": "Europe Rare",
-    "image": "https://gateway.pinata.cloud/ipfs/QmaFovw9HrPi18smwYyFzXicmB2cFUSLYYod2z4TwV4gQv",
+    "description": "The dormant volcano, Mt. Elbrus, in Russia rises 5,642m (18,510 ft) above sea level. Aphra enjoys playing in the deep snow while Ibn is checking on the conditions towards the summit.",
+    "image": "ipfs://QmaFovw9HrPi18smwYyFzXicmB2cFUSLYYod2z4TwV4gQv",
     "attributes": [{
             "trait_type": "Rarity",
             "value": "Rare"

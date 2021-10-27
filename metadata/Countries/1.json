@@ -1,7 +1,7 @@
 {
     "name": "Afghanistan Epic",
     "description": "Epic version of the Afghanistan country NFT.",
-    "image": "https://gateway.pinata.cloud/ipfs/QmWbUonVdzNyCMqAdFC2URpc9GXV5NwdeHbitxDcRzydfY",
+    "image": "ipfs://QmWbUonVdzNyCMqAdFC2URpc9GXV5NwdeHbitxDcRzydfY",
     "attributes": [{
             "trait_type": "Rarity",
             "value": "Epic"

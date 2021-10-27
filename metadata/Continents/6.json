@@ -1,7 +1,7 @@
 {
     "name": "Oceania",
-    "description": "Oceania Rare",
-    "image": "https://gateway.pinata.cloud/ipfs/QmeDvQjHnEnaX8PSamcLR2v8HVPxcDuccDceYWSHXMKcd9",
+    "description": "Staring up at the epic Jaya Peak, Ibn and Aphra feel insignificant while the peak towers over them. They are prepared for the long days ahead and are ready to make their mark at the summit.",
+    "image": "ipfs://QmeDvQjHnEnaX8PSamcLR2v8HVPxcDuccDceYWSHXMKcd9",
     "attributes": [{
             "trait_type": "Rarity",
             "value": "Rare"
