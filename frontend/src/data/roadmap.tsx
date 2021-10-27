@@ -2,7 +2,7 @@ import { RoadmapSection } from "../typings/roadmap";
 
 export const roadmap: Array<RoadmapSection> = [
   {
-    heading: "Q1",
+    heading: "Q2",
     tasks: [
       {
         name: "Ideation",
@@ -14,11 +14,6 @@ export const roadmap: Array<RoadmapSection> = [
         description: "Design of the first NFT series.",
         status: "complete",
       },
-    ],
-  },
-  {
-    heading: "Q2",
-    tasks: [
       {
         name: "Marketplace Development",
         description: "Development of the Marketplace UI.",
@@ -30,15 +25,21 @@ export const roadmap: Array<RoadmapSection> = [
     heading: "Q3",
     tasks: [
       {
-        name: "NFT Smart Contract Development",
-        description: "Development of the Smart Contracts for NFTs.",
+        name: "Smart Contract Development",
+        description:
+          "Development of Smart Contracts for the Marketplace and NFTs.",
         status: "complete",
       },
       {
-        name: "Integration of Smart Contracts with the UI",
-        description: "Development of the Smart Contracts for NFTs.",
+        name: "Smart Contract Integration",
+        description: "Update the UI to interact with the Smart Contracts.",
         status: "current",
       },
+    ],
+  },
+  {
+    heading: "Q4",
+    tasks: [
       {
         name: "NFT Minting",
         description: "Minting of the first series of NFTs.",
@@ -49,15 +50,10 @@ export const roadmap: Array<RoadmapSection> = [
         description: "Launch of Hodo Network Marketplace.",
         status: "upcoming",
       },
-    ],
-  },
-  {
-    heading: "Q4",
-    tasks: [
       {
         name: "Addition of more Wallets",
         description:
-          "MetaMask is the first wallet connector. Now we'll begin adding Ledger, Trezor, etc.",
+          "MetaMask is the first wallet connector. Now we'll begin adding more options.",
         status: "upcoming",
       },
       {
@@ -74,12 +70,6 @@ export const roadmap: Array<RoadmapSection> = [
       {
         name: "Bidding Service",
         description: "Allow users to bid on NFTs in an auction style format.",
-        status: "upcoming",
-      },
-      {
-        name: "Explore X-Chain NFTs",
-        description:
-          "Explore the idea of allowing X-Chain NFTs to be listed in the marketplace.",
         status: "upcoming",
       },
     ],
