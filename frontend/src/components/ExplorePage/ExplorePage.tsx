@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ReactLoading from "react-loading";
 import LeafletMap from "../LeafletMap";
 import { NFT } from "../../typings/nft";
 import classNames from "../../utils/classNames";
@@ -27,9 +28,6 @@ export const PureExplorePage = ({ items, loading }: PureExplorePageProps) => {
             // @ts-ignore
             selected={selected}
           />
-          {/* <div className='h-full w-full object-cover z-10 p-4'>
-            Map explorer coming soon
-          </div> */}
         </section>
 
         <aside className='h-full overflow-hidden hidden lg:block lg:flex-shrink-0 lg:order-first'>
@@ -42,7 +40,13 @@ export const PureExplorePage = ({ items, loading }: PureExplorePageProps) => {
               </p>
             </div>
             <div className='min-h-0 overflow-y-auto flex-1'>
-              {items.length ? (
+              {loading ? (
+                <ReactLoading
+                  type='bubbles'
+                  color='currentColor'
+                  className='text-blue-600 dark:text-blue-500'
+                />
+              ) : items.length ? (
                 items.map((item) => (
                   <div
                     key={item.id}

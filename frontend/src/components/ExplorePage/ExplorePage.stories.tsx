@@ -1,7 +1,7 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react";
 
-import { collectibles } from "../../data";
+import { listings } from "../../data/listings";
 import { PureExplorePage, PureExplorePageProps } from "./ExplorePage";
 
 export default {
@@ -15,5 +15,5 @@ const Template: Story<PureExplorePageProps> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  items: collectibles,
+  items: listings,
 };

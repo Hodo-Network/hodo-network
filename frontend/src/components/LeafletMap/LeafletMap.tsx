@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 // import { useWeb3React } from "@web3-react/core";
 // import { Web3Provider } from "@ethersproject/providers";
@@ -12,13 +12,17 @@ import {
   // Circle,
   FeatureGroup,
 } from "react-leaflet";
-import { NFT } from "../../typings/nft";
+import { NFT, Attribute } from "../../typings/nft";
 // import { NATIVE_CURRENCY } from "../../constants";
-import { ROUTE_COLLECTIONS } from "../../constants/routes";
+import { ROUTE_MARKETPLACE } from "../../constants/routes";
+
+const getTraitValue = (attributes: Array<Attribute>, trait: string) => {
+  return attributes.find((attr) => attr.trait_type === trait)?.value;
+};
 
 function LocationMarker({ selected }: { selected: NFT }) {
-  const [position, setPosition] = useState<any>(null);
   // const { chainId } = useWeb3React<Web3Provider>();
+  const [position, setPosition] = useState<any>(null);
   const map = useMap();
   var icon = L.icon({
     iconUrl: selected.image,
@@ -29,7 +33,9 @@ function LocationMarker({ selected }: { selected: NFT }) {
   });
 
   useEffect(() => {
-    const latlng = new L.LatLng(selected.lat, selected.lng);
+    let lat = getTraitValue(selected.attributes, "Latitude");
+    let lng = getTraitValue(selected.attributes, "Longitude");
+    const latlng = new L.LatLng(Number(lat), Number(lng));
     setPosition(latlng);
     map.flyTo(latlng, 3);
   }, [selected]);
@@ -45,7 +51,7 @@ function LocationMarker({ selected }: { selected: NFT }) {
         </div>
         <div>
           <NavLink
-            to={`${ROUTE_COLLECTIONS}/${selected.contractAddress}/${selected.tokenId}`}>
+            to={`${ROUTE_MARKETPLACE}/${selected.contractAddress}/${selected.tokenId}`}>
             View NFT
           </NavLink>
         </div>
@@ -56,7 +62,9 @@ function LocationMarker({ selected }: { selected: NFT }) {
 
 function ItemMarker({ item }: { item: NFT }) {
   // const { chainId } = useWeb3React<Web3Provider>();
-  const center = new L.LatLng(item.lat, item.lng);
+  let lat = getTraitValue(item.attributes, "Latitude");
+  let lng = getTraitValue(item.attributes, "Longitude");
+  const center = new L.LatLng(Number(lat), Number(lng));
   // const radiusInner = 5000;
   // const radiusOuter = 25000;
   var icon = L.icon({
@@ -79,7 +87,10 @@ function ItemMarker({ item }: { item: NFT }) {
             {/* {(chainId && NATIVE_CURRENCY[chainId]) || NATIVE_CURRENCY[0]} */}
           </div>
           <div>
-            <NavLink to={`${ROUTE_COLLECTIONS}/${item.id}`}>View NFT</NavLink>
+            <NavLink
+              to={`${ROUTE_MARKETPLACE}/${item.contractAddress}/${item.tokenId}`}>
+              View NFT
+            </NavLink>
           </div>
         </Popup>
       </Marker>
@@ -104,11 +115,11 @@ export interface LeafletMapProps {
   className?: string;
 }
 
-export const LeafletMap: React.FC<LeafletMapProps> = ({
+export const LeafletMap = ({
   collectibles,
   selected,
   className,
-}) => {
+}: LeafletMapProps) => {
   // const tileLayerUrl = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
   // const tileLayerUrl = "http://c.tile.stamen.com/watercolor/{z}/{x}/{y}.jpg";
   const tileLayerUrl =
@@ -123,7 +134,7 @@ export const LeafletMap: React.FC<LeafletMapProps> = ({
       <TileLayer url={tileLayerUrl} />
       {selected && <LocationMarker selected={selected} />}
       {collectibles?.map((item) => (
-        <ItemMarker item={item} key={item.id} />
+        <ItemMarker item={item} key={item.tokenId} />
       ))}
     </MapContainer>
   );
