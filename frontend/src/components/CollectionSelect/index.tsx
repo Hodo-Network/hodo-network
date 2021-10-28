@@ -1,6 +1,6 @@
 // import { useHistory, useLocation } from "react-router-dom";
 import { PureCollectionSelect } from "./CollectionSelect";
-import { collections } from "../../data";
+import { collections } from "../../data/collections";
 
 const CollectionSelect = () => {
   // const history = useHistory();

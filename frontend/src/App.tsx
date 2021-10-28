@@ -40,7 +40,7 @@ export default function App() {
     <Provider store={store}>
       {/* @ts-ignore */}
       {/* <ThemeProvider theme={preset}> */}
-      <div className='bg-gray-100 dark:bg-gray-900 flex flex-row h-screen overflow-hidden'>
+      <div className='bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white flex flex-row h-screen overflow-hidden'>
         <Router>
           <Sidebar
             toggle={() => setMiniSidebar(!miniSidebar)}

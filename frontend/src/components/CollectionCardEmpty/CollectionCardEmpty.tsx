@@ -1,6 +1,6 @@
 export const CollectionCardEmpty = () => {
   return (
-    <div className='flex flex-col rounded-md overflow-hidden transition-transform duration-300 transform hover:-translate-y-1 border-dashed border border-gray-400 dark:border-gray-700'>
+    <div className='flex flex-col rounded-md overflow-hidden border-dashed border border-gray-400 dark:border-gray-700'>
       <div className='flex-shrink-0 w-full'>
         <div className='h-60'></div>
       </div>

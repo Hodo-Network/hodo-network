@@ -1,18 +1,17 @@
-import React from "react";
 import ReactLoading from "react-loading";
 import { Collection } from "../../typings/nft";
 import CollectionCard from "../CollectionCard";
 import CollectionCardEmpty from "../CollectionCardEmpty";
 
-export interface CollectionCardListProps {
+export interface PureCollectionCardListProps {
   items: Collection[];
-  loading: boolean;
+  loading?: boolean;
 }
 
-export function CollectionCardList({
+export function PureCollectionCardList({
   items,
   loading = false,
-}: CollectionCardListProps) {
+}: PureCollectionCardListProps) {
   if (loading) {
     return (
       <ReactLoading

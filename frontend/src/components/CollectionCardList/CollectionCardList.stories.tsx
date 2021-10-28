@@ -2,18 +2,18 @@ import React from "react";
 import { Story, Meta } from "@storybook/react";
 
 import {
-  CollectionCardList,
-  CollectionCardListProps,
+  PureCollectionCardList,
+  PureCollectionCardListProps,
 } from "./CollectionCardList";
 import { collections } from "../../data/collections";
 
 export default {
   title: "Components/CollectionCardList",
-  component: CollectionCardList,
+  component: PureCollectionCardList,
 } as Meta;
 
-const Template: Story<CollectionCardListProps> = (args) => (
-  <CollectionCardList {...args} />
+const Template: Story<PureCollectionCardListProps> = (args) => (
+  <PureCollectionCardList {...args} />
 );
 
 export const Default = Template.bind({});
