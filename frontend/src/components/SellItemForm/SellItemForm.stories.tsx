@@ -1,0 +1,16 @@
+import React from "react";
+import { Story, Meta } from "@storybook/react";
+
+import { PureSellItemForm, PureSellItemFormProps } from "./SellItemForm";
+
+export default {
+  title: "Pages/SellItemForm",
+  component: PureSellItemForm,
+} as Meta;
+
+const Template: Story<PureSellItemFormProps> = (args) => (
+  <PureSellItemForm {...args} />
+);
+
+export const Default = Template.bind({});
+Default.args = {};

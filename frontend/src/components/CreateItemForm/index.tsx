@@ -54,6 +54,7 @@ const CreateItemForm = () => {
     alert("Unable to create items at this time. Coming soon");
   };
 
+  // eslint-disable-next-line
   const onCreateItem = async () => {
     if (!name || !description || !file) return;
 
@@ -69,14 +70,14 @@ const CreateItemForm = () => {
 
     if (!fileUrl) return;
 
-    const data = JSON.stringify({
-      name,
-      description,
-      image: fileUrl,
-    });
+    // const data = JSON.stringify({
+    //   name,
+    //   description,
+    //   image: fileUrl,
+    // });
 
     try {
-      const added = await client.add(data);
+      // const added = await client.add(data);
       // const url = `https://ipfs.infura.io/ipfs/${added.path}`;
       // createSale(url);
       history.push(ROUTE_ACCOUNT);

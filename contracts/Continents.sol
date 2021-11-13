@@ -1,60 +1,83 @@
 // SPDX-License-Identifier: MIT
+
 pragma solidity ^0.8.7;
 
-import "@openzeppelin/contracts/token/ERC1155/ERC1155.sol";
-import "@openzeppelin/contracts/utils/Strings.sol";
+import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/utils/Counters.sol";
 
-contract Continents is ERC1155 {
-    address marketplaceAddress;
-    uint256 public constant AFRICA = 0;
-    uint256 public constant ANTARCTICA = 1;
-    uint256 public constant ASIA = 2;
-    uint256 public constant AUSTRALIA = 3;
-    uint256 public constant EUROPE = 4;
-    uint256 public constant NORTH_AMERICA = 5;
-    uint256 public constant OCEANIA = 6;
-    uint256 public constant SOUTH_AMERICA = 7;
+contract Continents is ERC721, ReentrancyGuard, Ownable {
+  using Counters for Counters.Counter;
 
-    uint256[] itemIds = [
-        AFRICA,
-        ANTARCTICA,
-        ASIA,
-        AUSTRALIA,
-        EUROPE,
-        NORTH_AMERICA,
-        OCEANIA,
-        SOUTH_AMERICA
-    ];
-    uint256[] supplies = [500, 500, 500, 500, 500, 500, 500, 500];
+  constructor (string memory customBaseURI_) ERC721("Continents", "TTKN") {
+    customBaseURI = customBaseURI_;
+  }
 
-    // TODO: update endpoint
-    constructor(address contractAddress)
-        ERC1155(
-            "https://raw.githubusercontent.com/Hodo-Network/hodo-network.github.io/main/metadata/Continents/{id}.json"
-        )
-    {
-        marketplaceAddress = contractAddress;
-        _mintBatch(msg.sender, itemIds, supplies, "0x01");
-        setApprovalForAll(marketplaceAddress, true);
+  /** MINTING **/
+
+  uint256 public constant MAX_SUPPLY = 2000;
+
+  uint256 public constant MAX_MULTIMINT = 20;
+
+  uint256 public constant PRICE = 2000000000000000000;
+
+  Counters.Counter private supplyCounter;
+
+  function mint(uint256 count) public payable nonReentrant {
+    require(saleIsActive, "Sale not active");
+
+    require(totalSupply() + count - 1 < MAX_SUPPLY, "Exceeds max supply");
+
+    require(count <= MAX_MULTIMINT, "Mint at most 20 at a time");
+
+    require(msg.value >= PRICE * count, "Insufficient payment, 2 ETH per item");
+
+    for (uint256 i = 0; i < count; i++) {
+      _safeMint(_msgSender(), totalSupply());
+
+      supplyCounter.increment();
     }
+  }
 
-    function getIds() public view returns (uint256[] memory) {
-        return itemIds;
-    }
+  function totalSupply() public view returns (uint256) {
+    return supplyCounter.current();
+  }
 
-    function uri(uint256 _tokenId)
-        public
-        view
-        override
-        returns (string memory)
-    {
-        return
-            string(
-                abi.encodePacked(
-                    "https://raw.githubusercontent.com/Hodo-Network/hodo-network.github.io/main/metadata/Continents/",
-                    Strings.toString(_tokenId),
-                    ".json"
-                )
-            );
-    }
+  /** ACTIVATION **/
+
+  bool public saleIsActive = false;
+
+  function setSaleIsActive(bool saleIsActive_) external onlyOwner {
+    saleIsActive = saleIsActive_;
+  }
+
+  /** URI HANDLING **/
+
+  string private customBaseURI;
+
+  function setBaseURI(string memory customBaseURI_) external onlyOwner {
+    customBaseURI = customBaseURI_;
+  }
+
+  function _baseURI() internal view virtual override returns (string memory) {
+    return customBaseURI;
+  }
+
+  function tokenURI(uint256 tokenId) public view override
+    returns (string memory)
+  {
+    return string(abi.encodePacked(super.tokenURI(tokenId), ".json"));
+  }
+
+  /** PAYOUT **/
+
+  function withdraw() public {
+    uint256 balance = address(this).balance;
+
+    payable(owner()).transfer(balance);
+  }
 }
+
+// Contract created with Studio 721 v1.0.1
+// https://721.so

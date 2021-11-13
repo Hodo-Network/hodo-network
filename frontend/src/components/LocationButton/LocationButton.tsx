@@ -15,12 +15,14 @@ export const LocationButton = () => {
 
   return (
     <>
-      <Button size='large' onClick={onClick}>
-        Get Location
-      </Button>
-      <div className='mt-2 text-sm text-gray-500'>
-        {geoObj && JSON.stringify(geoObj)}
-      </div>
+      {geoObj ? (
+        <span>
+          {/* JSON.stringify(geoObj) */}
+          {geoObj.lat}, {geoObj.lng}
+        </span>
+      ) : (
+        <Button onClick={onClick}>Get Location</Button>
+      )}
     </>
   );
 };

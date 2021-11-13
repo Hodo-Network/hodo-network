@@ -8,14 +8,16 @@ import {
 
 export const NetworkContextName = "NETWORK";
 export const GAS_PRICE = 225;
-export const WALLET_ADDRESS = "0x6cBEd289596f757fC406eE3AB4aC9E83cFb48B92";
+// TODO: replace with HODO wallet
+export const WALLET_ADDRESS = "0xb935090108C3daCC47E489D2d958610E21B639D3";
 export const ZERO_ADDRESS = "0x0000000000000000000000000000000000000000";
+export const IPFS_GATEWAY_PREFIX = "https://gateway.pinata.cloud";
 
-export const supportedChainIds = [1, 3, 4, 5, 42, 31337, 43113, 43114];
+export const supportedChainIds = [1, 31337, 43112, 43113, 43114];
 
 export const ChainId = {
-  LOCALHOST: 31337,
   ETHEREUM: 1,
+  LOCALHOST: 43112,
   FUJI: 43113,
   AVALANCHE: 43114,
 };
@@ -29,7 +31,7 @@ export const AVALANCHE_MAINNET_PARAMS = {
     decimals: 18,
   },
   rpcUrls: ["https://api.avax.network/ext/bc/C/rpc"],
-  blockExplorerUrls: ["https://cchain.explorer.avax.network/"],
+  blockExplorerUrls: ["https://snowtrace.io/"],
 };
 
 export const AVALANCHE_TESTNET_PARAMS = {
@@ -41,24 +43,30 @@ export const AVALANCHE_TESTNET_PARAMS = {
     decimals: 18,
   },
   rpcUrls: ["https://api.avax-test.network/ext/bc/C/rpc"],
-  blockExplorerUrls: ["https://cchain.explorer.avax-test.network/"],
+  blockExplorerUrls: ["https://testnet.snowtrace.io/"],
 };
 
-export const NETWORK_LABELS = {
+export const NETWORK_LABELS: {
+  [key: number]: string;
+} = {
   [ChainId.LOCALHOST]: "Localhost",
   [ChainId.ETHEREUM]: "Ethereum",
   [ChainId.FUJI]: "Avalanche Fuji Testnet",
   [ChainId.AVALANCHE]: "Avalanche Mainnet C-Chain",
 };
 
-export const NETWORK_LABELS_SHORT = {
+export const NETWORK_LABELS_SHORT: {
+  [key: number]: string;
+} = {
   [ChainId.LOCALHOST]: "Localhost",
   [ChainId.ETHEREUM]: "Ethereum",
   [ChainId.FUJI]: "Fuji",
   [ChainId.AVALANCHE]: "Avalanche",
 };
 
-export const NATIVE_CURRENCY = {
+export const NATIVE_CURRENCY: {
+  [key: number]: string;
+} = {
   0: "AVAX", // Default fallback
   [ChainId.LOCALHOST]: "ETH",
   [ChainId.ETHEREUM]: "ETH",

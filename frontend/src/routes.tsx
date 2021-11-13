@@ -1,12 +1,13 @@
-import CollectiblePage from "./components/CollectiblePage";
-import CollectionPage from "./components/CollectionPage";
-import CollectionsPage from "./components/CollectionsPage";
-import CreatePage from "./components/CreatePage";
-import ExplorePage from "./components/ExplorePage";
-import FaqPage from "./components/FaqPage";
-import HomePage from "./components/HomePage";
-import RoadmapPage from "./components/RoadmapPage";
-import WalletPage from "./components/WalletPage";
+import AccountPage from "./pages/AccountPage";
+import AssetPage from "./pages/AssetPage";
+import CollectionsPage from "./pages/CollectionsPage";
+import CollectionPage from "./pages/CollectionPage";
+import CreatorPage from "./pages/CreatorPage";
+import ExplorePage from "./pages/ExplorePage";
+import FaqPage from "./pages/FaqPage";
+import HomePage from "./pages/HomePage";
+import MarketplacePage from "./pages/MarketplacePage";
+import RoadmapPage from "./pages/RoadmapPage";
 import * as paths from "./constants/routes";
 
 const routes = [
@@ -14,6 +15,12 @@ const routes = [
     path: paths.ROUTE_DEFAULT,
     name: "Home",
     Component: HomePage,
+    exact: true,
+  },
+  {
+    path: paths.ROUTE_MARKETPLACE,
+    name: "Marketplace",
+    Component: MarketplacePage,
     exact: true,
   },
   {
@@ -31,7 +38,7 @@ const routes = [
   {
     path: paths.ROUTE_COLLECTIBLE,
     name: ":tokenId",
-    Component: CollectiblePage,
+    Component: AssetPage,
     exact: true,
   },
   {
@@ -41,15 +48,15 @@ const routes = [
     exact: true,
   },
   {
-    path: paths.ROUTE_CREATE,
-    name: "Create",
-    Component: CreatePage,
-    exact: false,
+    path: paths.ROUTE_ACCOUNT,
+    name: "Account",
+    Component: AccountPage,
+    exact: true,
   },
   {
-    path: paths.ROUTE_WALLET,
-    name: "Wallet",
-    Component: WalletPage,
+    path: paths.ROUTE_CREATOR_DASHBOARD,
+    name: "Create",
+    Component: CreatorPage,
     exact: true,
   },
   {

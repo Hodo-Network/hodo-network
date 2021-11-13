@@ -1,11 +1,3 @@
-// import * as hodoNetwork from './hodo_network';
-
-export enum Vendor {
-    HODO_NETWORK = 'hodo_network',
-}
-
-// export type ContractName = hodoNetwork.ContractName;
-
 export enum TransferType {
     SAFE_TRANSFER_FROM = 0,
     TRANSFER_FROM = 1,
@@ -18,66 +10,53 @@ export enum NFTRarity {
     COMMON = 'common',
 }
 
-export type NFTLocation = {
-    lat: number;
-    lng: number;
-}
+export type Attribute = {
+    display_type?: string;
+    trait_type: string;
+    value: string | number;
+};
 
-export type NFTPrice = {
-    value: number;
-    units: string;
-}
-
-export type HodoNetworkNFT = {
-    description: string;
-    rarity: NFTRarity;
-    // location: NFTLocation;
-    lat: number;
-    lng: number;
-}
-
-export type Data<V extends Vendor> = V extends Vendor.HODO_NETWORK
-    ? HodoNetworkNFT
-    : never;
-
-export type NFTData = {
-    rarity: NFTRarity;
-    lat: number;
-    lng: number;
-}
-
-// export type NFT<V extends Vendor = any> = {
-export type NFT = {
-    id: string;
+export type Metadata = {
     name: string;
-    description: string;
+    description?: string;
     image: string;
-    // attributes: NFTData;
-    rarity: NFTRarity;
+    attributes?: Array<Attribute>;
+};
+
+export interface NFT {
+    id: string;
+    tokenId: string;
+    tokenURI: string;
+    name: string;
+    description?: string;
+    image: string;
     lat: number;
     lng: number;
-    // price: NFTPrice;
+    contractAddress: string;
+    contractName: string;
+    contractVerified: number;
+    owner_address: string;
+    creator: string;
+    supply: string;
+    amount: string;
     price: number;
     created_at: string;
-    owner_address: string;
-    contractAddress: string;
-    creator: string;
     tx_hash: string;
-    supply: string;
     is_deleted: number;
     sold: number;
-    tokenId: string;
-    // category: string;
-    amount: string;
-    // vendor: Vendor;
-    // data: Data<V>;
-    // activeOrderId: string | null;
-    // url: string;
 }
 
 export interface Collection {
     id: string;
     name: string;
-    image: string;
+    description: string;
+    banner?: string;
+    thumbnail: string;
     contractAddress: string;
+    network: number;
+    website?: string;
+    twitter?: string;
+    discord?: string;
+    telegram?: string;
+    verified: 0 | 1;
 }

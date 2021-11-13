@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { BadgeCheckIcon } from "@heroicons/react/solid";
+import { BadgeCheckIcon, ExclamationIcon } from "@heroicons/react/solid";
 import { Collection } from "../../typings/nft";
 import { ROUTE_MARKETPLACE } from "../../constants/routes";
 
@@ -24,8 +24,10 @@ export const PureCollectionCard = ({
       <div className='flex-1 bg-white dark:bg-gray-800 py-3 px-4 flex flex-col justify-between'>
         <p className='text-base font-semibold text-gray-900 dark:text-gray-100 capitalize flex justify-between'>
           <span>{name}</span>
-          {!!verified && (
+          {!!verified ? (
             <BadgeCheckIcon className='w-6 h-6 text-blue-500 ml-2' />
+          ) : (
+            <ExclamationIcon className='w-6 h-6 text-yellow-500 ml-2' />
           )}
         </p>
       </div>

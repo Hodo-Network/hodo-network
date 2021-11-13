@@ -19,17 +19,23 @@ async function main() {
 
   console.log("Account balance:", (await deployer.getBalance()).toString());
 
+  const Marketplace = await ethers.getContractFactory("Marketplace");
+  const marketplace = await Marketplace.deploy();
+  await marketplace.deployed();
+
+  console.log("Marketplace address:", marketplace.address);
+
   const Continents = await ethers.getContractFactory("Continents");
-  const continents = await Continents.deploy();
+  const continents = await Continents.deploy(marketplace.address);
   await continents.deployed();
 
   console.log("Continents address:", continents.address);
 
   // We also save the contract's artifacts and address in the frontend directory
-  saveFrontendFiles(continents);
+  saveFrontendFiles(marketplace, continents);
 }
 
-function saveFrontendFiles(continents) {
+function saveFrontendFiles(marketplace, continents) {
   const fs = require("fs");
   const contractsDir = __dirname + "/../frontend/src/contracts";
 
@@ -39,10 +45,20 @@ function saveFrontendFiles(continents) {
 
   fs.writeFileSync(
     contractsDir + "/contract-address.json",
-    JSON.stringify({ Continents: continents.address }, undefined, 2)
+    JSON.stringify(
+      { Marketplace: marketplace.address, Continents: continents.address },
+      undefined,
+      2
+    )
   );
 
+  const MarketplaceArtifact = artifacts.readArtifactSync("Marketplace");
   const ContinentsArtifact = artifacts.readArtifactSync("Continents");
+
+  fs.writeFileSync(
+    contractsDir + "/Marketplace.json",
+    JSON.stringify(MarketplaceArtifact, null, 2)
+  );
 
   fs.writeFileSync(
     contractsDir + "/Continents.json",

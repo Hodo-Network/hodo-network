@@ -5,11 +5,11 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
-import { Provider } from "react-redux";
 // import { ThemeProvider } from "styled-components";
 import { useWeb3React } from "@web3-react/core";
 import { Web3Provider } from "@ethersproject/providers";
-import store from "./state/redux";
+import { Provider } from "react-redux";
+import { store } from "./store";
 import { useEagerConnect, useInactiveListener } from "./hooks";
 import * as paths from "./constants/routes";
 import Navbar from "./components/Navbar";

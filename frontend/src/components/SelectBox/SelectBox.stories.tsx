@@ -2,7 +2,7 @@ import React from "react";
 import { Story, Meta } from "@storybook/react";
 
 import SelectBox, { SelectBoxProps } from "./SelectBox";
-import { collections } from "../../data";
+import { assets } from "../../data/assets";
 
 export default {
   title: "UI/SelectBox",
@@ -20,5 +20,5 @@ Default.args = {
 export const Objects = Template.bind({});
 Objects.args = {
   label: "Collections",
-  items: collections,
+  items: assets,
 };

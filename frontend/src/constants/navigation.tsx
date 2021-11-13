@@ -1,38 +1,57 @@
 import {
   GlobeIcon,
-  CreditCardIcon,
+  // CreditCardIcon,
   CollectionIcon,
   HomeIcon,
   QuestionMarkCircleIcon,
   MapIcon,
-  PhotographIcon,
+  // PhotographIcon,
+  // UserCircleIcon,
 } from "@heroicons/react/outline";
-import {
-  ROUTE_COLLECTIONS,
-  ROUTE_CREATE,
-  ROUTE_DEFAULT,
-  ROUTE_EXPLORE,
-  ROUTE_FAQ,
-  ROUTE_ROADMAP,
-  ROUTE_WALLET,
-} from "./routes";
+import * as routes from "./routes";
 
 export const navigation = [
-  { name: "Home", href: ROUTE_DEFAULT, icon: HomeIcon, exact: true },
+  { name: "Home", href: routes.ROUTE_DEFAULT, icon: HomeIcon, exact: true },
   {
-    name: "Collections",
-    href: ROUTE_COLLECTIONS,
+    name: "Marketplace",
+    href: routes.ROUTE_MARKETPLACE,
     icon: CollectionIcon,
     exact: false,
   },
-  { name: "Explore", href: ROUTE_EXPLORE, icon: GlobeIcon, exact: false },
-  { name: "Create", href: ROUTE_CREATE, icon: PhotographIcon, exact: false },
-  { name: "Wallet", href: ROUTE_WALLET, icon: CreditCardIcon, exact: true },
+  // {
+  //   name: "Collections",
+  //   href: routes.ROUTE_COLLECTIONS,
+  //   icon: CollectionIcon,
+  //   exact: false,
+  // },
   {
-    name: "Roadmap",
-    href: ROUTE_ROADMAP,
-    icon: MapIcon,
+    name: "Explore",
+    href: routes.ROUTE_EXPLORE,
+    icon: GlobeIcon,
     exact: false,
   },
-  { name: "FAQ", href: ROUTE_FAQ, icon: QuestionMarkCircleIcon, exact: true },
+  // {
+  //   name: "Account",
+  //   href: routes.ROUTE_ACCOUNT,
+  //   icon: UserCircleIcon,
+  //   exact: true,
+  // },
+  // {
+  //   name: "Create",
+  //   href: routes.ROUTE_CREATOR_DASHBOARD,
+  //   icon: PhotographIcon,
+  //   exact: true,
+  // },
+  {
+    name: "Roadmap",
+    href: routes.ROUTE_ROADMAP,
+    icon: MapIcon,
+    exact: true,
+  },
+  {
+    name: "FAQ",
+    href: routes.ROUTE_FAQ,
+    icon: QuestionMarkCircleIcon,
+    exact: true,
+  },
 ];

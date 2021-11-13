@@ -87,3 +87,12 @@ this repository or [our Discord server](https://invite.gg/HardhatSupport).
 Also you can [follow us on Twitter](https://twitter.com/HardhatHQ).
 
 **Happy _buidling_!**
+
+
+### Custom commands
+
+Run hardhat local node
+`npx hardhat node`
+
+Deploy contracts to the localhost network
+`npx hardhat run scripts/deploy.js --network localhost`
