@@ -6,6 +6,7 @@ const TEXT_BALANCE = "Balance";
 const TEXT_BLOCKCHAIN = "Blockchain";
 const TEXT_BUY = "Buy Now";
 const TEXT_CAPITAL_CITIES = "Capital Cities";
+const TEXT_CHANGE_PRICE = "Change price";
 const TEXT_COLLECTION = "Collection";
 const TEXT_CONNECT = "Connect";
 const TEXT_CONNECTED = "Connected";
@@ -38,6 +39,7 @@ export {
   TEXT_BLOCKCHAIN,
   TEXT_BUY,
   TEXT_CAPITAL_CITIES,
+  TEXT_CHANGE_PRICE,
   TEXT_COLLECTION,
   TEXT_CONNECT,
   TEXT_CONNECTED,
