@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
-import ReactLoading from "react-loading";
+import { useEffect } from "react";
 import { useWeb3React } from "@web3-react/core";
 import { Web3Provider } from "@ethersproject/providers";
 import { formatEther } from "@ethersproject/units";
 import useSWR from "swr";
 import { NATIVE_CURRENCY } from "../../constants";
+import Loader from "../../base/Loader";
 
 export const EthBalance = () => {
   const { account, library, chainId } = useWeb3React<Web3Provider>();
@@ -25,13 +25,7 @@ export const EthBalance = () => {
   }, []);
 
   if (!balance) {
-    return (
-      <ReactLoading
-        type='bubbles'
-        color='currentColor'
-        className='text-blue-600 dark:text-blue-500'
-      />
-    );
+    return <Loader />;
   }
   return (
     <div>

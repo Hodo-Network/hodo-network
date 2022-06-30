@@ -10,7 +10,7 @@ export const AttributeDisclosure = ({ attrs }: AttrDisclosureProps) => {
         <Disclosure defaultOpen={true} as="div">
             {({ open }) => (
                 <>
-                    <Disclosure.Button className="p-4 border border-gray-300 dark:border-gray-700 w-full text-left flex items-center justify-between">
+                    <Disclosure.Button className="p-4 border border-base-300 w-full text-left flex items-center justify-between">
                         <span className="font-semibold">Traits</span>
                         {open ? (
                             <ChevronUpIcon className="w-4 h-4" />
@@ -26,10 +26,10 @@ export const AttributeDisclosure = ({ attrs }: AttrDisclosureProps) => {
                         leaveFrom="transform scale-100 opacity-100"
                         leaveTo="transform scale-95 opacity-0"
                     >
-                        <Disclosure.Panel className="grid grid-cols-3 gap-3 p-4 border border-t-0 border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-800">
+                        <Disclosure.Panel className="grid grid-cols-3 gap-3 p-4 border border-t-0 border-base-300 bg-base-200">
                             {attrs?.map((attr: any) => (
-                                <div key={attr.trait_type} className="w-full p-2 border border-blue-500 rounded uppercase text-center">
-                                    <div className="text-xs font-medium text-blue-500 mb-1">{attr.trait_type}</div>
+                                <div key={attr.trait_type} className="w-full p-2 border border-base-content rounded-box uppercase text-center">
+                                    <div className="text-xs font-medium text-primary mb-1">{attr.trait_type}</div>
                                     <div className="text-sm">{attr.value}</div>
                                 </div>
                             ))}

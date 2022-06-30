@@ -3,7 +3,7 @@
 exports[`matches snapshot 1`] = `
 Array [
   <button
-    className="btn btn--large w-full"
+    className="btn btn-lg w-full"
     onClick={[Function]}
   >
     Get Location

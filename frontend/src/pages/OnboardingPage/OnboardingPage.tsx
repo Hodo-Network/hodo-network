@@ -1,4 +1,3 @@
-import React from "react";
 import { useWeb3React } from "@web3-react/core";
 import { CheckCircleIcon } from "@heroicons/react/solid";
 import {
@@ -16,7 +15,7 @@ export const OnboardingPage = () => {
     <div className='p-4 sm:p-8 lg:p-12 mx-auto max-w-prose'>
       <div className='bg-white shadow overflow-hidden sm:rounded-md'>
         <div className='px-4 py-5 border-b border-gray-200 sm:px-6'>
-          <h3 className='text-xl leading-7 font-medium uppercase text-blue-700 dark:text-blue-500'>
+          <h3 className='text-xl leading-7 font-medium uppercase text-primary'>
             {TEXT_ONBOARDING}
           </h3>
           <p className='mt-2 text-sm'>
@@ -25,7 +24,7 @@ export const OnboardingPage = () => {
           </p>
         </div>
 
-        <ul className='divide-y divide-gray-200 text-sm'>
+        <ul className='divide-y divide-base-content text-sm'>
           <li className='px-4 py-4 sm:px-6'>
             {active ? (
               <p className='flex items-center text-sm'>
@@ -75,7 +74,7 @@ export const OnboardingPage = () => {
                 href='https://wallet.avax.network/'
                 target='_blank'
                 rel='noreferrer'
-                className='text-blue-600 font-medium'>
+                className='text-primary font-medium'>
                 create a wallet
               </a>{" "}
               with an X-Chain address first. Then make the transfer to your
@@ -87,7 +86,7 @@ export const OnboardingPage = () => {
                 href='https://faucet.avax-test.network/'
                 target='_blank'
                 rel='noreferrer'
-                className='text-blue-600 font-medium'>
+                className='text-primary font-medium'>
                 AVAX Test Faucet
               </a>
             </p>

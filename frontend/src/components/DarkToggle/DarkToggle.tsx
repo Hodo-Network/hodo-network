@@ -1,4 +1,3 @@
-import React from "react";
 import { MoonIcon, SunIcon } from "@heroicons/react/solid";
 import { useDark } from "../../hooks";
 

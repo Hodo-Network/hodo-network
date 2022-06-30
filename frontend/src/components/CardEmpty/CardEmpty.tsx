@@ -1,15 +1,11 @@
 export const CardEmpty = () => {
   return (
-    <div className='flex flex-col rounded-md overflow-hidden border-dashed border border-gray-400 dark:border-gray-700'>
-      <div className='flex-shrink-0 w-full'>
-        <div className='h-60'></div>
-      </div>
-      <div className='flex-1 bg-white dark:bg-gray-800 p-4 flex flex-col justify-between'>
-        <div className='flex-1'>
-          <p className='text-base font-semibold text-gray-900 dark:text-gray-100 capitalize'>
-            Nothing to display
-          </p>
-        </div>
+    <div className='card card-compact shadow-md bg-neutral-focus text-neutral-content border border-dashed border-neutral-content'>
+      <div className='flex-shrink-0 w-full h-60'></div>
+      <div className='card-body bg-neutral'>
+        <p className='font-semibold'>
+          Nothing to display
+        </p>
       </div>
     </div>
   );

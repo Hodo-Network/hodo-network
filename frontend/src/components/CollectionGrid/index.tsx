@@ -8,13 +8,14 @@ import convertIpfsUrl from "../../utils/convertIpfsUrl";
 import { Collection } from "../../typings/nft";
 
 export interface CollectionGridProps {
-  status?: any;
+  status?: string;
 }
 
 const CollectionGrid = ({ status }: CollectionGridProps) => {
   const { chainId } = useWeb3React<Web3Provider>();
   const dispatch = useAppDispatch();
-  const collections = useAppSelector((state) => state.collections.data);
+  // const collections = useAppSelector((state) => state.collections);
+  const collectionData = useAppSelector((state) => state.collections.data);
   const loading = useAppSelector((state) => state.collections.loading);
   const [items, setItems] = useState<Array<Collection>>([]);
 
@@ -23,19 +24,24 @@ const CollectionGrid = ({ status }: CollectionGridProps) => {
   }, [chainId]);
 
   useEffect(() => {
-    if (collections?.status) {
-      let temp = collections.data;
+    if (collectionData) {
+      let temp = collectionData;
 
       if (status) {
         temp = temp.filter((item: any) => item.status === status);
       }
       temp = temp.map((item: any) => {
-        return { ...item, thumbnail: convertIpfsUrl(item.thumbnail) };
+        const indexOfIpfs = item.thumbnail.indexOf('ipfs');
+        if (indexOfIpfs >= 0) {
+          return { ...item, thumbnail: convertIpfsUrl(item.thumbnail) };
+        } else {
+          return item;
+        }
       });
 
       setItems(temp);
     }
-  }, [collections]);
+  }, [collectionData]);
 
   return <PureCollectionGrid items={items} loading={loading} />;
 };

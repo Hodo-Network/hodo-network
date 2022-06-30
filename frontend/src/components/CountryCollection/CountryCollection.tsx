@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useWeb3React } from "@web3-react/core";
 import { Contract } from "@ethersproject/contracts";
 import { Web3Provider } from "@ethersproject/providers";
@@ -10,10 +10,10 @@ export interface CountryCollectionProps {
   abi: any;
 }
 
-export const CountryCollection: React.FC<CountryCollectionProps> = ({
+export const CountryCollection = ({
   address,
   abi,
-}) => {
+}: CountryCollectionProps) => {
   const { account, library } = useWeb3React<Web3Provider>();
   // const { data: balance, mutate } = useSWR([address, "balanceOf", account]);
 

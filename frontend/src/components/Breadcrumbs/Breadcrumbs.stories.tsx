@@ -1,4 +1,3 @@
-import React from "react";
 import { Story, Meta } from "@storybook/react";
 
 import { Breadcrumbs, BreadcrumbsProps } from "./Breadcrumbs";
@@ -15,7 +14,6 @@ Home.args = {
   crumbs: [
     { exact: true, name: "Home", path: "/", current: true, isHome: true },
   ],
-  hide: false,
 };
 
 export const Collections = Template.bind({});
@@ -30,5 +28,4 @@ Collections.args = {
       isHome: false,
     },
   ],
-  hide: false,
 };

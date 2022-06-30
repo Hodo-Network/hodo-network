@@ -4,10 +4,10 @@ import { useAppDispatch, useAppSelector } from "../../state/hooks";
 import { PureAssetPage } from "./AssetPage";
 import { getCollection } from "../../state/asyncActions/collection";
 
-interface IParams {
+type IParams = {
   contractAddress: string;
   tokenId: string;
-}
+};
 
 const AssetPage = () => {
   const { contractAddress, tokenId } = useParams<IParams>();
@@ -16,7 +16,9 @@ const AssetPage = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(getCollection(contractAddress));
+    if (contractAddress) {
+      dispatch(getCollection(contractAddress));
+    }
   }, []);
 
   return (

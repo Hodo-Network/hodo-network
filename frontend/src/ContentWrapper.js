@@ -1,6 +1,6 @@
 // import { useEffect, useState } from "react";
-import { useRouteMatch } from "react-router-dom";
-// import { useParams, useRouteMatch, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 // import { ROUTE_DEFAULT } from "./constants/routes";
 // import routes from "./routes";
 // import Breadcrumbs from "./components/Breadcrumbs";
@@ -10,14 +10,11 @@ export default function ContentWrapper({ children }) {
   // const match = useRouteMatch();
   // const params = useParams();
   // const location = useLocation();
+  const { pathname } = useLocation();
   // const [crumbs, setCrumbs] = useState([]);
   // const collections = useAppSelector((state) => state.collections.data);
   // const asset = useAppSelector((state) => state.asset.data);
-
-  const matchHome = useRouteMatch({
-    path: "/",
-    exact: true,
-  });
+  const matchHome = pathname === "/";
 
   // useEffect(() => {
   //   setCrumbs(getCrumbs());

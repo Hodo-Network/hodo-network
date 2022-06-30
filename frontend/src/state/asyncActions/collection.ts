@@ -3,13 +3,15 @@ import {
 } from "../actions/collection";
 import { collectionEndpoint } from '../../http';
 // import { nftEndpoint, getNftByOwnerEndpoint } from '../../http';
+import { collections } from '../../data/collections';
 
 // Collection
 export const getCollection = (contractAddress: string) => async (dispatch: any) => {
     dispatch(getCollectionStarted());
     try {
-        const res = await fetch(`${collectionEndpoint}?contractAddress=${contractAddress}`);
-        const data = await res.json();
+        // const res = await fetch(`${collectionEndpoint}?contractAddress=${contractAddress}`);
+        // const data = await res.json();
+        const data = collections.find(collection => collection.contractAddress === contractAddress);
         dispatch(getCollectionSuccess(data));
     } catch (err: any) {
         dispatch(getCollectionFailure(err.message));

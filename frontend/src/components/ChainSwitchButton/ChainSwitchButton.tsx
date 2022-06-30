@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import Button from "../Button";
+import { useEffect, useState } from "react";
+import Button from "../../base/Button";
 
 export interface ChainSwitchButtonProps {
   label: string;
@@ -7,11 +7,11 @@ export interface ChainSwitchButtonProps {
   params?: any;
 }
 
-export const ChainSwitchButton: React.FC<ChainSwitchButtonProps> = ({
+export const ChainSwitchButton = ({
   label,
   disabled,
   params,
-}) => {
+}: ChainSwitchButtonProps) => {
   useEffect(() => {
     // TODO: move higher up?
     // ethereum?.on("chainChanged", (_chainId) => window.location.reload());
@@ -39,7 +39,7 @@ export const ChainSwitchButton: React.FC<ChainSwitchButtonProps> = ({
   };
 
   return (
-    <Button onClick={onClick} disabled={disabled}>
+    <Button color="primary" onClick={onClick} disabled={disabled}>
       {label}
     </Button>
   );

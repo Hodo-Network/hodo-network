@@ -1,14 +1,12 @@
-import React from "react";
-
 export interface NetworkErrorMessageProps {
   message: string;
   dismiss: any;
 }
 
-export const NetworkErrorMessage: React.FC<NetworkErrorMessageProps> = ({
+export const NetworkErrorMessage = ({
   message,
   dismiss,
-}) => {
+}: NetworkErrorMessageProps) => {
   return (
     <div className='alert alert-danger' role='alert'>
       {message}

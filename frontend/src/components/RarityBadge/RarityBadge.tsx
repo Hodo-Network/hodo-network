@@ -1,19 +1,23 @@
-import React from "react";
-import Badge from "../Badge";
 import { NFTRarity } from "../../typings/nft";
+import Badge from "../../base/Badge";
 
-export const EpicBadge = {
-  color: "red",
+type Badge = {
+  color: "error" | "warning" | "info";
+  label: NFTRarity;
+};
+
+export const EpicBadge: Badge = {
+  color: "error",
   label: NFTRarity.EPIC,
 };
 
-export const RareBadge = {
-  color: "yellow",
+export const RareBadge: Badge = {
+  color: "warning",
   label: NFTRarity.RARE,
 };
 
-export const CommonBadge = {
-  color: "blue",
+export const CommonBadge: Badge = {
+  color: "info",
   label: NFTRarity.COMMON,
 };
 
@@ -27,7 +31,7 @@ export interface RarityBadgeProps {
   rarity: string;
 }
 
-export const RarityBadge: React.FC<RarityBadgeProps> = ({ rarity }) => {
+export const RarityBadge = ({ rarity }: RarityBadgeProps) => {
   let info = CommonBadge;
 
   if (rarity === NFTRarity.RARE) {

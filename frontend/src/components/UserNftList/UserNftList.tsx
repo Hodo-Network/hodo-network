@@ -1,4 +1,4 @@
-import ReactLoading from "react-loading";
+import Loader from "../../base/Loader";
 
 export interface PureUserNftListProps {
   loading?: boolean;
@@ -10,13 +10,7 @@ export const PureUserNftList = ({
   items,
 }: PureUserNftListProps) => {
   if (loading) {
-    return (
-      <ReactLoading
-        type='bubbles'
-        color='currentColor'
-        className='text-blue-600 dark:text-blue-500'
-      />
-    );
+    return <Loader />;
   }
 
   return (

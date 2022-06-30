@@ -1,4 +1,4 @@
-import Button from "../Button";
+import Button from "../../base/Button";
 
 export interface PureChainAddButtonProps {
   label: string;
@@ -12,7 +12,7 @@ export const PureChainAddButton = ({
   onClick,
 }: PureChainAddButtonProps) => {
   return (
-    <Button onClick={onClick} disabled={disabled}>
+    <Button color="primary" onClick={onClick} disabled={disabled}>
       {label}
     </Button>
   );

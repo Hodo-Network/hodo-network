@@ -1,4 +1,3 @@
-import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { BadgeCheckIcon, ExclamationIcon } from "@heroicons/react/solid";
 // import { Web3Provider } from "@ethersproject/providers";
@@ -7,14 +6,15 @@ import { Avax } from "../../assets";
 // import { NATIVE_CURRENCY } from "../../constants";
 import { ROUTE_MARKETPLACE } from "../../constants/routes";
 import { NFT } from "../../typings/nft";
+import clsx from "clsx";
 
 export interface PureAssetListItemProps {
   item: NFT;
 }
 
-export const PureAssetListItem: React.FC<PureAssetListItemProps> = ({
+export const PureAssetListItem = ({
   item: { tokenId, contractAddress, name, image, description, sold, price, contractName, contractVerified }
-}) => {
+}: PureAssetListItemProps) => {
   // const { chainId } = useWeb3React<Web3Provider>();
   const location = useLocation();
   const path = `${ROUTE_MARKETPLACE}/${contractAddress}/${tokenId}`;
@@ -22,9 +22,8 @@ export const PureAssetListItem: React.FC<PureAssetListItemProps> = ({
   return (
     <NavLink
       to={path}
-      exact={true}
-      className='cursor-pointer flex p-4 border-b border-gray-200 dark:border-gray-800 items-center hover:bg-gray-50 dark:hover:bg-gray-800'
-      activeClassName='bg-gray-100 dark:bg-gray-800'
+      // exact={true}
+      className={(navData) => clsx('flex p-4 gap-4 items-center cursor-pointer hover:bg-primary hover:text-primary-content', navData.isActive && 'bg-primary text-primary-content')}
       aria-current={[path].includes(location.pathname) ? "page" : undefined}
     >
       <div className='flex-shrink-0'>
@@ -34,27 +33,27 @@ export const PureAssetListItem: React.FC<PureAssetListItemProps> = ({
           alt={name}
         />
       </div>
-      <div className='flex-1 px-4 flex justify-between'>
+      <div className='flex-1 flex justify-between'>
         <div className='flex-1 max-w-2xl'>
-          <p className='text-xs text-gray-600 dark:text-gray-400 flex items-center'>
+          <p className='text-xs flex items-center'>
             {contractName}
             {!!contractVerified ? (
-              <BadgeCheckIcon className='w-4 h-4 text-blue-500 ml-1' />
+              <BadgeCheckIcon className='w-4 h-4 text-info ml-1' />
             ) : (
-              <ExclamationIcon className='w-4 h-4 text-yellow-500 ml-1' />
+              <ExclamationIcon className='w-4 h-4 text-warning ml-1' />
             )}
           </p>
-          <p className='mt-1 text-base font-semibold text-gray-900 dark:text-gray-100'>
+          <p className='mt-1 text-base font-semibold'>
             {name}
           </p>
-          <p className='mt-1 text-sm text-gray-600 dark:text-gray-300 line-clamp-3'>
+          <p className='mt-1 text-sm line-clamp-3'>
             {description}
           </p>
         </div>
       </div>
       {!sold && (
         <div className='flex flex-col items-end'>
-          <p className='text-xs text-gray-600 dark:text-gray-400'>Price</p>
+          <p className='text-xs'>Price</p>
           <div className='mt-1 flex items-center'>
             {/* TODO: allow other currency logos */}
             {/* {(chainId && NATIVE_CURRENCY[chainId]) || NATIVE_CURRENCY[0]} */}

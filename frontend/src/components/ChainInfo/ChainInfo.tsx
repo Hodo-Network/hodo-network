@@ -1,5 +1,4 @@
-import React from "react";
-import Button from "../Button";
+import Button from "../../base/Button";
 // import Avalanche from "avalanche";
 
 // let avalanche = new Avalanche("127.0.0.1", 9650, "https");
@@ -13,7 +12,7 @@ export interface ChainInfoProps {
   params: any;
 }
 
-export const ChainInfo: React.FC<ChainInfoProps> = ({ params }) => {
+export const ChainInfo = ({ params }: ChainInfoProps) => {
   const getBalances = async () => {
     console.log("chaininfo");
     try {
@@ -30,7 +29,7 @@ export const ChainInfo: React.FC<ChainInfoProps> = ({ params }) => {
   };
 
   return (
-    <Button size='large' onClick={getBalances}>
+    <Button color="primary" size='lg' onClick={getBalances}>
       Get Balances
     </Button>
   );

@@ -1,4 +1,3 @@
-import React from "react";
 import { Story, Meta } from "@storybook/react";
 
 import { Button, ButtonProps } from "./Button";
@@ -14,23 +13,25 @@ const Template: Story<ButtonProps> = (args) => (
 
 export const Primary = Template.bind({});
 Primary.args = {
-  primary: true,
+  color: "primary",
 };
 
 export const Secondary = Template.bind({});
-Secondary.args = {};
+Secondary.args = {
+  color: "secondary",
+};
 
 export const Large = Template.bind({});
 Large.args = {
-  size: "large",
+  size: "lg",
 };
 
 export const Medium = Template.bind({});
 Medium.args = {
-  size: "medium",
+  size: "md",
 };
 
 export const Small = Template.bind({});
 Small.args = {
-  size: "small",
+  size: "sm",
 };

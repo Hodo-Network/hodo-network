@@ -1,28 +1,24 @@
 import { useState, useEffect } from "react";
 
 export default function useTheme() {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("dark");
 
-  const switchTheme = (theme: string) => setTheme(theme);
+  const switchTheme = (theme: string) => {
+    setTheme(theme);
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.theme = theme;
+  };
 
   // Whenever the user explicitly chooses to respect the OS preference
-  //   const removeTheme = () => {
-  //     localStorage.removeItem("theme");
-  //   };
+  // const removeTheme = () => {
+  //   localStorage.removeItem("theme");
+  // };
 
-  // On page load or when changing themes
+  // On page load
   useEffect(() => {
-    const isDark = document
-      .getElementsByTagName("html")[0]
-      .classList.contains("dark");
+    const data = document.documentElement.getAttribute('data-theme') || '';
+    switchTheme(data);
+  }, []);
 
-    if (isDark) {
-      setTheme("dark");
-    } else {
-      setTheme("light");
-    }
-    localStorage.theme = theme;
-  }, [theme, setTheme]);
-
-  return [theme, switchTheme];
+  return { theme, switchTheme };
 }

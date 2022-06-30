@@ -1,5 +1,4 @@
 import { Fragment } from "react";
-import ReactLoading from "react-loading";
 import { Tab } from "@headlessui/react";
 // import { SWRConfig } from "swr";
 // import fetcher from "swr-eth";
@@ -17,6 +16,7 @@ import UserNftList from "../../components/UserNftList";
 import OnboardingButton from "../../components/OnboardingButton";
 import WalletAddress from "../../components/WalletAddress";
 import NetworkSwitch from "../../components/NetworkSwitch";
+import Loader from "../../base/Loader";
 // import ChainAddButton from "../../components/ChainAddButton";
 
 export interface PureAccountPageProps {
@@ -41,19 +41,13 @@ export const PureAccountPage = ({
   const tabs = ["Owned", "Sales", "Network Info"];
 
   if (loading) {
-    return (
-      <ReactLoading
-        type='bubbles'
-        color='currentColor'
-        className='text-blue-600 dark:text-blue-500'
-      />
-    );
+    return <Loader />;
   }
 
   return (
     <ContentWrapper>
       <Tab.Group>
-        <Tab.List className='border-b border-gray-300 dark:border-gray-800'>
+        <Tab.List className='border-b border-gray-300'>
           {tabs.map((tab, idx) => (
             <Tab as={Fragment} key={idx}>
               {({ selected }) => (
@@ -61,8 +55,8 @@ export const PureAccountPage = ({
                   className={[
                     "w-1/3 py-4 px-1 text-center border-b-2 font-medium text-sm",
                     selected
-                      ? "border-blue-500 text-blue-600"
-                      : "border-transparent text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-300 dark:hover:border-gray-800",
+                      ? "border-primary-content text-primary"
+                      : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300",
                   ].join(" ")}>
                   {tab}
                 </button>
@@ -126,11 +120,11 @@ export const PureAccountPage = ({
             <WalletAddress address={address} loading={false} />
 
             <div>
-              <h1 className='text-sm uppercase font-medium text-gray-500 dark:text-gray-400'>
+              <h1 className='text-sm uppercase font-medium text-gray-500'>
                 {TEXT_NETWORK}
               </h1>
               {connected ? (
-                <p className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis'>
+                <p className='mt-2 font-medium text-gray-900 overflow-hidden overflow-ellipsis'>
                   {network}
                 </p>
               ) : (
@@ -143,10 +137,10 @@ export const PureAccountPage = ({
             {connected && <NetworkSwitch />}
 
             {/* <div>
-              <h1 className='text-sm uppercase font-medium text-gray-500 dark:text-gray-400'>
+              <h1 className='text-sm uppercase font-medium text-gray-500'>
                 {TEXT_BALANCE}
               </h1>
-              <div className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis'>
+              <div className='mt-2 font-medium text-gray-900 overflow-hidden overflow-ellipsis'>
                 {library && (
                   <SWRConfig value={{ fetcher: fetcher(library, new Map(ABIs)) }}>
                     <EthBalance />
@@ -157,18 +151,18 @@ export const PureAccountPage = ({
             </div> */}
 
             {/* <div>
-              <h1 className='text-sm uppercase font-medium text-gray-500 dark:text-gray-400'>
+              <h1 className='text-sm uppercase font-medium text-gray-500'>
                 {TEXT_ADD_FUNDS}
               </h1>
               {chainId === 43114 ? (
-                <p className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis'>
+                <p className='mt-2 font-medium text-gray-900 overflow-hidden overflow-ellipsis'>
                   Purchase AVAX from an exchange and send it to the X-Chain address
                   in your wallet at{" "}
                   <a
                     href='https://wallet.avax.network/'
                     target='_blank'
                     rel='noreferrer'
-                    className='text-blue-600 font-medium'>
+                    className='text-primary font-medium'>
                     https://wallet.avax.network/
                   </a>
                   .<br />
@@ -178,18 +172,18 @@ export const PureAccountPage = ({
                   is also a C-Chain address).
                 </p>
               ) : chainId === 43113 ? (
-                <p className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis'>
+                <p className='mt-2 font-medium text-gray-900 overflow-hidden overflow-ellipsis'>
                   Request tokens from the{" "}
                   <a
                     href='https://faucet.avax-test.network/'
                     target='_blank'
                     rel='noreferrer'
-                    className='text-blue-600 font-medium'>
+                    className='text-primary font-medium'>
                     AVAX Test Faucet.
                   </a>
                 </p>
               ) : (
-                <p className='mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis'>
+                <p className='mt-2 font-medium text-gray-900 overflow-hidden overflow-ellipsis'>
                   Unsupported network.
                 </p>
               )}

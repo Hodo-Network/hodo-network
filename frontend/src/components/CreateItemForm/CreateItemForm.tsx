@@ -20,18 +20,18 @@ export const PureCreateItemForm = ({
   return (
     <form onSubmit={(e) => onSubmitForm(e)}>
       <div className='shadow sm:rounded-md sm:overflow-hidden'>
-        <div className='px-4 py-5 bg-white dark:bg-gray-800 space-y-6 sm:p-6'>
+        <div className='px-4 py-5 bg-white space-y-6 sm:p-6'>
           <div>
             <label
               htmlFor='asset-name'
-              className='block text-sm font-medium text-gray-700 dark:text-gray-400'>
+              className='block text-sm font-medium text-gray-700'>
               Name
             </label>
             <input
               type='text'
               name='asset-name'
               id='asset-name'
-              className='mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md dark:bg-gray-700 dark:border-gray-600'
+              className='mt-1 focus:ring-primary-focus focus:border-primary-focus block w-full shadow-sm sm:text-sm border-gray-300 rounded-md'
               onChange={(e) => onUpdateInput("name", e.target.value)}
             />
           </div>
@@ -39,7 +39,7 @@ export const PureCreateItemForm = ({
           <div>
             <label
               htmlFor='description'
-              className='block text-sm font-medium text-gray-700 dark:text-gray-400'>
+              className='block text-sm font-medium text-gray-700'>
               Description
             </label>
             <div className='mt-1'>
@@ -47,11 +47,11 @@ export const PureCreateItemForm = ({
                 id='description'
                 name='description'
                 rows={3}
-                className='shadow-sm focus:ring-blue-500 focus:border-blue-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md dark:bg-gray-700 dark:border-gray-600'
+                className='shadow-sm focus:ring-primary-focus focus:border-primary-focus mt-1 block w-full sm:text-sm border border-gray-300 rounded-md'
                 onChange={(e) => onUpdateInput("description", e.target.value)}
               />
             </div>
-            <p className='mt-2 text-sm text-gray-500 dark:text-gray-400'>
+            <p className='mt-2 text-sm text-gray-500'>
               Brief description of the asset.
             </p>
           </div>
@@ -59,7 +59,7 @@ export const PureCreateItemForm = ({
           <div>
             <label
               htmlFor='asset-geolocation'
-              className='block text-sm font-medium text-gray-700 dark:text-gray-400'>
+              className='block text-sm font-medium text-gray-700'>
               Coordinates
             </label>
             <div className='mt-1'>
@@ -69,13 +69,13 @@ export const PureCreateItemForm = ({
               type='text'
               name='asset-geolocation'
               id='asset-geolocation'
-              className='mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md dark:bg-gray-700 dark:border-gray-600'
+              className='mt-1 focus:ring-primary-focus focus:border-primary-focus block w-full shadow-sm sm:text-sm border-gray-300 rounded-md'
               onChange={(e) => onUpdateInput("name", e.target.value)}
             /> */}
           </div>
 
           <div>
-            <label className='block text-sm font-medium text-gray-700 dark:text-gray-400'>
+            <label className='block text-sm font-medium text-gray-700'>
               Image
             </label>
             <div className='flex mt-4'>
@@ -84,11 +84,11 @@ export const PureCreateItemForm = ({
                   <img src={file} alt='' />
                 </div>
               ) : (
-                <div className='rounded mr-2 w-80 flex justify-center items-center p-6 border-2 border-gray-300 dark:border-gray-600 border-dashed'>
+                <div className='rounded mr-2 w-80 flex justify-center items-center p-6 border-2 border-gray-300 border-dashed'>
                   <span className='text-gray-400'>Preview</span>
                 </div>
               )}
-              <div className='flex flex-1 justify-center items-center p-6 border-2 border-gray-300 dark:border-gray-600 border-dashed rounded'>
+              <div className='flex flex-1 justify-center items-center p-6 border-2 border-gray-300 border-dashed rounded'>
                 <div className='space-y-1 text-center'>
                   <svg
                     className='mx-auto h-12 w-12 text-gray-400'
@@ -106,7 +106,7 @@ export const PureCreateItemForm = ({
                   <div className='flex text-sm justify-center'>
                     <label
                       htmlFor='file-upload'
-                      className='relative cursor-pointer rounded-md font-medium text-blue-600 hover:text-blue-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-blue-500'>
+                      className='relative cursor-pointer rounded-md font-medium text-primary hover:text-primary focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-primary-focus'>
                       <span>Upload a file</span>
                       <input
                         id='file-upload'
@@ -119,7 +119,7 @@ export const PureCreateItemForm = ({
                     {/* <p className='pl-1'>or drag and drop</p> */}
                   </div>
                   {/* TODO: update accepted filetypes */}
-                  <p className='text-xs text-gray-500 dark:text-gray-400'>
+                  <p className='text-xs text-gray-500'>
                     PNG, JPG, GIF up to 10MB
                   </p>
                 </div>
@@ -129,7 +129,7 @@ export const PureCreateItemForm = ({
 
           {/* onChange={(e) => onUpdateInput("attributes", e.target.value)} */}
           {/* <div>
-            <p className='block text-sm font-medium text-gray-700 dark:text-gray-400'>
+            <p className='block text-sm font-medium text-gray-700'>
               Attributes
             </p>
 
@@ -137,7 +137,7 @@ export const PureCreateItemForm = ({
               <div className='sm:col-span-3'>
                 <label
                   htmlFor='attribute-type'
-                  className='block text-sm font-medium text-gray-700 dark:text-gray-400'>
+                  className='block text-sm font-medium text-gray-700'>
                   Type
                 </label>
                 <div className='mt-1'>
@@ -145,7 +145,7 @@ export const PureCreateItemForm = ({
                     type='text'
                     name='attribute-type'
                     id='attribute-type'
-                    className='shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-md'
+                    className='shadow-sm focus:ring-primary-focus focus:border-primary-focus block w-full sm:text-sm border-gray-300 rounded-md'
                   />
                 </div>
               </div>
@@ -153,7 +153,7 @@ export const PureCreateItemForm = ({
               <div className='sm:col-span-3'>
                 <label
                   htmlFor='attribute-value'
-                  className='block text-sm font-medium text-gray-700 dark:text-gray-400'>
+                  className='block text-sm font-medium text-gray-700'>
                   Value
                 </label>
                 <div className='mt-1'>
@@ -161,7 +161,7 @@ export const PureCreateItemForm = ({
                     type='text'
                     name='attribute-value'
                     id='attribute-value'
-                    className='shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-md'
+                    className='shadow-sm focus:ring-primary-focus focus:border-primary-focus block w-full sm:text-sm border-gray-300 rounded-md'
                   />
                 </div>
               </div>
@@ -169,12 +169,12 @@ export const PureCreateItemForm = ({
           </div> */}
         </div>
 
-        <div className='px-4 py-3 bg-gray-50 dark:bg-gray-700 flex justify-between items-center sm:px-6'>
-          <div className='text-gray-600 dark:text-gray-400'>Coming Soon</div>
+        <div className='px-4 py-3 bg-gray-50 flex justify-between items-center sm:px-6'>
+          <div className='text-gray-600'>Coming Soon</div>
           <button
             type='submit'
             disabled={disabled}
-            className='btn btn--primary'>
+            className='btn btn-primary'>
             Create Digital Asset
           </button>
         </div>

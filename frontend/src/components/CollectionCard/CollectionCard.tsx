@@ -8,26 +8,22 @@ export interface PureCollectionCardProps {
 }
 
 export const PureCollectionCard = ({
-  collection: { name, thumbnail, contractAddress, verified, network },
+  collection: { name, thumbnail, contractAddress, verified },
 }: PureCollectionCardProps) => {
   return (
     <Link
       to={`${ROUTE_MARKETPLACE}/${contractAddress}`}
-      className='flex flex-col rounded-md shadow overflow-hidden transition-transform duration-300 transform hover:-translate-y-1'>
-      <div className='flex-shrink-0'>
-        <img
-          className='h-54 w-full object-scale-down'
-          src={thumbnail}
-          alt={name}
-        />
-      </div>
-      <div className='flex-1 bg-white dark:bg-gray-800 py-3 px-4 flex flex-col justify-between'>
-        <p className='text-base font-semibold text-gray-900 dark:text-gray-100 capitalize flex justify-between'>
+      className='card card-compact shadow-md bg-neutral-focus text-neutral-content transition-transform duration-300 transform hover:-translate-y-1'>
+      <figure className="h-60">
+        <img src={thumbnail} alt={name} />
+      </figure>
+      <div className='card-body bg-neutral'>
+        <p className='font-semibold flex justify-between space-x-2'>
           <span>{name}</span>
           {!!verified ? (
-            <BadgeCheckIcon className='w-6 h-6 text-blue-500 ml-2' />
+            <BadgeCheckIcon className='w-6 h-6 text-info' />
           ) : (
-            <ExclamationIcon className='w-6 h-6 text-yellow-500 ml-2' />
+            <ExclamationIcon className='w-6 h-6 text-warning' />
           )}
         </p>
       </div>

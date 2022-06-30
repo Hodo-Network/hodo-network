@@ -17,11 +17,11 @@ export const ConnectionBadge = ({ network, account }: ConnectionBadgeProps) => {
         .writeText(account)
         .then(
           function () {
-            setMessageColor("green-500");
+            setMessageColor("text-green-500");
             setMessage("Copied!");
           },
           function () {
-            setMessageColor("red-500");
+            setMessageColor("text-red-500");
             setMessage("Failed to copy.");
           }
         )
@@ -52,7 +52,7 @@ export const ConnectionBadge = ({ network, account }: ConnectionBadgeProps) => {
       </span>
       {showMsg && (
         <span
-          className={`absolute flex items-center justify-center bg-gray-900 opacity-90 w-full h-full left-0 top-0 font-semibold px-3 py-1.5 rounded-md text-${messageColor}`}>
+          className={`absolute flex items-center justify-center bg-gray-900 opacity-90 w-full h-full left-0 top-0 font-semibold px-3 py-1.5 rounded-md ${messageColor}`}>
           {message}
         </span>
       )}

@@ -1,14 +1,12 @@
-import React from "react";
-
 export interface MenuOpenIconProps {
   className?: string;
   props?: any;
 }
 
-export const MenuOpenIcon: React.FC<MenuOpenIconProps> = ({
+export const MenuOpenIcon = ({
   className,
   props,
-}) => {
+}: MenuOpenIconProps) => {
   return (
     <svg
       viewBox='0 0 24 18'

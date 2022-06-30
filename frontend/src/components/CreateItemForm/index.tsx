@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useHistory } from "react-router";
+import { useNavigate } from "react-router";
 import { create as ipfsHttpClient } from "ipfs-http-client";
 import { ROUTE_ACCOUNT } from "../../constants/routes";
 import { PureCreateItemForm } from "./CreateItemForm";
@@ -13,7 +13,7 @@ const client = ipfsHttpClient({
 });
 
 const CreateItemForm = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
   const [loading, setLoading] = useState<boolean>(false);
   const [disabled, setDisabled] = useState<boolean>(true);
   // const { contractAddress } = useParams<IParams>();
@@ -80,7 +80,7 @@ const CreateItemForm = () => {
       // const added = await client.add(data);
       // const url = `https://ipfs.infura.io/ipfs/${added.path}`;
       // createSale(url);
-      history.push(ROUTE_ACCOUNT);
+      navigate(ROUTE_ACCOUNT);
     } catch (error) {
       console.log("Create item error:", error);
     }

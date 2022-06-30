@@ -27,6 +27,7 @@ const TEXT_NETWORK = "Network";
 const TEXT_ONBOARDING = "Onboarding";
 const TEXT_OWNER = "Owned by";
 const TEXT_REGION = "My Region";
+const TEXT_REMOVE_LISTING = "Remove listing";
 const TEXT_SELL = "Sell";
 const TEXT_SWITCH = "Switch Networks";
 
@@ -60,6 +61,7 @@ export {
   TEXT_ONBOARDING,
   TEXT_OWNER,
   TEXT_REGION,
+  TEXT_REMOVE_LISTING,
   TEXT_SELL,
   TEXT_SWITCH,
 };

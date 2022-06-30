@@ -1,5 +1,5 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
+import clsx from 'clsx';
 import { navigation } from "../../constants/navigation";
 import Footer from "../Footer";
 import MenuClosedIcon from "../MenuClosedIcon";
@@ -10,39 +10,27 @@ export interface SidebarProps {
   toggle: () => void;
 }
 
-export const Sidebar: React.FC<SidebarProps> = ({ mini, toggle }) => {
+export const Sidebar = ({ mini, toggle }: SidebarProps) => {
   return (
     <div
-      className={`hidden md:flex flex-col border-r border-gray-700 dark:border-gray-800 bg-gray-800 dark:bg-gray-900 ${
-        mini ? "w-20" : "w-80"
-      }`}>
+      className={clsx('hidden md:flex flex-col border-r border-neutral bg-base-200', mini ? "w-20" : "w-80")}>
       <div className='h-16'>
         <div
-          className={`flex items-center h-full p-3 ${
-            mini && "justify-center"
-          }`}>
-          {mini ? (
-            <button
-              type='button'
-              className='text-gray-200 px-4 py-3 focus:outline-none'
-              aria-label='Toggle sidebar'
-              onClick={toggle}>
+          className={clsx('flex items-center h-full p-3', mini && 'justify-center')}>
+          <button
+            type='button'
+            className='text-base-content px-4 py-3 focus:outline-none'
+            aria-label='Toggle sidebar'
+            onClick={toggle}>
+            {mini ? (
               <MenuClosedIcon className='w-6 h-6' />
-            </button>
-          ) : (
-            <button
-              type='button'
-              className='text-gray-200 px-4 py-3 focus:outline-none'
-              aria-label='Toggle sidebar'
-              onClick={toggle}>
+            ) : (
               <MenuOpenIcon className='w-6 h-6' />
-            </button>
-          )}
+            )}
+          </button>
 
           <span
-            className={`-ml-1 font-bold text-xl text-white ${
-              mini && "sr-only"
-            }`}>
+            className={clsx('-ml-1 font-bold text-xl', mini && 'sr-only')}>
             Hodo Network
           </span>
         </div>
@@ -53,9 +41,11 @@ export const Sidebar: React.FC<SidebarProps> = ({ mini, toggle }) => {
           <NavLink
             key={item.name}
             to={item.href}
-            exact={item.exact}
-            className='text-gray-400 hover:bg-gray-900 dark:hover:bg-gray-800 flex items-center rounded-md px-4 py-3'
-            activeClassName='bg-gray-900 dark:bg-gray-800 text-white'>
+            // exact={item.exact}
+            className={(navData) => clsx(
+              'flex items-center rounded-md px-4 py-3 hover:bg-neutral hover:text-neutral-content',
+              navData.isActive && 'bg-neutral text-neutral-content'
+            )}>
             <item.icon className='h-6 w-6' aria-hidden='true' />
             <span className={mini ? "sr-only" : "ml-3"}>{item.name}</span>
           </NavLink>
@@ -63,6 +53,6 @@ export const Sidebar: React.FC<SidebarProps> = ({ mini, toggle }) => {
       </nav>
 
       {!mini && <Footer />}
-    </div>
+    </div >
   );
 };

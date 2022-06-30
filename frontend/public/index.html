@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full">
+<html lang="en" class="h-full" data-theme="dark">
 
 <head>
   <meta charset="utf-8" />
@@ -36,7 +36,7 @@
     (function (l) {
       if (l.search[1] === '/') {
         var decoded = l.search.slice(1).split('&').map(function (s) {
-          return s.replace(/~and~/g, '&')
+          return s.replace(/~and~/g, '&');
         }).join('?');
         window.history.replaceState(null, null,
           l.pathname.slice(0, -1) + decoded + l.hash
@@ -50,9 +50,9 @@
       (!("dark" in localStorage) &&
         window.matchMedia("(prefers-color-scheme: dark)").matches)
     ) {
-      document.documentElement.classList.add("dark");
+      document.documentElement.setAttribute('data-theme', 'dark');
     } else {
-      document.documentElement.classList.remove("dark");
+      document.documentElement.setAttribute('data-theme', 'winter');
     }
   </script>
   <title>%REACT_APP_COMPANY%</title>

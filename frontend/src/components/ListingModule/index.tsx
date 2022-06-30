@@ -8,10 +8,10 @@ import { Web3Provider } from "@ethersproject/providers";
 import { Contract } from "@ethersproject/contracts";
 // import BN from "bn.js";
 // import { WALLET_ADDRESS } from "../../constants";
-// import { buyNftEndpoint } from "../../http";
+import { buyNftEndpoint, saveNftEndpoint, updateIsDeleteNftEndpoint } from "../../http";
 // import { getCollections } from "../../state/asyncActions/collections";
 // import { getCollection } from "../../state/asyncActions/collection";
-import { NFT } from "../../typings/nft";
+import { Collection, NFT } from "../../typings/nft";
 // import NFTABI from "../../abi/NFTABI.json";
 // import Continents from "../../contracts/Continents.json";
 import ContractAddresses from "../../contracts/contract-address.json";
@@ -31,10 +31,11 @@ import { PureListingModule } from "./ListingModule";
 
 export interface ListingModuleProps {
   item: NFT;
+  collection: Collection;
 }
 
-const ListingModule = ({ item }: ListingModuleProps) => {
-  const { account, library } = useWeb3React<Web3Provider>();
+const ListingModule = ({ item, collection }: ListingModuleProps) => {
+  const { account, library, chainId } = useWeb3React<Web3Provider>();
   const [marketContract, setMarketContract] = useState<any>();
   // const [web3State, setWeb3State] = useState<any>();
   // const [accounts, setAccounts] = useState<any>();
@@ -44,7 +45,7 @@ const ListingModule = ({ item }: ListingModuleProps) => {
   }, []);
 
   const getListing = async () => {
-    console.log("get listing");
+    console.log("getListing");
     // const provider = new ethers.providers.JsonRpcProvider();
     // const tokenContract = new Contract(
     //   ContractAddresses.Marketplace,
@@ -68,74 +69,23 @@ const ListingModule = ({ item }: ListingModuleProps) => {
     // bool sold
   };
 
-  const onCreateListing = async () => {
-    console.log("create listing");
-
-    try {
-      // if (library) {
-      //   const provider = new ethers.providers.JsonRpcProvider();
-      //   const tokenContract = new Contract(
-      //     ContractAddresses.Marketplace,
-      //     Marketplace.abi,
-      //     provider
-      //   );
-
-      //   let listingPrice = await tokenContract.getListingPrice();
-      //   listingPrice = listingPrice.toString();
-
-      //   // const signer = library?.getSigner();
-      //   const market = new Contract(
-      //     ContractAddresses.Marketplace,
-      //     Marketplace.abi,
-      //     provider.getSigner()
-      //   );
-      //   setMarketContract(market);
-
-      //   // TODO: remove
-      //   await tokenContract.mint(1);
-      //   debugger;
-
-      //   const price = 2;
-      //   const val = ethers.utils.parseUnits(price.toString(), "ether");
-      //   // const val = new BN(price * 1e18) || 0;
-
-      //   // const llitem = await market.createMarketItem(
-      //   //   ContractAddresses.Continents,
-      //   //   tokenId,
-      //   //   val,
-      //   //   { value: listingPrice }
-      //   // );
-
-      //   // const price2 = await tokenContract.getListingPrice();
-      //   // const myitems = await tokenContract.fetchMyNFTs();
-      //   // const mitems = await tokenContract.fetchMarketItems();
-      //   // const citems = await tokenContract.fetchItemsCreated();
-      // }
-    } catch (error) {
-      console.log("AssetView load error: ", error);
-    }
-  };
-
   const onBuyAsset = async () => {
     try {
-      console.log("buy");
-      // let ownerAddress = account;
-      // let id = asset.data ? asset.data.id : "";
-      // const requestOptions = {
-      //   method: "POST",
-      //   headers: { "Content-type": "application/json;charset=UTF-8" },
-      //   body: JSON.stringify({
-      //     id,
-      //     ownerAddress,
-      //   }),
-      // };
+      console.log("onBuyAsset");
+      const requestOptions = {
+        method: "POST",
+        headers: { "Content-type": "application/json;charset=UTF-8" },
+        body: JSON.stringify({
+          id: item.id,
+          buyerAddress: account,
+        }),
+      };
 
-      // let fetchNftData = await fetch(buyNftEndpoint, requestOptions);
-      // console.log(fetchNftData);
+      let fetchNftData = await fetch(buyNftEndpoint, requestOptions);
 
       // if (fetchNftData.status === 200) {
-      //   let price = asset.data ? asset.data.price.toString() : "";
-      //   let token_id = asset.data ? asset.data.tokenId.toString() : "";
+      //   let price = item.data ? item.data.price.toString() : "";
+      //   let token_id = item.data ? item.data.tokenId.toString() : "";
       //   token_id = --token_id;
       //   let tradeCount = await contract.methods.getTradeCount().call();
       //   tradeCount = --tradeCount;
@@ -144,7 +94,7 @@ const ListingModule = ({ item }: ListingModuleProps) => {
       //     .send({ from: account, value: price });
       //   console.log("after  transaction ", receipt);
 
-      //   // const val = (asset && new BN(asset.price * 1e18)) || 0;
+      //   // const val = (item && new BN(item.price * 1e18)) || 0;
       //   try {
       //     const transactionParameters = {
       //       from: account,
@@ -166,13 +116,13 @@ const ListingModule = ({ item }: ListingModuleProps) => {
       //   }
       // }
     } catch (error) {
-      console.log("Error with onBuyAsset", error);
+      console.log("onBuyAsset error:", error);
     }
   };
 
   // From tutorial
   // eslint-disable-next-line
-  const onBuyAssetTut = async (nft: any) => {
+  const onBuyAssetTut = async (nft: NFT) => {
     const signer = library?.getSigner();
     const contract = new Contract(
       ContractAddresses.Marketplace,
@@ -182,7 +132,7 @@ const ListingModule = ({ item }: ListingModuleProps) => {
 
     const price = ethers.utils.parseUnits(nft.price.toString(), "ether");
     const transaction = await contract.createMarketSale(
-      nft.address,
+      nft.contractAddress,
       nft.tokenId,
       {
         value: price,
@@ -192,12 +142,102 @@ const ListingModule = ({ item }: ListingModuleProps) => {
     // loadNfts();
   };
 
-  const onChangePrice = () => {
-    console.log("Change price");
+  const onSellAsset = async () => {
+    try {
+      console.log("onSellAsset");
+      const price = 2;
+      const tx_hash = '0x00';
+
+      const requestOptions = {
+        method: "POST",
+        headers: { "Content-type": "application/json;charset=UTF-8" },
+        body: JSON.stringify({
+          name: item.name,
+          description: item.description,
+          price,
+          image: item.image,
+          owner_address: item.owner_address,
+          creator: item.creator,
+          supply: item.supply,
+          tokenId: item.tokenId,
+          tx_hash,
+          lat: item.lat,
+          lng: item.lng,
+          // rarity: item.rarity,
+          contractAddress: item.contractAddress,
+          amount: item.amount,
+        }),
+      };
+
+      let fetchNftData = await fetch(saveNftEndpoint, requestOptions);
+
+      if (library) {
+        const provider = new ethers.providers.JsonRpcProvider();
+        // const tokenContract = new Contract(
+        //   ContractAddresses.Continents,
+        //   Continents.abi,
+        //   provider
+        // );
+
+        // const signer = library?.getSigner();
+        const market = new Contract(
+          ContractAddresses.Marketplace,
+          Marketplace.abi,
+          provider.getSigner()
+        );
+        setMarketContract(market);
+
+        let listingPrice = await market.getListingPrice();
+        listingPrice = listingPrice.toString();
+
+        // TODO: prompt user for Price and sale info
+        const price = 2;
+        const val = ethers.utils.parseUnits(price.toString(), "ether");
+        // const val = new BN(price * 1e18) || 0;
+
+        // TODO: error - token doesn't exist until mint
+        const llitem = await market.createMarketItem(
+          collection.contractAddress,
+          item.tokenId,
+          val,
+          { value: listingPrice }
+        );
+
+        // const price2 = await tokenContract.getListingPrice();
+        // const myitems = await tokenContract.fetchMyNFTs();
+        // const mitems = await tokenContract.fetchMarketItems();
+        // const citems = await tokenContract.fetchItemsCreated();
+      }
+    } catch (error) {
+      console.log("onSellAsset error:", error);
+    }
   };
 
-  const mintNFT = async (tokenURI: string) => {
-    console.log("Mint nft");
+  const onRemoveListing = async () => {
+    try {
+      console.log("onRemoveListing");
+      const requestOptions = {
+        method: "POST",
+        headers: { "Content-type": "application/json;charset=UTF-8" },
+        body: JSON.stringify({
+          id: item.id,
+          is_deleted: 1,
+        }),
+      };
+
+      let fetchNftData = await fetch(updateIsDeleteNftEndpoint, requestOptions);
+
+    } catch (error) {
+      console.log('onRemoveListing error:', error);
+    }
+  };
+
+  const onChangePrice = () => {
+    console.log("onChangePrice");
+  };
+
+  const onMintNft = async (tokenURI: string) => {
+    console.log("onMintNft");
     // const nonce = await web3.eth.getTransactionCount(PUBLIC_KEY, "latest"); //get latest nonce
 
     // //the transaction
@@ -241,8 +281,10 @@ const ListingModule = ({ item }: ListingModuleProps) => {
       price={item.price}
       owned={item.owner_address === account}
       forSale={!item.sold && !item.is_deleted}
-      onCreateListing={onCreateListing}
+      connected={!!account && chainId === collection.network}
+      onSellAsset={onSellAsset}
       onBuyAsset={onBuyAsset}
+      onRemoveListing={onRemoveListing}
       onChangePrice={onChangePrice}
     />
   );

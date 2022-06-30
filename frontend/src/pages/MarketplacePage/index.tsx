@@ -19,22 +19,24 @@ const MarketplacePage = () => {
   }, [chainId]);
 
   useEffect(() => {
-    if (assets?.status) {
+    if (assets) {
       // Return unsold items
-      // let filtered = assets.data.filter((asset: NFT) => !asset.sold);
+      // let filtered = assets.filter((asset: NFT) => !asset.sold);
 
+      // Return items with Verified Contract
       // if (verifiedOnly) {
-      //   // Return items with Verified Contract
       //   filtered = filtered.filter((asset: NFT) => asset.contractVerified);
       // }
 
       // Return unsold items, with optional Verified Contract
-      let filtered = assets.data.filter((asset: NFT) => {
+      let filtered = assets.filter((asset: NFT) => {
         return verifiedOnly ? asset.contractVerified && !asset.sold : !asset.sold;
       });
 
       setItems(filtered);
     }
+
+    return () => setItems([]);
   }, [assets, verifiedOnly]);
 
   return <PureMarketplacePage items={items} loading={loading} verifiedOnly={verifiedOnly} onFilterVerified={onFilterVerified} />;

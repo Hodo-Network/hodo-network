@@ -2,7 +2,7 @@
 
 exports[`matches snapshot 1`] = `
 <button
-  className="btn btn--large"
+  className="btn btn-lg"
   onClick={[Function]}
 >
   Get Balances

@@ -1,4 +1,4 @@
-import React from "react";
+import clsx from "clsx";
 import { ExclamationIcon, XIcon } from "@heroicons/react/solid";
 
 export interface PureAlertProps {
@@ -8,12 +8,12 @@ export interface PureAlertProps {
   onDismiss?: () => void;
 }
 
-export const PureAlert: React.FC<PureAlertProps> = ({
+export const PureAlert = ({
   message,
   status = "warning",
   hidden = false,
   onDismiss,
-}) => {
+}: PureAlertProps) => {
   let classStyles = {
     container: "",
     icon: "",
@@ -54,20 +54,18 @@ export const PureAlert: React.FC<PureAlertProps> = ({
 
   return (
     <div
-      className={`border-b-2 p-4 ${classStyles.container} ${
-        hidden && "hidden"
-      }`}>
+      className={clsx('border-b-2 p-4', classStyles.container, hidden && 'hidden')}>
       <div className='flex'>
         <div className='flex-shrink-0'>
-          <ExclamationIcon className={`h-5 w-5  ${classStyles.icon}`} />
+          <ExclamationIcon className={clsx('h-5 w-5', classStyles.icon)} />
         </div>
         <div className='ml-3'>
-          <p className={`text-sm ${classStyles.message}`}>{message}</p>
+          <p className={clsx('text-sm', classStyles.message)}>{message}</p>
         </div>
         <div className='ml-auto pl-3'>
           <div className='-mx-1.5 -my-1.5'>
             <button
-              className={`inline-flex rounded-md p-1.5 focus:outline-none focus:ring-2 focus:ring-offset-2 ${classStyles.message}`}
+              className={clsx('inline-flex rounded-md p-1.5 focus:outline-none focus:ring-2 focus:ring-offset-2', classStyles.message)}
               onClick={onDismiss}>
               <span className='sr-only'>Dismiss</span>
               <XIcon className='h-5 w-5' />

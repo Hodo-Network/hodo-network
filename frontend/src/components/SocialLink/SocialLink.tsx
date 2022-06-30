@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from "react";
+import { PropsWithChildren } from "react";
 
 export interface SocialLinkProps {
   href: string;
@@ -6,18 +6,18 @@ export interface SocialLinkProps {
   viewbox?: string;
 }
 
-export const SocialLink: React.FC<PropsWithChildren<SocialLinkProps>> = ({
+export const SocialLink = ({
   href,
   title,
   viewbox,
   children,
-}) => {
+}: PropsWithChildren<SocialLinkProps>) => {
   return (
     <a
       href={href}
       target='_blank'
       rel='noreferrer'
-      className='text-gray-400 hover:text-gray-500'>
+      className='hover:text-neutral'>
       <span className='sr-only'>{title}</span>
       <svg
         className='h-6 w-6'

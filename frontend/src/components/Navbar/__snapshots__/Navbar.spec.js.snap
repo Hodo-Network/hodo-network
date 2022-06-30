@@ -2,7 +2,7 @@
 
 exports[`matches snapshot 1`] = `
 <header
-  className="flex-shrink-0 bg-white dark:bg-gray-900 text-gray-800 dark:text-white border-b border-gray-200 dark:border-gray-800 flex items-center"
+  className="flex-shrink-0 bg-white text-gray-800 border-b border-gray-200 flex items-center"
 >
   <div
     className="flex-1 flex items-center justify-between py-3 px-4 sm:px-8"
@@ -48,7 +48,7 @@ exports[`matches snapshot 1`] = `
     className="py-3 px-4 flex items-center md:hidden"
   >
     <button
-      className="inline-flex items-center justify-center p-2 rounded-md text-gray-800 dark:text-white hover:text-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-600"
+      className="inline-flex items-center justify-center p-2 rounded-md text-gray-800 hover:text-gray-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary"
       onClick={[Function]}
       type="button"
     >

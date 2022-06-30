@@ -59,4 +59,5 @@ export interface Collection {
     discord?: string;
     telegram?: string;
     verified: 0 | 1;
+    status?: string;
 }

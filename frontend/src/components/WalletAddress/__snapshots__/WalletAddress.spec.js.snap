@@ -3,12 +3,12 @@
 exports[`matches snapshot 1`] = `
 <div>
   <h1
-    className="text-sm uppercase font-medium text-gray-500 dark:text-gray-400"
+    className="text-sm uppercase font-medium text-gray-500"
   >
     Address
   </h1>
   <p
-    className="mt-2 font-medium text-gray-900 dark:text-gray-200 overflow-hidden overflow-ellipsis"
+    className="mt-2 font-medium text-gray-900 overflow-hidden overflow-ellipsis"
   >
     0x0000000000000000000000000000000000000000
   </p>

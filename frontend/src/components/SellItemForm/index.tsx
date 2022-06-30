@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams, useHistory } from "react-router";
+import { useParams, useNavigate } from "react-router";
 import { useWeb3React } from "@web3-react/core";
 import { Web3Provider } from "@ethersproject/providers";
 import { Contract, ethers } from "ethers";
@@ -20,7 +20,7 @@ const client = ipfsHttpClient({
 });
 
 const SellItemForm = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
   const { library } = useWeb3React<Web3Provider>();
   const [loading, setLoading] = useState<boolean>(false);
   const [formInput, updateFormInput] = useState({
@@ -70,7 +70,7 @@ const SellItemForm = () => {
       );
       await transaction.wait();
 
-      // history.push(ROUTE_ACCOUNT);
+      // navigate(ROUTE_ACCOUNT);
 
       setLoading(false);
     } catch (error) {
@@ -95,7 +95,7 @@ const SellItemForm = () => {
               type='text'
               name='price'
               id='price'
-              className='mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md'
+              className='mt-1 focus:ring-primary-focus focus:border-primary-focus block w-full shadow-sm sm:text-sm border-gray-300 rounded-md'
               onChange={(e) =>
                 updateFormInput({ ...formInput, price: e.target.value })
               }
@@ -105,7 +105,7 @@ const SellItemForm = () => {
         <div className='px-4 py-3 bg-gray-50 text-right sm:px-6'>
           <button
             type='submit'
-            className='inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500'>
+            className='inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-primary hover:bg-primary-focus focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-focus'>
             Complete listing
           </button>
         </div>

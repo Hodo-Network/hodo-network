@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
-  Switch,
+  Routes,
   Route,
-  Redirect,
+  Navigate,
 } from "react-router-dom";
 // import { ThemeProvider } from "styled-components";
 import { useWeb3React } from "@web3-react/core";
@@ -40,7 +40,7 @@ export default function App() {
     <Provider store={store}>
       {/* @ts-ignore */}
       {/* <ThemeProvider theme={preset}> */}
-      <div className='bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white flex flex-row h-screen overflow-hidden'>
+      <div className='flex flex-row h-screen overflow-hidden'>
         <Router>
           <Sidebar
             toggle={() => setMiniSidebar(!miniSidebar)}
@@ -50,17 +50,16 @@ export default function App() {
           <div className='flex flex-col flex-1 min-h-0 overflow-hidden'>
             <Navbar hideTitle={!miniSidebar} />
 
-            <Switch>
-              {routes.map(({ path, Component, exact }, key) => (
+            <Routes>
+              {routes.map(({ path, Component }, key) => (
                 <Route
                   path={path}
-                  component={Component}
-                  exact={exact}
+                  element={<Component />}
                   key={key}
                 />
               ))}
-              <Redirect to={paths.ROUTE_DEFAULT} />
-            </Switch>
+              <Route path="*" element={<Navigate to={paths.ROUTE_DEFAULT} />} />
+            </Routes>
           </div>
         </Router>
       </div>

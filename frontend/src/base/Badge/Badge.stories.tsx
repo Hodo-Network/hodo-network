@@ -1,4 +1,3 @@
-import React from "react";
 import { Story, Meta } from "@storybook/react";
 
 import { PureBadge, PureBadgeProps } from "./Badge";
@@ -23,42 +22,66 @@ Default.args = {
 
 export const Small = Template.bind({});
 Small.args = {
-  size: "small",
+  size: "sm",
   label: "Badge",
 };
 
 export const Medium = Template.bind({});
 Medium.args = {
-  size: "medium",
+  size: "md",
   label: "Badge",
 };
 
 export const Large = Template.bind({});
 Large.args = {
-  size: "large",
+  size: "lg",
   label: "Badge",
 };
 
-export const Gray = Template.bind({});
-Gray.args = {
+export const Primary = Template.bind({});
+Primary.args = {
   label: "Badge",
-  color: "gray",
+  color: "primary",
 };
 
-export const Red = Template.bind({});
-Red.args = {
+export const Secondary = Template.bind({});
+Secondary.args = {
   label: "Badge",
-  color: "red",
+  color: "secondary",
 };
 
-export const Yellow = Template.bind({});
-Yellow.args = {
+export const Accent = Template.bind({});
+Accent.args = {
   label: "Badge",
-  color: "yellow",
+  color: "accent",
 };
 
-export const Blue = Template.bind({});
-Blue.args = {
+export const Ghost = Template.bind({});
+Ghost.args = {
   label: "Badge",
-  color: "blue",
+  color: "ghost",
+};
+
+export const Info = Template.bind({});
+Info.args = {
+  label: "Badge",
+  color: "info",
+};
+
+export const Success = Template.bind({});
+Success.args = {
+  label: "Badge",
+  color: "success",
+};
+
+export const Warning = Template.bind({});
+Warning.args = {
+  label: "Badge",
+  color: "warning",
+};
+
+export const Error = Template.bind({});
+Error.args = {
+  label: "Badge",
+  color: "error",
 };

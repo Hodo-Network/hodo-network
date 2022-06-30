@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { useAppDispatch, useAppSelector } from "../../state/hooks";
-import { getCollection } from "../../state/asyncActions/collection";
+// import { getCollection } from "../../state/asyncActions/collection";
 import { NFT } from "../../typings/nft";
 import { PureCollectionPage } from "./CollectionPage";
 
-interface IParams {
+type IParams = {
   contractAddress: string;
-}
+};
 
 const CollectionPage = () => {
   const { contractAddress } = useParams<IParams>();
@@ -18,7 +18,8 @@ const CollectionPage = () => {
   const loading = useAppSelector((state) => state.collection.loading);
 
   useEffect(() => {
-    dispatch(getCollection(contractAddress));
+    // dispatch(getCollection(contractAddress));
+    console.log('getcollection')
   }, [contractAddress]);
 
   useEffect(() => {

@@ -1,7 +1,7 @@
-import ReactLoading from "react-loading";
 import { NFT } from "../../typings/nft";
-import CardEmpty from "../CardEmpty";
 import AssetCard from "../AssetCard";
+import CardEmpty from "../CardEmpty";
+import Loader from "../../base/Loader";
 
 export interface PureAssetGridProps {
   items: Array<NFT>;
@@ -13,13 +13,7 @@ export const PureAssetGrid = ({
   loading = false,
 }: PureAssetGridProps) => {
   if (loading) {
-    return (
-      <ReactLoading
-        type='bubbles'
-        color='currentColor'
-        className='text-blue-600 dark:text-blue-500'
-      />
-    );
+    return <Loader />;
   }
 
   return (

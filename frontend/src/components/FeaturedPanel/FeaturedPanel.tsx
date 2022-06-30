@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ChevronRightIcon } from "@heroicons/react/solid";
 import { MESSAGE_VIEW_ALL } from "../../constants/messages";
@@ -13,10 +13,10 @@ export interface PureFeaturedPanelProps {
   title: string;
 }
 
-export const PureFeaturedPanel: React.FC<PureFeaturedPanelProps> = ({
+export const PureFeaturedPanel = ({
   contractAddress,
   title,
-}) => {
+}: PureFeaturedPanelProps) => {
   const dispatch = useAppDispatch();
   const collection = useAppSelector((state) => state.collection.data);
   const loading = useAppSelector((state) => state.collection.loading);
@@ -30,10 +30,10 @@ export const PureFeaturedPanel: React.FC<PureFeaturedPanelProps> = ({
   return (
     <div className='mx-auto max-w-8xl mt-12'>
       <div className='flex justify-between mb-6'>
-        <h2 className='font-bold text-xl dark:text-white'>{title}</h2>
+        <h2 className='font-bold text-xl'>{title}</h2>
         <Link
           to={`${ROUTE_MARKETPLACE}/${contractAddress}`}
-          className='link flex'>
+          className='link link-primary flex'>
           <span className='whitespace-nowrap'>{MESSAGE_VIEW_ALL}</span>
           <ChevronRightIcon className='h-6' />
         </Link>

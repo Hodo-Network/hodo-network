@@ -2,7 +2,7 @@
 
 exports[`matches snapshot 1`] = `
 <div
-  className="text-blue-600 dark:text-blue-500"
+  className="text-primary"
   dangerouslySetInnerHTML={
     Object {
       "__html": "<svg xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 32 32\\">

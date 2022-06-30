@@ -1,9 +1,9 @@
 import { NavLink } from "react-router-dom";
 import { HomeIcon } from "@heroicons/react/outline";
+import clsx from "clsx";
 
 export interface BreadcrumbsProps {
   crumbs: any;
-  hide?: boolean;
 }
 
 export interface BreadcrumbProps {
@@ -13,14 +13,10 @@ export interface BreadcrumbProps {
   isHome?: boolean;
 }
 
-export const Breadcrumbs = ({ crumbs, hide = false }: BreadcrumbsProps) => {
-  if (hide) {
-    return null;
-  }
-
+export const Breadcrumbs = ({ crumbs }: BreadcrumbsProps) => {
   return (
     <nav
-      className='flex bg-white dark:bg-gray-900 border-b border-gray-300 dark:border-gray-800'
+      className='flex bg-white border-b border-gray-300'
       aria-label='Breadcrumb'
       style={{ minHeight: "45px" }}>
       <ol className='max-w-screen-xl w-full px-4 flex space-x-4 sm:px-8'>
@@ -32,9 +28,8 @@ export const Breadcrumbs = ({ crumbs, hide = false }: BreadcrumbsProps) => {
                   <div className='flex items-center'>
                     <NavLink
                       to={path}
-                      exact={true}
-                      className='text-gray-400 hover:text-gray-500 dark:hover:text-gray-300'
-                      activeClassName='text-gray-500'
+                      // exact={true}
+                      className={(navData) => clsx('text-gray-400 hover:text-gray-500', navData.isActive && 'text-gray-500')}
                       aria-current={current ? "page" : undefined}>
                       <HomeIcon
                         className='flex-shrink-0 h-5 w-5'
@@ -50,7 +45,7 @@ export const Breadcrumbs = ({ crumbs, hide = false }: BreadcrumbsProps) => {
               <li key={key} className='flex'>
                 <div className='flex items-center'>
                   <svg
-                    className='flex-shrink-0 w-6 h-full text-gray-200 dark:text-gray-700'
+                    className='flex-shrink-0 w-6 h-full text-gray-200'
                     viewBox='0 0 24 44'
                     preserveAspectRatio='none'
                     fill='currentColor'
@@ -61,9 +56,8 @@ export const Breadcrumbs = ({ crumbs, hide = false }: BreadcrumbsProps) => {
                   <NavLink
                     key={name}
                     to={path}
-                    exact={true}
-                    className='ml-4 text-sm font-medium capitalize text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300'
-                    activeClassName='text-gray-500 cursor-disabled'
+                    // exact={true}
+                    className={(navData) => clsx('ml-4 text-sm font-medium capitalize text-gray-500 hover:text-gray-700', navData.isActive && 'text-gray-500 cursor-disabled')}
                     aria-current={current ? "page" : undefined}>
                     {name}
                   </NavLink>

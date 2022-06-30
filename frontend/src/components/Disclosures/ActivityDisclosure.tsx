@@ -15,7 +15,7 @@ export const ActivityDisclosure = ({ item }: ActivityDisclosureProps) => {
     <Disclosure defaultOpen={true} as="div">
       {({ open }) => (
         <>
-          <Disclosure.Button className="p-4 border border-gray-300 dark:border-gray-700 w-full text-left flex items-center justify-between">
+          <Disclosure.Button className="p-4 border border-base-300 w-full text-left flex items-center justify-between">
             <span className="font-semibold">Activity</span>
             {open ? (
               <ChevronUpIcon className="w-4 h-4" />
@@ -31,25 +31,25 @@ export const ActivityDisclosure = ({ item }: ActivityDisclosureProps) => {
             leaveFrom="transform scale-100 opacity-100"
             leaveTo="transform scale-95 opacity-0"
           >
-            <Disclosure.Panel className="border border-t-0 border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-800 text-xs">
-              <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-                <thead className="bg-gray-50 dark:bg-gray-800">
+            <Disclosure.Panel className="border border-t-0 border-base-300 bg-base-200 text-xs">
+              <table className="min-w-full divide-y divide-base-content">
+                <thead className="bg-gray-50">
                   <tr>
                     <th
                       scope="col"
-                      className="px-6 py-3 text-left text-xs font-medium text-gray-700 dark:text-gray-300 uppercase tracking-wider"
+                      className="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider"
                     >
                       Event
                     </th>
                     <th
                       scope="col"
-                      className="px-6 py-3 text-left text-xs font-medium text-gray-700 dark:text-gray-300 uppercase tracking-wider"
+                      className="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider"
                     >
                       From
                     </th>
                     <th
                       scope="col"
-                      className="px-6 py-3 text-right text-xs font-medium text-gray-700 dark:text-gray-300 uppercase tracking-wider"
+                      className="px-6 py-3 text-right text-xs font-medium text-gray-700 uppercase tracking-wider"
                     >
                       To
                     </th>
@@ -57,7 +57,7 @@ export const ActivityDisclosure = ({ item }: ActivityDisclosureProps) => {
                 </thead>
                 <tbody>
                   {activities.map((activity, idx) => (
-                    <tr key={idx} className={idx % 2 === 0 ? 'bg-white dark:bg-gray-700' : 'bg-gray-50 dark:bg-gray-800'}>
+                    <tr key={idx} className={idx % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                         {activity.event}
                       </td>

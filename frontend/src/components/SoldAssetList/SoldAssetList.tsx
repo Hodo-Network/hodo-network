@@ -1,7 +1,7 @@
 import { Web3Provider } from "@ethersproject/providers";
 import { useWeb3React } from "@web3-react/core";
-import ReactLoading from "react-loading";
 import { NATIVE_CURRENCY } from "../../constants";
+import Loader from "../../base/Loader";
 
 export interface PureSoldAssetListProps {
   loading?: boolean;
@@ -15,13 +15,7 @@ export const PureSoldAssetList = ({
   const { chainId } = useWeb3React<Web3Provider>();
 
   if (loading) {
-    return (
-      <ReactLoading
-        type='bubbles'
-        color='currentColor'
-        className='text-blue-600 dark:text-blue-500'
-      />
-    );
+    return <Loader />;
   }
 
   return (

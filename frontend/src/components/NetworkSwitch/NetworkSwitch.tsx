@@ -13,7 +13,7 @@ export interface PureNetworkSwitchProps {
 export const PureNetworkSwitch = ({ chainId }: PureNetworkSwitchProps) => {
   return (
     <div>
-      <h1 className='text-sm uppercase font-medium text-gray-500 dark:text-gray-400'>
+      <h1 className='text-sm uppercase font-medium text-gray-500'>
         {TEXT_SWITCH}
       </h1>
       <div className='mt-2 flex space-x-4'>

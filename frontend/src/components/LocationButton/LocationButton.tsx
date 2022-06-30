@@ -1,6 +1,6 @@
 import { useState } from "react";
 import useGeolocation from "@rooks/use-geolocation";
-import Button from "../Button";
+import Button from "../../base/Button";
 
 export const LocationButton = () => {
   const [when, setWhen] = useState(false);
@@ -21,7 +21,7 @@ export const LocationButton = () => {
           {geoObj.lat}, {geoObj.lng}
         </span>
       ) : (
-        <Button onClick={onClick}>Get Location</Button>
+        <Button color="primary" onClick={onClick}>Get Location</Button>
       )}
     </>
   );

@@ -25,13 +25,15 @@ const AssetView = ({ contractAddress, tokenId }: AssetViewProps) => {
   }, [tokenId]);
 
   useEffect(() => {
-    if (asset?.status) {
-      setItem(asset?.data);
+    if (asset) {
+      setItem(asset);
     }
+
+    return () => setItem(undefined);
   }, [asset]);
 
   useEffect(() => {
-    const data = collections?.data.find(
+    const data = collections?.find(
       (item: any) => item.contractAddress === contractAddress
     );
     setCollection(data);
@@ -41,7 +43,7 @@ const AssetView = ({ contractAddress, tokenId }: AssetViewProps) => {
     <PureAssetView
       item={item}
       collection={collection}
-      loading={loading}
+      loading={false}
       account={account}
     />
   );

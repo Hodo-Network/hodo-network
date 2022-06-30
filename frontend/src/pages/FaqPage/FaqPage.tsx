@@ -7,14 +7,12 @@ export const FaqPage = () => {
     <ContentWrapper>
       <section
         aria-labelledby='primary-heading'
-        className='p-4 sm:p-8 max-w-8xl divide-y-2 divide-gray-200 dark:divide-gray-800'>
-        <h1 id='primary-heading' className='text-2xl font-bold'>
+        className='p-4 sm:p-8 max-w-8xl divide-y-2 divide-base-content'>
+        <h1 id='primary-heading' className='text-2xl font-bold mb-6'>
           Frequently Asked Questions
         </h1>
 
-        <div className='mt-6'>
-          <FaqList items={faqs} />
-        </div>
+        <FaqList items={faqs} />
       </section>
     </ContentWrapper>
   );

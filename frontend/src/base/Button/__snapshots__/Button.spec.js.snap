@@ -2,7 +2,7 @@
 
 exports[`matches snapshot 1`] = `
 <button
-  className="btn btn--primary btn--medium"
+  className="btn btn-primary btn-md"
   style={
     Object {
       "backgroundColor": undefined,

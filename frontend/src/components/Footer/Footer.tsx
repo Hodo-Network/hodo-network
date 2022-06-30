@@ -1,4 +1,3 @@
-import React from "react";
 import { MailIcon } from "@heroicons/react/solid";
 import SocialLink from "../SocialLink";
 
@@ -108,7 +107,7 @@ export const Footer = () => {
             href={social.email.href}
             target='_blank'
             rel='noreferrer'
-            className='text-gray-400 hover:text-gray-500'>
+            className='hover:text-neutral'>
             <span className='sr-only'>{social.email.title}</span>
             <MailIcon className='h-6 w-6' />
           </a>
@@ -116,7 +115,7 @@ export const Footer = () => {
       </div>
 
       <div className='mt-4'>
-        <p className='text-center text-base text-gray-400'>
+        <p className='text-center text-base'>
           {process.env.REACT_APP_VERSION}
         </p>
       </div>

@@ -1,6 +1,7 @@
-import ReactLoading from 'react-loading';
 import { NFT } from "../../typings/nft";
 import AssetListItem from '../AssetListItem';
+import Loader from "../../base/Loader";
+import CardEmpty from "../CardEmpty";
 
 export interface PureAssetListProps {
   items: Array<NFT>;
@@ -9,23 +10,20 @@ export interface PureAssetListProps {
 
 export const PureAssetList = ({ items, loading = false }: PureAssetListProps) => {
   if (loading) {
-    return (
-      <ReactLoading
-        type='bubbles'
-        color='currentColor'
-        className='text-blue-600 dark:text-blue-500'
-      />
-    );
+    return <Loader />;
   }
 
   return (
     <nav
       aria-label='Sections'
-      className='bg-white dark:bg-gray-900'>
-
-      {items.map((item: NFT) => (
-        <AssetListItem item={item} key={item.tokenId} />
-      ))}
+      className='bg-neutral text-neutral-content divide-y divide-neutral-focus rounded-box overflow-hidden'>
+      {!items || items?.length === 0 ? (
+        <CardEmpty />
+      ) : (
+        items.map((item: NFT) => (
+          <AssetListItem item={item} key={item.tokenId} />
+        ))
+      )}
     </nav>
   );
 };

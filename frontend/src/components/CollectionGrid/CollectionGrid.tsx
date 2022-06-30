@@ -1,7 +1,7 @@
-import ReactLoading from "react-loading";
 import { Collection } from "../../typings/nft";
 import CollectionCard from "../CollectionCard";
 import CardEmpty from "../CardEmpty";
+import Loader from "../../base/Loader";
 
 export interface PureCollectionGridProps {
   items: Collection[];
@@ -13,13 +13,7 @@ export function PureCollectionGrid({
   loading = false,
 }: PureCollectionGridProps) {
   if (loading) {
-    return (
-      <ReactLoading
-        type='bubbles'
-        color='currentColor'
-        className='text-blue-600 dark:text-blue-500'
-      />
-    );
+    return <Loader />;
   }
 
   return (

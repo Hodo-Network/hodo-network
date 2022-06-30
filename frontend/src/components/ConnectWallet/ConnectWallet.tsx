@@ -1,4 +1,3 @@
-import React from "react";
 import NetworkErrorMessage from "../NetworkErrorMessage";
 
 export interface ConnectWalletProps {
@@ -7,11 +6,11 @@ export interface ConnectWalletProps {
   dismiss: any;
 }
 
-export const ConnectWallet: React.FC<ConnectWalletProps> = ({
+export const ConnectWallet = ({
   connectWallet,
   networkError,
   dismiss,
-}) => {
+}: ConnectWalletProps) => {
   return (
     <div className='container'>
       <div className='row justify-content-md-center'>

@@ -1,6 +1,5 @@
-import React from "react";
-import ReactLoading from "react-loading";
 import ContentWrapper from "../../ContentWrapper";
+import Loader from "../../base/Loader";
 
 export interface PureSellItemFormProps {
   loading?: boolean;
@@ -17,11 +16,7 @@ export const PureSellItemForm = ({
     <ContentWrapper>
       <div className='p-4 sm:p-8 max-w-8xl'>
         {loading ? (
-          <ReactLoading
-            type='bubbles'
-            color='currentColor'
-            className='text-blue-600 dark:text-blue-500'
-          />
+          <Loader />
         ) : (
           "Insert form here"
         )}
