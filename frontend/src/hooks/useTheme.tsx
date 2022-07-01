@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 export default function useTheme() {
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState<string>("dark");
 
   const switchTheme = (theme: string) => {
     setTheme(theme);
@@ -10,15 +10,18 @@ export default function useTheme() {
   };
 
   // Whenever the user explicitly chooses to respect the OS preference
-  // const removeTheme = () => {
-  //   localStorage.removeItem("theme");
-  // };
+  const removeTheme = () => {
+    setTheme('');
+    document.documentElement.removeAttribute('data-theme');
+    localStorage.removeItem("theme");
+  };
 
   // On page load
   useEffect(() => {
-    const data = document.documentElement.getAttribute('data-theme') || '';
-    switchTheme(data);
+    if (localStorage.theme) {
+      switchTheme(localStorage.theme);
+    }
   }, []);
 
-  return { theme, switchTheme };
+  return { theme, switchTheme, removeTheme };
 }

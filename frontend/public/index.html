@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full" data-theme="dark">
-
+<html lang="en" class="h-full">
 <head>
   <meta charset="utf-8" />
   <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
@@ -44,17 +43,6 @@
       }
     }(window.location))
   </script>
-  <script>
-    if (
-      localStorage.dark === "true" ||
-      (!("dark" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
-    ) {
-      document.documentElement.setAttribute('data-theme', 'dark');
-    } else {
-      document.documentElement.setAttribute('data-theme', 'winter');
-    }
-  </script>
   <title>%REACT_APP_COMPANY%</title>
   <!-- TODO: Leaflet -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
@@ -66,7 +54,6 @@
     crossorigin=""></script>
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 </head>
-
 <body class="h-full">
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root" class="h-full"></div>
@@ -81,5 +68,4 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
 </body>
-
 </html>
