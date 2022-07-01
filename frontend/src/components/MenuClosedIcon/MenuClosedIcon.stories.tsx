@@ -1,13 +1,13 @@
 import { Story, Meta } from "@storybook/react";
 
-import { MenuClosedIcon, MenuClosedIconProps } from "./MenuClosedIcon";
+import { MenuClosedIcon } from "./MenuClosedIcon";
 
 export default {
   title: "Components/MenuClosedIcon",
   component: MenuClosedIcon,
 } as Meta;
 
-const Template: Story<MenuClosedIconProps> = (args) => (
+const Template: Story = (args) => (
   <MenuClosedIcon {...args} />
 );
 

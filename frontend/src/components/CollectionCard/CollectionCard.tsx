@@ -4,18 +4,18 @@ import { Collection } from "../../typings/nft";
 import { ROUTE_MARKETPLACE } from "../../constants/routes";
 
 export interface PureCollectionCardProps {
-  collection: Collection;
+  item: Collection;
 }
 
 export const PureCollectionCard = ({
-  collection: { name, thumbnail, contractAddress, verified },
+  item: { name, image, contractAddress, verified },
 }: PureCollectionCardProps) => {
   return (
     <Link
       to={`${ROUTE_MARKETPLACE}/${contractAddress}`}
       className='card card-compact shadow-md bg-neutral-focus text-neutral-content transition-transform duration-300 transform hover:-translate-y-1'>
       <figure className="h-60">
-        <img src={thumbnail} alt={name} />
+        <img src={image} alt={name} />
       </figure>
       <div className='card-body bg-neutral'>
         <p className='font-semibold flex justify-between space-x-2'>

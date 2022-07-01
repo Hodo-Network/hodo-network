@@ -1,21 +1,15 @@
 import { Story, Meta } from "@storybook/react";
 
-import { ChainSwitchButton, ChainSwitchButtonProps } from "./ChainSwitchButton";
+import { PureChainSwitchButton, PureChainSwitchButtonProps } from "./ChainSwitchButton";
 
 export default {
   title: "Components/ChainSwitchButton",
-  component: ChainSwitchButton,
+  component: PureChainSwitchButton,
 } as Meta;
 
-const Template: Story<ChainSwitchButtonProps> = (args) => (
-  <ChainSwitchButton {...args} />
+const Template: Story<PureChainSwitchButtonProps> = (args) => (
+  <PureChainSwitchButton {...args} />
 );
 
 export const Default = Template.bind({});
-Default.args = {
-  label: "Switch to Network",
-  disabled: false,
-  params: {
-    chainId: 4,
-  },
-};
+Default.args = {};

@@ -1,7 +1,7 @@
 import {
     getAssetStarted, getAssetSuccess, getAssetFailure
 } from "../actions/asset";
-import { assetEndpoint } from '../../http';
+// import { assetEndpoint } from '../../http';
 // import { nftEndpoint, getNftByOwnerEndpoint } from '../../http';
 import { assets } from '../../data/assets';
 

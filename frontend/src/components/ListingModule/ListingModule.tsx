@@ -36,7 +36,7 @@ export const PureListingModule = ({
     <Disclosure defaultOpen={true} as="div">
       {({ open }) => (
         <>
-          <Disclosure.Button className="p-4 border border-base-300 w-full text-left flex items-center justify-between">
+          <Disclosure.Button className="p-4 border-2 border-base-300 w-full text-left flex items-center justify-between">
             <span className="font-semibold">Listing</span>
             {open ? (
               <ChevronUpIcon className="w-4 h-4" />
@@ -52,7 +52,7 @@ export const PureListingModule = ({
             leaveFrom="transform scale-100 opacity-100"
             leaveTo="transform scale-95 opacity-0"
           >
-            <Disclosure.Panel className="p-4 border border-t-0 border-base-300 bg-base-200 text-xs">
+            <Disclosure.Panel className="border-2 border-t-0 border-base-300 bg-base-200 p-4 text-xs">
               <h1 className='text-base font-medium'>
                 {TEXT_CURRENT_PRICE}
               </h1>
@@ -63,9 +63,9 @@ export const PureListingModule = ({
                 <span className='text-2xl font-semibold'>{price}</span>
               </div>
 
-              <div className='mt-4'>
+              <div className='mt-4 flex gap-4'>
                 {owned && forSale && (
-                  <div className='flex gap-4'>
+                  <>
                     <Button
                       size='md'
                       color="primary"
@@ -80,7 +80,7 @@ export const PureListingModule = ({
                       disabled={!connected}>
                       {TEXT_REMOVE_LISTING}
                     </Button>
-                  </div>
+                  </>
                 )}
                 {owned && !forSale && (
                   <Button

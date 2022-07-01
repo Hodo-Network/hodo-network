@@ -1,7 +1,6 @@
 import LocationButton from "../LocationButton";
 
 export interface PureCreateItemFormProps {
-  loading?: boolean;
   onSubmitForm: (T: any) => void;
   onUpdateInput: (T: any, X: any) => void;
   onUploadFile: (T: any) => void;
@@ -10,7 +9,6 @@ export interface PureCreateItemFormProps {
 }
 
 export const PureCreateItemForm = ({
-  loading = false,
   onSubmitForm,
   onUpdateInput,
   onUploadFile,

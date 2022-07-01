@@ -1,45 +1,36 @@
-import { useEffect, useState } from "react";
+import { Suspense } from "react";
 import { Link } from "react-router-dom";
 import { ChevronRightIcon } from "@heroicons/react/solid";
 import { MESSAGE_VIEW_ALL } from "../../constants/messages";
-import { ROUTE_MARKETPLACE } from "../../constants/routes";
-import { useAppDispatch, useAppSelector } from "../../state/hooks";
-import { getCollection } from "../../state/asyncActions/collection";
-import { NFT } from "../../typings/nft";
 import AssetGrid from "../AssetGrid";
+import Loader from "../../base/Loader";
 
 export interface PureFeaturedPanelProps {
-  contractAddress: string;
+  url: string;
   title: string;
+  items: any;
 }
 
 export const PureFeaturedPanel = ({
-  contractAddress,
+  url,
   title,
+  items,
 }: PureFeaturedPanelProps) => {
-  const dispatch = useAppDispatch();
-  const collection = useAppSelector((state) => state.collection.data);
-  const loading = useAppSelector((state) => state.collection.loading);
-  const [items, setItems] = useState<NFT[]>([]);
-
-  useEffect(() => {
-    dispatch(getCollection(contractAddress));
-    setItems(collection.data);
-  }, [contractAddress]);
-
   return (
     <div className='mx-auto max-w-8xl mt-12'>
       <div className='flex justify-between mb-6'>
         <h2 className='font-bold text-xl'>{title}</h2>
         <Link
-          to={`${ROUTE_MARKETPLACE}/${contractAddress}`}
+          to={url}
           className='link link-primary flex'>
           <span className='whitespace-nowrap'>{MESSAGE_VIEW_ALL}</span>
           <ChevronRightIcon className='h-6' />
         </Link>
       </div>
 
-      <AssetGrid items={items} loading={loading} />
+      <Suspense fallback={<Loader />}>
+        <AssetGrid items={items} />
+      </Suspense>
     </div>
   );
 };

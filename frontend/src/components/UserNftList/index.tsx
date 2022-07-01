@@ -54,7 +54,7 @@ const UserNftList = () => {
     setLoading(false);
   };
 
-  return <PureUserNftList loading={loading} items={items} />;
+  return <PureUserNftList items={items} />;
 };
 
 export default UserNftList;

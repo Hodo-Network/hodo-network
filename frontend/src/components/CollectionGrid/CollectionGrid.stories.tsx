@@ -1,18 +1,18 @@
 import { Story, Meta } from "@storybook/react";
 
 import {
-  PureCollectionGrid,
-  PureCollectionGridProps,
+  CollectionGrid,
+  CollectionGridProps,
 } from "./CollectionGrid";
 import { collections } from "../../data/collections";
 
 export default {
   title: "Components/CollectionGrid",
-  component: PureCollectionGrid,
+  component: CollectionGrid,
 } as Meta;
 
-const Template: Story<PureCollectionGridProps> = (args) => (
-  <PureCollectionGrid {...args} />
+const Template: Story<CollectionGridProps> = (args) => (
+  <CollectionGrid {...args} />
 );
 
 export const Default = Template.bind({});

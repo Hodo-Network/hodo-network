@@ -1,18 +1,10 @@
-import Loader from "../../base/Loader";
-
 export interface PureUserNftListProps {
-  loading?: boolean;
   items: Array<any>;
 }
 
 export const PureUserNftList = ({
-  loading = false,
   items,
 }: PureUserNftListProps) => {
-  if (loading) {
-    return <Loader />;
-  }
-
   return (
     <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4'>
       {items.length === 0 ? (

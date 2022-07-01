@@ -39,7 +39,7 @@ const MarketplacePage = () => {
     return () => setItems([]);
   }, [assets, verifiedOnly]);
 
-  return <PureMarketplacePage items={items} loading={loading} verifiedOnly={verifiedOnly} onFilterVerified={onFilterVerified} />;
+  return <PureMarketplacePage items={items} verifiedOnly={verifiedOnly} onFilterVerified={onFilterVerified} />;
 };
 
 export default MarketplacePage;

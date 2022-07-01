@@ -8,13 +8,11 @@ import { ROUTE_MARKETPLACE } from "../../constants/routes";
 import { NFT } from "../../typings/nft";
 
 export interface PureAssetCardProps {
-  nft: NFT;
-  // collection?: Collection;
+  item: NFT;
 }
 
 export const PureAssetCard = ({
-  nft: { tokenId, contractAddress, name, image, sold, price, contractName, contractVerified },
-  // collection,
+  item: { tokenId, contractAddress, name, image, sold, price, contractName, contractVerified },
 }: PureAssetCardProps) => {
   // const { chainId } = useWeb3React<Web3Provider>();
 

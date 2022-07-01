@@ -1,13 +1,13 @@
 import { Story, Meta } from "@storybook/react";
 
-import { Breadcrumbs, BreadcrumbsProps } from "./Breadcrumbs";
+import { PureBreadcrumbs, PureBreadcrumbsProps } from "./Breadcrumbs";
 
 export default {
   title: "UI/Breadcrumbs",
-  component: Breadcrumbs,
+  component: PureBreadcrumbs,
 } as Meta;
 
-const Template: Story<BreadcrumbsProps> = (args) => <Breadcrumbs {...args} />;
+const Template: Story<PureBreadcrumbsProps> = (args) => <PureBreadcrumbs {...args} />;
 
 export const Home = Template.bind({});
 Home.args = {

@@ -1,18 +1,12 @@
 import { NFT } from "../../typings/nft";
 import AssetListItem from '../AssetListItem';
-import Loader from "../../base/Loader";
 import CardEmpty from "../CardEmpty";
 
 export interface PureAssetListProps {
   items: Array<NFT>;
-  loading?: boolean;
 }
 
-export const PureAssetList = ({ items, loading = false }: PureAssetListProps) => {
-  if (loading) {
-    return <Loader />;
-  }
-
+export const PureAssetList = ({ items }: PureAssetListProps) => {
   return (
     <nav
       aria-label='Sections'

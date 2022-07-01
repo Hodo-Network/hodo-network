@@ -14,7 +14,7 @@ const client = ipfsHttpClient({
 
 const CreateItemForm = () => {
   const navigate = useNavigate();
-  const [loading, setLoading] = useState<boolean>(false);
+  // const [loading, setLoading] = useState<boolean>(false);
   const [disabled, setDisabled] = useState<boolean>(true);
   // const { contractAddress } = useParams<IParams>();
 
@@ -43,10 +43,10 @@ const CreateItemForm = () => {
 
   const onSubmitForm = (event: any) => {
     event.preventDefault();
-    setLoading(true);
+    // setLoading(true);
     // onCreateItem();
     onCreateItemAlert();
-    setLoading(false);
+    // setLoading(false);
   };
 
   // TODO: remove once Create is implemented
@@ -92,7 +92,6 @@ const CreateItemForm = () => {
 
   return (
     <PureCreateItemForm
-      loading={loading}
       onSubmitForm={onSubmitForm}
       onUpdateInput={onUpdateInput}
       onUploadFile={onUploadFile}

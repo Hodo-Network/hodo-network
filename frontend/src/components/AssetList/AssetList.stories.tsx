@@ -14,11 +14,9 @@ const Template: Story<PureAssetListProps> = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   items: [],
-  loading: false
 };
 
 export const Loading = Template.bind({});
 Loading.args = {
   items: [],
-  loading: true
 };

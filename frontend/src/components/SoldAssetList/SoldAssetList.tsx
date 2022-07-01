@@ -1,22 +1,15 @@
 import { Web3Provider } from "@ethersproject/providers";
 import { useWeb3React } from "@web3-react/core";
 import { NATIVE_CURRENCY } from "../../constants";
-import Loader from "../../base/Loader";
 
 export interface PureSoldAssetListProps {
-  loading?: boolean;
   items: Array<any>;
 }
 
 export const PureSoldAssetList = ({
-  loading = false,
   items,
 }: PureSoldAssetListProps) => {
   const { chainId } = useWeb3React<Web3Provider>();
-
-  if (loading) {
-    return <Loader />;
-  }
 
   return (
     <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4'>

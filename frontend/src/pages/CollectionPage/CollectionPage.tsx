@@ -1,19 +1,16 @@
 import ContentWrapper from "../../ContentWrapper";
 import AssetGrid from "../../components/AssetGrid";
+import { NFT } from "../../typings/nft";
 
 export interface PureCollectionPageProps {
-  items: any;
-  loading?: boolean;
+  items: Array<NFT>;
 }
 
-export const PureCollectionPage = ({
-  items,
-  loading = false,
-}: PureCollectionPageProps) => {
+export const PureCollectionPage = ({ items }: PureCollectionPageProps) => {
   return (
     <ContentWrapper>
       <div className='p-4 sm:p-8 max-w-8xl'>
-        <AssetGrid items={items} loading={loading} />
+        <AssetGrid items={items} />
       </div>
     </ContentWrapper>
   );

@@ -13,6 +13,7 @@ const Template: Story<PureFeaturedPanelProps> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  contractAddress: "0x0000000000000000000000000000000000000000",
+  url: "/",
   title: "Featured NFTs",
+  items: []
 };

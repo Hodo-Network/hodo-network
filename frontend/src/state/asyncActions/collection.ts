@@ -3,7 +3,7 @@ import {
 } from "../actions/collection";
 import { collectionEndpoint } from '../../http';
 // import { nftEndpoint, getNftByOwnerEndpoint } from '../../http';
-import { collections } from '../../data/collections';
+import { assets } from '../../data/assets';
 
 // Collection
 export const getCollection = (contractAddress: string) => async (dispatch: any) => {
@@ -11,7 +11,7 @@ export const getCollection = (contractAddress: string) => async (dispatch: any) 
     try {
         // const res = await fetch(`${collectionEndpoint}?contractAddress=${contractAddress}`);
         // const data = await res.json();
-        const data = collections.find(collection => collection.contractAddress === contractAddress);
+        const data = assets.filter(asset => asset.contractAddress === contractAddress);
         dispatch(getCollectionSuccess(data));
     } catch (err: any) {
         dispatch(getCollectionFailure(err.message));

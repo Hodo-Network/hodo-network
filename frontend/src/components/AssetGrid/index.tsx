@@ -1,2 +1,2 @@
-import { PureAssetGrid } from "./AssetGrid";
-export default PureAssetGrid;
+import { AssetGrid } from "./AssetGrid";
+export default AssetGrid;

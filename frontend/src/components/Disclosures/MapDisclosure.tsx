@@ -23,7 +23,7 @@ export const MapDisclosure = ({ attrs }: MapDisclosureProps) => {
     <Disclosure defaultOpen={true} as="div">
       {({ open }) => (
         <>
-          <Disclosure.Button className="p-4 border border-base-300 w-full text-left flex items-center justify-between">
+          <Disclosure.Button className="p-4 border-2 border-base-300 w-full text-left flex items-center justify-between">
             <span className="font-semibold">Map</span>
             {open ? (
               <ChevronUpIcon className="w-4 h-4" />
@@ -39,7 +39,7 @@ export const MapDisclosure = ({ attrs }: MapDisclosureProps) => {
             leaveFrom="transform scale-100 opacity-100"
             leaveTo="transform scale-95 opacity-0"
           >
-            <Disclosure.Panel className="p-4 border border-t-0 border-base-300 bg-base-200">
+            <Disclosure.Panel className="border-2 border-t-0 border-base-300 bg-base-200 p-4">
               <p>Coming soon for location, <span className="nowrap text-sm font-semibold text-green-600">[{latitude}, {longitude}]</span></p>
             </Disclosure.Panel>
           </Transition>

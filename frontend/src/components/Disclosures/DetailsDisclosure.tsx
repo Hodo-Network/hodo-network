@@ -13,7 +13,7 @@ export const DetailsDisclosure = ({ contractAddress, network, tokenId }: Details
         <Disclosure defaultOpen={true} as="div">
             {({ open }) => (
                 <>
-                    <Disclosure.Button className="p-4 border border-base-300 w-full text-left flex items-center justify-between">
+                    <Disclosure.Button className="p-4 border-2 border-base-300 w-full text-left flex items-center justify-between">
                         <span className="font-semibold">Details</span>
                         {open ? (
                             <ChevronUpIcon className="w-4 h-4" />
@@ -29,7 +29,7 @@ export const DetailsDisclosure = ({ contractAddress, network, tokenId }: Details
                         leaveFrom="transform scale-100 opacity-100"
                         leaveTo="transform scale-95 opacity-0"
                     >
-                        <Disclosure.Panel className="p-4 border border-t-0 border-base-300 bg-base-200 text-xs">
+                        <Disclosure.Panel className="border-2 border-t-0 border-base-300 bg-base-200 p-4 text-xs">
                             <div className="flex items-center justify-between">
                                 <span>{TEXT_CONTRACT}</span>
                                 {/* TODO: use network blockExplorer */}

@@ -11,7 +11,7 @@ const Template: Story<PureAssetCardProps> = (args) => <PureAssetCard {...args} /
 
 // export const Default = Template.bind({});
 // Default.args = {
-//   nft: "",
+//   item: "",
 //   collection: "",
 //   listing: "",
 // };

@@ -13,12 +13,5 @@ const Template: Story<PureUserNftListProps> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  loading: false,
-  items: [],
-};
-
-export const Loading = Template.bind({});
-Loading.args = {
-  loading: true,
   items: [],
 };

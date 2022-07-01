@@ -14,7 +14,7 @@ export const CollectionDisclosure = ({ contractAddress, collection }: Collection
         <Disclosure defaultOpen={true} as="div">
             {({ open }) => (
                 <>
-                    <Disclosure.Button className="p-4 border border-base-300 w-full text-left flex items-center justify-between">
+                    <Disclosure.Button className="p-4 border-2 border-base-300 w-full text-left flex items-center justify-between">
                         <span className="font-semibold">More from this collection</span>
                         {open ? (
                             <ChevronUpIcon className="w-4 h-4" />
@@ -30,8 +30,8 @@ export const CollectionDisclosure = ({ contractAddress, collection }: Collection
                         leaveFrom="transform scale-100 opacity-100"
                         leaveTo="transform scale-95 opacity-0"
                     >
-                        <Disclosure.Panel className="p-4 border border-t-0 border-base-300 bg-base-200 text-xs">
-                            <AssetGrid items={collection.data} />
+                        <Disclosure.Panel className="border-2 border-t-0 border-base-300 bg-base-200 p-4 text-xs">
+                            <AssetGrid items={collection} />
                             <div className="mt-6 flex justify-around">
                                 <NavLink
                                     to={`${ROUTE_MARKETPLACE}/${contractAddress}`}

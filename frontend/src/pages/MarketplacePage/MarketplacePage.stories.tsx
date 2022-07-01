@@ -1,6 +1,6 @@
 import { Story, Meta } from "@storybook/react";
 
-// import { assets } from "../../data/assets";
+import { assets } from "../../data/assets";
 
 import {
   PureMarketplacePage,
@@ -18,12 +18,10 @@ const Template: Story<PureMarketplacePageProps> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  // items: assets,
-  loading: false,
+  items: assets,
 };
 
 export const Loading = Template.bind({});
 Loading.args = {
-  // items: assets,
-  loading: true,
+  items: assets,
 };

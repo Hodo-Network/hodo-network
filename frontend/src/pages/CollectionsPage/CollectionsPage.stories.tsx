@@ -1,7 +1,7 @@
 import { Story, Meta } from "@storybook/react";
 
 import {
-  PureCollectionsPage,
+  PureCollectionsPage, PureCollectionsPageProps,
 } from "./CollectionsPage";
 
 export default {
@@ -9,9 +9,11 @@ export default {
   component: PureCollectionsPage,
 } as Meta;
 
-const Template: Story = (args) => (
+const Template: Story<PureCollectionsPageProps> = (args) => (
   <PureCollectionsPage {...args} />
 );
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  items: []
+};

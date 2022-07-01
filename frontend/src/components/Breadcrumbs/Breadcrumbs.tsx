@@ -2,18 +2,18 @@ import { NavLink } from "react-router-dom";
 import { HomeIcon } from "@heroicons/react/outline";
 import clsx from "clsx";
 
-export interface BreadcrumbsProps {
+export interface PureBreadcrumbsProps {
   crumbs: any;
 }
 
-export interface BreadcrumbProps {
+export interface PureBreadcrumbProps {
   name: string;
   path: string;
   current?: boolean;
   isHome?: boolean;
 }
 
-export const Breadcrumbs = ({ crumbs }: BreadcrumbsProps) => {
+export const PureBreadcrumbs = ({ crumbs }: PureBreadcrumbsProps) => {
   return (
     <nav
       className='flex bg-white border-b border-gray-300'
@@ -21,7 +21,7 @@ export const Breadcrumbs = ({ crumbs }: BreadcrumbsProps) => {
       style={{ minHeight: "45px" }}>
       <ol className='max-w-screen-xl w-full px-4 flex space-x-4 sm:px-8'>
         {crumbs.map(
-          ({ name, path, current, isHome }: BreadcrumbProps, key: number) => {
+          ({ name, path, current, isHome }: PureBreadcrumbProps, key: number) => {
             if (isHome) {
               return (
                 <li key={key} className='flex'>

@@ -57,7 +57,7 @@ const SoldAssetList = () => {
     setLoading(false);
   };
 
-  return <PureSoldAssetList loading={loading} items={items} />;
+  return <PureSoldAssetList items={items} />;
 };
 
 export default SoldAssetList;

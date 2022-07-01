@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { useAppDispatch, useAppSelector } from "../../state/hooks";
-// import { getCollection } from "../../state/asyncActions/collection";
+import { getCollection } from "../../state/asyncActions/collection";
 import { NFT } from "../../typings/nft";
 import { PureCollectionPage } from "./CollectionPage";
 
@@ -15,20 +15,21 @@ const CollectionPage = () => {
 
   const dispatch = useAppDispatch();
   const collection = useAppSelector((state) => state.collection.data);
-  const loading = useAppSelector((state) => state.collection.loading);
+  // const loading = useAppSelector((state) => state.collection.loading);
 
   useEffect(() => {
-    // dispatch(getCollection(contractAddress));
-    console.log('getcollection')
+    if (contractAddress) {
+      dispatch(getCollection(contractAddress));
+    }
   }, [contractAddress]);
 
   useEffect(() => {
-    if (collection?.status) {
-      setItems(collection.data);
+    if (collection) {
+      setItems(collection);
     }
   }, [collection]);
 
-  return <PureCollectionPage items={items} loading={loading} />;
+  return <PureCollectionPage items={items} />;
 };
 
 export default CollectionPage;

@@ -1,46 +1,17 @@
-import { useEffect, useState } from "react";
 import Button from "../../base/Button";
 
-export interface ChainSwitchButtonProps {
-  label: string;
-  disabled: boolean;
-  params?: any;
+export interface PureChainSwitchButtonProps {
+  onClick?: any;
+  disabled?: boolean;
 }
 
-export const ChainSwitchButton = ({
-  label,
+export const PureChainSwitchButton = ({
+  onClick,
   disabled,
-  params,
-}: ChainSwitchButtonProps) => {
-  useEffect(() => {
-    // TODO: move higher up?
-    // ethereum?.on("chainChanged", (_chainId) => window.location.reload());
-
-    const requestChain = async () => {
-      // try {
-      //   await ethereum?.request({ method: "eth_chainId" });
-      // } catch (error) {
-      //   console.error(error);
-      // }
-    };
-
-    requestChain();
-  }, [label, params]);
-
-  const onClick = async () => {
-    // try {
-    //   await ethereum?.request({
-    //     method: "wallet_addEthereumChain",
-    //     params: [params],
-    //   });
-    // } catch (error) {
-    //   console.error(error);
-    // }
-  };
-
+}: PureChainSwitchButtonProps) => {
   return (
     <Button color="primary" onClick={onClick} disabled={disabled}>
-      {label}
+      Switch to Network
     </Button>
   );
 };

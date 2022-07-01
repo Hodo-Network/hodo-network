@@ -51,7 +51,7 @@ export interface Collection {
     name: string;
     description: string;
     banner?: string;
-    thumbnail: string;
+    image: string;
     contractAddress: string;
     network: number;
     website?: string;

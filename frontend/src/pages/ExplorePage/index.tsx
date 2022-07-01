@@ -21,7 +21,7 @@ const ExplorePage = () => {
   useEffect(() => {
     if (collection?.status) {
       const temp = collection.data.map((item: any) => {
-        return { ...item, thumbnail: convertIpfsUrl(item.image) };
+        return { ...item, image: convertIpfsUrl(item.image) };
       });
 
       setItems(temp);

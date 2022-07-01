@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { Suspense, useState } from 'react';
 import clsx from 'clsx';
 import { RadioGroup } from "@headlessui/react";
 import { ViewGridIcon, ViewListIcon } from '@heroicons/react/outline';
@@ -7,6 +7,7 @@ import ContentWrapper from "../../ContentWrapper";
 import AssetGrid from "../../components/AssetGrid";
 import AssetList from '../../components/AssetList';
 import Toggle from '../../base/Toggle';
+import Loader from '../../base/Loader';
 
 const displayOptions = [
   { name: 'Grid', icon: ViewGridIcon, disabled: false },
@@ -15,14 +16,12 @@ const displayOptions = [
 
 export interface PureMarketplacePageProps {
   items: Array<NFT>;
-  loading?: boolean;
   verifiedOnly?: boolean;
   onFilterVerified: (checked: boolean) => void;
 }
 
 export const PureMarketplacePage = ({
   items,
-  loading = false,
   verifiedOnly = false,
   onFilterVerified,
 }: PureMarketplacePageProps) => {
@@ -61,11 +60,13 @@ export const PureMarketplacePage = ({
           </div>
         </div>
 
-        {mem.name === "Grid" ? (
-          <AssetGrid items={items} loading={loading} />
-        ) : (
-          <AssetList items={items} loading={loading} />
-        )}
+        <Suspense fallback={<Loader />}>
+          {mem.name === "Grid" ? (
+            <AssetGrid items={items} />
+          ) : (
+            <AssetList items={items} />
+          )}
+        </Suspense>
       </div>
     </ContentWrapper>
   );

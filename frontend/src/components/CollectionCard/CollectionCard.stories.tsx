@@ -21,5 +21,5 @@ const Template: Story<PureCollectionCardProps> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  collection: collections[0],
+  item: collections[0],
 };

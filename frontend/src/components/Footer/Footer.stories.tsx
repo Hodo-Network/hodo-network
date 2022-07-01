@@ -1,13 +1,16 @@
 import { Story, Meta } from "@storybook/react";
+import { social } from '../../data/social';
 
-import { Footer } from "./Footer";
+import { PureFooter, PureFooterProps } from "./Footer";
 
 export default {
   title: "Components/Footer",
-  component: Footer,
+  component: PureFooter,
 } as Meta;
 
-const Template: Story = (args) => <Footer {...args} />;
+const Template: Story<PureFooterProps> = (args) => <PureFooter {...args} />;
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  links: social
+};
