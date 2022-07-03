@@ -29,14 +29,17 @@ export const parameters = {
 };
 
 export const globalTypes = {
-  theme: {
-    name: "Theme",
-    description: "Global theme for components",
-    defaultValue: "light",
-    toolbar: {
-      icon: "mirror",
-      items: themes.sort(),
-      showName: true,
-    },
+  // theme: {
+  //   name: "Theme",
+  //   description: "Global theme for components",
+  //   defaultValue: "light",
+  //   toolbar: {
+  //     icon: "mirror",
+  //     items: themes.sort(),
+  //     showName: true,
+  //   },
+  // },
+  themes: {
+    defaultValue: themes.sort(),
   },
 };

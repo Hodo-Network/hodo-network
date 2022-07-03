@@ -109,6 +109,7 @@
     "@storybook/manager-webpack5": "^6.5.9",
     "@storybook/node-logger": "^6.3.7",
     "@storybook/preset-create-react-app": "^4.1.2",
-    "@storybook/react": "^6.3.7"
+    "@storybook/react": "^6.3.7",
+    "storybook-addon-theme-changer": "^0.1.2"
   }
 }
