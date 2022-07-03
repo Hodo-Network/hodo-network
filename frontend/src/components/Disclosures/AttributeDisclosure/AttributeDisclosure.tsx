@@ -27,7 +27,7 @@ export const AttributeDisclosure = ({ attrs }: IAttrDisclosureProps) => {
                         leaveFrom="transform scale-100 opacity-100"
                         leaveTo="transform scale-95 opacity-0"
                     >
-                        <Disclosure.Panel className="border-2 border-t-0 border-base-300 bg-base-200 p-4 grid grid-cols-3 gap-3">
+                        <Disclosure.Panel className="border-2 border-t-0 border-base-300 bg-base-200 p-4 grid grid-cols-2 lg:grid-cols-3 gap-3">
                             {!attrs || attrs.length === 0 ? (
                                 <p>None</p>
                             ) : attrs?.map((attr: any) => (

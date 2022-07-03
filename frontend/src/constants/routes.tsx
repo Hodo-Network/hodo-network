@@ -13,17 +13,17 @@ const ROUTE_ROADMAP = "/roadmap";
 // Used to pull a convenient name for analytics tracking events. The key must
 // be react-router ready path, and can include params such as :id for popup windows
 // const PATH_NAME_MAP = {
-//   [ROUTE_ACCOUNT]: "Account Page",
-//   [ROUTE_COLLECTIONS]: "Collections Page",
-//   [ROUTE_COLLECTION]: "Collection Page",
-//   [ROUTE_COLLECTIBLE]: "Collectible Page",
-//   [ROUTE_CREATE_COLLECTION]: "Create Collection Page",
-//   [ROUTE_CREATOR_DASHBOARD]: "Create Page",
+//   [ROUTE_ACCOUNT]: "Account View",
+//   [ROUTE_COLLECTIONS]: "Collections View",
+//   [ROUTE_COLLECTION]: "Collection View",
+//   [ROUTE_COLLECTIBLE]: "Collectible View",
+//   [ROUTE_CREATE_COLLECTION]: "Create Collection View",
+//   [ROUTE_CREATOR_DASHBOARD]: "Create View",
 //   [ROUTE_DEFAULT]: "Home",
-//   [ROUTE_EXPLORE]: "Map Page",
-//   [ROUTE_FAQ]: "Info Page",
-//   [ROUTE_MARKETPLACE]: "Marketplace Page",
-//   [ROUTE_ROADMAP]: "Roadmap",
+//   [ROUTE_EXPLORE]: "Explore View",
+//   [ROUTE_FAQ]: "FAQ View",
+//   [ROUTE_MARKETPLACE]: "Marketplace View",
+//   [ROUTE_ROADMAP]: "Roadmap View",
 // };
 
 export {

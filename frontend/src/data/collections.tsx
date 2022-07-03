@@ -7,7 +7,7 @@ export const collections: Array<Collection> = [
         description: '',
         image: "/assets/images/globe.jpg",
         contractAddress: "0x0000000000000000000000000000000000000000",
-        network: 1,
+        network: 43113,
         verified: 0,
     },
     {
@@ -18,7 +18,7 @@ export const collections: Array<Collection> = [
         image: '/assets/images/afghanistan.png',
         contractAddress: "0x0000000000000000000000000000000000000001",
         network: 43113,
-        verified: 1,
+        verified: 0,
         status: 'featured'
     },
     {
@@ -27,8 +27,8 @@ export const collections: Array<Collection> = [
         description: '',
         image: "/assets/images/globe.jpg",
         contractAddress: "0x0000000000000000000000000000000000000002",
-        network: 43113,
-        verified: 0,
+        network: 1,
+        verified: 1,
         status: 'featured'
     },
     {

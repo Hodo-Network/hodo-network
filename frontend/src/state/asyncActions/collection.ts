@@ -1,7 +1,7 @@
 import {
     getCollectionStarted, getCollectionSuccess, getCollectionFailure
 } from "../actions/collection";
-import { collectionEndpoint } from '../../http';
+// import { collectionEndpoint } from '../../http';
 // import { nftEndpoint, getNftByOwnerEndpoint } from '../../http';
 import { assets } from '../../data/assets';
 

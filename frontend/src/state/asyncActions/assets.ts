@@ -1,7 +1,7 @@
 import {
     getAssetsStarted, getAssetsSuccess, getAssetsFailure
 } from "../actions/assets";
-import { assetsEndpoint } from '../../http';
+// import { assetsEndpoint } from '../../http';
 import { assets } from '../../data/assets';
 
 // get assets list

@@ -36,7 +36,7 @@ export interface ListingModuleProps {
 
 const ListingModule = ({ item, collection }: ListingModuleProps) => {
   const { account, library, chainId } = useWeb3React<Web3Provider>();
-  const [marketContract, setMarketContract] = useState<any>();
+  // const [marketContract, setMarketContract] = useState<any>();
   // const [web3State, setWeb3State] = useState<any>();
   // const [accounts, setAccounts] = useState<any>();
 
@@ -185,7 +185,7 @@ const ListingModule = ({ item, collection }: ListingModuleProps) => {
           Marketplace.abi,
           provider.getSigner()
         );
-        setMarketContract(market);
+        // setMarketContract(market);
 
         let listingPrice = await market.getListingPrice();
         listingPrice = listingPrice.toString();

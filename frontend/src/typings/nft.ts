@@ -26,6 +26,7 @@ export interface NFT {
     image: string;
     lat: number;
     lng: number;
+    network: number;
     contractAddress: string;
     contractName: string;
     contractVerified: number;

@@ -29,7 +29,7 @@ export const DetailsDisclosure = ({ contractAddress, network, tokenId }: IDetail
                         leaveFrom="transform scale-100 opacity-100"
                         leaveTo="transform scale-95 opacity-0"
                     >
-                        <Disclosure.Panel className="border-2 border-t-0 border-base-300 bg-base-200 p-4 text-xs">
+                        <Disclosure.Panel className="border-2 border-t-0 border-base-300 bg-base-200 p-4 text-xs space-y-3">
                             <div className="flex items-center justify-between">
                                 <span>{TEXT_CONTRACT}</span>
                                 {/* TODO: use network blockExplorer */}
@@ -42,12 +42,12 @@ export const DetailsDisclosure = ({ contractAddress, network, tokenId }: IDetail
                                 </a>
                             </div>
 
-                            <div className="flex items-center justify-between mt-3">
+                            <div className="flex items-center justify-between">
                                 <span>{TEXT_ID}</span>
                                 <span>{tokenId}</span>
                             </div>
 
-                            <div className="flex items-center justify-between mt-3">
+                            <div className="flex items-center justify-between">
                                 <span>{TEXT_NETWORK}</span>
                                 <span>{network}</span>
                             </div>

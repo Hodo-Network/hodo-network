@@ -1,71 +1,71 @@
-import AccountPage from "./pages/AccountPage";
-import AssetPage from "./pages/AssetPage";
-import CollectionsPage from "./pages/CollectionsPage";
-import CollectionPage from "./pages/CollectionPage";
-import CreatorPage from "./pages/CreatorPage";
-import ExplorePage from "./pages/ExplorePage";
-import FaqPage from "./pages/FaqPage";
-import HomePage from "./pages/HomePage";
-import MarketplacePage from "./pages/MarketplacePage";
-import RoadmapPage from "./pages/RoadmapPage";
+import AccountView from "./views/AccountView";
+import AssetView from "./views/AssetView";
+import CollectionsView from "./views/CollectionsView";
+import CollectionView from "./views/CollectionView";
+import CreatorView from "./views/CreatorView";
+import ExploreView from "./views/ExploreView";
+import FaqView from "./views/FaqView";
+import HomeView from "./views/HomeView";
+import MarketplaceView from "./views/MarketplaceView";
+import RoadmapView from "./views/RoadmapView";
 import * as paths from "./constants/routes";
 
 const routes = [
   {
     path: paths.ROUTE_DEFAULT,
     name: "Home",
-    Component: HomePage,
+    Component: HomeView,
     exact: true,
   },
   {
     path: paths.ROUTE_MARKETPLACE,
     name: "Marketplace",
-    Component: MarketplacePage,
+    Component: MarketplaceView,
     exact: true,
   },
   {
     path: paths.ROUTE_COLLECTIONS,
     name: "Collections",
-    Component: CollectionsPage,
+    Component: CollectionsView,
     exact: true,
   },
   {
     path: paths.ROUTE_COLLECTION,
     name: ":contractAddress",
-    Component: CollectionPage,
+    Component: CollectionView,
     exact: true,
   },
   {
     path: paths.ROUTE_COLLECTIBLE,
     name: ":tokenId",
-    Component: AssetPage,
+    Component: AssetView,
     exact: true,
   },
   {
     path: paths.ROUTE_EXPLORE,
     name: "Explore",
-    Component: ExplorePage,
+    Component: ExploreView,
     exact: true,
   },
   {
     path: paths.ROUTE_ACCOUNT,
     name: "Account",
-    Component: AccountPage,
+    Component: AccountView,
     exact: true,
   },
   {
     path: paths.ROUTE_CREATOR_DASHBOARD,
     name: "Create",
-    Component: CreatorPage,
+    Component: CreatorView,
     exact: true,
   },
   {
     path: paths.ROUTE_ROADMAP,
     name: "Roadmap",
-    Component: RoadmapPage,
+    Component: RoadmapView,
     exact: true,
   },
-  { path: paths.ROUTE_FAQ, name: "FAQ", Component: FaqPage, exact: true },
+  { path: paths.ROUTE_FAQ, name: "FAQ", Component: FaqView, exact: true },
 ];
 
 export default routes;

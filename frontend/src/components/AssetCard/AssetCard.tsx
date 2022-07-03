@@ -1,21 +1,16 @@
 import { NavLink } from "react-router-dom";
 import { BadgeCheckIcon, ExclamationIcon } from "@heroicons/react/solid";
-// import { Web3Provider } from "@ethersproject/providers";
-// import { useWeb3React } from "@web3-react/core";
-import { Avax } from "../../assets";
-// import { NATIVE_CURRENCY } from "../../constants";
 import { ROUTE_MARKETPLACE } from "../../constants/routes";
 import { NFT } from "../../typings/nft";
+import CurrencyLogo from '../CurrencyLogo';
 
 export interface AssetCardProps {
   item: NFT;
 }
 
 export const AssetCard = ({
-  item: { tokenId, contractAddress, name, image, sold, price, contractName, contractVerified },
+  item: { tokenId, network, contractAddress, name, image, sold, price, contractName, contractVerified },
 }: AssetCardProps) => {
-  // const { chainId } = useWeb3React<Web3Provider>();
-
   return (
     <NavLink
       to={`${ROUTE_MARKETPLACE}/${contractAddress}/${tokenId}`}
@@ -41,10 +36,8 @@ export const AssetCard = ({
           {!sold && (
             <div className='flex flex-col items-end'>
               <p className='text-xs'>Price</p>
-              <div className='mt-1 flex items-center'>
-                {/* TODO: allow other currency logos */}
-                {/* {(chainId && NATIVE_CURRENCY[chainId]) || NATIVE_CURRENCY[0]} */}
-                <img src={Avax} alt='AVAX logo' className='w-3 h-3 mr-2' />
+              <div className='mt-1 flex items-center gap-1'>
+                <CurrencyLogo network={network} />
                 <span className='text-sm font-medium'>{price}</span>
               </div>
             </div>
