@@ -1,13 +1,13 @@
 import Button from "../../base/Button";
 
 export interface PureChainAddButtonProps {
-  label: string;
+  label?: string;
   disabled?: boolean;
   onClick?: () => void;
 }
 
 export const PureChainAddButton = ({
-  label,
+  label = "Add Network",
   disabled = false,
   onClick,
 }: PureChainAddButtonProps) => {

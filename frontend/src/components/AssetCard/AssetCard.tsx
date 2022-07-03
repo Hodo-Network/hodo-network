@@ -7,19 +7,19 @@ import { Avax } from "../../assets";
 import { ROUTE_MARKETPLACE } from "../../constants/routes";
 import { NFT } from "../../typings/nft";
 
-export interface PureAssetCardProps {
+export interface AssetCardProps {
   item: NFT;
 }
 
-export const PureAssetCard = ({
+export const AssetCard = ({
   item: { tokenId, contractAddress, name, image, sold, price, contractName, contractVerified },
-}: PureAssetCardProps) => {
+}: AssetCardProps) => {
   // const { chainId } = useWeb3React<Web3Provider>();
 
   return (
     <NavLink
       to={`${ROUTE_MARKETPLACE}/${contractAddress}/${tokenId}`}
-      className='card card-compact shadow bg-neutral-focus text-neutral-content transition-transform duration-300 transform hover:-translate-y-1'>
+      className='card card-compact shadow bg-neutral-focus text-neutral-content transition-transform duration-300 transform hover:-translate-y-1 max-w-sm'>
       <div className='figure'>
         <img className='h-54 w-full object-scale-down' src={image} alt={name} />
       </div>

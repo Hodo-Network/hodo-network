@@ -12,6 +12,9 @@ const Template: Story<PureChainAddButtonProps> = (args) => (
 );
 
 export const Default = Template.bind({});
-Default.args = {
-  label: "Add Network",
+Default.args = {};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  disabled: true,
 };

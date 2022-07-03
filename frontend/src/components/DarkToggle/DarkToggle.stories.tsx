@@ -11,3 +11,9 @@ const Template: Story = (args) => <DarkToggle {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};
+
+export const OtherThemes = Template.bind({});
+OtherThemes.args = {
+  light: 'retro',
+  dark: 'synthwave',
+};

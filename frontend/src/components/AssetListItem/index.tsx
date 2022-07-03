@@ -1,2 +1,2 @@
-import { PureAssetListItem } from "./AssetListItem";
-export default PureAssetListItem;
+import { AssetListItem } from "./AssetListItem";
+export default AssetListItem;

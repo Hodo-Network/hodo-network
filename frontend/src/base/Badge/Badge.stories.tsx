@@ -3,7 +3,7 @@ import { Story, Meta } from "@storybook/react";
 import { PureBadge, PureBadgeProps } from "./Badge";
 
 export default {
-  title: "UI/Badge",
+  title: "Base/Badge",
   component: PureBadge,
   argTypes: {
     color: {
@@ -84,4 +84,10 @@ export const Error = Template.bind({});
 Error.args = {
   label: "Badge",
   color: "error",
+};
+
+export const Outline = Template.bind({});
+Outline.args = {
+  label: "Badge",
+  variant: "outline",
 };

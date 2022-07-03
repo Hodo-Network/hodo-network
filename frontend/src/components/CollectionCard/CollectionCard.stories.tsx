@@ -23,3 +23,8 @@ export const Default = Template.bind({});
 Default.args = {
   item: collections[0],
 };
+
+export const VerifiedCollection = Template.bind({});
+VerifiedCollection.args = {
+  item: collections[1],
+};

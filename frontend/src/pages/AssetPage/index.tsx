@@ -11,7 +11,7 @@ type IParams = {
 
 const AssetPage = () => {
   const { contractAddress, tokenId } = useParams<IParams>();
-  const collection = useAppSelector((state) => state.collection.data);
+  const collectionAssets = useAppSelector((state) => state.collection.data);
   const loading = useAppSelector((state) => state.collection.loading);
   const dispatch = useAppDispatch();
 
@@ -23,7 +23,7 @@ const AssetPage = () => {
 
   return (
     <PureAssetPage
-      collection={collection}
+      collectionAssets={collectionAssets}
       contractAddress={contractAddress}
       tokenId={tokenId}
       loading={loading}

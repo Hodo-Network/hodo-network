@@ -1,34 +1,30 @@
-import NetworkErrorMessage from "../NetworkErrorMessage";
+import Alert from "../../base/Alert";
+import Button from "../../base/Button";
 
 export interface ConnectWalletProps {
-  connectWallet: any;
-  networkError: string;
-  dismiss: any;
+  onConnectWallet: () => void;
+  onDismiss?: () => void;
+  networkError?: string;
 }
 
 export const ConnectWallet = ({
-  connectWallet,
+  onConnectWallet,
+  onDismiss,
   networkError,
-  dismiss,
 }: ConnectWalletProps) => {
   return (
-    <div className='container'>
-      <div className='row justify-content-md-center'>
-        <div className='col-12 text-center'>
-          {/* Metamask network should be set to Localhost:8545. */}
-          {networkError && (
-            <NetworkErrorMessage message={networkError} dismiss={dismiss} />
-          )}
-        </div>
-        <div className='col-6 p-4 text-center'>
-          <p>Please connect to your wallet.</p>
-          <button
-            className='btn btn-warning'
-            type='button'
-            onClick={connectWallet}>
-            Connect Wallet
-          </button>
-        </div>
+    <div className='space-y-4'>
+      {networkError && (
+        <Alert message={networkError} status="error" onDismiss={onDismiss} />
+      )}
+
+      <div className='text-center space-y-2'>
+        <p>Please connect to your wallet.</p>
+        <Button
+          color="warning"
+          onClick={onConnectWallet}>
+          Connect Wallet
+        </Button>
       </div>
     </div>
   );

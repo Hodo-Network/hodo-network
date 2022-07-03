@@ -5,6 +5,7 @@ export const ThemeSwitch = () => {
   const { theme, switchTheme } = useTheme();
   const themes = ['light', 'dark', 'cupcake', 'bumblebee', 'emerald', 'corporate', 'synthwave', 'retro', 'cyberpunk', 'valentine', 'halloween', 'garden', 'forest', 'aqua', 'lofi', 'pastel', 'fantasy', 'wireframe', 'black', 'luxury', 'dracula', 'cmyk', 'autumn', 'business', 'acid', 'lemonade', 'night', 'coffee', 'winter'].sort();
 
+  // TODO: need a way to update when theme is changed in some other component
   return (
     <div className="dropdown dropdown-end">
       <label tabIndex={0} className="btn btn-ghost">Theme</label>

@@ -4,15 +4,16 @@ import clsx from 'clsx';
 import { useWeb3React } from "@web3-react/core";
 import { Web3Provider } from "@ethersproject/providers";
 import { Dialog, Transition } from "@headlessui/react";
-import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import { navigation } from "../../constants/navigation";
 import { NETWORK_LABELS_SHORT } from "../../constants";
 
 import ConnectionBadge from "../ConnectionBadge";
-import ThemeSwitch from "../ThemeSwitch";
+import DarkToggle from "../DarkToggle";
 import Footer from "../Footer";
+import MenuIconSwap from '../MenuIconSwap';
 import OnboardingButton from "../OnboardingButton";
 import SearchBar from "../SearchBar";
+import ThemeSwitch from "../ThemeSwitch";
 
 export interface NavbarProps {
   hideTitle?: boolean;
@@ -28,7 +29,7 @@ export const Navbar = ({ hideTitle }: NavbarProps) => {
     <header className='flex-shrink-0 border-b border-neutral flex items-center'>
       <div className='flex-1 flex items-center justify-between py-3 px-4 sm:px-8'>
         <div className='flex items-center'>
-          <span className={`font-bold text-xl ${hideTitle && "md:hidden"}`}>
+          <span className={clsx('font-bold text-xl', hideTitle && 'md:hidden')}>
             Hodo Network
           </span>
         </div>
@@ -41,6 +42,7 @@ export const Navbar = ({ hideTitle }: NavbarProps) => {
 
         <div className='ml-10 flex-shrink-0 hidden md:flex items-center space-x-2'>
           <ThemeSwitch />
+          <DarkToggle />
 
           {account ? (
             <ConnectionBadge network={network} account={account} />
@@ -51,13 +53,7 @@ export const Navbar = ({ hideTitle }: NavbarProps) => {
       </div>
 
       <div className='py-3 px-4 flex items-center md:hidden'>
-        <button
-          type='button'
-          className='btn btn-square'
-          onClick={() => setMenuOpen(true)}>
-          <span className='sr-only'>Open main menu</span>
-          <MenuIcon className='h-6 w-6' aria-hidden='true' />
-        </button>
+        <MenuIconSwap active={false} onClick={() => setMenuOpen(true)} />
       </div>
 
       <Transition show={menuOpen} as={Fragment}>
@@ -93,13 +89,7 @@ export const Navbar = ({ hideTitle }: NavbarProps) => {
                 <span className='font-bold text-xl'>
                   Hodo Network
                 </span>
-                <button
-                  type='button'
-                  className='btn btn-square'
-                  onClick={() => setMenuOpen(false)}>
-                  <span className='sr-only'>Close main menu</span>
-                  <XIcon className='h-6 w-6' aria-hidden='true' />
-                </button>
+                <MenuIconSwap active={true} onClick={() => setMenuOpen(false)} />
               </div>
 
               {enableSearch && (

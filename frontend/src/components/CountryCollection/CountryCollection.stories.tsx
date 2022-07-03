@@ -1,20 +1,20 @@
 import { Story, Meta } from "@storybook/react";
+import { ZERO_ADDRESS } from "../../constants";
 
-import { CountryCollection, CountryCollectionProps } from "./CountryCollection";
+import { PureCountryCollection, PureCountryCollectionProps } from "./CountryCollection";
 
-import HodoNftAbi from "../../abi/HodoNFT.abi.json";
 
 export default {
   title: "Components/CountryCollection",
-  component: CountryCollection,
+  component: PureCountryCollection,
 } as Meta;
 
-const Template: Story<CountryCollectionProps> = (args) => (
-  <CountryCollection {...args} />
+const Template: Story<PureCountryCollectionProps> = (args) => (
+  <PureCountryCollection {...args} />
 );
 
 export const Default = Template.bind({});
 Default.args = {
-  address: "0x4b9b8F97305B3d266812c91715120c4EC303d812",
-  abi: HodoNftAbi,
+  balance: 2530000000000000,
+  address: ZERO_ADDRESS,
 };

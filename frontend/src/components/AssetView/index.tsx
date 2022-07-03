@@ -16,7 +16,6 @@ const AssetView = ({ contractAddress, tokenId }: AssetViewProps) => {
   const dispatch = useAppDispatch();
   const collections = useAppSelector((state) => state.collections.data);
   const asset = useAppSelector((state) => state.asset.data);
-  const loading = useAppSelector((state) => state.asset.loading);
   const [item, setItem] = useState<NFT>();
   const [collection, setCollection] = useState<Collection>();
 
@@ -43,7 +42,6 @@ const AssetView = ({ contractAddress, tokenId }: AssetViewProps) => {
     <PureAssetView
       item={item}
       collection={collection}
-      loading={false}
       account={account}
     />
   );

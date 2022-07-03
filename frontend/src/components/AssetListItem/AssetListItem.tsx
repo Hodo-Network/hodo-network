@@ -8,13 +8,13 @@ import { ROUTE_MARKETPLACE } from "../../constants/routes";
 import { NFT } from "../../typings/nft";
 import clsx from "clsx";
 
-export interface PureAssetListItemProps {
+export interface AssetListItemProps {
   item: NFT;
 }
 
-export const PureAssetListItem = ({
+export const AssetListItem = ({
   item: { tokenId, contractAddress, name, image, description, sold, price, contractName, contractVerified }
-}: PureAssetListItemProps) => {
+}: AssetListItemProps) => {
   // const { chainId } = useWeb3React<Web3Provider>();
   const location = useLocation();
   const path = `${ROUTE_MARKETPLACE}/${contractAddress}/${tokenId}`;

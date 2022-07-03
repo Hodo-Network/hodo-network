@@ -1,17 +1,16 @@
 import { Story, Meta } from "@storybook/react";
 
-import { PureAssetListItem, PureAssetListItemProps } from "./AssetListItem";
+import { AssetListItem, AssetListItemProps } from "./AssetListItem";
+import { assets } from "../../data/assets";
 
 export default {
   title: "Components/AssetListItem",
-  component: PureAssetListItem,
+  component: AssetListItem,
 } as Meta;
 
-const Template: Story<PureAssetListItemProps> = (args) => <PureAssetListItem {...args} />;
+const Template: Story<AssetListItemProps> = (args) => <AssetListItem {...args} />;
 
-// export const Default = Template.bind({});
-// Default.args = {
-//   nft: "",
-//   collection: "",
-//   listing: "",
-// };
+export const Default = Template.bind({});
+Default.args = {
+  item: assets[0],
+};

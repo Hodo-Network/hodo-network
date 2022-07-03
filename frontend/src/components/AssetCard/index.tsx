@@ -1,2 +1,2 @@
-import { PureAssetCard } from "./AssetCard";
-export default PureAssetCard;
+import { AssetCard } from "./AssetCard";
+export default AssetCard;

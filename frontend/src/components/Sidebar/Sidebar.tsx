@@ -2,8 +2,7 @@ import { NavLink } from "react-router-dom";
 import clsx from 'clsx';
 import { navigation } from "../../constants/navigation";
 import Footer from "../Footer";
-import MenuClosedIcon from "../MenuClosedIcon";
-import MenuOpenIcon from "../MenuOpenIcon";
+import SidebarIconSwap from "../SidebarIconSwap";
 
 export interface SidebarProps {
   mini: boolean;
@@ -17,20 +16,10 @@ export const Sidebar = ({ mini, toggle }: SidebarProps) => {
       <div className='h-16'>
         <div
           className={clsx('flex items-center h-full p-3', mini && 'justify-center')}>
-          <button
-            type='button'
-            className='text-base-content px-4 py-3 focus:outline-none'
-            aria-label='Toggle sidebar'
-            onClick={toggle}>
-            {mini ? (
-              <MenuClosedIcon className='w-6 h-6' />
-            ) : (
-              <MenuOpenIcon className='w-6 h-6' />
-            )}
-          </button>
+          <SidebarIconSwap onClick={toggle} active={mini} />
 
           <span
-            className={clsx('-ml-1 font-bold text-xl', mini && 'sr-only')}>
+            className={clsx('font-bold text-xl', mini && 'sr-only')}>
             Hodo Network
           </span>
         </div>
@@ -41,13 +30,10 @@ export const Sidebar = ({ mini, toggle }: SidebarProps) => {
           <NavLink
             key={item.name}
             to={item.href}
-            // exact={item.exact}
-            className={(navData) => clsx(
-              'flex items-center rounded-md px-4 py-3 hover:bg-neutral hover:text-neutral-content',
-              navData.isActive && 'bg-neutral text-neutral-content'
-            )}>
+            className={(navData) => clsx('btn btn-block capitalize justify-start gap-2', navData.isActive ? 'btn-primary' : ' btn-ghost')}
+          >
             <item.icon className='h-6 w-6' aria-hidden='true' />
-            <span className={mini ? "sr-only" : "ml-3"}>{item.name}</span>
+            <span className={mini ? 'sr-only' : ''}>{item.name}</span>
           </NavLink>
         ))}
       </nav>

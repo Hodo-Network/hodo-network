@@ -1,13 +1,13 @@
 import { Story, Meta } from "@storybook/react";
 
-import { PureAlert, PureAlertProps } from "./Alert";
+import { Alert, IAlertProps } from "./Alert";
 
 export default {
-  title: "UI/Alert",
-  component: PureAlert,
+  title: "Base/Alert",
+  component: Alert,
 } as Meta;
 
-const Template: Story<PureAlertProps> = (args) => <PureAlert {...args} />;
+const Template: Story<IAlertProps> = (args) => <Alert {...args} />;
 
 export const Success = Template.bind({});
 Success.args = {
@@ -25,4 +25,10 @@ export const Error = Template.bind({});
 Error.args = {
   message: "This is a sample Error",
   status: "error",
+};
+
+export const Info = Template.bind({});
+Info.args = {
+  message: "This is a sample Info",
+  status: "info",
 };

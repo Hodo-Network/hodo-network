@@ -1,75 +1,58 @@
 import clsx from "clsx";
-import { ExclamationIcon, XIcon } from "@heroicons/react/solid";
+import { CheckCircleIcon, ExclamationCircleIcon, InformationCircleIcon, XCircleIcon, XIcon } from "@heroicons/react/solid";
+import Button from "../Button";
 
-export interface PureAlertProps {
+export interface IAlertProps {
   message: string;
-  status: "success" | "warning" | "error";
+  status: "success" | "warning" | "error" | "info";
   hidden?: boolean;
   onDismiss?: () => void;
 }
 
-export const PureAlert = ({
+export const Alert = ({
   message,
-  status = "warning",
+  status = "info",
   hidden = false,
   onDismiss,
-}: PureAlertProps) => {
-  let classStyles = {
-    container: "",
-    icon: "",
-    message: "",
-    button: "",
+}: IAlertProps) => {
+  const container: { [key: string]: string; } = {
+    success: "bg-green-50 border-green-400 text-green-700",
+    warning: "bg-yellow-50 border-yellow-400 text-yellow-700",
+    error: "bg-red-50 border-red-400 text-red-700",
+    info: "bg-blue-50 border-blue-400 text-blue-700",
   };
 
-  switch (status) {
-    case "success":
-      classStyles = {
-        container: "bg-green-50 border-green-400",
-        icon: "text-green-400",
-        message: "text-green-700",
-        button:
-          "bg-green-50 text-green-500 hover:bg-green-100 focus:ring-offset-green-50 focus:ring-green-600",
-      };
-      break;
-    case "error":
-      classStyles = {
-        container: "bg-red-50 border-red-400",
-        icon: "text-red-400",
-        message: "text-red-700",
-        button:
-          "bg-red-50 text-red-500 hover:bg-red-100 focus:ring-offset-red-50 focus:ring-red-600",
-      };
-      break;
-    default:
-      // case "warning"
-      classStyles = {
-        container: "bg-yellow-50 border-yellow-400",
-        icon: "text-yellow-400",
-        message: "text-yellow-700",
-        button:
-          "bg-yellow-50 text-yellow-500 hover:bg-yellow-100 focus:ring-offset-yellow-50 focus:ring-yellow-600",
-      };
-      break;
-  }
-
   return (
-    <div
-      className={clsx('border-b-2 p-4', classStyles.container, hidden && 'hidden')}>
+    <div role='alert'
+      className={clsx('border-b-2 p-4', container[status], hidden && 'hidden')}>
       <div className='flex'>
         <div className='flex-shrink-0'>
-          <ExclamationIcon className={clsx('h-5 w-5', classStyles.icon)} />
+          {status === 'success' ? (
+            <CheckCircleIcon className='h-5 w-5' />
+          ) : status === 'warning' ? (
+            <ExclamationCircleIcon className='h-5 w-5' />
+          ) : status === 'error' ? (
+            <XCircleIcon className='h-5 w-5' />
+          ) : (
+            // status === 'info'
+            <InformationCircleIcon className='h-5 w-5' />
+          )}
         </div>
         <div className='ml-3'>
-          <p className={clsx('text-sm', classStyles.message)}>{message}</p>
+          <p className='text-sm'>{message}</p>
         </div>
         <div className='ml-auto pl-3'>
           <div className='-mx-1.5 -my-1.5'>
-            <button
-              className={clsx('inline-flex rounded-md p-1.5 focus:outline-none focus:ring-2 focus:ring-offset-2', classStyles.message)}
-              onClick={onDismiss}>
+            <Button
+              size='sm'
+              variant='ghost'
+              util='focus:outline-current'
+              onClick={onDismiss}
+              aria-label='Close'
+              data-dismiss='alert'>
               <span className='sr-only'>Dismiss</span>
-              <XIcon className='h-5 w-5' />
-            </button>
+              <XIcon className='h-5 w-5' aria-hidden='true' />
+            </Button>
           </div>
         </div>
       </div>

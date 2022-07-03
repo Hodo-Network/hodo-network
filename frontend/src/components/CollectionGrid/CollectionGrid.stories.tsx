@@ -17,5 +17,10 @@ const Template: Story<CollectionGridProps> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
+  items: []
+};
+
+export const WithItems = Template.bind({});
+WithItems.args = {
   items: collections,
 };

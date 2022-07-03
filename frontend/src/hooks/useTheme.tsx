@@ -16,6 +16,15 @@ export default function useTheme() {
     localStorage.removeItem("theme");
   };
 
+  // Toggle between 2 themes
+  const toggleThemes = (theme1: string, theme2: string) => {
+    if (theme === theme1) {
+      switchTheme(theme2);
+    } else {
+      switchTheme(theme1);
+    }
+  };
+
   // On page load
   useEffect(() => {
     if (localStorage.theme) {
@@ -23,5 +32,5 @@ export default function useTheme() {
     }
   }, []);
 
-  return { theme, switchTheme, removeTheme };
+  return { theme, switchTheme, removeTheme, toggleThemes };
 }

@@ -1,2 +1,2 @@
-import { PureAlert } from "./Alert";
-export default PureAlert;
+import { Alert } from "./Alert";
+export default Alert;

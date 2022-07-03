@@ -10,17 +10,12 @@ export default {
 
 const Template: Story<AssetGridProps> = (args) => <AssetGrid {...args} />;
 
-export const Loading = Template.bind({});
-Loading.args = {
-  items: [],
-};
-
 export const Empty = Template.bind({});
 Empty.args = {
   items: [],
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  items: assets.splice(0, 5),
+export const WithItems = Template.bind({});
+WithItems.args = {
+  items: assets.slice(0, 5),
 };

@@ -1,2 +1,2 @@
-import { PureBreadcrumbs } from "./Breadcrumbs";
-export default PureBreadcrumbs;
+import { Breadcrumbs } from "./Breadcrumbs";
+export default Breadcrumbs;

@@ -13,3 +13,8 @@ const Template: Story<ConnectWalletProps> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {};
+
+export const NetworkError = Template.bind({});
+NetworkError.args = {
+  networkError: "Error connecting to network."
+};

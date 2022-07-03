@@ -18,7 +18,7 @@ export const collections: Array<Collection> = [
         image: '/assets/images/afghanistan.png',
         contractAddress: "0x0000000000000000000000000000000000000001",
         network: 43113,
-        verified: 0,
+        verified: 1,
         status: 'featured'
     },
     {

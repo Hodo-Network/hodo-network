@@ -13,3 +13,8 @@ const Template: Story<PureChainSwitchButtonProps> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  disabled: true,
+};

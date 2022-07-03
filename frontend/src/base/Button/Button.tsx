@@ -7,7 +7,7 @@ export type ButtonProps = {
   disabled?: boolean;
   loading?: boolean;
   animation?: "no-animation" | string;
-  size?: "xs" | "sm" | "md" | "lg" | "xl";
+  size?: "xs" | "sm" | "md" | "lg";
   color?: "primary" | "secondary" | "accent" | "info" | "success" | "warning" | "error";
   variant?: "ghost" | "link" | "outline" | "glass";
   shape?: "wide" | "block" | "circle" | "square";

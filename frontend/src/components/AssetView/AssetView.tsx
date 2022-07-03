@@ -5,25 +5,22 @@ import { NETWORK_LABELS_SHORT } from '../../constants';
 import { ROUTE_MARKETPLACE } from "../../constants/routes";
 import { TEXT_DESCRIPTION, TEXT_OWNER } from "../../constants/text";
 import { Attribute, NFT } from "../../typings/nft";
-import Loader from "../../base/Loader";
-import { ActivityDisclosure } from '../Disclosures/ActivityDisclosure';
-import { AttributeDisclosure } from '../Disclosures/AttributeDisclosure';
-import { DetailsDisclosure } from '../Disclosures/DetailsDisclosure';
-import { MapDisclosure } from '../Disclosures/MapDisclosure';
+import ActivityDisclosure from '../Disclosures/ActivityDisclosure';
+import AttributeDisclosure from '../Disclosures/AttributeDisclosure';
+import DetailsDisclosure from '../Disclosures/DetailsDisclosure';
+import MapDisclosure from '../Disclosures/MapDisclosure';
 import ListingModule from '../ListingModule';
 import NetworkSwitch from "../NetworkSwitch";
 
 export interface PureAssetViewProps {
   item?: NFT;
   collection?: any;
-  loading?: boolean;
   account?: any;
 }
 
 export const PureAssetView = ({
   item,
   collection,
-  loading = false,
   account,
 }: PureAssetViewProps) => {
   const location = useLocation();
@@ -38,10 +35,6 @@ export const PureAssetView = ({
     "trait_type": "Longitude",
     "value": item?.lng || "0"
   }];
-
-  if (loading) {
-    return <Loader />;
-  }
 
   if (item && collection) {
     return (

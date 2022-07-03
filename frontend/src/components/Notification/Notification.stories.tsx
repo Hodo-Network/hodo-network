@@ -3,7 +3,7 @@ import { Story, Meta } from "@storybook/react";
 import { Notification, NotificationProps } from "./Notification";
 
 export default {
-  title: "UI/Notification",
+  title: "Components/Notification",
   component: Notification,
 } as Meta;
 

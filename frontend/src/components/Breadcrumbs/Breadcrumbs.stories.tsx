@@ -1,13 +1,13 @@
 import { Story, Meta } from "@storybook/react";
 
-import { PureBreadcrumbs, PureBreadcrumbsProps } from "./Breadcrumbs";
+import { Breadcrumbs, BreadcrumbsProps } from "./Breadcrumbs";
 
 export default {
-  title: "UI/Breadcrumbs",
-  component: PureBreadcrumbs,
+  title: "Components/Breadcrumbs",
+  component: Breadcrumbs,
 } as Meta;
 
-const Template: Story<PureBreadcrumbsProps> = (args) => <PureBreadcrumbs {...args} />;
+const Template: Story<BreadcrumbsProps> = (args) => <Breadcrumbs {...args} />;
 
 export const Home = Template.bind({});
 Home.args = {
@@ -16,14 +16,21 @@ Home.args = {
   ],
 };
 
-export const Collections = Template.bind({});
-Collections.args = {
+export const WithLinks = Template.bind({});
+WithLinks.args = {
   crumbs: [
     { exact: true, name: "Home", path: "/", current: false, isHome: true },
     {
       exact: false,
       name: "Collections",
       path: "/collections",
+      current: false,
+      isHome: false,
+    },
+    {
+      exact: true,
+      name: "Collection",
+      path: "/collection",
       current: true,
       isHome: false,
     },

@@ -4,7 +4,7 @@ import SelectBox, { SelectBoxProps } from "./SelectBox";
 import { assets } from "../../data/assets";
 
 export default {
-  title: "UI/SelectBox",
+  title: "Components/SelectBox",
   component: SelectBox,
 } as Meta;
 
