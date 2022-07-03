@@ -12,7 +12,6 @@ import { PureUserNftList } from "./UserNftList";
 const UserNftList = () => {
   const { library } = useWeb3React<Web3Provider>();
   const [items, setItems] = useState<Array<any>>([]);
-  const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
     loadNFTs();
@@ -51,7 +50,6 @@ const UserNftList = () => {
       })
     );
     setItems(items);
-    setLoading(false);
   };
 
   return <PureUserNftList items={items} />;

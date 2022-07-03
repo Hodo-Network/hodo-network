@@ -13,7 +13,7 @@ export const LocationButton = () => {
     setWhen(true);
   };
 
-  {/* JSON.stringify(geoObj) */ }
+  // JSON.stringify(geoObj)
   return <PureLocationButton location={`${geoObj?.lat}, ${geoObj?.lng}`} onClick={onClick} />;
 };
 

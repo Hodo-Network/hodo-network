@@ -3,7 +3,6 @@ import { Tab } from "@headlessui/react";
 // import { SWRConfig } from "swr";
 // import fetcher from "swr-eth";
 // import { AVALANCHE_MAINNET_PARAMS } from "../../constants";
-import { NATIVE_CURRENCY } from "../../constants";
 import {
   // TEXT_BALANCE,
   TEXT_NETWORK,
@@ -16,7 +15,8 @@ import UserNftList from "../../components/UserNftList";
 import OnboardingButton from "../../components/Buttons/OnboardingButton";
 import WalletAddress from "../../components/WalletAddress";
 import NetworkSwitch from "../../components/NetworkSwitch";
-import Loader from "../../base/Loader";
+import { PureSoldAssetList } from "../../components/SoldAssetList/SoldAssetList";
+import { NFT } from "../../typings/nft";
 // import ChainAddButton from "../../components/ChainAddButton";
 
 export interface PureAccountPageProps {
@@ -25,8 +25,8 @@ export interface PureAccountPageProps {
   address?: string | null;
   chainId?: any;
   loading?: boolean;
-  owned: Array<any>;
-  sold: Array<any>;
+  owned: Array<NFT>;
+  sold: Array<NFT>;
 }
 
 export const PureAccountPage = ({
@@ -40,10 +40,6 @@ export const PureAccountPage = ({
 }: PureAccountPageProps) => {
   const tabs = ["Owned", "Sales", "Network Info"];
 
-  if (loading) {
-    return <Loader />;
-  }
-
   return (
     <ContentWrapper>
       <Tab.Group>
@@ -56,7 +52,7 @@ export const PureAccountPage = ({
                     "w-1/3 py-4 px-1 text-center border-b-2 font-medium text-sm",
                     selected
                       ? "border-primary-content text-primary"
-                      : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300",
+                      : "border-transparent text-bc-muted hover:text-gray-700 hover:border-gray-300",
                   ].join(" ")}>
                   {tab}
                 </button>
@@ -66,78 +62,35 @@ export const PureAccountPage = ({
         </Tab.List>
         <Tab.Panels className='p-4 sm:p-8 max-w-8xl'>
           <Tab.Panel>
+            {/* <h2 className='text-2xl py-2'>Items Created</h2> */}
             <UserNftList />
-            {/* <div className='mb-4'>
-              <h2 className='text-2xl py-2'>Items Created</h2>
-              <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4'>
-                {owned.length === 0 ? (
-                  <h1 className='text-2xl'>No assets created</h1>
-                ) : (
-                  owned.map((item, idx) => (
-                    <div
-                      key={idx}
-                      className='border shadow rounded-xl overflow-hidden'>
-                      <img src={item.image} className='rounded' alt='' />
-                      <div className='p-4 bg-black'>
-                        <p className='text-2xl font-bold text-white'>
-                          Price - {item.price}{" "}
-                          {(chainId && NATIVE_CURRENCY[chainId]) ||
-                            NATIVE_CURRENCY[0]}
-                        </p>
-                      </div>
-                    </div>
-                  ))
-                )}
-              </div>
-            </div> */}
           </Tab.Panel>
 
           <Tab.Panel>
-            {sold.length && (
-              <div className='mt-4'>
-                <h2 className='text-2xl py-2'>Items sold</h2>
-                <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4'>
-                  {sold.map((item, idx) => (
-                    <div
-                      key={idx}
-                      className='border shadow rounded-xl overflow-hidden'>
-                      <img src={item.image} className='rounded' alt='' />
-                      <div className='p-4 bg-black'>
-                        <p className='text-2xl font-bold text-white'>
-                          Price - {item.price}{" "}
-                          {(chainId && NATIVE_CURRENCY[chainId]) ||
-                            NATIVE_CURRENCY[0]}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
+            {/* <h2 className='text-2xl py-2'>Items Sold</h2> */}
+            <PureSoldAssetList items={sold} />
           </Tab.Panel>
 
           <Tab.Panel className='space-y-8'>
             <WalletAddress address={address} loading={false} />
 
             <div>
-              <h1 className='text-sm uppercase font-medium text-gray-500'>
+              <h1 className='text-sm uppercase font-medium text-bc-muted space-y-2'>
                 {TEXT_NETWORK}
               </h1>
               {connected ? (
-                <p className='mt-2 font-medium text-gray-900 overflow-hidden overflow-ellipsis'>
+                <p className='font-medium overflow-hidden overflow-ellipsis'>
                   {network}
                 </p>
               ) : (
-                <div className='mt-2'>
-                  <OnboardingButton />
-                </div>
+                <OnboardingButton />
               )}
             </div>
 
             {connected && <NetworkSwitch />}
 
             {/* <div>
-              <h1 className='text-sm uppercase font-medium text-gray-500'>
+              <h1 className='text-sm uppercase font-medium text-bc-muted'>
                 {TEXT_BALANCE}
               </h1>
               <div className='mt-2 font-medium text-gray-900 overflow-hidden overflow-ellipsis'>
@@ -151,7 +104,7 @@ export const PureAccountPage = ({
             </div> */}
 
             {/* <div>
-              <h1 className='text-sm uppercase font-medium text-gray-500'>
+              <h1 className='text-sm uppercase font-medium text-bc-muted'>
                 {TEXT_ADD_FUNDS}
               </h1>
               {chainId === 43114 ? (
