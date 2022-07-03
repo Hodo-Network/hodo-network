@@ -70,8 +70,8 @@
     "test": "react-scripts test",
     "coverage": "npm run test -- --coverage",
     "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "eslintConfig": {
     "extends": [
@@ -105,9 +105,10 @@
     "@storybook/addon-actions": "^6.3.7",
     "@storybook/addon-essentials": "^6.3.7",
     "@storybook/addon-links": "^6.3.7",
+    "@storybook/builder-webpack5": "^6.5.9",
+    "@storybook/manager-webpack5": "^6.5.9",
     "@storybook/node-logger": "^6.3.7",
     "@storybook/preset-create-react-app": "^4.1.2",
-    "@storybook/react": "^6.3.7",
-    "storybook-tailwind-dark-mode": "^1.0.11"
+    "@storybook/react": "^6.3.7"
   }
 }
