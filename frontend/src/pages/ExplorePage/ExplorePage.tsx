@@ -1,5 +1,5 @@
 import { useState } from "react";
-import clsx from 'clsx';
+import clsx from "clsx";
 import LeafletMap from "../../components/LeafletMap";
 import { NFT } from "../../typings/nft";
 import ContentWrapper from "../../ContentWrapper";

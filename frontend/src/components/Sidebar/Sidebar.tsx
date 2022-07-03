@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import clsx from 'clsx';
+import clsx from "clsx";
 import { navigation } from "../../constants/navigation";
 import Footer from "../Footer";
 import SidebarIconSwap from "../SidebarIconSwap";

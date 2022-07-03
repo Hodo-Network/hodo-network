@@ -1,6 +1,6 @@
 import { Fragment, useState } from "react";
 import { NavLink } from "react-router-dom";
-import clsx from 'clsx';
+import clsx from "clsx";
 import { useWeb3React } from "@web3-react/core";
 import { Web3Provider } from "@ethersproject/providers";
 import { Dialog, Transition } from "@headlessui/react";

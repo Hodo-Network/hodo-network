@@ -1,5 +1,5 @@
 import { Suspense, useState } from 'react';
-import clsx from 'clsx';
+import clsx from "clsx";
 import { RadioGroup } from "@headlessui/react";
 import { ViewGridIcon, ViewListIcon } from '@heroicons/react/outline';
 import { NFT } from "../../typings/nft";

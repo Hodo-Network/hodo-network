@@ -1,5 +1,5 @@
 import { Fragment, useState, useEffect } from "react";
-import clsx from 'clsx';
+import clsx from "clsx";
 import { Listbox, Transition } from "@headlessui/react";
 import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
 

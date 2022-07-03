@@ -1,5 +1,7 @@
-// TODO: no longer used
-// Replaced with clsx
-export default function classNames(...classes: any) {
+import { default as cx } from 'clsx';
+
+export const classNames = (...classes: any) => {
     return classes.filter(Boolean).join(" ");
-}
+};
+
+export default cx;
