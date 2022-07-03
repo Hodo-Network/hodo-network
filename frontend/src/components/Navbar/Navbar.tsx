@@ -91,7 +91,7 @@ export const Navbar = ({ title, hideTitle }: NavbarProps) => {
               aria-label='Global'>
               <div className='flex items-center justify-between py-3 px-4'>
                 <span className='font-bold text-xl'>
-                  Hodo Network
+                  {title}
                 </span>
                 <MenuIconSwap active={true} onClick={() => setMenuOpen(false)} />
               </div>
