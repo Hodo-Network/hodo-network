@@ -10,7 +10,7 @@ import {
   // TEXT_ADD_FUNDS,
 } from "../../constants/text";
 import ContentWrapper from "../../ContentWrapper";
-// import EthBalance from "../EthBalance";
+// import ChainBalance from "../ChainBalance";
 // import TokenList from "../TokenList";
 import UserNftList from "../../components/UserNftList";
 import OnboardingButton from "../../components/OnboardingButton";
@@ -143,7 +143,7 @@ export const PureAccountPage = ({
               <div className='mt-2 font-medium text-gray-900 overflow-hidden overflow-ellipsis'>
                 {library && (
                   <SWRConfig value={{ fetcher: fetcher(library, new Map(ABIs)) }}>
-                    <EthBalance />
+                    <ChainBalance />
                     <TokenList chainId={chainId} />
                   </SWRConfig>
                 )}

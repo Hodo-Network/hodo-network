@@ -4,9 +4,9 @@ import { Web3Provider } from "@ethersproject/providers";
 import { formatEther } from "@ethersproject/units";
 import useSWR from "swr";
 import { NATIVE_CURRENCY } from "../../constants";
-import Loader from "../../base/Loader";
+import { PureChainBalance } from "./ChainBalance";
 
-export const EthBalance = () => {
+const ChainBalance = () => {
   const { account, library, chainId } = useWeb3React<Web3Provider>();
   const { data: balance, mutate } = useSWR(["getBalance", account, "latest"]);
 
@@ -24,13 +24,11 @@ export const EthBalance = () => {
     };
   }, []);
 
-  if (!balance) {
-    return <Loader />;
-  }
   return (
-    <div>
-      {parseFloat(formatEther(balance))}{" "}
-      {(chainId && NATIVE_CURRENCY[chainId]) || NATIVE_CURRENCY[0]}
-    </div>
+    <PureChainBalance
+      balance={parseFloat(formatEther(balance))}
+      currency={(chainId && NATIVE_CURRENCY[chainId]) || NATIVE_CURRENCY[0]} />
   );
 };
+
+export default ChainBalance;
