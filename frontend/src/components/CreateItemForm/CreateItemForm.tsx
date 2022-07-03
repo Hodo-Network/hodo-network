@@ -1,6 +1,6 @@
 import FileUpload from "../FileUpload";
 import ImagePreview from "../ImagePreview";
-import LocationButton from "../LocationButton";
+import LocationButton from "../Buttons/LocationButton";
 
 export interface PureCreateItemFormProps {
   onSubmitForm: (T: any) => void;

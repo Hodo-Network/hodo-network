@@ -9,5 +9,6 @@ export default {
 
 const Template: Story<LeafletMapProps> = (args) => <LeafletMap {...args} />;
 
+// TODO: add stories
 export const Default = Template.bind({});
 Default.args = {};

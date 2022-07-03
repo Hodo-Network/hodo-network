@@ -7,7 +7,7 @@ import {
   TEXT_INSTALL_METAMASK,
   TEXT_CONNECT,
   TEXT_CONNECTED,
-} from "../../constants/text";
+} from "../../../constants/text";
 import { PureOnboardingButton } from "./OnboardingButton";
 
 const OnboardingButton = () => {

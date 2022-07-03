@@ -1,19 +1,23 @@
 import { Web3Provider } from "@ethersproject/providers";
 import { useWeb3React } from "@web3-react/core";
 import { NATIVE_CURRENCY } from "../../constants";
+import { NFT } from "../../typings/nft";
+import CardEmpty from "../CardEmpty";
 
-export interface PureSoldAssetListProps {
-  items: Array<any>;
+export interface IPureSoldAssetListProps {
+  items?: Array<NFT>;
 }
 
 export const PureSoldAssetList = ({
   items,
-}: PureSoldAssetListProps) => {
+}: IPureSoldAssetListProps) => {
   const { chainId } = useWeb3React<Web3Provider>();
 
   return (
-    <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4'>
-      {items.map((item, idx) => (
+    <div className='grid gap-4 md:gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5'>
+      {!items || items.length === 0 ? (
+        <CardEmpty />
+      ) : items.map((item, idx) => (
         <div key={idx} className='border shadow rounded-xl overflow-hidden'>
           <img src={item.image} className='rounded' alt='' />
           <div className='p-4 bg-black'>

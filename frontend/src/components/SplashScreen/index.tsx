@@ -1,5 +1,2 @@
-const SplashScreen = () => {
-  return <div>Loading...</div>;
-};
-
+import { SplashScreen } from './SplashScreen';
 export default SplashScreen;

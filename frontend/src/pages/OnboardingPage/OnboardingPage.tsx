@@ -5,8 +5,8 @@ import {
   AVALANCHE_TESTNET_PARAMS,
 } from "../../constants";
 import { TEXT_ONBOARDING } from "../../constants/text";
-import ChainAddButton from "../../components/ChainAddButton";
-import OnboardingButton from "../../components/OnboardingButton";
+import ChainAddButton from "../../components/Buttons/ChainAddButton";
+import OnboardingButton from "../../components/Buttons/OnboardingButton";
 
 export const OnboardingPage = () => {
   const { active, account } = useWeb3React();

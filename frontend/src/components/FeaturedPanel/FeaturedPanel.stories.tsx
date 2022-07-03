@@ -1,4 +1,5 @@
 import { Story, Meta } from "@storybook/react";
+import { assets } from "../../data/assets";
 
 import { PureFeaturedPanel, PureFeaturedPanelProps } from "./FeaturedPanel";
 
@@ -14,6 +15,14 @@ const Template: Story<PureFeaturedPanelProps> = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   url: "/",
-  title: "Featured NFTs",
+  title: "Featured Assets",
   items: []
 };
+
+export const WithAssets = Template.bind({});
+WithAssets.args = {
+  url: "/",
+  title: "Featured Assets",
+  items: assets.slice(0, 5),
+};
+

@@ -15,6 +15,9 @@ export default {
 
 const Template: Story<RarityBadgeProps> = (args) => <RarityBadge {...args} />;
 
+export const Default = Template.bind({});
+Default.args = {};
+
 export const Common = Template.bind({});
 Common.args = {
   rarity: "common",

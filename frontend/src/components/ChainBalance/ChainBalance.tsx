@@ -1,12 +1,15 @@
-export interface IPureChainBalance {
+export interface IPureChainBalanceProps {
   balance?: number | string;
-  currency?: string;
+  symbol?: string;
 }
 
-export const PureChainBalance = ({ balance = 0, currency = "AVAX" }: IPureChainBalance) => {
+export const PureChainBalance = ({
+  balance = 0,
+  symbol = "AVAX"
+}: IPureChainBalanceProps) => {
   return (
     <div>
-      {balance} {currency}
+      {balance} {symbol}
     </div>
   );
 };

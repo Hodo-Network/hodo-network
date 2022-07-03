@@ -3,7 +3,7 @@ import { Story, Meta } from "@storybook/react";
 import { PureChainAddButton, PureChainAddButtonProps } from "./ChainAddButton";
 
 export default {
-  title: "Components/ChainAddButton",
+  title: "Components/Buttons/ChainAddButton",
   component: PureChainAddButton,
 } as Meta;
 

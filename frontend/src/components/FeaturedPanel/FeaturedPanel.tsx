@@ -2,13 +2,14 @@ import { Suspense } from "react";
 import { Link } from "react-router-dom";
 import { ChevronRightIcon } from "@heroicons/react/solid";
 import { MESSAGE_VIEW_ALL } from "../../constants/messages";
+import { NFT } from "../../typings/nft";
 import AssetGrid from "../AssetGrid";
 import Loader from "../../base/Loader";
 
 export interface PureFeaturedPanelProps {
   url: string;
   title: string;
-  items: any;
+  items: Array<NFT>;
 }
 
 export const PureFeaturedPanel = ({

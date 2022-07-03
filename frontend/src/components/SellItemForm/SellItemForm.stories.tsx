@@ -3,7 +3,7 @@ import { Story, Meta } from "@storybook/react";
 import { PureSellItemForm, PureSellItemFormProps } from "./SellItemForm";
 
 export default {
-  title: "Pages/SellItemForm",
+  title: "Components/SellItemForm",
   component: PureSellItemForm,
 } as Meta;
 

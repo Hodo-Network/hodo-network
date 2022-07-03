@@ -15,7 +15,6 @@ const Template: Story<WalletAddressProps> = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   address: ZERO_ADDRESS,
-  loading: false,
 };
 
 export const Loading = Template.bind({});

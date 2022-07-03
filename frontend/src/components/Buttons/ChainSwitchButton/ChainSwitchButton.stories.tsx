@@ -3,7 +3,7 @@ import { Story, Meta } from "@storybook/react";
 import { PureChainSwitchButton, PureChainSwitchButtonProps } from "./ChainSwitchButton";
 
 export default {
-  title: "Components/ChainSwitchButton",
+  title: "Components/Buttons/ChainSwitchButton",
   component: PureChainSwitchButton,
 } as Meta;
 

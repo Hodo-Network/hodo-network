@@ -20,10 +20,24 @@ Owned.args = {
   owned: true,
 };
 
+export const OwnedAndConnected = Template.bind({});
+OwnedAndConnected.args = {
+  price: "2",
+  owned: true,
+  connected: true,
+};
+
 export const ForSale = Template.bind({});
 ForSale.args = {
   price: "2",
   forSale: true,
+};
+
+export const ForSaleAndConnected = Template.bind({});
+ForSaleAndConnected.args = {
+  price: "2",
+  forSale: true,
+  connected: true,
 };
 
 export const OwnedAndForSale = Template.bind({});
@@ -31,4 +45,12 @@ OwnedAndForSale.args = {
   price: "2",
   owned: true,
   forSale: true,
+};
+
+export const OwnedForSaleAndConnected = Template.bind({});
+OwnedForSaleAndConnected.args = {
+  price: "2",
+  owned: true,
+  forSale: true,
+  connected: true,
 };

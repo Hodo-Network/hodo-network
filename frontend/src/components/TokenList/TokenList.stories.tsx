@@ -1,15 +1,20 @@
 import { Story, Meta } from "@storybook/react";
 
-import { TokenList, TokenListProps } from "./TokenList";
+import { TOKENS_BY_NETWORK } from "../../constants";
+import { PureTokenList, IPureTokenListProps } from "./TokenList";
 
 export default {
   title: "Components/TokenList",
-  component: TokenList,
+  component: PureTokenList,
 } as Meta;
 
-const Template: Story<TokenListProps> = (args) => <TokenList {...args} />;
+const Template: Story<IPureTokenListProps> = (args) => <PureTokenList {...args} />;
 
 export const Default = Template.bind({});
-Default.args = {
-  chainId: 4,
+Default.args = {};
+
+// TODO: fix broken story from nested component
+export const Tokens = Template.bind({});
+Tokens.args = {
+  tokens: TOKENS_BY_NETWORK[43114],
 };

@@ -1,14 +1,16 @@
-import { TOKENS_BY_NETWORK } from "../../constants";
+import { IERC20 } from "../../constants";
 import TokenBalance from "../TokenBalance";
 
-export interface TokenListProps {
-  chainId: number;
+export interface IPureTokenListProps {
+  tokens?: IERC20[];
 }
 
-export const TokenList = ({ chainId }: TokenListProps) => {
+export const PureTokenList = ({ tokens }: IPureTokenListProps) => {
   return (
     <>
-      {TOKENS_BY_NETWORK[chainId]?.map((token) => (
+      {!tokens || tokens.length === 0 ? (
+        <div>No tokens</div>
+      ) : tokens.map((token) => (
         <TokenBalance key={token.address} {...token} />
       ))}
     </>

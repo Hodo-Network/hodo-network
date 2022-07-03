@@ -3,13 +3,15 @@ import { RoadmapSection } from "../../typings/roadmap";
 import { RoadmapItem } from "./RoadmapItem";
 
 export interface RoadmapItemsProps {
-  items: Array<RoadmapSection>;
+  items?: Array<RoadmapSection>;
 }
 
 export function RoadmapItems({ items }: RoadmapItemsProps) {
   return (
     <nav aria-label='Progress'>
-      {items.map((step, stepIdx) => (
+      {!items || items.length === 0 ? (
+        <p>Coming Soon</p>
+      ) : items.map((step, stepIdx) => (
         <div key={step.heading}>
           <h2
             className={clsx('font-semibold text-lg pl-1 mb-4', stepIdx !== 0 && "mt-8")}>

@@ -1,6 +1,7 @@
 import React, { Suspense } from "react";
 import { MemoryRouter } from "react-router";
 import SplashScreen from "../src/components/SplashScreen";
+import { themes } from "../src/data/themes";
 import "../src/styles/tailwind.output.css";
 
 const withSuspense = (Story, context) => {
@@ -23,6 +24,19 @@ export const parameters = {
     matchers: {
       color: /(background|color)$/i,
       date: /Date$/,
+    },
+  },
+};
+
+export const globalTypes = {
+  theme: {
+    name: "Theme",
+    description: "Global theme for components",
+    defaultValue: "light",
+    toolbar: {
+      icon: "mirror",
+      items: themes.sort(),
+      showName: true,
     },
   },
 };

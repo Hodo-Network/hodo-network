@@ -27,7 +27,7 @@ const ChainBalance = () => {
   return (
     <PureChainBalance
       balance={parseFloat(formatEther(balance))}
-      currency={(chainId && NATIVE_CURRENCY[chainId]) || NATIVE_CURRENCY[0]} />
+      symbol={(chainId && NATIVE_CURRENCY[chainId]) || NATIVE_CURRENCY[0]} />
   );
 };
 

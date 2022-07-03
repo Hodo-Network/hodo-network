@@ -6,7 +6,7 @@ import {
 } from "./OnboardingButton";
 
 export default {
-  title: "Components/OnboardingButton",
+  title: "Components/Buttons/OnboardingButton",
   component: PureOnboardingButton,
 } as Meta;
 
@@ -16,3 +16,8 @@ const Template: Story<PureOnboardingButtonProps> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  disabled: true,
+};

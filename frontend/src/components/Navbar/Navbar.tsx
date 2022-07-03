@@ -6,20 +6,22 @@ import { Web3Provider } from "@ethersproject/providers";
 import { Dialog, Transition } from "@headlessui/react";
 import { navigation } from "../../constants/navigation";
 import { NETWORK_LABELS_SHORT } from "../../constants";
+import { themes } from '../../data/themes';
 
+import OnboardingButton from "../Buttons/OnboardingButton";
 import ConnectionBadge from "../ConnectionBadge";
 import DarkToggle from "../DarkToggle";
 import Footer from "../Footer";
 import MenuIconSwap from '../MenuIconSwap';
-import OnboardingButton from "../OnboardingButton";
 import SearchBar from "../SearchBar";
 import ThemeSwitch from "../ThemeSwitch";
 
 export interface NavbarProps {
+  title?: string;
   hideTitle?: boolean;
 }
 
-export const Navbar = ({ hideTitle }: NavbarProps) => {
+export const Navbar = ({ title, hideTitle }: NavbarProps) => {
   const { chainId, account } = useWeb3React<Web3Provider>();
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const enableSearch = false;
@@ -28,11 +30,13 @@ export const Navbar = ({ hideTitle }: NavbarProps) => {
   return (
     <header className='flex-shrink-0 border-b border-neutral flex items-center'>
       <div className='flex-1 flex items-center justify-between py-3 px-4 sm:px-8'>
-        <div className='flex items-center'>
-          <span className={clsx('font-bold text-xl', hideTitle && 'md:hidden')}>
-            Hodo Network
-          </span>
-        </div>
+        {title && !hideTitle && (
+          <div className='flex items-center'>
+            <span className='font-bold text-xl'>
+              {title}
+            </span>
+          </div>
+        )}
 
         {enableSearch && (
           <div className='min-w-0 max-w-2xl hidden md:flex flex-1'>
@@ -40,8 +44,8 @@ export const Navbar = ({ hideTitle }: NavbarProps) => {
           </div>
         )}
 
-        <div className='ml-10 flex-shrink-0 hidden md:flex items-center space-x-2'>
-          <ThemeSwitch />
+        <div className='ml-auto flex-shrink-0 hidden md:flex items-center space-x-2'>
+          <ThemeSwitch themes={themes} />
           <DarkToggle />
 
           {account ? (
@@ -105,7 +109,7 @@ export const Navbar = ({ hideTitle }: NavbarProps) => {
                   ) : (
                     <OnboardingButton />
                   )}
-                  <ThemeSwitch />
+                  <ThemeSwitch themes={themes} />
                 </div>
 
                 <div className="space-y-1">

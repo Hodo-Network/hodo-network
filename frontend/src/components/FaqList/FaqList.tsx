@@ -14,7 +14,7 @@ export const FaqList = ({ items }: FaqListProps) => {
             {item.question}
           </dt>
           <dd className='mt-2 md:mt-0 md:col-span-7 prose-primary'>
-            <p className='text-base'>
+            <p>
               {ReactHtmlParser(item.answer)}
             </p>
           </dd>

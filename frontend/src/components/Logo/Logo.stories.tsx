@@ -1,7 +1,7 @@
 import { Story, Meta } from "@storybook/react";
 
 import { Logo, LogoProps } from "./Logo";
-import { Marker } from "../../assets";
+import { HodoPinFilled } from "../../assets";
 
 export default {
   title: "Components/Logo",
@@ -12,6 +12,6 @@ const Template: Story<LogoProps> = (args) => <Logo {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  img: Marker,
+  img: HodoPinFilled,
   alt: "Logo",
 };

@@ -4,12 +4,6 @@ export enum TransferType {
     TRANSFER = 2
 }
 
-export enum NFTRarity {
-    RARE = 'rare',
-    EPIC = 'epic',
-    COMMON = 'common',
-}
-
 export type Attribute = {
     display_type?: string;
     trait_type: string;

@@ -11,6 +11,14 @@ export default {
 const Template: Story<RoadmapItemsProps> = (args) => <RoadmapItems {...args} />;
 
 export const Default = Template.bind({});
-Default.args = {
+Default.args = {};
+
+export const Empty = Template.bind({});
+Empty.args = {
+  items: [],
+};
+
+export const WithItems = Template.bind({});
+WithItems.args = {
   items: roadmap,
 };

@@ -11,6 +11,10 @@ const Template: Story<NotificationProps> = (args) => <Notification {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  hidden: false,
   message: "Notification",
+};
+
+export const Hidden = Template.bind({});
+Hidden.args = {
+  hidden: true,
 };

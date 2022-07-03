@@ -43,12 +43,13 @@ export default function App() {
       <div className='flex flex-row h-screen overflow-hidden'>
         <Router>
           <Sidebar
+            title="Hodo Network"
             toggle={() => setMiniSidebar(!miniSidebar)}
             mini={miniSidebar}
           />
 
           <div className='flex flex-col flex-1 min-h-0 overflow-hidden'>
-            <Navbar hideTitle={!miniSidebar} />
+            <Navbar title="Hodo Network" hideTitle={!miniSidebar} />
 
             <Routes>
               {routes.map(({ path, Component }, key) => (

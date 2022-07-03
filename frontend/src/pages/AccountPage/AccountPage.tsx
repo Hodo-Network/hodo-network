@@ -13,7 +13,7 @@ import ContentWrapper from "../../ContentWrapper";
 // import ChainBalance from "../ChainBalance";
 // import TokenList from "../TokenList";
 import UserNftList from "../../components/UserNftList";
-import OnboardingButton from "../../components/OnboardingButton";
+import OnboardingButton from "../../components/Buttons/OnboardingButton";
 import WalletAddress from "../../components/WalletAddress";
 import NetworkSwitch from "../../components/NetworkSwitch";
 import Loader from "../../base/Loader";
@@ -143,7 +143,7 @@ export const PureAccountPage = ({
               <div className='mt-2 font-medium text-gray-900 overflow-hidden overflow-ellipsis'>
                 {library && (
                   <SWRConfig value={{ fetcher: fetcher(library, new Map(ABIs)) }}>
-                    <ChainBalance />
+                    <ChainBalance balance={balance} symbol={symbol} />
                     <TokenList chainId={chainId} />
                   </SWRConfig>
                 )}

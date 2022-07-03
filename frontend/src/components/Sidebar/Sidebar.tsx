@@ -5,11 +5,12 @@ import Footer from "../Footer";
 import SidebarIconSwap from "../SidebarIconSwap";
 
 export interface SidebarProps {
-  mini: boolean;
+  title?: string;
+  mini?: boolean;
   toggle: () => void;
 }
 
-export const Sidebar = ({ mini, toggle }: SidebarProps) => {
+export const Sidebar = ({ title, mini = false, toggle }: SidebarProps) => {
   return (
     <div
       className={clsx('hidden md:flex flex-col border-r border-neutral bg-base-200', mini ? "w-20" : "w-80")}>
@@ -18,10 +19,12 @@ export const Sidebar = ({ mini, toggle }: SidebarProps) => {
           className={clsx('flex items-center h-full p-3', mini && 'justify-center')}>
           <SidebarIconSwap onClick={toggle} active={mini} />
 
-          <span
-            className={clsx('font-bold text-xl', mini && 'sr-only')}>
-            Hodo Network
-          </span>
+          {title && (
+            <span
+              className={clsx('font-bold text-xl', mini && 'sr-only')}>
+              {title}
+            </span>
+          )}
         </div>
       </div>
 

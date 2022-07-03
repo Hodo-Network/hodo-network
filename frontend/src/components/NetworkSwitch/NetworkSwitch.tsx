@@ -4,7 +4,7 @@ import {
   AVALANCHE_TESTNET_PARAMS,
   ChainId,
 } from "../../constants";
-import ChainAddButton from "../ChainAddButton";
+import ChainAddButton from "../Buttons/ChainAddButton";
 
 export interface PureNetworkSwitchProps {
   chainId?: number;

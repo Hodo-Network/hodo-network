@@ -10,8 +10,11 @@ export default {
 const Template: Story<SidebarProps> = (args) => <Sidebar {...args} />;
 
 export const Default = Template.bind({});
-Default.args = {
-  mini: false,
+Default.args = {};
+
+export const Title = Template.bind({});
+Title.args = {
+  title: 'Site Name',
 };
 
 export const Mini = Template.bind({});
