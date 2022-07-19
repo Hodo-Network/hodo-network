@@ -55,7 +55,13 @@ export const Button = <C extends ElementType = "button">({ as, active, disabled:
 
   return (
     <Component
-      className={clsx('btn', sizes[size], color && colors[color], variant && variants[variant], shape && shapes[shape], activeCls, loadingCls, disabledCls, animation, util)}
+      className={clsx('btn',
+        sizes[size],
+        color && colors[color],
+        variant && variants[variant],
+        shape && shapes[shape],
+        activeCls, loadingCls, disabledCls, animation, util
+      )}
       disabled={disabled}
       {...rest}
     >
