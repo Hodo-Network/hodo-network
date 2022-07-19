@@ -1,12 +1,12 @@
 import clsx from "clsx";
-import useTheme from "../../hooks/useTheme";
+import { useTheme } from "../../state/ThemeContext";
 
 export interface IThemeSwitchProps {
   themes: Array<string>;
 }
 
 export const ThemeSwitch = ({ themes }: IThemeSwitchProps) => {
-  const { theme, switchTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
   const options = themes.sort();
 
   // TODO: need a way to update when theme is changed in some other component
@@ -17,7 +17,7 @@ export const ThemeSwitch = ({ themes }: IThemeSwitchProps) => {
         {/* <div className="bg-primary text-primary-content capitalize px-4 py-3">{theme}</div> */}
         <ul tabIndex={0} className="h-96 overflow-y-scroll">
           {options.map(item => (
-            <li key={item}><button className={clsx('capitalize', item === theme && 'bg-primary text-primary-content')} onClick={() => switchTheme(item)}>{item}</button></li>
+            <li key={item}><button className={clsx('capitalize', item === theme && 'bg-primary text-primary-content')} onClick={() => setTheme(item)}>{item}</button></li>
           ))}
         </ul>
       </div>

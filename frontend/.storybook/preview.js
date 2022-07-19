@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import { MemoryRouter } from "react-router";
 import SplashScreen from "../src/components/SplashScreen";
-import { themes } from "../src/data/themes";
+import { themes } from "../src/constants/themes";
 import "../src/styles/tailwind.output.css";
 
 const withSuspense = (Story, context) => {

@@ -3,11 +3,6 @@ import { useState, useEffect } from "react";
 export default function useDark() {
   const [dark, setDark] = useState<boolean>(false);
 
-  // Whenever the user explicitly chooses to respect the OS preference
-  //   const removeTheme = () => {
-  //     localStorage.removeItem("dark");
-  //   };
-
   const toggleDark = () => {
     document.documentElement.classList.toggle("dark");
     setDark(!dark);

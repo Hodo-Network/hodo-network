@@ -5,7 +5,7 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-// import { ThemeProvider } from "styled-components";
+import { ThemeProvider } from "./state/ThemeContext";
 import { useWeb3React } from "@web3-react/core";
 import { Web3Provider } from "@ethersproject/providers";
 import { Provider } from "react-redux";
@@ -38,33 +38,32 @@ export default function App() {
 
   return (
     <Provider store={store}>
-      {/* @ts-ignore */}
-      {/* <ThemeProvider theme={preset}> */}
-      <div className='flex flex-row h-screen overflow-hidden'>
-        <Router>
-          <Sidebar
-            title="Hodo Network"
-            toggle={() => setMiniSidebar(!miniSidebar)}
-            mini={miniSidebar}
-          />
+      <ThemeProvider>
+        <div className='flex flex-row h-screen overflow-hidden'>
+          <Router>
+            <Sidebar
+              title="Hodo Network"
+              toggle={() => setMiniSidebar(!miniSidebar)}
+              mini={miniSidebar}
+            />
 
-          <div className='flex flex-col flex-1 min-h-0 overflow-hidden'>
-            <Navbar title="Hodo Network" hideTitle={!miniSidebar} />
+            <div className='flex flex-col flex-1 min-h-0 overflow-hidden'>
+              <Navbar title="Hodo Network" hideTitle={!miniSidebar} />
 
-            <Routes>
-              {routes.map(({ path, Component }, key) => (
-                <Route
-                  path={path}
-                  element={<Component />}
-                  key={key}
-                />
-              ))}
-              <Route path="*" element={<Navigate to={paths.ROUTE_DEFAULT} />} />
-            </Routes>
-          </div>
-        </Router>
-      </div>
-      {/* </ThemeProvider> */}
+              <Routes>
+                {routes.map(({ path, Component }, key) => (
+                  <Route
+                    path={path}
+                    element={<Component />}
+                    key={key}
+                  />
+                ))}
+                <Route path="*" element={<Navigate to={paths.ROUTE_DEFAULT} />} />
+              </Routes>
+            </div>
+          </Router>
+        </div>
+      </ThemeProvider>
     </Provider>
   );
 }

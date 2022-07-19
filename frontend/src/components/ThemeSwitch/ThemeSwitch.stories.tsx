@@ -1,7 +1,7 @@
 import { Story, Meta } from "@storybook/react";
 
 import { IThemeSwitchProps, ThemeSwitch } from "./ThemeSwitch";
-import { themes } from '../../data/themes';
+import { themes } from '../../constants/themes';
 
 export default {
   title: "Components/ThemeSwitch",

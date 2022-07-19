@@ -6,7 +6,7 @@ import { Web3Provider } from "@ethersproject/providers";
 import { Dialog, Transition } from "@headlessui/react";
 import { navigation } from "../../constants/navigation";
 import { NETWORK_LABELS_SHORT } from "../../constants";
-import { themes } from '../../data/themes';
+import { themes } from '../../constants/themes';
 
 import OnboardingButton from "../Buttons/OnboardingButton";
 import ConnectionBadge from "../ConnectionBadge";

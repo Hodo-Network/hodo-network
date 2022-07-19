@@ -1,4 +1,6 @@
-export const themes: Array<string> = [
+export const defaultTheme: string = 'dark';
+
+export const daisyThemes: Array<string> = [
   'light',
   'dark',
   'cupcake',
@@ -29,3 +31,5 @@ export const themes: Array<string> = [
   'coffee',
   'winter'
 ];
+
+export const themes: Array<string> = [defaultTheme, ...daisyThemes];
