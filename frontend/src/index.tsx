@@ -5,6 +5,11 @@ import { NetworkContextName } from "./constants";
 import getLibrary from "./utils/getLibrary";
 import App from "./App";
 
+if (process.env.NODE_ENV === 'development') {
+  const { worker } = require('./mocks/browser');
+  worker.start();
+}
+
 const container = document.getElementById('root') as HTMLElement;
 const root = createRoot(container);
 const Web3ProviderNetwork = createWeb3ReactRoot(NetworkContextName);

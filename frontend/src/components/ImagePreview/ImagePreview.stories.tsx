@@ -14,5 +14,5 @@ Default.args = {};
 
 export const WithSrc = Template.bind({});
 WithSrc.args = {
-  src: '/assets/images/forest.jpeg'
+  src: './assets/images/forest.jpeg'
 };

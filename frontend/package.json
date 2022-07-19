@@ -41,6 +41,7 @@
     "ethers": "^5.1.0",
     "ipfs-http-client": "^57.0.3",
     "leaflet": "^1.7.1",
+    "msw": "^0.43.1",
     "postcss": "^8.2.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
