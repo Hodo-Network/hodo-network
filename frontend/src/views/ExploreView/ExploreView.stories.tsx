@@ -6,6 +6,9 @@ import { PureExploreView, PureExploreViewProps } from "./ExploreView";
 export default {
   title: "Views/ExploreView",
   component: PureExploreView,
+  parameters: {
+    layout: 'fullscreen',
+  },
 } as Meta;
 
 const Template: Story<PureExploreViewProps> = (args) => (

@@ -6,6 +6,9 @@ import { PureOnboardingView, IPureOnboardingViewProps } from "./OnboardingView";
 export default {
   title: "Views/OnboardingView",
   component: PureOnboardingView,
+  parameters: {
+    layout: 'fullscreen',
+  },
 } as Meta;
 
 const Template: Story<IPureOnboardingViewProps> = (args) => <PureOnboardingView {...args} />;

@@ -32,4 +32,4 @@ export const daisyThemes: Array<string> = [
   'winter'
 ];
 
-export const themes: Array<string> = [defaultTheme, ...daisyThemes];
+export const themes: Array<string> = [...daisyThemes];

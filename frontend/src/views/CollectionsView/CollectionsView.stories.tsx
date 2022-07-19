@@ -8,6 +8,9 @@ import {
 export default {
   title: "Views/CollectionsView",
   component: PureCollectionsView,
+  parameters: {
+    layout: 'fullscreen',
+  },
 } as Meta;
 
 const Template: Story<PureCollectionsViewProps> = (args) => (

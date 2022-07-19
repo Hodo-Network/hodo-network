@@ -7,6 +7,9 @@ import { collections } from "../../data/collections";
 export default {
   title: "Views/AssetView",
   component: PureAssetView,
+  parameters: {
+    layout: 'fullscreen',
+  },
 } as Meta;
 
 const Template: Story<PureAssetViewProps> = (args) => (

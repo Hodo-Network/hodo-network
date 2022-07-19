@@ -6,6 +6,9 @@ import { PureCollectionView, PureCollectionViewProps } from "./CollectionView";
 export default {
   title: "Views/CollectionView",
   component: PureCollectionView,
+  parameters: {
+    layout: 'fullscreen',
+  },
 } as Meta;
 
 const Template: Story<PureCollectionViewProps> = (args) => (

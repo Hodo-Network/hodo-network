@@ -11,6 +11,9 @@ import {
 export default {
   title: "Views/MarketplaceView",
   component: PureMarketplaceView,
+  parameters: {
+    layout: 'fullscreen',
+  },
 } as Meta;
 
 const Template: Story<PureMarketplaceViewProps> = (args) => (

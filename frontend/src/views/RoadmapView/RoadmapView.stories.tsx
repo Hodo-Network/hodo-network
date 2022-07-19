@@ -5,6 +5,9 @@ import { RoadmapView } from "./RoadmapView";
 export default {
   title: "Views/RoadmapView",
   component: RoadmapView,
+  parameters: {
+    layout: 'fullscreen',
+  },
 } as Meta;
 
 const Template: Story = (args) => <RoadmapView {...args} />;

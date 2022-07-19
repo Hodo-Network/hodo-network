@@ -7,6 +7,9 @@ import { PureAccountView, PureAccountViewProps } from "./AccountView";
 export default {
   title: "Views/AccountView",
   component: PureAccountView,
+  parameters: {
+    layout: 'fullscreen',
+  },
 } as Meta;
 
 const Template: Story<PureAccountViewProps> = (args) => (
