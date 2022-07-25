@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 // import { useMemo } from "react";
 import { useWeb3React } from "@web3-react/core";
 import { Web3Provider } from "@ethersproject/providers";
@@ -15,14 +15,15 @@ import {
   NETWORK_LABELS,
 } from "../../constants";
 import { PureAccountView } from "./AccountView";
+import { NFT } from "../../typings/nft";
 
 // This is an error code that indicates that the user canceled a transaction
 // const ERROR_CODE_TX_REJECTED_BY_USER = 4001;
 
 const AccountView = () => {
   const { chainId, account, library } = useWeb3React<Web3Provider>();
-  const [items, setItems] = useState<Array<any>>([]);
-  const [sold, setSold] = useState<Array<any>>([]);
+  const [items, setItems] = useState<NFT[]>([]);
+  const soldItems = useMemo((): NFT[] => items.filter(item => item.sold), [items]);
 
   useEffect(() => {
     loadNFTs();
@@ -64,9 +65,6 @@ const AccountView = () => {
       })
     );
 
-    /* create a filtered array of tempItems that have been sold */
-    const soldItems = tempItems.filter((item: any) => item.sold);
-    setSold(soldItems);
     setItems(tempItems);
   };
 
@@ -93,7 +91,7 @@ const AccountView = () => {
       chainId={chainId}
       connected={!!chainId}
       owned={items}
-      sold={sold}
+      sold={soldItems}
     />
   );
 };

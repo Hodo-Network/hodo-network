@@ -16,7 +16,7 @@ import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import routes from "./routes";
 
-import "./styles/tailwind.output.css";
+import "./styles/tailwind.css";
 
 export default function App() {
   const { connector } = useWeb3React<Web3Provider>();
