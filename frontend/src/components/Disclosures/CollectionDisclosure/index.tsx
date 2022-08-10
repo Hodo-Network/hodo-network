@@ -1,2 +1,2 @@
-import { CollectionDisclosure } from "./CollectionDisclosure";
+import { CollectionDisclosure } from './CollectionDisclosure';
 export default CollectionDisclosure;

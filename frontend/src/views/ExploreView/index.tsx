@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
-import { getCollection } from "../../state/asyncActions/collection";
-import { useAppDispatch, useAppSelector } from "../../state/hooks";
-import ContractAddresses from "../../contracts/contract-address.json";
-import { NFT } from "../../typings/nft";
+import { useEffect, useState } from 'react';
+import ContractAddresses from '../../contracts/contract-address.json';
+import { getCollection } from '../../state/asyncActions/collection';
+import { useAppDispatch, useAppSelector } from '../../state/hooks';
+import { NFT } from '../../typings/nft';
 
-import { PureExploreView } from "./ExploreView";
-import convertIpfsUrl from "../../utils/convertIpfsUrl";
+import convertIpfsUrl from '../../utils/convertIpfsUrl';
+import { PureExploreView } from './ExploreView';
 
 const ExploreView = () => {
   const dispatch = useAppDispatch();

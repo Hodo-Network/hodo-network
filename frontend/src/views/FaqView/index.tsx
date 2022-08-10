@@ -1,2 +1,2 @@
-import { FaqView } from "./FaqView";
+import { FaqView } from './FaqView';
 export default FaqView;

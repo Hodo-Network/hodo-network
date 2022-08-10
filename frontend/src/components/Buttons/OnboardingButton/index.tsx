@@ -1,14 +1,14 @@
-import { useEffect, useState, useRef } from "react";
-import MetaMaskOnboarding from "@metamask/onboarding";
+import MetaMaskOnboarding from '@metamask/onboarding';
+import { useEffect, useRef, useState } from 'react';
 // import detectEthereumProvider from "@metamask/detect-provider";
 // import { useWeb3React } from "@web3-react/core";
 // import { Web3Provider } from "@ethersproject/providers";
 import {
-  TEXT_INSTALL_METAMASK,
   TEXT_CONNECT,
   TEXT_CONNECTED,
-} from "../../../constants/text";
-import { PureOnboardingButton } from "./OnboardingButton";
+  TEXT_INSTALL_METAMASK,
+} from '../../../constants/text';
+import { PureOnboardingButton } from './OnboardingButton';
 
 const OnboardingButton = () => {
   const [label, setLabel] = useState(TEXT_INSTALL_METAMASK);
@@ -52,13 +52,13 @@ const OnboardingButton = () => {
       if (MetaMaskOnboarding.isMetaMaskInstalled()) {
         // @ts-ignore
         await ethereum
-          .request({ method: "eth_requestAccounts" })
+          .request({ method: 'eth_requestAccounts' })
           .then(handleNewAccounts);
         // @ts-ignore
-        ethereum.on("accountsChanged", handleNewAccounts);
+        ethereum.on('accountsChanged', handleNewAccounts);
         return () => {
           // @ts-ignore
-          ethereum?.off("accountsChanged", handleNewAccounts);
+          ethereum?.off('accountsChanged', handleNewAccounts);
         };
       } else {
         // @ts-ignore

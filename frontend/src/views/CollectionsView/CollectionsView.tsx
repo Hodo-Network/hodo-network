@@ -1,6 +1,6 @@
-import { Collection } from "../../typings/nft";
-import ContentWrapper from "../../ContentWrapper";
-import CollectionGrid from "../../components/CollectionGrid";
+import CollectionGrid from '../../components/CollectionGrid';
+import ContentWrapper from '../../ContentWrapper';
+import { Collection } from '../../typings/nft';
 
 export interface PureCollectionsViewProps {
   items: Array<Collection>;

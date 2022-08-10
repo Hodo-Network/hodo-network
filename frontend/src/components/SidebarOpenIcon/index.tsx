@@ -1,2 +1,2 @@
-import { SidebarOpenIcon } from "./SidebarOpenIcon";
+import { SidebarOpenIcon } from './SidebarOpenIcon';
 export default SidebarOpenIcon;

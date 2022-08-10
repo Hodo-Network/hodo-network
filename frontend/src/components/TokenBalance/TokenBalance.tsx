@@ -5,7 +5,7 @@ export interface IPureTokenBalanceProps {
 
 export const PureTokenBalance = ({
   balance = 0,
-  symbol = "AVAX",
+  symbol = 'AVAX',
 }: IPureTokenBalanceProps) => {
   return (
     <div>

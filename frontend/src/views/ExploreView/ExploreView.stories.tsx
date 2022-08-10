@@ -1,10 +1,10 @@
-import { Story, Meta } from "@storybook/react";
+import { Meta, Story } from '@storybook/react';
 
-import { assets } from "../../data/assets";
-import { PureExploreView, PureExploreViewProps } from "./ExploreView";
+import { assets } from '../../data/assets';
+import { PureExploreView, PureExploreViewProps } from './ExploreView';
 
 export default {
-  title: "Views/ExploreView",
+  title: 'Views/ExploreView',
   component: PureExploreView,
   parameters: {
     layout: 'fullscreen',

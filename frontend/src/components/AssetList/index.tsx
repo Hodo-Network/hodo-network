@@ -1,2 +1,2 @@
-import { AssetList } from "./AssetList";
+import { AssetList } from './AssetList';
 export default AssetList;

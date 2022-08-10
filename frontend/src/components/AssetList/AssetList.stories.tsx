@@ -1,16 +1,14 @@
-import { Story, Meta } from "@storybook/react";
+import { Meta, Story } from '@storybook/react';
 
-import { AssetList, AssetListProps } from "./AssetList";
-import { assets } from "../../data/assets";
+import { assets } from '../../data/assets';
+import { AssetList, AssetListProps } from './AssetList';
 
 export default {
-  title: "Components/AssetList",
+  title: 'Components/AssetList',
   component: AssetList,
 } as Meta;
 
-const Template: Story<AssetListProps> = (args) => (
-  <AssetList {...args} />
-);
+const Template: Story<AssetListProps> = (args) => <AssetList {...args} />;
 
 export const Empty = Template.bind({});
 Empty.args = {

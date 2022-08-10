@@ -1,9 +1,9 @@
-import { Story, Meta } from "@storybook/react";
+import { Meta, Story } from '@storybook/react';
 
-import { Button, ButtonProps } from "./Button";
+import { Button, ButtonProps } from './Button';
 
 export default {
-  title: "Base/Button",
+  title: 'Base/Button',
   component: Button,
 } as Meta;
 
@@ -13,102 +13,102 @@ const Template: Story<ButtonProps> = (args) => (
 
 export const Primary = Template.bind({});
 Primary.args = {
-  color: "primary",
+  color: 'primary',
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-  color: "secondary",
+  color: 'secondary',
 };
 
 export const Accent = Template.bind({});
 Accent.args = {
-  color: "accent",
+  color: 'accent',
 };
 
 export const Info = Template.bind({});
 Info.args = {
-  color: "info",
+  color: 'info',
 };
 
 export const Success = Template.bind({});
 Success.args = {
-  color: "success",
+  color: 'success',
 };
 
 export const Warning = Template.bind({});
 Warning.args = {
-  color: "warning",
+  color: 'warning',
 };
 
 export const Error = Template.bind({});
 Error.args = {
-  color: "error",
+  color: 'error',
 };
 
 export const Large = Template.bind({});
 Large.args = {
-  size: "lg",
+  size: 'lg',
 };
 
 export const Medium = Template.bind({});
 Medium.args = {
-  size: "md",
+  size: 'md',
 };
 
 export const Small = Template.bind({});
 Small.args = {
-  size: "sm",
+  size: 'sm',
 };
 
 export const XSmall = Template.bind({});
 XSmall.args = {
-  size: "xs",
+  size: 'xs',
 };
 
 export const Wide = Template.bind({});
 Wide.args = {
-  shape: "wide",
+  shape: 'wide',
 };
 
 export const Block = Template.bind({});
 Block.args = {
-  shape: "block",
+  shape: 'block',
 };
 
 export const Circle = Template.bind({});
 Circle.args = {
-  shape: "circle",
+  shape: 'circle',
 };
 
 export const Square = Template.bind({});
 Square.args = {
-  shape: "square",
+  shape: 'square',
 };
 
 export const Ghost = Template.bind({});
 Ghost.args = {
-  variant: "ghost",
+  variant: 'ghost',
 };
 
 export const Link = Template.bind({});
 Link.args = {
-  variant: "link",
+  variant: 'link',
 };
 
 export const Outline = Template.bind({});
 Outline.args = {
-  variant: "outline",
+  variant: 'outline',
 };
 
 export const Glass = Template.bind({});
 Glass.args = {
-  variant: "glass",
+  variant: 'glass',
 };
 
 export const NoAnimation = Template.bind({});
 NoAnimation.args = {
-  animation: "no-animation",
+  animation: 'no-animation',
 };
 
 export const Loading = Template.bind({});

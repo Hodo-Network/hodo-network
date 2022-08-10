@@ -1,5 +1,5 @@
-import clsx from "clsx";
-import { MenuIcon, XIcon } from "@heroicons/react/outline";
+import { MenuIcon, XIcon } from '@heroicons/react/outline';
+import clsx from 'clsx';
 
 export interface IMenuIconSwap {
   active?: boolean;
@@ -8,7 +8,13 @@ export interface IMenuIconSwap {
 
 export const MenuIconSwap = ({ active = false, onClick }: IMenuIconSwap) => {
   return (
-    <button className={clsx("btn btn-square swap swap-rotate", active && 'swap-active')} onClick={onClick} aria-label='Toggle menu'>
+    <button
+      className={clsx(
+        'btn btn-square swap swap-rotate',
+        active && 'swap-active'
+      )}
+      onClick={onClick}
+      aria-label='Toggle menu'>
       {/* hamburger icon */}
       {/* <span className='sr-only'>Open main menu</span> */}
       <MenuIcon className='swap-off fill-current h-6 w-6' aria-hidden='true' />

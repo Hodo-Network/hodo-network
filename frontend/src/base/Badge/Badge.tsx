@@ -1,9 +1,17 @@
-import clsx from "clsx";
+import clsx from 'clsx';
 
 export interface PureBadgeProps {
-  size?: "xs" | "sm" | "md" | "lg";
-  color?: "primary" | "secondary" | "accent" | "ghost" | "info" | "success" | "warning" | "error";
-  variant?: "outline";
+  size?: 'xs' | 'sm' | 'md' | 'lg';
+  color?:
+    | 'primary'
+    | 'secondary'
+    | 'accent'
+    | 'ghost'
+    | 'info'
+    | 'success'
+    | 'warning'
+    | 'error';
+  variant?: 'outline';
   label?: string;
 }
 
@@ -14,14 +22,14 @@ export const PureBadge = ({
   label,
   ...props
 }: PureBadgeProps) => {
-  const sizes: { [key: string]: string; } = {
-    xs: "badge-xs",
-    sm: "badge-sm",
-    md: "badge-md",
-    lg: "badge-lg",
+  const sizes: { [key: string]: string } = {
+    xs: 'badge-xs',
+    sm: 'badge-sm',
+    md: 'badge-md',
+    lg: 'badge-lg',
   };
 
-  const colors: { [key: string]: string; } = {
+  const colors: { [key: string]: string } = {
     primary: 'badge-primary',
     secondary: 'badge-secondary',
     accent: 'badge-accent',
@@ -32,14 +40,14 @@ export const PureBadge = ({
     error: 'badge-error',
   };
 
-  const variants: { [key: string]: string; } = {
-    outline: 'badge-outline'
+  const variants: { [key: string]: string } = {
+    outline: 'badge-outline',
   };
 
   return (
     <span
       className={clsx(
-        "badge",
+        'badge',
         color && colors[color],
         size && sizes[size],
         variant && variants[variant]

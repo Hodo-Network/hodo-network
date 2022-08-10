@@ -1,13 +1,18 @@
-import { Story, Meta } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
 
-import { ActivityDisclosure, IActivityDisclosureProps } from './ActivityDisclosure';
+import {
+  ActivityDisclosure,
+  IActivityDisclosureProps,
+} from './ActivityDisclosure';
 
 export default {
   title: 'Components/Disclosures/ActivityDisclosure',
   component: ActivityDisclosure,
 } as Meta;
 
-const Template: Story<IActivityDisclosureProps> = (args) => <ActivityDisclosure {...args} />;
+const Template: Story<IActivityDisclosureProps> = (args) => (
+  <ActivityDisclosure {...args} />
+);
 
 export const Default = Template.bind({});
 Default.args = {

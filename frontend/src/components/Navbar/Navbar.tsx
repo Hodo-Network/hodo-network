@@ -1,20 +1,20 @@
-import { Fragment, useState } from "react";
-import { NavLink } from "react-router-dom";
-import clsx from "clsx";
-import { useWeb3React } from "@web3-react/core";
-import { Web3Provider } from "@ethersproject/providers";
-import { Dialog, Transition } from "@headlessui/react";
-import { navigation } from "../../constants/navigation";
-import { NETWORK_LABELS_SHORT } from "../../constants";
+import { Web3Provider } from '@ethersproject/providers';
+import { Dialog, Transition } from '@headlessui/react';
+import { useWeb3React } from '@web3-react/core';
+import clsx from 'clsx';
+import { Fragment, useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import { NETWORK_LABELS_SHORT } from '../../constants';
+import { navigation } from '../../constants/navigation';
 import { themes } from '../../constants/themes';
 
-import OnboardingButton from "../Buttons/OnboardingButton";
-import ConnectionBadge from "../ConnectionBadge";
-import DarkToggle from "../DarkToggle";
-import Footer from "../Footer";
+import OnboardingButton from '../Buttons/OnboardingButton';
+import ConnectionBadge from '../ConnectionBadge';
+import DarkToggle from '../DarkToggle';
+import Footer from '../Footer';
 import MenuIconSwap from '../MenuIconSwap';
-import SearchBar from "../SearchBar";
-import ThemeSwitch from "../ThemeSwitch";
+import SearchBar from '../SearchBar';
+import ThemeSwitch from '../ThemeSwitch';
 
 export interface NavbarProps {
   title?: string;
@@ -25,16 +25,14 @@ export const Navbar = ({ title, hideTitle }: NavbarProps) => {
   const { chainId, account } = useWeb3React<Web3Provider>();
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const enableSearch = false;
-  const network = (chainId && NETWORK_LABELS_SHORT[chainId]) || "";
+  const network = (chainId && NETWORK_LABELS_SHORT[chainId]) || '';
 
   return (
     <header className='flex-shrink-0 border-b border-neutral flex items-center'>
       <div className='flex-1 flex items-center justify-between py-3 px-4 sm:px-8'>
         {title && !hideTitle && (
           <div className='flex items-center'>
-            <span className='font-bold text-xl'>
-              {title}
-            </span>
+            <span className='font-bold text-xl'>{title}</span>
           </div>
         )}
 
@@ -90,10 +88,11 @@ export const Navbar = ({ title, hideTitle }: NavbarProps) => {
               className='fixed z-50 inset-0 h-full w-full sm:inset-y-0 sm:left-auto sm:right-0 sm:max-w-sm sm:w-full sm:shadow-lg bg-base-100 flex flex-col'
               aria-label='Global'>
               <div className='flex items-center justify-between py-3 px-4'>
-                <span className='font-bold text-xl'>
-                  {title}
-                </span>
-                <MenuIconSwap active={true} onClick={() => setMenuOpen(false)} />
+                <span className='font-bold text-xl'>{title}</span>
+                <MenuIconSwap
+                  active={true}
+                  onClick={() => setMenuOpen(false)}
+                />
               </div>
 
               {enableSearch && (
@@ -112,13 +111,18 @@ export const Navbar = ({ title, hideTitle }: NavbarProps) => {
                   <ThemeSwitch themes={themes} />
                 </div>
 
-                <div className="space-y-1">
+                <div className='space-y-1'>
                   {navigation.map((item) => (
                     <NavLink
                       key={item.name}
                       to={item.href}
                       // exact={item.exact}
-                      className={(navData) => clsx('flex items-center rounded-md px-4 py-3 hover:bg-neutral hover:text-neutral-content', navData.isActive && 'bg-neutral text-neutral-content')}
+                      className={(navData) =>
+                        clsx(
+                          'flex items-center rounded-md px-4 py-3 hover:bg-neutral hover:text-neutral-content',
+                          navData.isActive && 'bg-neutral text-neutral-content'
+                        )
+                      }
                       onClick={() => setMenuOpen(false)}>
                       <item.icon className='h-6 w-6' aria-hidden='true' />
                       <span className='ml-3'>{item.name}</span>

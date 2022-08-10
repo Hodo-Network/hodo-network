@@ -1,3 +1,3 @@
-import { PureCollectionCard } from "./CollectionCard";
+import { PureCollectionCard } from './CollectionCard';
 
 export default PureCollectionCard;

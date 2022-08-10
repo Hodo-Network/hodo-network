@@ -1,7 +1,7 @@
-import { Fragment, useState, useEffect } from "react";
-import clsx from "clsx";
-import { Listbox, Transition } from "@headlessui/react";
-import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
+import { Listbox, Transition } from '@headlessui/react';
+import { CheckIcon, SelectorIcon } from '@heroicons/react/solid';
+import clsx from 'clsx';
+import { Fragment, useEffect, useState } from 'react';
 
 export interface SelectBoxProps {
   label?: string;
@@ -33,10 +33,7 @@ export default function SelectBox({ label, items, onChange }: SelectBoxProps) {
                 {selected.name || selected}
               </span>
               <span className='absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none'>
-                <SelectorIcon
-                  className='h-5 w-5'
-                  aria-hidden='true'
-                />
+                <SelectorIcon className='h-5 w-5' aria-hidden='true' />
               </span>
             </Listbox.Button>
 
@@ -52,25 +49,29 @@ export default function SelectBox({ label, items, onChange }: SelectBoxProps) {
                 {items.map((item, index) => (
                   <Listbox.Option
                     key={index}
-                    className={({ active }) => clsx(
-                      active && "text-white bg-primary",
-                      "cursor-default select-none relative py-2 pl-3 pr-9"
-                    )}
+                    className={({ active }) =>
+                      clsx(
+                        active && 'text-white bg-primary',
+                        'cursor-default select-none relative py-2 pl-3 pr-9'
+                      )
+                    }
                     value={item}>
                     {({ selected, active }) => (
                       <>
-                        <span className={clsx(
-                          selected ? "font-semibold" : "font-normal",
-                          "block truncate capitalize"
-                        )}>
+                        <span
+                          className={clsx(
+                            selected ? 'font-semibold' : 'font-normal',
+                            'block truncate capitalize'
+                          )}>
                           {item.name || item}
                         </span>
 
                         {selected && (
-                          <span className={clsx(
-                            "absolute inset-y-0 right-0 flex items-center pr-4",
-                            active ? "text-white" : "text-primary"
-                          )}>
+                          <span
+                            className={clsx(
+                              'absolute inset-y-0 right-0 flex items-center pr-4',
+                              active ? 'text-white' : 'text-primary'
+                            )}>
                             <CheckIcon className='h-5 w-5' aria-hidden='true' />
                           </span>
                         )}

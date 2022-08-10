@@ -1,9 +1,9 @@
-import { Story, Meta } from "@storybook/react";
+import { Meta, Story } from '@storybook/react';
 
-import { LeafletMap, LeafletMapProps } from "./LeafletMap";
+import { LeafletMap, LeafletMapProps } from './LeafletMap';
 
 export default {
-  title: "Components/LeafletMap",
+  title: 'Components/LeafletMap',
   component: LeafletMap,
 } as Meta;
 

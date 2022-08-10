@@ -1,15 +1,15 @@
-import { Story, Meta } from "@storybook/react";
+import { Meta, Story } from '@storybook/react';
 
-import { assets } from "../../data/assets";
-import { NFT } from "../../typings/nft";
+import { assets } from '../../data/assets';
+import { NFT } from '../../typings/nft';
 
 import {
   PureMarketplaceView,
   PureMarketplaceViewProps,
-} from "./MarketplaceView";
+} from './MarketplaceView';
 
 export default {
-  title: "Views/MarketplaceView",
+  title: 'Views/MarketplaceView',
   component: PureMarketplaceView,
   parameters: {
     layout: 'fullscreen',

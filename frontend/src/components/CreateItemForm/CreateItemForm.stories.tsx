@@ -1,9 +1,9 @@
-import { Story, Meta } from "@storybook/react";
+import { Meta, Story } from '@storybook/react';
 
-import { PureCreateItemForm, PureCreateItemFormProps } from "./CreateItemForm";
+import { PureCreateItemForm, PureCreateItemFormProps } from './CreateItemForm';
 
 export default {
-  title: "Components/CreateItemForm",
+  title: 'Components/CreateItemForm',
   component: PureCreateItemForm,
 } as Meta;
 

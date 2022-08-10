@@ -1,19 +1,29 @@
-import { NavLink, useLocation } from "react-router-dom";
-import { BadgeCheckIcon, ExclamationIcon } from "@heroicons/react/solid";
+import { BadgeCheckIcon, ExclamationIcon } from '@heroicons/react/solid';
+import { NavLink, useLocation } from 'react-router-dom';
 // import { Web3Provider } from "@ethersproject/providers";
 // import { useWeb3React } from "@web3-react/core";
-import { Avax } from "../../assets";
+import { Avax } from '../../assets';
 // import { NATIVE_CURRENCY } from "../../constants";
-import { ROUTE_MARKETPLACE } from "../../constants/routes";
-import { NFT } from "../../typings/nft";
-import clsx from "clsx";
+import clsx from 'clsx';
+import { ROUTE_MARKETPLACE } from '../../constants/routes';
+import { NFT } from '../../typings/nft';
 
 export interface AssetListItemProps {
   item: NFT;
 }
 
 export const AssetListItem = ({
-  item: { tokenId, contractAddress, name, image, description, sold, price, contractName, contractVerified }
+  item: {
+    tokenId,
+    contractAddress,
+    name,
+    image,
+    description,
+    sold,
+    price,
+    contractName,
+    contractVerified,
+  },
 }: AssetListItemProps) => {
   // const { chainId } = useWeb3React<Web3Provider>();
   const location = useLocation();
@@ -23,9 +33,13 @@ export const AssetListItem = ({
     <NavLink
       to={path}
       // exact={true}
-      className={(navData) => clsx('flex p-4 gap-4 items-center cursor-pointer hover:bg-primary hover:text-primary-content', navData.isActive && 'bg-primary text-primary-content')}
-      aria-current={[path].includes(location.pathname) ? "page" : undefined}
-    >
+      className={(navData) =>
+        clsx(
+          'flex p-4 gap-4 items-center cursor-pointer hover:bg-primary hover:text-primary-content',
+          navData.isActive && 'bg-primary text-primary-content'
+        )
+      }
+      aria-current={[path].includes(location.pathname) ? 'page' : undefined}>
       <div className='flex-shrink-0'>
         <img
           className='flex-shrink-0 h-24 w-24 md:h-32 md:w-32'
@@ -43,12 +57,8 @@ export const AssetListItem = ({
               <ExclamationIcon className='w-4 h-4 text-warning ml-1' />
             )}
           </p>
-          <p className='mt-1 text-base font-semibold'>
-            {name}
-          </p>
-          <p className='mt-1 text-sm line-clamp-3'>
-            {description}
-          </p>
+          <p className='mt-1 text-base font-semibold'>{name}</p>
+          <p className='mt-1 text-sm line-clamp-3'>{description}</p>
         </div>
       </div>
       {!sold && (

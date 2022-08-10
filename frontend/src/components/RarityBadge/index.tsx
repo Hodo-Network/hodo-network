@@ -1,2 +1,2 @@
-import { RarityBadge } from "./RarityBadge";
+import { RarityBadge } from './RarityBadge';
 export default RarityBadge;

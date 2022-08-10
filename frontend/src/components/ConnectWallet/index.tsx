@@ -1,2 +1,2 @@
-import { ConnectWallet } from "./ConnectWallet";
+import { ConnectWallet } from './ConnectWallet';
 export default ConnectWallet;

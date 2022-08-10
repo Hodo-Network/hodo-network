@@ -1,8 +1,8 @@
-import { Story, Meta } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
 import { SplashScreen } from './SplashScreen';
 
 export default {
-  title: "Components/SplashScreen",
+  title: 'Components/SplashScreen',
   component: SplashScreen,
 } as Meta;
 

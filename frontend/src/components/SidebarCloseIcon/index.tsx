@@ -1,2 +1,2 @@
-import { SidebarCloseIcon } from "./SidebarCloseIcon";
+import { SidebarCloseIcon } from './SidebarCloseIcon';
 export default SidebarCloseIcon;

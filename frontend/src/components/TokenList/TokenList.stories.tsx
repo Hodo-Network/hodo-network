@@ -1,14 +1,16 @@
-import { Story, Meta } from "@storybook/react";
+import { Meta, Story } from '@storybook/react';
 
-import { TOKENS_BY_NETWORK } from "../../constants";
-import { PureTokenList, IPureTokenListProps } from "./TokenList";
+import { TOKENS_BY_NETWORK } from '../../constants';
+import { IPureTokenListProps, PureTokenList } from './TokenList';
 
 export default {
-  title: "Components/TokenList",
+  title: 'Components/TokenList',
   component: PureTokenList,
 } as Meta;
 
-const Template: Story<IPureTokenListProps> = (args) => <PureTokenList {...args} />;
+const Template: Story<IPureTokenListProps> = (args) => (
+  <PureTokenList {...args} />
+);
 
 export const Default = Template.bind({});
 Default.args = {};

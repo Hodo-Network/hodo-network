@@ -1,2 +1,2 @@
-import { DarkToggle } from "./DarkToggle";
+import { DarkToggle } from './DarkToggle';
 export default DarkToggle;

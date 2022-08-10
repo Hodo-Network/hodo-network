@@ -1,2 +1,2 @@
-import { DetailsDisclosure } from "./DetailsDisclosure";
+import { DetailsDisclosure } from './DetailsDisclosure';
 export default DetailsDisclosure;

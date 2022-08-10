@@ -1,9 +1,9 @@
-import { Story, Meta } from "@storybook/react";
+import { Meta, Story } from '@storybook/react';
 
-import { SocialLink, SocialLinkProps } from "./SocialLink";
+import { SocialLink, SocialLinkProps } from './SocialLink';
 
 export default {
-  title: "Components/SocialLink",
+  title: 'Components/SocialLink',
   component: SocialLink,
 } as Meta;
 
@@ -15,6 +15,6 @@ const Template: Story<SocialLinkProps> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  href: "#none",
-  title: "Facebook",
+  href: '#none',
+  title: 'Facebook',
 };

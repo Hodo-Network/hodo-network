@@ -1,22 +1,22 @@
-import { useEffect, useState } from "react";
+import { Web3Provider } from '@ethersproject/providers';
+import { useWeb3React } from '@web3-react/core';
+import { useEffect, useState } from 'react';
+import { Provider } from 'react-redux';
 import {
   BrowserRouter as Router,
-  Routes,
-  Route,
   Navigate,
-} from "react-router-dom";
-import { ThemeProvider } from "./state/ThemeContext";
-import { useWeb3React } from "@web3-react/core";
-import { Web3Provider } from "@ethersproject/providers";
-import { Provider } from "react-redux";
-import { store } from "./store";
-import { useEagerConnect, useInactiveListener } from "./hooks";
-import * as paths from "./constants/routes";
-import Navbar from "./components/Navbar";
-import Sidebar from "./components/Sidebar";
-import routes from "./routes";
+  Route,
+  Routes,
+} from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Sidebar from './components/Sidebar';
+import * as paths from './constants/routes';
+import { useEagerConnect, useInactiveListener } from './hooks';
+import routes from './routes';
+import { ThemeProvider } from './state/ThemeContext';
+import { store } from './store';
 
-import "./styles/tailwind.css";
+import './styles/tailwind.css';
 
 export default function App() {
   const { connector } = useWeb3React<Web3Provider>();
@@ -42,23 +42,22 @@ export default function App() {
         <div className='flex flex-row h-screen overflow-hidden'>
           <Router>
             <Sidebar
-              title="Hodo Network"
+              title='Hodo Network'
               toggle={() => setMiniSidebar(!miniSidebar)}
               mini={miniSidebar}
             />
 
             <div className='flex flex-col flex-1 min-h-0 overflow-hidden'>
-              <Navbar title="Hodo Network" hideTitle={!miniSidebar} />
+              <Navbar title='Hodo Network' hideTitle={!miniSidebar} />
 
               <Routes>
                 {routes.map(({ path, Component }, key) => (
-                  <Route
-                    path={path}
-                    element={<Component />}
-                    key={key}
-                  />
+                  <Route path={path} element={<Component />} key={key} />
                 ))}
-                <Route path="*" element={<Navigate to={paths.ROUTE_DEFAULT} />} />
+                <Route
+                  path='*'
+                  element={<Navigate to={paths.ROUTE_DEFAULT} />}
+                />
               </Routes>
             </div>
           </Router>

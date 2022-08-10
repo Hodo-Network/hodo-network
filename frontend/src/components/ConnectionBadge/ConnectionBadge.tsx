@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 export interface ConnectionBadgeProps {
   network: string;
@@ -6,8 +6,8 @@ export interface ConnectionBadgeProps {
 }
 
 export const ConnectionBadge = ({ network, account }: ConnectionBadgeProps) => {
-  const [message, setMessage] = useState<string>("");
-  const [messageColor, setMessageColor] = useState<string>("");
+  const [message, setMessage] = useState<string>('');
+  const [messageColor, setMessageColor] = useState<string>('');
   const [showMsg, setShowMsg] = useState<boolean>(false);
 
   const copyToClipboard = () => {
@@ -17,12 +17,12 @@ export const ConnectionBadge = ({ network, account }: ConnectionBadgeProps) => {
         .writeText(account)
         .then(
           function () {
-            setMessageColor("text-green-500");
-            setMessage("Copied!");
+            setMessageColor('text-green-500');
+            setMessage('Copied!');
           },
           function () {
-            setMessageColor("text-red-500");
-            setMessage("Failed to copy.");
+            setMessageColor('text-red-500');
+            setMessage('Failed to copy.');
           }
         )
         .then(() => {

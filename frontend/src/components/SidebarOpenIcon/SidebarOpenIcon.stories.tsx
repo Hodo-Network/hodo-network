@@ -1,17 +1,17 @@
-import { Story, Meta } from "@storybook/react";
+import { Meta, Story } from '@storybook/react';
 
-import { SidebarOpenIcon } from "./SidebarOpenIcon";
+import { SidebarOpenIcon } from './SidebarOpenIcon';
 
 export default {
-  title: "Components/SidebarOpenIcon",
+  title: 'Components/SidebarOpenIcon',
   component: SidebarOpenIcon,
   decorators: [
     (Story) => (
-      <div className="w-12">
+      <div className='w-12'>
         <Story />
       </div>
-    )
-  ]
+    ),
+  ],
 } as Meta;
 
 const Template: Story = (args) => <SidebarOpenIcon {...args} />;

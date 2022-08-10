@@ -1,15 +1,15 @@
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router";
-import { create as ipfsHttpClient } from "ipfs-http-client";
-import { ROUTE_ACCOUNT } from "../../constants/routes";
-import { PureCreateItemForm } from "./CreateItemForm";
+import { create as ipfsHttpClient } from 'ipfs-http-client';
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router';
+import { ROUTE_ACCOUNT } from '../../constants/routes';
+import { PureCreateItemForm } from './CreateItemForm';
 
 // interface IParams {
 //   contractAddress: string;
 // }
 
 const client = ipfsHttpClient({
-  apiPath: "https://ipfs.infura.io:5001/api/v0",
+  apiPath: 'https://ipfs.infura.io:5001/api/v0',
 });
 
 const CreateItemForm = () => {
@@ -18,10 +18,10 @@ const CreateItemForm = () => {
   const [disabled, setDisabled] = useState<boolean>(true);
   // const { contractAddress } = useParams<IParams>();
 
-  const [name, setName] = useState<string>("");
-  const [description, setDescription] = useState<string>("");
+  const [name, setName] = useState<string>('');
+  const [description, setDescription] = useState<string>('');
   const [file, setFile] = useState<any>(null);
-  const [fileUrl, setFileUrl] = useState<string>("");
+  const [fileUrl, setFileUrl] = useState<string>('');
 
   useEffect(() => {
     // TODO: add geolocation
@@ -33,10 +33,10 @@ const CreateItemForm = () => {
   }, [name, description, file]);
 
   const onUpdateInput = (key: string, val: string) => {
-    if (key === "name") {
+    if (key === 'name') {
       setName(val);
     }
-    if (key === "description") {
+    if (key === 'description') {
       setDescription(val);
     }
   };
@@ -51,7 +51,7 @@ const CreateItemForm = () => {
 
   // TODO: remove once Create is implemented
   const onCreateItemAlert = () => {
-    alert("Unable to create items at this time. Coming soon");
+    alert('Unable to create items at this time. Coming soon');
   };
 
   // eslint-disable-next-line
@@ -65,7 +65,7 @@ const CreateItemForm = () => {
       const url = `https://ipfs.infura.io/ipfs/${added.path}`;
       setFileUrl(url);
     } catch (error) {
-      console.log("Upload file error:", error);
+      console.log('Upload file error:', error);
     }
 
     if (!fileUrl) return;
@@ -82,7 +82,7 @@ const CreateItemForm = () => {
       // createSale(url);
       navigate(ROUTE_ACCOUNT);
     } catch (error) {
-      console.log("Create item error:", error);
+      console.log('Create item error:', error);
     }
   };
 

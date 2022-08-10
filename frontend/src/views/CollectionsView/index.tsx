@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
-import { useWeb3React } from "@web3-react/core";
-import { Web3Provider } from "@ethersproject/providers";
-import { useAppDispatch, useAppSelector } from "../../state/hooks";
-import { getCollections } from "../../state/asyncActions/collections";
-import { Collection } from "../../typings/nft";
-import { PureCollectionsView } from "./CollectionsView";
+import { Web3Provider } from '@ethersproject/providers';
+import { useWeb3React } from '@web3-react/core';
+import { useEffect, useState } from 'react';
+import { getCollections } from '../../state/asyncActions/collections';
+import { useAppDispatch, useAppSelector } from '../../state/hooks';
+import { Collection } from '../../typings/nft';
+import { PureCollectionsView } from './CollectionsView';
 
 const CollectionsView = () => {
   const { chainId } = useWeb3React<Web3Provider>();

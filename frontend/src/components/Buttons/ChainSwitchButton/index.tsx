@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { PureChainSwitchButton } from "./ChainSwitchButton";
+import { PureChainSwitchButton } from './ChainSwitchButton';
 
 // params: {
 //   chainId: 4,
@@ -8,9 +8,7 @@ export interface ChainSwitchButtonProps {
   params?: any;
 }
 
-const ChainSwitchButton = ({
-  params,
-}: ChainSwitchButtonProps) => {
+const ChainSwitchButton = ({ params }: ChainSwitchButtonProps) => {
   const disabled = false;
 
   useEffect(() => {

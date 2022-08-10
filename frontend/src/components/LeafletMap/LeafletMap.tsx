@@ -1,17 +1,17 @@
-import { useEffect } from "react";
-import { NavLink } from "react-router-dom";
-import L from "leaflet";
+import L from 'leaflet';
+import { useEffect } from 'react';
 import {
-  MapContainer,
-  TileLayer,
-  Marker,
-  Popup,
-  useMap,
   // Circle,
   FeatureGroup,
-} from "react-leaflet";
-import { NFT } from "../../typings/nft";
-import { ROUTE_MARKETPLACE } from "../../constants/routes";
+  MapContainer,
+  Marker,
+  Popup,
+  TileLayer,
+  useMap,
+} from 'react-leaflet';
+import { NavLink } from 'react-router-dom';
+import { ROUTE_MARKETPLACE } from '../../constants/routes';
+import { NFT } from '../../typings/nft';
 
 // const getTraitValue = (attributes: Array<Attribute>, trait: string) => {
 //   return attributes?.find((attr) => attr.trait_type === trait)?.value;
@@ -67,14 +67,12 @@ function ItemMarker({ item }: { item: any }) {
   });
 
   return (
-    <FeatureGroup pathOptions={{ color: "purple" }}>
+    <FeatureGroup pathOptions={{ color: 'purple' }}>
       {center && (
         <Marker position={center} icon={icon}>
           <Popup>
             <div className='font-semibold text-base'>{item.name}</div>
-            <div>
-              {item.description}
-            </div>
+            <div>{item.description}</div>
             <div>
               <NavLink
                 to={`${ROUTE_MARKETPLACE}/${item.contractAddress}/${item.tokenId}`}>
@@ -113,7 +111,7 @@ export const LeafletMap = ({
   // const tileLayerUrl = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
   // const tileLayerUrl = "http://c.tile.stamen.com/watercolor/{z}/{x}/{y}.jpg";
   const tileLayerUrl =
-    "https://tiles.wmflabs.org/osm-no-labels/{z}/{x}/{y}.png";
+    'https://tiles.wmflabs.org/osm-no-labels/{z}/{x}/{y}.png';
 
   return (
     <MapContainer

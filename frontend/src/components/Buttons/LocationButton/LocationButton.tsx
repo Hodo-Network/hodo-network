@@ -1,4 +1,4 @@
-import Button from "../../../base/Button";
+import Button from '../../../base/Button';
 
 export interface IPureLocationButtonProps {
   label?: string;
@@ -6,16 +6,16 @@ export interface IPureLocationButtonProps {
   onClick?: () => void;
 }
 
-export const PureLocationButton = ({ label = "Get Location", location, onClick }: IPureLocationButtonProps) => {
+export const PureLocationButton = ({
+  label = 'Get Location',
+  location,
+  onClick,
+}: IPureLocationButtonProps) => {
   if (location) {
-    return (
-      <span>
-        {location}
-      </span>
-    );
+    return <span>{location}</span>;
   } else {
     return (
-      <Button color="primary" onClick={onClick}>
+      <Button color='primary' onClick={onClick}>
         {label}
       </Button>
     );

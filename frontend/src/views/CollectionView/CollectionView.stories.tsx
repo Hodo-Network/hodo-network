@@ -1,10 +1,10 @@
-import { Story, Meta } from "@storybook/react";
-import { assets } from "../../data/assets";
+import { Meta, Story } from '@storybook/react';
+import { assets } from '../../data/assets';
 
-import { PureCollectionView, PureCollectionViewProps } from "./CollectionView";
+import { PureCollectionView, PureCollectionViewProps } from './CollectionView';
 
 export default {
-  title: "Views/CollectionView",
+  title: 'Views/CollectionView',
   component: PureCollectionView,
   parameters: {
     layout: 'fullscreen',

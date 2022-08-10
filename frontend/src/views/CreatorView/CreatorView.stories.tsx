@@ -1,9 +1,9 @@
-import { Story, Meta } from "@storybook/react";
+import { Meta, Story } from '@storybook/react';
 
-import { PureCreatorView } from "./CreatorView";
+import { PureCreatorView } from './CreatorView';
 
 export default {
-  title: "Views/CreatorView",
+  title: 'Views/CreatorView',
   component: PureCreatorView,
   parameters: {
     layout: 'fullscreen',

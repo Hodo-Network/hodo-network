@@ -1,2 +1,2 @@
-import { LeafletMap } from "./LeafletMap";
+import { LeafletMap } from './LeafletMap';
 export default LeafletMap;

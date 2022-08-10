@@ -1,5 +1,5 @@
-import { useWeb3React } from "@web3-react/core";
-import { PureOnboardingView } from "./OnboardingView";
+import { useWeb3React } from '@web3-react/core';
+import { PureOnboardingView } from './OnboardingView';
 
 const OnboardingView = () => {
   const { active, account } = useWeb3React();

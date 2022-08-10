@@ -1,6 +1,6 @@
-import { roadmap } from "../../data/roadmap";
-import ContentWrapper from "../../ContentWrapper";
-import RoadmapItems from "../../components/RoadmapItems";
+import RoadmapItems from '../../components/RoadmapItems';
+import ContentWrapper from '../../ContentWrapper';
+import { roadmap } from '../../data/roadmap';
 
 export const RoadmapView = () => {
   return (

@@ -1,6 +1,6 @@
-import Badge from "../../base/Badge";
+import Badge from '../../base/Badge';
 
-const colors: { [key: string]: "error" | "warning" | "info"; } = {
+const colors: { [key: string]: 'error' | 'warning' | 'info' } = {
   epic: 'error',
   rare: 'warning',
   common: 'info',

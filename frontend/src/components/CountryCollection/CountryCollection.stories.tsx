@@ -1,11 +1,13 @@
-import { Story, Meta } from "@storybook/react";
-import { ZERO_ADDRESS } from "../../constants";
+import { Meta, Story } from '@storybook/react';
+import { ZERO_ADDRESS } from '../../constants';
 
-import { PureCountryCollection, PureCountryCollectionProps } from "./CountryCollection";
-
+import {
+  PureCountryCollection,
+  PureCountryCollectionProps,
+} from './CountryCollection';
 
 export default {
-  title: "Components/CountryCollection",
+  title: 'Components/CountryCollection',
   component: PureCountryCollection,
 } as Meta;
 

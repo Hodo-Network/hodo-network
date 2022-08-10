@@ -1,5 +1,5 @@
-import ReactHtmlParser from "react-html-parser";
-import { FAQ } from "../../typings/faq";
+import ReactHtmlParser from 'react-html-parser';
+import { FAQ } from '../../typings/faq';
 
 export interface FaqListProps {
   items: Array<FAQ>;
@@ -14,9 +14,7 @@ export const FaqList = ({ items }: FaqListProps) => {
             {item.question}
           </dt>
           <dd className='mt-2 md:mt-0 md:col-span-7 prose-primary'>
-            <p>
-              {ReactHtmlParser(item.answer)}
-            </p>
+            <p>{ReactHtmlParser(item.answer)}</p>
           </dd>
         </div>
       ))}

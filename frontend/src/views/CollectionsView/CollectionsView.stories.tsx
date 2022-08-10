@@ -1,12 +1,13 @@
-import { Story, Meta } from "@storybook/react";
-import { collections } from "../../data/collections";
+import { Meta, Story } from '@storybook/react';
+import { collections } from '../../data/collections';
 
 import {
-  PureCollectionsView, PureCollectionsViewProps,
-} from "./CollectionsView";
+  PureCollectionsView,
+  PureCollectionsViewProps,
+} from './CollectionsView';
 
 export default {
-  title: "Views/CollectionsView",
+  title: 'Views/CollectionsView',
   component: PureCollectionsView,
   parameters: {
     layout: 'fullscreen',
@@ -19,7 +20,7 @@ const Template: Story<PureCollectionsViewProps> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  items: []
+  items: [],
 };
 
 export const Collections = Template.bind({});

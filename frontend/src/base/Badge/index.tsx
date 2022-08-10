@@ -1,2 +1,2 @@
-import { PureBadge } from "./Badge";
+import { PureBadge } from './Badge';
 export default PureBadge;

@@ -29,7 +29,7 @@ export const daisyThemes: Array<string> = [
   'lemonade',
   'night',
   'coffee',
-  'winter'
+  'winter',
 ];
 
 export const themes: Array<string> = [...daisyThemes];

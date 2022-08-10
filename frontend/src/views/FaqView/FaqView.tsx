@@ -1,6 +1,6 @@
-import { faqs } from "../../data/faqs";
-import ContentWrapper from "../../ContentWrapper";
-import FaqList from "../../components/FaqList";
+import FaqList from '../../components/FaqList';
+import ContentWrapper from '../../ContentWrapper';
+import { faqs } from '../../data/faqs';
 
 export const FaqView = () => {
   return (

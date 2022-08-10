@@ -1,10 +1,10 @@
-import { Story, Meta } from "@storybook/react";
+import { Meta, Story } from '@storybook/react';
 
-import { WalletAddress, WalletAddressProps } from "./WalletAddress";
-import { ZERO_ADDRESS } from "../../constants";
+import { ZERO_ADDRESS } from '../../constants';
+import { WalletAddress, WalletAddressProps } from './WalletAddress';
 
 export default {
-  title: "Components/WalletAddress",
+  title: 'Components/WalletAddress',
   component: WalletAddress,
 } as Meta;
 

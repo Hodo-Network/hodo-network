@@ -1,10 +1,10 @@
-import { Story, Meta } from "@storybook/react";
+import { Meta, Story } from '@storybook/react';
 
-import { AssetListCompact, AssetListCompactProps } from "./AssetListCompact";
-import { assets } from "../../data/assets";
+import { assets } from '../../data/assets';
+import { AssetListCompact, AssetListCompactProps } from './AssetListCompact';
 
 export default {
-  title: "Components/AssetListCompact",
+  title: 'Components/AssetListCompact',
   component: AssetListCompact,
 } as Meta;
 

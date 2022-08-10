@@ -1,13 +1,15 @@
-import { Story, Meta } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
 
-import { SidebarIconSwap, ISidebarIconSwap } from './SidebarIconSwap';
+import { ISidebarIconSwap, SidebarIconSwap } from './SidebarIconSwap';
 
 export default {
-  title: "Components/SidebarIconSwap",
+  title: 'Components/SidebarIconSwap',
   component: SidebarIconSwap,
 } as Meta;
 
-const Template: Story<ISidebarIconSwap> = (args) => <SidebarIconSwap {...args} />;
+const Template: Story<ISidebarIconSwap> = (args) => (
+  <SidebarIconSwap {...args} />
+);
 
 export const Default = Template.bind({});
 Default.args = {};

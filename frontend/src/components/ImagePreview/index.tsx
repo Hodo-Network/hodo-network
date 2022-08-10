@@ -1,2 +1,2 @@
-import { ImagePreview } from "./ImagePreview";
+import { ImagePreview } from './ImagePreview';
 export default ImagePreview;

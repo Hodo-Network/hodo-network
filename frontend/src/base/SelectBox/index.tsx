@@ -1,2 +1,2 @@
-import SelectBox from "./SelectBox";
+import SelectBox from './SelectBox';
 export default SelectBox;

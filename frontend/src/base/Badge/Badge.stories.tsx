@@ -1,14 +1,14 @@
-import { Story, Meta } from "@storybook/react";
+import { Meta, Story } from '@storybook/react';
 
-import { PureBadge, PureBadgeProps } from "./Badge";
+import { PureBadge, PureBadgeProps } from './Badge';
 
 export default {
-  title: "Base/Badge",
+  title: 'Base/Badge',
   component: PureBadge,
   argTypes: {
     color: {
-      options: ["gray", "red", "yellow", "blue"],
-      control: { type: "radio" },
+      options: ['gray', 'red', 'yellow', 'blue'],
+      control: { type: 'radio' },
     },
   },
 } as Meta;
@@ -17,77 +17,77 @@ const Template: Story<PureBadgeProps> = (args) => <PureBadge {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  label: "Badge",
+  label: 'Badge',
 };
 
 export const Small = Template.bind({});
 Small.args = {
-  size: "sm",
-  label: "Badge",
+  size: 'sm',
+  label: 'Badge',
 };
 
 export const Medium = Template.bind({});
 Medium.args = {
-  size: "md",
-  label: "Badge",
+  size: 'md',
+  label: 'Badge',
 };
 
 export const Large = Template.bind({});
 Large.args = {
-  size: "lg",
-  label: "Badge",
+  size: 'lg',
+  label: 'Badge',
 };
 
 export const Primary = Template.bind({});
 Primary.args = {
-  label: "Badge",
-  color: "primary",
+  label: 'Badge',
+  color: 'primary',
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-  label: "Badge",
-  color: "secondary",
+  label: 'Badge',
+  color: 'secondary',
 };
 
 export const Accent = Template.bind({});
 Accent.args = {
-  label: "Badge",
-  color: "accent",
+  label: 'Badge',
+  color: 'accent',
 };
 
 export const Ghost = Template.bind({});
 Ghost.args = {
-  label: "Badge",
-  color: "ghost",
+  label: 'Badge',
+  color: 'ghost',
 };
 
 export const Info = Template.bind({});
 Info.args = {
-  label: "Badge",
-  color: "info",
+  label: 'Badge',
+  color: 'info',
 };
 
 export const Success = Template.bind({});
 Success.args = {
-  label: "Badge",
-  color: "success",
+  label: 'Badge',
+  color: 'success',
 };
 
 export const Warning = Template.bind({});
 Warning.args = {
-  label: "Badge",
-  color: "warning",
+  label: 'Badge',
+  color: 'warning',
 };
 
 export const Error = Template.bind({});
 Error.args = {
-  label: "Badge",
-  color: "error",
+  label: 'Badge',
+  color: 'error',
 };
 
 export const Outline = Template.bind({});
 Outline.args = {
-  label: "Badge",
-  variant: "outline",
+  label: 'Badge',
+  variant: 'outline',
 };

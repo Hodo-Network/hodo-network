@@ -1,6 +1,6 @@
-import { NFT } from "../../typings/nft";
+import { NFT } from '../../typings/nft';
 import AssetListItem from '../AssetListItem';
-import CardEmpty from "../CardEmpty";
+import CardEmpty from '../CardEmpty';
 
 export interface AssetListProps {
   items: Array<NFT>;

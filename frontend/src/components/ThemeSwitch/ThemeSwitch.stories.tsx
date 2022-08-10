@@ -1,23 +1,23 @@
-import { Story, Meta } from "@storybook/react";
+import { Meta, Story } from '@storybook/react';
 
-import { IThemeSwitchProps, ThemeSwitch } from "./ThemeSwitch";
 import { themes } from '../../constants/themes';
+import { IThemeSwitchProps, ThemeSwitch } from './ThemeSwitch';
 
 export default {
-  title: "Components/ThemeSwitch",
+  title: 'Components/ThemeSwitch',
   component: ThemeSwitch,
   decorators: [
     (Story) => (
-      <div className="flex justify-end">
+      <div className='flex justify-end'>
         <Story />
       </div>
-    )
-  ]
+    ),
+  ],
 } as Meta;
 
 const Template: Story<IThemeSwitchProps> = (args) => <ThemeSwitch {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  themes: themes.slice(0, 10)
+  themes: themes.slice(0, 10),
 };

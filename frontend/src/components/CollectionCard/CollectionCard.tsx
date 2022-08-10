@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
-import { BadgeCheckIcon, ExclamationIcon } from "@heroicons/react/solid";
-import { Collection } from "../../typings/nft";
-import { ROUTE_MARKETPLACE } from "../../constants/routes";
+import { BadgeCheckIcon, ExclamationIcon } from '@heroicons/react/solid';
+import { Link } from 'react-router-dom';
+import { ROUTE_MARKETPLACE } from '../../constants/routes';
+import { Collection } from '../../typings/nft';
 
 export interface PureCollectionCardProps {
   item: Collection;
@@ -14,7 +14,7 @@ export const PureCollectionCard = ({
     <Link
       to={`${ROUTE_MARKETPLACE}/${contractAddress}`}
       className='card card-compact shadow-md bg-neutral-focus text-neutral-content transition-transform duration-300 transform hover:-translate-y-1'>
-      <figure className="h-60">
+      <figure className='h-60'>
         <img src={image} alt={name} />
       </figure>
       <div className='card-body bg-neutral'>

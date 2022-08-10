@@ -1,4 +1,4 @@
-import { PropsWithChildren } from "react";
+import { PropsWithChildren } from 'react';
 
 export interface SocialLinkProps {
   href: string;
@@ -22,7 +22,7 @@ export const SocialLink = ({
       <svg
         className='h-6 w-6'
         fill='currentColor'
-        viewBox={viewbox ? viewbox : "0 0 24 24"}
+        viewBox={viewbox ? viewbox : '0 0 24 24'}
         aria-hidden='true'>
         {children}
       </svg>

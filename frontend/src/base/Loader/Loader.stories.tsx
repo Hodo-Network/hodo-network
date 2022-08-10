@@ -1,9 +1,9 @@
-import { Story, Meta } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
 
 import { Loader } from './Loader';
 
 export default {
-  title: "Base/Loader",
+  title: 'Base/Loader',
   component: Loader,
 } as Meta;
 

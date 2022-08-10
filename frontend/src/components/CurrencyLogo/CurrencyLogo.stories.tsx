@@ -1,13 +1,15 @@
-import { Story, Meta } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
 
 import { CurrencyLogo, ICurrencyLogoProps } from './CurrencyLogo';
 
 export default {
-  title: "Components/CurrencyLogo",
+  title: 'Components/CurrencyLogo',
   component: CurrencyLogo,
 } as Meta;
 
-const Template: Story<ICurrencyLogoProps> = (args) => <CurrencyLogo {...args} />;
+const Template: Story<ICurrencyLogoProps> = (args) => (
+  <CurrencyLogo {...args} />
+);
 
 export const Default = Template.bind({});
 Default.args = {};

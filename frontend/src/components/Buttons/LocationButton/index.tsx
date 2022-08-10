@@ -1,5 +1,5 @@
-import { useState } from "react";
-import useGeolocation from "@rooks/use-geolocation";
+import useGeolocation from '@rooks/use-geolocation';
+import { useState } from 'react';
 import { PureLocationButton } from './LocationButton';
 
 export const LocationButton = () => {
@@ -14,7 +14,12 @@ export const LocationButton = () => {
   };
 
   // JSON.stringify(geoObj)
-  return <PureLocationButton location={`${geoObj?.lat}, ${geoObj?.lng}`} onClick={onClick} />;
+  return (
+    <PureLocationButton
+      location={`${geoObj?.lat}, ${geoObj?.lng}`}
+      onClick={onClick}
+    />
+  );
 };
 
 export default LocationButton;

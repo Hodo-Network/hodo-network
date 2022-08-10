@@ -1,18 +1,18 @@
 // import { useEffect, useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
-import { BadgeCheckIcon, ExclamationIcon } from "@heroicons/react/solid";
-import { NETWORK_LABELS_SHORT } from '../../constants';
-import { ROUTE_MARKETPLACE } from "../../constants/routes";
-import { TEXT_DESCRIPTION, TEXT_OWNER } from "../../constants/text";
-import { Attribute, Collection, NFT } from "../../typings/nft";
+import { BadgeCheckIcon, ExclamationIcon } from '@heroicons/react/solid';
+import { NavLink, useLocation } from 'react-router-dom';
 import ActivityDisclosure from '../../components/Disclosures/ActivityDisclosure';
 import AttributeDisclosure from '../../components/Disclosures/AttributeDisclosure';
+import CollectionDisclosure from '../../components/Disclosures/CollectionDisclosure';
 import DetailsDisclosure from '../../components/Disclosures/DetailsDisclosure';
 import MapDisclosure from '../../components/Disclosures/MapDisclosure';
 import ListingModule from '../../components/ListingModule';
-import NetworkSwitch from "../../components/NetworkSwitch";
-import ContentWrapper from "../../ContentWrapper";
-import CollectionDisclosure from "../../components/Disclosures/CollectionDisclosure";
+import NetworkSwitch from '../../components/NetworkSwitch';
+import { NETWORK_LABELS_SHORT } from '../../constants';
+import { ROUTE_MARKETPLACE } from '../../constants/routes';
+import { TEXT_DESCRIPTION, TEXT_OWNER } from '../../constants/text';
+import ContentWrapper from '../../ContentWrapper';
+import { Attribute, Collection, NFT } from '../../typings/nft';
 
 export interface PureAssetViewProps {
   item?: NFT;
@@ -31,22 +31,24 @@ export const PureAssetView = ({
 }: PureAssetViewProps) => {
   const location = useLocation();
   const collectionPath = `${ROUTE_MARKETPLACE}/${collection?.contractAddress}`;
-  const attrs: Array<Attribute> = [{
-    "display_type": "number",
-    "trait_type": "Latitude",
-    "value": item?.lat || "0"
-  },
-  {
-    "display_type": "number",
-    "trait_type": "Longitude",
-    "value": item?.lng || "0"
-  }];
+  const attrs: Array<Attribute> = [
+    {
+      display_type: 'number',
+      trait_type: 'Latitude',
+      value: item?.lat || '0',
+    },
+    {
+      display_type: 'number',
+      trait_type: 'Longitude',
+      value: item?.lng || '0',
+    },
+  ];
 
   return (
     <ContentWrapper>
       {item && collection ? (
         <div className='p-4 sm:p-8 max-w-8xl space-y-4'>
-          <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0">
+          <div className='flex flex-col lg:flex-row space-y-4 lg:space-y-0'>
             <div className='lg:w-1/3 space-y-4'>
               <div className='w-60 lg:w-auto'>
                 <div className='aspect-w-1 aspect-h-1'>
@@ -64,14 +66,17 @@ export const PureAssetView = ({
             </div>
 
             <div className='lg:ml-6 flex-1 order-first lg:order-last'>
-              <div className="space-y-4">
+              <div className='space-y-4'>
                 <div>
                   <NavLink
                     to={collectionPath}
                     // exact={true}
                     className='link link-hover text-sm flex items-center mb-1'
-                    aria-current={[collectionPath].includes(location.pathname) ? "page" : undefined}
-                  >
+                    aria-current={
+                      [collectionPath].includes(location.pathname)
+                        ? 'page'
+                        : undefined
+                    }>
                     {collection?.name}
                     {!!collection?.verified ? (
                       <BadgeCheckIcon className='w-4 h-4 text-primary ml-1' />
@@ -99,7 +104,9 @@ export const PureAssetView = ({
                     {TEXT_OWNER}
                   </h1>
                   <p className='mt-1 font-medium overflow-hidden overflow-ellipsis'>
-                    {item.owner_address === account ? "You" : item.owner_address}
+                    {item.owner_address === account
+                      ? 'You'
+                      : item.owner_address}
                   </p>
                 </div>
 
@@ -111,7 +118,10 @@ export const PureAssetView = ({
           </div>
 
           {collectionAssets && contractAddress && (
-            <CollectionDisclosure collectionAssets={collectionAssets} contractAddress={contractAddress} />
+            <CollectionDisclosure
+              collectionAssets={collectionAssets}
+              contractAddress={contractAddress}
+            />
           )}
         </div>
       ) : (

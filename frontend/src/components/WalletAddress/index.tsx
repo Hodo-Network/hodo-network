@@ -1,2 +1,2 @@
-import { WalletAddress } from "./WalletAddress";
+import { WalletAddress } from './WalletAddress';
 export default WalletAddress;

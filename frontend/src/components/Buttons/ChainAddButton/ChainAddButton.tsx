@@ -1,4 +1,4 @@
-import Button from "../../../base/Button";
+import Button from '../../../base/Button';
 
 export interface PureChainAddButtonProps {
   label?: string;
@@ -7,12 +7,12 @@ export interface PureChainAddButtonProps {
 }
 
 export const PureChainAddButton = ({
-  label = "Add Network",
+  label = 'Add Network',
   disabled = false,
   onClick,
 }: PureChainAddButtonProps) => {
   return (
-    <Button color="primary" onClick={onClick} disabled={disabled}>
+    <Button color='primary' onClick={onClick} disabled={disabled}>
       {label}
     </Button>
   );

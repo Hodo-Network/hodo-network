@@ -1,8 +1,8 @@
-import { useState } from "react";
-import LeafletMap from "../../components/LeafletMap";
-import { NFT } from "../../typings/nft";
-import ContentWrapper from "../../ContentWrapper";
-import AssetListCompact from "../../components/AssetListCompact";
+import { useState } from 'react';
+import AssetListCompact from '../../components/AssetListCompact';
+import LeafletMap from '../../components/LeafletMap';
+import ContentWrapper from '../../ContentWrapper';
+import { NFT } from '../../typings/nft';
 
 export interface PureExploreViewProps {
   items: Array<any>;
@@ -33,7 +33,11 @@ export const PureExploreView = ({ items }: PureExploreViewProps) => {
         </section>
 
         <aside className='h-full overflow-hidden hidden lg:block lg:flex-shrink-0 lg:order-first border-r border-neutral'>
-          <AssetListCompact items={items} selected={selected} onSelectItem={onSelectItem} />
+          <AssetListCompact
+            items={items}
+            selected={selected}
+            onSelectItem={onSelectItem}
+          />
         </aside>
       </div>
     </ContentWrapper>

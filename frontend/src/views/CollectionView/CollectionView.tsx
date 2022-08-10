@@ -1,6 +1,6 @@
-import ContentWrapper from "../../ContentWrapper";
-import AssetGrid from "../../components/AssetGrid";
-import { NFT } from "../../typings/nft";
+import AssetGrid from '../../components/AssetGrid';
+import ContentWrapper from '../../ContentWrapper';
+import { NFT } from '../../typings/nft';
 
 export interface PureCollectionViewProps {
   items: Array<NFT>;

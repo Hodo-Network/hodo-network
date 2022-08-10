@@ -1,12 +1,12 @@
-import { Story, Meta } from "@storybook/react";
+import { Meta, Story } from '@storybook/react';
 
 import {
   PureOnboardingButton,
   PureOnboardingButtonProps,
-} from "./OnboardingButton";
+} from './OnboardingButton';
 
 export default {
-  title: "Components/Buttons/OnboardingButton",
+  title: 'Components/Buttons/OnboardingButton',
   component: PureOnboardingButton,
 } as Meta;
 

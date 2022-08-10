@@ -6,9 +6,9 @@ import EthBlackWhite from './eth-diamond-black-white.jpg';
 // import EthPurpleWhite from './eth-diamond-purple-white.jpg';
 // import EthPurple from './eth-diamond-purple.png';
 import Globe from './globe.png';
-import HodoLogo from './logo.png';
 import HodoPin from './hodopin-01.png';
 import HodoPinFilled from './hodopinfilled-01.png';
+import HodoLogo from './logo.png';
 import Marker from './marker.svg';
 
 export { Avax, EthBlackWhite, Globe, HodoLogo, HodoPin, HodoPinFilled, Marker };

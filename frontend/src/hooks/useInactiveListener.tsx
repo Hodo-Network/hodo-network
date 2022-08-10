@@ -1,6 +1,6 @@
-import { useEffect } from "react";
-import { useWeb3React } from "@web3-react/core";
-import { injected } from "../connectors";
+import { useWeb3React } from '@web3-react/core';
+import { useEffect } from 'react';
+import { injected } from '../connectors';
 
 export default function useInactiveListener(suppress: boolean = false) {
   const { active, error, activate } = useWeb3React();
@@ -27,17 +27,17 @@ export default function useInactiveListener(suppress: boolean = false) {
         activate(injected);
       };
 
-      ethereum.on("connect", handleConnect);
-      ethereum.on("chainChanged", handleChainChanged);
-      ethereum.on("accountsChanged", handleAccountsChanged);
-      ethereum.on("networkChanged", handleNetworkChanged);
+      ethereum.on('connect', handleConnect);
+      ethereum.on('chainChanged', handleChainChanged);
+      ethereum.on('accountsChanged', handleAccountsChanged);
+      ethereum.on('networkChanged', handleNetworkChanged);
 
       return () => {
         if (ethereum.removeListener) {
-          ethereum.removeListener("connect", handleConnect);
-          ethereum.removeListener("chainChanged", handleChainChanged);
-          ethereum.removeListener("accountsChanged", handleAccountsChanged);
-          ethereum.removeListener("networkChanged", handleNetworkChanged);
+          ethereum.removeListener('connect', handleConnect);
+          ethereum.removeListener('chainChanged', handleChainChanged);
+          ethereum.removeListener('accountsChanged', handleAccountsChanged);
+          ethereum.removeListener('networkChanged', handleNetworkChanged);
         }
       };
     }

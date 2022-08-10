@@ -1,10 +1,10 @@
-import { Fragment } from "react";
-import { Tab } from "@headlessui/react";
-import ContentWrapper from "../../ContentWrapper";
-import CreateItemForm from "../../components/CreateItemForm";
+import { Tab } from '@headlessui/react';
+import { Fragment } from 'react';
+import CreateItemForm from '../../components/CreateItemForm';
+import ContentWrapper from '../../ContentWrapper';
 
 export const PureCreatorView = () => {
-  const tabs = ["My Creations", "Create Asset", "Add Collection"];
+  const tabs = ['My Creations', 'Create Asset', 'Add Collection'];
 
   return (
     <ContentWrapper>
@@ -15,11 +15,11 @@ export const PureCreatorView = () => {
               {({ selected }) => (
                 <button
                   className={[
-                    "w-1/3 py-4 px-1 text-center border-b-2 font-medium text-sm",
+                    'w-1/3 py-4 px-1 text-center border-b-2 font-medium text-sm',
                     selected
-                      ? "border-primary-content text-base-content"
-                      : "border-transparent text-bc-muted hover:text-base-content hover:border-primary-content",
-                  ].join(" ")}>
+                      ? 'border-primary-content text-base-content'
+                      : 'border-transparent text-bc-muted hover:text-base-content hover:border-primary-content',
+                  ].join(' ')}>
                   {tab}
                 </button>
               )}
@@ -55,7 +55,10 @@ export const PureCreatorView = () => {
           </Tab.Panel>
 
           <Tab.Panel>
-            <p>In the future, you'll be able to submit your own Collection to the marketplace.</p>
+            <p>
+              In the future, you'll be able to submit your own Collection to the
+              marketplace.
+            </p>
           </Tab.Panel>
         </Tab.Panels>
       </Tab.Group>

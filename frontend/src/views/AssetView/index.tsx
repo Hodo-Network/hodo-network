@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router";
-import { useWeb3React } from "@web3-react/core";
-import { Web3Provider } from "@ethersproject/providers";
-import { useAppDispatch, useAppSelector } from "../../state/hooks";
-import { getAsset } from "../../state/asyncActions/asset";
-import { getCollection } from "../../state/asyncActions/collection";
-import { Collection, NFT } from "../../typings/nft";
-import { PureAssetView } from "./AssetView";
-import { collections } from "../../data/collections";
+import { Web3Provider } from '@ethersproject/providers';
+import { useWeb3React } from '@web3-react/core';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router';
+import { collections } from '../../data/collections';
+import { getAsset } from '../../state/asyncActions/asset';
+import { getCollection } from '../../state/asyncActions/collection';
+import { useAppDispatch, useAppSelector } from '../../state/hooks';
+import { Collection, NFT } from '../../typings/nft';
+import { PureAssetView } from './AssetView';
 
 type IParams = {
   contractAddress: string;

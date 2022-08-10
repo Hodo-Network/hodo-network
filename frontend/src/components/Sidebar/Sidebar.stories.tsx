@@ -1,9 +1,9 @@
-import { Story, Meta } from "@storybook/react";
+import { Meta, Story } from '@storybook/react';
 
-import { Sidebar, SidebarProps } from "./Sidebar";
+import { Sidebar, SidebarProps } from './Sidebar';
 
 export default {
-  title: "Components/Sidebar",
+  title: 'Components/Sidebar',
   component: Sidebar,
 } as Meta;
 

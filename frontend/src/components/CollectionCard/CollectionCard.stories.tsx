@@ -1,10 +1,10 @@
-import { Story, Meta } from "@storybook/react";
+import { Meta, Story } from '@storybook/react';
 
-import { PureCollectionCard, PureCollectionCardProps } from "./CollectionCard";
-import { collections } from "../../data/collections";
+import { collections } from '../../data/collections';
+import { PureCollectionCard, PureCollectionCardProps } from './CollectionCard';
 
 export default {
-  title: "Components/CollectionCard",
+  title: 'Components/CollectionCard',
   component: PureCollectionCard,
   decorators: [
     (Story) => (

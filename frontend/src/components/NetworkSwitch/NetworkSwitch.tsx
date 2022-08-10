@@ -1,10 +1,10 @@
-import { TEXT_SWITCH } from "../../constants/text";
 import {
   AVALANCHE_MAINNET_PARAMS,
   AVALANCHE_TESTNET_PARAMS,
   ChainId,
-} from "../../constants";
-import ChainAddButton from "../Buttons/ChainAddButton";
+} from '../../constants';
+import { TEXT_SWITCH } from '../../constants/text';
+import ChainAddButton from '../Buttons/ChainAddButton';
 
 export interface PureNetworkSwitchProps {
   chainId?: number;

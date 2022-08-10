@@ -4,40 +4,40 @@ export interface SocialItem {
   title?: string;
 }
 
-export const social: { [key: string]: SocialItem; } = {
+export const social: { [key: string]: SocialItem } = {
   facebook: {
     show: false,
-    href: "#none",
-    title: "Facebook",
+    href: '#none',
+    title: 'Facebook',
   },
   instagram: {
     show: false,
-    href: "#none",
-    title: "Instagram",
+    href: '#none',
+    title: 'Instagram',
   },
   twitter: {
     show: true,
-    href: "https://twitter.com/HodoNetwork",
-    title: "Twitter",
+    href: 'https://twitter.com/HodoNetwork',
+    title: 'Twitter',
   },
   github: {
     show: false,
-    href: "https://github.com/Hodo-Network",
-    title: "GitHub",
+    href: 'https://github.com/Hodo-Network',
+    title: 'GitHub',
   },
   dribbble: {
     show: false,
-    href: "#none",
-    title: "Dribbble",
+    href: '#none',
+    title: 'Dribbble',
   },
   discord: {
     show: true,
-    href: "https://discord.gg/vYcZj5Fgfy",
-    title: "Discord",
+    href: 'https://discord.gg/vYcZj5Fgfy',
+    title: 'Discord',
   },
   email: {
     show: true,
-    href: "mailto:info@hodo.network",
-    title: "Email",
+    href: 'mailto:info@hodo.network',
+    title: 'Email',
   },
 };

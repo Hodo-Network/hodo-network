@@ -1,10 +1,10 @@
-import { Story, Meta } from "@storybook/react";
-import { collections } from "../../data/collections";
+import { Meta, Story } from '@storybook/react';
+import { collections } from '../../data/collections';
 
-import { IHomeViewProps, PureHomeView } from "./HomeView";
+import { IHomeViewProps, PureHomeView } from './HomeView';
 
 export default {
-  title: "Views/HomeView",
+  title: 'Views/HomeView',
   component: PureHomeView,
   parameters: {
     layout: 'fullscreen',
@@ -15,5 +15,5 @@ const Template: Story<IHomeViewProps> = (args) => <PureHomeView {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  items: collections.slice(0, 5)
+  items: collections.slice(0, 5),
 };

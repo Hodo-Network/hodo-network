@@ -1,6 +1,6 @@
-import { Collection } from "../../typings/nft";
-import CollectionCard from "../CollectionCard";
-import CardEmpty from "../CardEmpty";
+import { Collection } from '../../typings/nft';
+import CardEmpty from '../CardEmpty';
+import CollectionCard from '../CollectionCard';
 
 export interface CollectionGridProps {
   items: Array<Collection>;
@@ -12,7 +12,9 @@ export const CollectionGrid = ({ items }: CollectionGridProps) => {
       {items.length === 0 ? (
         <CardEmpty />
       ) : (
-        items?.map((item: Collection, index: number) => <CollectionCard key={index} item={item} />)
+        items?.map((item: Collection, index: number) => (
+          <CollectionCard key={index} item={item} />
+        ))
       )}
     </div>
   );

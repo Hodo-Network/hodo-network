@@ -1,6 +1,6 @@
-import { NavLink } from "react-router-dom";
-import { HomeIcon } from "@heroicons/react/outline";
-import clsx from "clsx";
+import { HomeIcon } from '@heroicons/react/outline';
+import clsx from 'clsx';
+import { NavLink } from 'react-router-dom';
 
 export interface BreadcrumbsProps {
   crumbs: any;
@@ -18,10 +18,13 @@ export const Breadcrumbs = ({ crumbs }: BreadcrumbsProps) => {
     <nav
       className='flex border-b border-base-content'
       aria-label='Breadcrumb'
-      style={{ minHeight: "45px" }}>
+      style={{ minHeight: '45px' }}>
       <ol className='max-w-screen-xl w-full px-4 flex space-x-4 sm:px-8'>
         {crumbs.map(
-          ({ name, path, current, isHome }: PureBreadcrumbProps, key: number) => {
+          (
+            { name, path, current, isHome }: PureBreadcrumbProps,
+            key: number
+          ) => {
             if (isHome) {
               return (
                 <li key={key} className='flex'>
@@ -30,7 +33,7 @@ export const Breadcrumbs = ({ crumbs }: BreadcrumbsProps) => {
                       to={path}
                       // exact={true}
                       className='link link-hover'
-                      aria-current={current ? "page" : undefined}>
+                      aria-current={current ? 'page' : undefined}>
                       <HomeIcon
                         className='flex-shrink-0 h-5 w-5'
                         aria-hidden='true'
@@ -57,8 +60,13 @@ export const Breadcrumbs = ({ crumbs }: BreadcrumbsProps) => {
                     key={name}
                     to={path}
                     // exact={true}
-                    className={(navData) => clsx('ml-4 text-sm font-medium capitalize link link-hover', navData.isActive && 'link-primary')}
-                    aria-current={current ? "page" : undefined}>
+                    className={(navData) =>
+                      clsx(
+                        'ml-4 text-sm font-medium capitalize link link-hover',
+                        navData.isActive && 'link-primary'
+                      )
+                    }
+                    aria-current={current ? 'page' : undefined}>
                     {name}
                   </NavLink>
                 </div>

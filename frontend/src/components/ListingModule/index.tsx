@@ -1,22 +1,26 @@
-import { useEffect, useState } from "react";
+import { useEffect } from 'react';
 // import { useParams } from "react-router";
 // import Web3 from "web3";
 // import { AbiItem } from "web3-utils";
-import { useWeb3React } from "@web3-react/core";
-import { ethers } from "ethers";
-import { Web3Provider } from "@ethersproject/providers";
-import { Contract } from "@ethersproject/contracts";
+import { Contract } from '@ethersproject/contracts';
+import { Web3Provider } from '@ethersproject/providers';
+import { useWeb3React } from '@web3-react/core';
+import { ethers } from 'ethers';
 // import BN from "bn.js";
 // import { WALLET_ADDRESS } from "../../constants";
-import { buyNftEndpoint, saveNftEndpoint, updateIsDeleteNftEndpoint } from "../../http";
+import {
+  buyNftEndpoint,
+  saveNftEndpoint,
+  updateIsDeleteNftEndpoint,
+} from '../../http';
 // import { getCollections } from "../../state/asyncActions/collections";
 // import { getCollection } from "../../state/asyncActions/collection";
-import { Collection, NFT } from "../../typings/nft";
+import { Collection, NFT } from '../../typings/nft';
 // import NFTABI from "../../abi/NFTABI.json";
 // import Continents from "../../contracts/Continents.json";
-import ContractAddresses from "../../contracts/contract-address.json";
-import Marketplace from "../../contracts/Marketplace.json";
-import { PureListingModule } from "./ListingModule";
+import ContractAddresses from '../../contracts/contract-address.json';
+import Marketplace from '../../contracts/Marketplace.json';
+import { PureListingModule } from './ListingModule';
 
 // require("dotenv").config();
 // const API_URL = process.env.API_URL;
@@ -45,7 +49,7 @@ const ListingModule = ({ item, collection }: ListingModuleProps) => {
   }, []);
 
   const getListing = async () => {
-    console.log("getListing");
+    console.log('getListing');
     // const provider = new ethers.providers.JsonRpcProvider();
     // const tokenContract = new Contract(
     //   ContractAddresses.Marketplace,
@@ -71,10 +75,10 @@ const ListingModule = ({ item, collection }: ListingModuleProps) => {
 
   const onBuyAsset = async () => {
     try {
-      console.log("onBuyAsset");
+      console.log('onBuyAsset');
       const requestOptions = {
-        method: "POST",
-        headers: { "Content-type": "application/json;charset=UTF-8" },
+        method: 'POST',
+        headers: { 'Content-type': 'application/json;charset=UTF-8' },
         body: JSON.stringify({
           id: item.id,
           buyerAddress: account,
@@ -116,7 +120,7 @@ const ListingModule = ({ item, collection }: ListingModuleProps) => {
       //   }
       // }
     } catch (error) {
-      console.log("onBuyAsset error:", error);
+      console.log('onBuyAsset error:', error);
     }
   };
 
@@ -130,7 +134,7 @@ const ListingModule = ({ item, collection }: ListingModuleProps) => {
       signer
     );
 
-    const price = ethers.utils.parseUnits(nft.price.toString(), "ether");
+    const price = ethers.utils.parseUnits(nft.price.toString(), 'ether');
     const transaction = await contract.createMarketSale(
       nft.contractAddress,
       nft.tokenId,
@@ -144,13 +148,13 @@ const ListingModule = ({ item, collection }: ListingModuleProps) => {
 
   const onSellAsset = async () => {
     try {
-      console.log("onSellAsset");
+      console.log('onSellAsset');
       const price = 2;
       const tx_hash = '0x00';
 
       const requestOptions = {
-        method: "POST",
-        headers: { "Content-type": "application/json;charset=UTF-8" },
+        method: 'POST',
+        headers: { 'Content-type': 'application/json;charset=UTF-8' },
         body: JSON.stringify({
           name: item.name,
           description: item.description,
@@ -192,7 +196,7 @@ const ListingModule = ({ item, collection }: ListingModuleProps) => {
 
         // TODO: prompt user for Price and sale info
         const price = 2;
-        const val = ethers.utils.parseUnits(price.toString(), "ether");
+        const val = ethers.utils.parseUnits(price.toString(), 'ether');
         // const val = new BN(price * 1e18) || 0;
 
         // TODO: error - token doesn't exist until mint
@@ -209,16 +213,16 @@ const ListingModule = ({ item, collection }: ListingModuleProps) => {
         // const citems = await tokenContract.fetchItemsCreated();
       }
     } catch (error) {
-      console.log("onSellAsset error:", error);
+      console.log('onSellAsset error:', error);
     }
   };
 
   const onRemoveListing = async () => {
     try {
-      console.log("onRemoveListing");
+      console.log('onRemoveListing');
       const requestOptions = {
-        method: "POST",
-        headers: { "Content-type": "application/json;charset=UTF-8" },
+        method: 'POST',
+        headers: { 'Content-type': 'application/json;charset=UTF-8' },
         body: JSON.stringify({
           id: item.id,
           is_deleted: 1,
@@ -226,18 +230,17 @@ const ListingModule = ({ item, collection }: ListingModuleProps) => {
       };
 
       let fetchNftData = await fetch(updateIsDeleteNftEndpoint, requestOptions);
-
     } catch (error) {
       console.log('onRemoveListing error:', error);
     }
   };
 
   const onChangePrice = () => {
-    console.log("onChangePrice");
+    console.log('onChangePrice');
   };
 
   const onMintNft = async (tokenURI: string) => {
-    console.log("onMintNft");
+    console.log('onMintNft');
     // const nonce = await web3.eth.getTransactionCount(PUBLIC_KEY, "latest"); //get latest nonce
 
     // //the transaction

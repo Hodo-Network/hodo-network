@@ -1,55 +1,55 @@
 import {
-  GlobeIcon,
   // CreditCardIcon,
   CollectionIcon,
+  GlobeIcon,
   HomeIcon,
-  QuestionMarkCircleIcon,
   MapIcon,
   PhotographIcon,
+  QuestionMarkCircleIcon,
   UserCircleIcon,
-} from "@heroicons/react/outline";
-import * as routes from "./routes";
+} from '@heroicons/react/outline';
+import * as routes from './routes';
 
 export const navigation = [
-  { name: "Home", href: routes.ROUTE_DEFAULT, icon: HomeIcon, exact: true },
+  { name: 'Home', href: routes.ROUTE_DEFAULT, icon: HomeIcon, exact: true },
   {
-    name: "Collections",
+    name: 'Collections',
     href: routes.ROUTE_COLLECTIONS,
     icon: CollectionIcon,
     exact: false,
   },
   {
-    name: "Marketplace",
+    name: 'Marketplace',
     href: routes.ROUTE_MARKETPLACE,
     icon: CollectionIcon,
     exact: false,
   },
   {
-    name: "Account",
+    name: 'Account',
     href: routes.ROUTE_ACCOUNT,
     icon: UserCircleIcon,
     exact: true,
   },
   {
-    name: "Create",
+    name: 'Create',
     href: routes.ROUTE_CREATOR_DASHBOARD,
     icon: PhotographIcon,
     exact: true,
   },
   {
-    name: "Explore",
+    name: 'Explore',
     href: routes.ROUTE_EXPLORE,
     icon: GlobeIcon,
     exact: false,
   },
   {
-    name: "Roadmap",
+    name: 'Roadmap',
     href: routes.ROUTE_ROADMAP,
     icon: MapIcon,
     exact: true,
   },
   {
-    name: "FAQ",
+    name: 'FAQ',
     href: routes.ROUTE_FAQ,
     icon: QuestionMarkCircleIcon,
     exact: true,

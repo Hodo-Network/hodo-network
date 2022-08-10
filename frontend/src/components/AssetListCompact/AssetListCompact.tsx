@@ -1,4 +1,4 @@
-import { NFT } from "../../typings/nft";
+import { NFT } from '../../typings/nft';
 import { AssetListCompactItem } from './AssetListCompactItem';
 
 export interface AssetListCompactProps {
@@ -7,7 +7,11 @@ export interface AssetListCompactProps {
   onSelectItem?: (T: NFT) => void;
 }
 
-export const AssetListCompact = ({ items, selected, onSelectItem }: AssetListCompactProps) => {
+export const AssetListCompact = ({
+  items,
+  selected,
+  onSelectItem,
+}: AssetListCompactProps) => {
   return (
     <nav
       aria-label='Sections'
@@ -15,9 +19,7 @@ export const AssetListCompact = ({ items, selected, onSelectItem }: AssetListCom
       {!items || items?.length === 0 ? (
         <div className='flex p-4 items-center'>
           <div className='text-sm overflow-hidden space-y-2'>
-            <p className='font-semibold text-bc-muted'>
-              Empty
-            </p>
+            <p className='font-semibold text-bc-muted'>Empty</p>
             <p>No items to display.</p>
           </div>
         </div>

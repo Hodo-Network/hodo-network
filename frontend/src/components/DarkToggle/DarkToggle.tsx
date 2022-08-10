@@ -1,6 +1,6 @@
-import { MoonIcon, SunIcon } from "@heroicons/react/solid";
-import { useTheme } from "../../state/ThemeContext";
-import Button from "../../base/Button";
+import { MoonIcon, SunIcon } from '@heroicons/react/solid';
+import Button from '../../base/Button';
+import { useTheme } from '../../state/ThemeContext';
 
 export interface IDarkToggle {
   light?: string;
@@ -22,8 +22,8 @@ export const DarkToggle = ({ light = 'light', dark = 'dark' }: IDarkToggle) => {
   return (
     <Button
       onClick={() => toggleThemes(light, dark)}
-      variant="ghost"
-      shape="square">
+      variant='ghost'
+      shape='square'>
       {theme === light ? (
         <MoonIcon className='h-6 w-6' />
       ) : (

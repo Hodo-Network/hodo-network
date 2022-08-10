@@ -1,23 +1,25 @@
-import { Story, Meta } from "@storybook/react";
+import { Meta, Story } from '@storybook/react';
 
-import { PureTokenBalance, IPureTokenBalanceProps } from "./TokenBalance";
+import { IPureTokenBalanceProps, PureTokenBalance } from './TokenBalance';
 
 export default {
-  title: "Components/TokenBalance",
+  title: 'Components/TokenBalance',
   component: PureTokenBalance,
 } as Meta;
 
-const Template: Story<IPureTokenBalanceProps> = (args) => <PureTokenBalance {...args} />;
+const Template: Story<IPureTokenBalanceProps> = (args) => (
+  <PureTokenBalance {...args} />
+);
 
 export const Default = Template.bind({});
 Default.args = {};
 
 export const Balance = Template.bind({});
 Balance.args = {
-  balance: "500",
+  balance: '500',
 };
 
 export const Symbol = Template.bind({});
 Symbol.args = {
-  symbol: "WAVAX",
+  symbol: 'WAVAX',
 };

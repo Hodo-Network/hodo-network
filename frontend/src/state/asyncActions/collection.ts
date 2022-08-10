@@ -1,22 +1,27 @@
 import {
-    getCollectionStarted, getCollectionSuccess, getCollectionFailure
-} from "../actions/collection";
+  getCollectionFailure,
+  getCollectionStarted,
+  getCollectionSuccess,
+} from '../actions/collection';
 // import { collectionEndpoint } from '../../http';
 // import { nftEndpoint, getNftByOwnerEndpoint } from '../../http';
 import { assets } from '../../data/assets';
 
 // Collection
-export const getCollection = (contractAddress: string) => async (dispatch: any) => {
+export const getCollection =
+  (contractAddress: string) => async (dispatch: any) => {
     dispatch(getCollectionStarted());
     try {
-        // const res = await fetch(`${collectionEndpoint}?contractAddress=${contractAddress}`);
-        // const data = await res.json();
-        const data = assets.filter(asset => asset.contractAddress === contractAddress);
-        dispatch(getCollectionSuccess(data));
+      // const res = await fetch(`${collectionEndpoint}?contractAddress=${contractAddress}`);
+      // const data = await res.json();
+      const data = assets.filter(
+        (asset) => asset.contractAddress === contractAddress
+      );
+      dispatch(getCollectionSuccess(data));
     } catch (err: any) {
-        dispatch(getCollectionFailure(err.message));
+      dispatch(getCollectionFailure(err.message));
     }
-};;
+  };
 
 // export const getNft = (tokenId: string) => async (dispatch: any) => {
 //     dispatch(getCollectionStarted());

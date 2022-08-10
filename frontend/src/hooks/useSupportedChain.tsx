@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
-import { useWeb3React } from "@web3-react/core";
-import { supportedChainIds } from "../constants";
+import { useWeb3React } from '@web3-react/core';
+import { useEffect, useState } from 'react';
+import { supportedChainIds } from '../constants';
 
 export default function useSupportedChain() {
   const [supportedChain, setSupportedChain] = useState<boolean>(false);

@@ -1,16 +1,16 @@
-import { Fragment } from "react";
-import { Tab } from "@headlessui/react";
+import { Tab } from '@headlessui/react';
+import { Fragment } from 'react';
 // import { SWRConfig } from "swr";
 // import fetcher from "swr-eth";
-import { TEXT_NETWORK } from "../../constants/text";
-import { NFT } from "../../typings/nft";
-import ContentWrapper from "../../ContentWrapper";
-import AssetGrid from "../../components/AssetGrid";
-import OnboardingButton from "../../components/Buttons/OnboardingButton";
+import AssetGrid from '../../components/AssetGrid';
+import OnboardingButton from '../../components/Buttons/OnboardingButton';
+import { TEXT_NETWORK } from '../../constants/text';
+import ContentWrapper from '../../ContentWrapper';
+import { NFT } from '../../typings/nft';
 // import ChainBalance from "../../components/ChainBalance";
-import NetworkSwitch from "../../components/NetworkSwitch";
+import NetworkSwitch from '../../components/NetworkSwitch';
 // import TokenList from "../../components/TokenList";
-import WalletAddress from "../../components/WalletAddress";
+import WalletAddress from '../../components/WalletAddress';
 
 export interface PureAccountViewProps {
   connected?: boolean;
@@ -29,7 +29,7 @@ export const PureAccountView = ({
   owned = [],
   sold = [],
 }: PureAccountViewProps) => {
-  const tabs = ["Owned", "Sales", "Network Info"];
+  const tabs = ['Owned', 'Sales', 'Network Info'];
 
   return (
     <ContentWrapper>
@@ -40,11 +40,11 @@ export const PureAccountView = ({
               {({ selected }) => (
                 <button
                   className={[
-                    "w-1/3 py-4 px-1 text-center border-b-2 font-medium text-sm",
+                    'w-1/3 py-4 px-1 text-center border-b-2 font-medium text-sm',
                     selected
-                      ? "border-primary-content text-base-content"
-                      : "border-transparent text-bc-muted hover:text-base-content hover:border-primary-content",
-                  ].join(" ")}>
+                      ? 'border-primary-content text-base-content'
+                      : 'border-transparent text-bc-muted hover:text-base-content hover:border-primary-content',
+                  ].join(' ')}>
                   {tab}
                 </button>
               )}
@@ -63,14 +63,12 @@ export const PureAccountView = ({
           <Tab.Panel className='space-y-4'>
             <WalletAddress address={address} />
 
-            <div className="space-y-2">
+            <div className='space-y-2'>
               <h1 className='text-sm uppercase font-medium text-bc-muted'>
                 {TEXT_NETWORK}
               </h1>
               {connected ? (
-                <p className='overflow-hidden overflow-ellipsis'>
-                  {network}
-                </p>
+                <p className='overflow-hidden overflow-ellipsis'>{network}</p>
               ) : (
                 <OnboardingButton />
               )}

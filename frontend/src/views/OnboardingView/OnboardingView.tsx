@@ -1,19 +1,21 @@
-
-import { CheckCircleIcon } from "@heroicons/react/solid";
+import { CheckCircleIcon } from '@heroicons/react/solid';
+import ChainAddButton from '../../components/Buttons/ChainAddButton';
+import OnboardingButton from '../../components/Buttons/OnboardingButton';
 import {
   AVALANCHE_MAINNET_PARAMS,
   AVALANCHE_TESTNET_PARAMS,
-} from "../../constants";
-import { TEXT_ONBOARDING } from "../../constants/text";
-import ChainAddButton from "../../components/Buttons/ChainAddButton";
-import OnboardingButton from "../../components/Buttons/OnboardingButton";
+} from '../../constants';
+import { TEXT_ONBOARDING } from '../../constants/text';
 
 export interface IPureOnboardingViewProps {
   connected?: boolean;
   address?: string | null;
 }
 
-export const PureOnboardingView = ({ connected = false, address }: IPureOnboardingViewProps) => {
+export const PureOnboardingView = ({
+  connected = false,
+  address,
+}: IPureOnboardingViewProps) => {
   return (
     <div className='p-4 sm:p-8 lg:p-12 mx-auto max-w-prose'>
       <div className='shadow-lg border border-base-300 overflow-hidden sm:rounded-box'>
@@ -36,8 +38,10 @@ export const PureOnboardingView = ({ connected = false, address }: IPureOnboardi
                 <span className='font-semibold'>{address}</span>
               </p>
             ) : (
-              <div className="space-y-2">
-                <p className='font-semibold text-bc-muted'>Connect to MetaMask</p>
+              <div className='space-y-2'>
+                <p className='font-semibold text-bc-muted'>
+                  Connect to MetaMask
+                </p>
                 <p>
                   Install the extension and go through the prompts to setup a
                   new wallet.
@@ -49,9 +53,7 @@ export const PureOnboardingView = ({ connected = false, address }: IPureOnboardi
 
           <li className='p-4 space-y-2'>
             <p className='font-semibold text-bc-muted'>Use Avalanche</p>
-            <p>
-              Avalanche isn't a default network so we'll need to add it.
-            </p>
+            <p>Avalanche isn't a default network so we'll need to add it.</p>
             <div className='flex gap-4'>
               <ChainAddButton
                 label='Use Mainnet'
@@ -70,19 +72,19 @@ export const PureOnboardingView = ({ connected = false, address }: IPureOnboardi
             <p className='font-semibold text-bc-muted'>Add Funds</p>
             <p>
               <b>Mainnet</b>: purchase AVAX from an exchange and send it to your
-              wallet address. You may need to{" "}
+              wallet address. You may need to{' '}
               <a
                 href='https://wallet.avax.network/'
                 target='_blank'
                 rel='noreferrer'
                 className='link link-primary'>
                 create a wallet
-              </a>{" "}
+              </a>{' '}
               with an X-Chain address first. Then make the transfer to your
               C-Chain address which is what we're creating with MetaMask.
             </p>
             <p>
-              <b>Testnet</b>: you can request test AVAX from the{" "}
+              <b>Testnet</b>: you can request test AVAX from the{' '}
               <a
                 href='https://faucet.avax-test.network/'
                 target='_blank'

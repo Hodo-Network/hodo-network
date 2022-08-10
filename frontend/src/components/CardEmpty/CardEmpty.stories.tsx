@@ -1,9 +1,9 @@
-import { Story, Meta } from "@storybook/react";
+import { Meta, Story } from '@storybook/react';
 
-import { CardEmpty } from "./CardEmpty";
+import { CardEmpty } from './CardEmpty';
 
 export default {
-  title: "Components/CardEmpty",
+  title: 'Components/CardEmpty',
   component: CardEmpty,
   decorators: [
     (Story) => (

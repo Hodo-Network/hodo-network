@@ -1,17 +1,19 @@
-import { Story, Meta } from "@storybook/react";
-import { ZERO_ADDRESS } from "../../constants";
+import { Meta, Story } from '@storybook/react';
+import { ZERO_ADDRESS } from '../../constants';
 
-import { PureOnboardingView, IPureOnboardingViewProps } from "./OnboardingView";
+import { IPureOnboardingViewProps, PureOnboardingView } from './OnboardingView';
 
 export default {
-  title: "Views/OnboardingView",
+  title: 'Views/OnboardingView',
   component: PureOnboardingView,
   parameters: {
     layout: 'fullscreen',
   },
 } as Meta;
 
-const Template: Story<IPureOnboardingViewProps> = (args) => <PureOnboardingView {...args} />;
+const Template: Story<IPureOnboardingViewProps> = (args) => (
+  <PureOnboardingView {...args} />
+);
 
 export const Default = Template.bind({});
 Default.args = {};

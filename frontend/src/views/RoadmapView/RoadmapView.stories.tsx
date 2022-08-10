@@ -1,9 +1,9 @@
-import { Story, Meta } from "@storybook/react";
+import { Meta, Story } from '@storybook/react';
 
-import { RoadmapView } from "./RoadmapView";
+import { RoadmapView } from './RoadmapView';
 
 export default {
-  title: "Views/RoadmapView",
+  title: 'Views/RoadmapView',
   component: RoadmapView,
   parameters: {
     layout: 'fullscreen',

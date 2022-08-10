@@ -1,9 +1,9 @@
-import { Story, Meta } from "@storybook/react";
+import { Meta, Story } from '@storybook/react';
 
-import { PureNetworkSwitch } from "./NetworkSwitch";
+import { PureNetworkSwitch } from './NetworkSwitch';
 
 export default {
-  title: "Components/NetworkSwitch",
+  title: 'Components/NetworkSwitch',
   component: PureNetworkSwitch,
 } as Meta;
 

@@ -1,6 +1,6 @@
-import { useNavigate } from "react-router-dom";
-import { ROUTE_MARKETPLACE } from "../../constants/routes";
-import { PureHero } from "./Hero";
+import { useNavigate } from 'react-router-dom';
+import { ROUTE_MARKETPLACE } from '../../constants/routes';
+import { PureHero } from './Hero';
 
 const Hero = () => {
   const navigate = useNavigate();

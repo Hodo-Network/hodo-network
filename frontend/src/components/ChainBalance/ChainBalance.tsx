@@ -5,7 +5,7 @@ export interface IPureChainBalanceProps {
 
 export const PureChainBalance = ({
   balance = 0,
-  symbol = "AVAX"
+  symbol = 'AVAX',
 }: IPureChainBalanceProps) => {
   return (
     <div>

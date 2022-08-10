@@ -1,6 +1,6 @@
-import FileUpload from "../FileUpload";
-import ImagePreview from "../ImagePreview";
-import LocationButton from "../Buttons/LocationButton";
+import LocationButton from '../Buttons/LocationButton';
+import FileUpload from '../FileUpload';
+import ImagePreview from '../ImagePreview';
 
 export interface PureCreateItemFormProps {
   onSubmitForm: (T: any) => void;
@@ -21,7 +21,7 @@ export const PureCreateItemForm = ({
     <form onSubmit={(e) => onSubmitForm(e)}>
       <div className='shadow sm:rounded-md sm:overflow-hidden'>
         <div className='px-4 py-5 bg-white space-y-6 sm:p-6'>
-          <div className="space-y-2">
+          <div className='space-y-2'>
             <label
               htmlFor='asset-name'
               className='block text-sm font-medium text-gray-700'>
@@ -32,11 +32,11 @@ export const PureCreateItemForm = ({
               name='asset-name'
               id='asset-name'
               className='focus:ring-primary-focus focus:border-primary-focus block w-full shadow-sm sm:text-sm border-bc-muted rounded-md'
-              onChange={(e) => onUpdateInput("name", e.target.value)}
+              onChange={(e) => onUpdateInput('name', e.target.value)}
             />
           </div>
 
-          <div className="space-y-2">
+          <div className='space-y-2'>
             <label
               htmlFor='description'
               className='block text-sm font-medium text-gray-700'>
@@ -47,14 +47,14 @@ export const PureCreateItemForm = ({
               name='description'
               rows={3}
               className='shadow-sm focus:ring-primary-focus focus:border-primary-focus mt-1 block w-full sm:text-sm border border-bc-muted rounded-md'
-              onChange={(e) => onUpdateInput("description", e.target.value)}
+              onChange={(e) => onUpdateInput('description', e.target.value)}
             />
             <p className='text-sm text-gray-500'>
               Brief description of the asset.
             </p>
           </div>
 
-          <div className="space-y-2">
+          <div className='space-y-2'>
             <label
               htmlFor='asset-geolocation'
               className='block text-sm font-medium text-gray-700'>
@@ -64,7 +64,7 @@ export const PureCreateItemForm = ({
             <LocationButton />
           </div>
 
-          <div className="space-y-2">
+          <div className='space-y-2'>
             <label className='block text-sm font-medium text-gray-700'>
               Image
             </label>
@@ -118,10 +118,7 @@ export const PureCreateItemForm = ({
 
         <div className='px-4 py-3 bg-gray-50 flex justify-between items-center sm:px-6'>
           <div className='text-gray-600'>Coming Soon</div>
-          <button
-            type='submit'
-            disabled={disabled}
-            className='btn btn-primary'>
+          <button type='submit' disabled={disabled} className='btn btn-primary'>
             Create Digital Asset
           </button>
         </div>

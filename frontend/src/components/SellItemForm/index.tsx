@@ -1,14 +1,14 @@
-import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router";
-import { useWeb3React } from "@web3-react/core";
-import { Web3Provider } from "@ethersproject/providers";
-import { Contract, ethers } from "ethers";
+import { Web3Provider } from '@ethersproject/providers';
+import { useWeb3React } from '@web3-react/core';
+import { Contract, ethers } from 'ethers';
+import { useState } from 'react';
+import { useNavigate } from 'react-router';
 // import axios from "axios";
-import { create as ipfsHttpClient } from "ipfs-http-client";
+import { create as ipfsHttpClient } from 'ipfs-http-client';
 // import { ROUTE_ACCOUNT } from "../../constants/routes";
-import ContractAddresses from "../../contracts/contract-address.json";
-import Continents from "../../contracts/Continents.json";
-import Marketplace from "../../contracts/Marketplace.json";
+import Continents from '../../contracts/Continents.json';
+import ContractAddresses from '../../contracts/contract-address.json';
+import Marketplace from '../../contracts/Marketplace.json';
 // import { PureCreateItemForm } from "./CreateItemForm";
 
 // interface IParams {
@@ -16,7 +16,7 @@ import Marketplace from "../../contracts/Marketplace.json";
 // }
 
 const client = ipfsHttpClient({
-  apiPath: "https://ipfs.infura.io:5001/api/v0",
+  apiPath: 'https://ipfs.infura.io:5001/api/v0',
 });
 
 const SellItemForm = () => {
@@ -24,12 +24,12 @@ const SellItemForm = () => {
   const { library } = useWeb3React<Web3Provider>();
   const [loading, setLoading] = useState<boolean>(false);
   const [formInput, updateFormInput] = useState({
-    price: "",
+    price: '',
   });
 
   const onSubmitForm = (event: any) => {
     event.preventDefault();
-    onCreateListing("");
+    onCreateListing('');
   };
 
   const onCreateListing = async (url: string) => {
@@ -50,7 +50,7 @@ const SellItemForm = () => {
       let value = event.args[2];
       let tokenId = value.toNumber();
 
-      const price = ethers.utils.parseUnits(formInput.price, "ether");
+      const price = ethers.utils.parseUnits(formInput.price, 'ether');
       contract = new Contract(
         ContractAddresses.Marketplace,
         Marketplace.abi,

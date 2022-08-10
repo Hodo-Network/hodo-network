@@ -1,11 +1,11 @@
-import { configureStore, combineReducers } from "@reduxjs/toolkit";
-import { save, load } from "redux-localstorage-simple";
-import thunk from "redux-thunk";
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { load, save } from 'redux-localstorage-simple';
+import thunk from 'redux-thunk';
 // import collectionReducer from './state/features/collections/collectionsSlice'
-import collectionsReducer from './state/reducers/collections';
-import collectionReducer from './state/reducers/collection';
-import assetsReducer from './state/reducers/assets';
 import assetReducer from './state/reducers/asset';
+import assetsReducer from './state/reducers/assets';
+import collectionReducer from './state/reducers/collection';
+import collectionsReducer from './state/reducers/collections';
 // import application from "./application/reducer";
 // import user from "./user/reducer";
 

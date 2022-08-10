@@ -1,9 +1,9 @@
-import { Story, Meta } from "@storybook/react";
+import { Meta, Story } from '@storybook/react';
 
-import { FaqView } from "./FaqView";
+import { FaqView } from './FaqView';
 
 export default {
-  title: "Views/FaqView",
+  title: 'Views/FaqView',
   component: FaqView,
   parameters: {
     layout: 'fullscreen',

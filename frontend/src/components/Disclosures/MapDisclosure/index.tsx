@@ -1,2 +1,2 @@
-import { MapDisclosure } from "./MapDisclosure";
+import { MapDisclosure } from './MapDisclosure';
 export default MapDisclosure;

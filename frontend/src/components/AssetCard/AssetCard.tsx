@@ -1,7 +1,7 @@
-import { NavLink } from "react-router-dom";
-import { BadgeCheckIcon, ExclamationIcon } from "@heroicons/react/solid";
-import { ROUTE_MARKETPLACE } from "../../constants/routes";
-import { NFT } from "../../typings/nft";
+import { BadgeCheckIcon, ExclamationIcon } from '@heroicons/react/solid';
+import { NavLink } from 'react-router-dom';
+import { ROUTE_MARKETPLACE } from '../../constants/routes';
+import { NFT } from '../../typings/nft';
 import CurrencyLogo from '../CurrencyLogo';
 
 export interface AssetCardProps {
@@ -9,7 +9,17 @@ export interface AssetCardProps {
 }
 
 export const AssetCard = ({
-  item: { tokenId, network, contractAddress, name, image, sold, price, contractName, contractVerified },
+  item: {
+    tokenId,
+    network,
+    contractAddress,
+    name,
+    image,
+    sold,
+    price,
+    contractName,
+    contractVerified,
+  },
 }: AssetCardProps) => {
   return (
     <NavLink
@@ -19,7 +29,7 @@ export const AssetCard = ({
         <img className='h-54 w-full object-scale-down' src={image} alt={name} />
       </div>
       <div className='card-body bg-neutral'>
-        <div className="flex">
+        <div className='flex'>
           <div className='flex-1'>
             <p className='text-xs flex items-center'>
               {contractName}
@@ -29,9 +39,7 @@ export const AssetCard = ({
                 <ExclamationIcon className='w-4 h-4 text-warning ml-1' />
               )}
             </p>
-            <p className='mt-1 text-sm font-semibold'>
-              {name}
-            </p>
+            <p className='mt-1 text-sm font-semibold'>{name}</p>
           </div>
           {!sold && (
             <div className='flex flex-col items-end'>

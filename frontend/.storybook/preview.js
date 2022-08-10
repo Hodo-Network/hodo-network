@@ -1,12 +1,12 @@
-import React, { Suspense } from "react";
-import { MemoryRouter } from "react-router";
-import SplashScreen from "../src/components/SplashScreen";
-import { themes } from "../src/constants/themes";
-import "../src/styles/tailwind.output.css";
+import React, { Suspense } from 'react';
+import { MemoryRouter } from 'react-router';
+import SplashScreen from '../src/components/SplashScreen';
+import { themes } from '../src/constants/themes';
+import '../src/styles/tailwind.output.css';
 
 const withSuspense = (Story, context) => {
   return (
-    <MemoryRouter initialEntries={["/"]}>
+    <MemoryRouter initialEntries={['/']}>
       <Suspense fallback={<SplashScreen />}>
         <Story {...context} />
       </Suspense>
@@ -17,7 +17,7 @@ const withSuspense = (Story, context) => {
 export const decorators = [withSuspense];
 
 export const parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
+  actions: { argTypesRegex: '^on[A-Z].*' },
   backgrounds: { disable: true },
   controls: {
     expanded: true,

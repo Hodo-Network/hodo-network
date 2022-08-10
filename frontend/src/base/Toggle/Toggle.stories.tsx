@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
 
 import { Toggle, ToggleProps } from './Toggle';
 
@@ -19,5 +19,5 @@ Checked.args = {
 
 export const Label = Template.bind({});
 Label.args = {
-  label: "Toggle label",
+  label: 'Toggle label',
 };

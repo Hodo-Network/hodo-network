@@ -1,6 +1,6 @@
 // import { Web3Provider } from "@ethersproject/providers";
 // import { useWeb3React } from "@web3-react/core";
-import { PureChainAddButton } from "./ChainAddButton";
+import { PureChainAddButton } from './ChainAddButton';
 
 const ChainAddButton = ({
   label,
@@ -16,7 +16,7 @@ const ChainAddButton = ({
     try {
       // @ts-ignore
       await ethereum.request({
-        method: "wallet_addEthereumChain",
+        method: 'wallet_addEthereumChain',
         params: [params],
       });
     } catch (error) {

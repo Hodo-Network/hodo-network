@@ -1,10 +1,10 @@
-import { Story, Meta } from "@storybook/react";
+import { Meta, Story } from '@storybook/react';
 
-import { RoadmapItems, RoadmapItemsProps } from "./RoadmapItems";
-import { roadmap } from "../../data/roadmap";
+import { roadmap } from '../../data/roadmap';
+import { RoadmapItems, RoadmapItemsProps } from './RoadmapItems';
 
 export default {
-  title: "Components/RoadmapItems",
+  title: 'Components/RoadmapItems',
   component: RoadmapItems,
 } as Meta;
 

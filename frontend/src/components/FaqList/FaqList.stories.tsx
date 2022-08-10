@@ -1,10 +1,10 @@
-import { Story, Meta } from "@storybook/react";
+import { Meta, Story } from '@storybook/react';
 
-import { FaqList, FaqListProps } from "./FaqList";
-import { faqs } from "../../data/faqs";
+import { faqs } from '../../data/faqs';
+import { FaqList, FaqListProps } from './FaqList';
 
 export default {
-  title: "Components/FaqList",
+  title: 'Components/FaqList',
   component: FaqList,
 } as Meta;
 

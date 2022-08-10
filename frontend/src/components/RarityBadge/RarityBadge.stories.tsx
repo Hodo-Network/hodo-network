@@ -1,14 +1,14 @@
-import { Story, Meta } from "@storybook/react";
+import { Meta, Story } from '@storybook/react';
 
-import { RarityBadge, RarityBadgeProps } from "./RarityBadge";
+import { RarityBadge, RarityBadgeProps } from './RarityBadge';
 
 export default {
-  title: "Components/RarityBadge",
+  title: 'Components/RarityBadge',
   component: RarityBadge,
   argTypes: {
     rarity: {
-      options: ["common", "rare", "epic"],
-      control: { type: "radio" },
+      options: ['common', 'rare', 'epic'],
+      control: { type: 'radio' },
     },
   },
 } as Meta;
@@ -20,15 +20,15 @@ Default.args = {};
 
 export const Common = Template.bind({});
 Common.args = {
-  rarity: "common",
+  rarity: 'common',
 };
 
 export const Rare = Template.bind({});
 Rare.args = {
-  rarity: "rare",
+  rarity: 'rare',
 };
 
 export const Epic = Template.bind({});
 Epic.args = {
-  rarity: "epic",
+  rarity: 'epic',
 };

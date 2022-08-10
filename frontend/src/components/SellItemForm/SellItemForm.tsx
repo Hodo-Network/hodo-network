@@ -1,4 +1,4 @@
-import ContentWrapper from "../../ContentWrapper";
+import ContentWrapper from '../../ContentWrapper';
 
 export interface PureSellItemFormProps {
   onUpdateFormInput: (T: any) => void;
@@ -11,9 +11,7 @@ export const PureSellItemForm = ({
 }: PureSellItemFormProps) => {
   return (
     <ContentWrapper>
-      <div className='p-4 sm:p-8 max-w-8xl'>
-        Insert form here
-      </div>
+      <div className='p-4 sm:p-8 max-w-8xl'>Insert form here</div>
     </ContentWrapper>
   );
 };

@@ -1,2 +1,2 @@
-import { ActivityDisclosure } from "./ActivityDisclosure";
+import { ActivityDisclosure } from './ActivityDisclosure';
 export default ActivityDisclosure;

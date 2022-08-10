@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from 'react';
 
 export default function useDark() {
   const [dark, setDark] = useState<boolean>(false);
 
   const toggleDark = () => {
-    document.documentElement.classList.toggle("dark");
+    document.documentElement.classList.toggle('dark');
     setDark(!dark);
   };
 
@@ -12,8 +12,8 @@ export default function useDark() {
   // Initial logic in /public/index.html
   useEffect(() => {
     const isDark = document
-      .getElementsByTagName("html")[0]
-      .classList.contains("dark");
+      .getElementsByTagName('html')[0]
+      .classList.contains('dark');
 
     setDark(isDark);
     localStorage.dark = isDark;

@@ -1,9 +1,9 @@
-import { Story, Meta } from "@storybook/react";
+import { Meta, Story } from '@storybook/react';
 
-import { DarkToggle } from "./DarkToggle";
+import { DarkToggle } from './DarkToggle';
 
 export default {
-  title: "Components/DarkToggle",
+  title: 'Components/DarkToggle',
   component: DarkToggle,
 } as Meta;
 

@@ -1,4 +1,4 @@
-import { StyledLogo } from "./styles";
+import { StyledLogo } from './styles';
 
 export interface LogoProps {
   img: string;

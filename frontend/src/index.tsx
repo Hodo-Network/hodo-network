@@ -1,9 +1,9 @@
-import React from "react";
-import { createRoot } from "react-dom/client";
-import { createWeb3ReactRoot, Web3ReactProvider } from "@web3-react/core";
-import { NetworkContextName } from "./constants";
-import getLibrary from "./utils/getLibrary";
-import App from "./App";
+import { createWeb3ReactRoot, Web3ReactProvider } from '@web3-react/core';
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import App from './App';
+import { NetworkContextName } from './constants';
+import getLibrary from './utils/getLibrary';
 
 if (process.env.NODE_ENV === 'development') {
   const { worker } = require('./mocks/browser');

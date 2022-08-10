@@ -1,4 +1,4 @@
-import { PureChainInfo } from "./ChainInfo";
+import { PureChainInfo } from './ChainInfo';
 // import Avalanche from "avalanche";
 
 // let avalanche = new Avalanche("127.0.0.1", 9650, "https");
@@ -21,12 +21,12 @@ export interface ChainInfoProps {
 
 const ChainInfo = ({ params }: ChainInfoProps) => {
   const onGetBalances = async () => {
-    console.log("chaininfo");
+    console.log('chaininfo');
     try {
       // @ts-ignore
       await ethereum
         .request({
-          method: "eth_getAssetBalance",
+          method: 'eth_getAssetBalance',
           params: [params],
         })
         .then((response: any) => console.log(response));

@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router";
-import { useAppDispatch, useAppSelector } from "../../state/hooks";
-import { getCollection } from "../../state/asyncActions/collection";
-import { NFT } from "../../typings/nft";
-import { PureCollectionView } from "./CollectionView";
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router';
+import { getCollection } from '../../state/asyncActions/collection';
+import { useAppDispatch, useAppSelector } from '../../state/hooks';
+import { NFT } from '../../typings/nft';
+import { PureCollectionView } from './CollectionView';
 
 type IParams = {
   contractAddress: string;

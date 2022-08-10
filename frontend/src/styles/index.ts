@@ -2,4 +2,4 @@
 
 // Global styles (styles not confined to one component) go here
 
-export { };
+export {};

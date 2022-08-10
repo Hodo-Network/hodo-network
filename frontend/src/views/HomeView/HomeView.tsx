@@ -1,8 +1,7 @@
-
-import { Collection } from "../../typings/nft";
-import ContentWrapper from "../../ContentWrapper";
-import Hero from "../../components/Hero";
 import CollectionGrid from '../../components/CollectionGrid';
+import Hero from '../../components/Hero';
+import ContentWrapper from '../../ContentWrapper';
+import { Collection } from '../../typings/nft';
 
 export interface IHomeViewProps {
   items: Array<Collection>;
@@ -20,7 +19,9 @@ export const PureHomeView = ({ items }: IHomeViewProps) => {
 
         <Hero />
 
-        <h2 className='text-xl font-semibold text-primary-focus mb-4'>Featured Collections</h2>
+        <h2 className='text-xl font-semibold text-primary-focus mb-4'>
+          Featured Collections
+        </h2>
         <CollectionGrid items={items} />
       </section>
     </ContentWrapper>

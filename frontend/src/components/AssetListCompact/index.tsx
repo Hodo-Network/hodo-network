@@ -1,2 +1,2 @@
-import { AssetListCompact } from "./AssetListCompact";
+import { AssetListCompact } from './AssetListCompact';
 export default AssetListCompact;

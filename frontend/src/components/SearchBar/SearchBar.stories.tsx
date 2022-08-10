@@ -1,9 +1,9 @@
-import { Story, Meta } from "@storybook/react";
+import { Meta, Story } from '@storybook/react';
 
-import { SearchBar } from "./SearchBar";
+import { SearchBar } from './SearchBar';
 
 export default {
-  title: "Components/SearchBar",
+  title: 'Components/SearchBar',
   component: SearchBar,
 } as Meta;
 

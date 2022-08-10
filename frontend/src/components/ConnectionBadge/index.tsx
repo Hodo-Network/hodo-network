@@ -1,2 +1,2 @@
-import { ConnectionBadge } from "./ConnectionBadge";
+import { ConnectionBadge } from './ConnectionBadge';
 export default ConnectionBadge;

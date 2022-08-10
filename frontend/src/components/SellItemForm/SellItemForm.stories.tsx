@@ -1,9 +1,9 @@
-import { Story, Meta } from "@storybook/react";
+import { Meta, Story } from '@storybook/react';
 
-import { PureSellItemForm, PureSellItemFormProps } from "./SellItemForm";
+import { PureSellItemForm, PureSellItemFormProps } from './SellItemForm';
 
 export default {
-  title: "Components/SellItemForm",
+  title: 'Components/SellItemForm',
   component: PureSellItemForm,
 } as Meta;
 

@@ -1,5 +1,5 @@
-import Alert from "../../base/Alert";
-import Button from "../../base/Button";
+import Alert from '../../base/Alert';
+import Button from '../../base/Button';
 
 export interface ConnectWalletProps {
   onConnectWallet: () => void;
@@ -15,14 +15,12 @@ export const ConnectWallet = ({
   return (
     <div className='space-y-4'>
       {networkError && (
-        <Alert message={networkError} status="error" onDismiss={onDismiss} />
+        <Alert message={networkError} status='error' onDismiss={onDismiss} />
       )}
 
       <div className='text-center space-y-2'>
         <p>Please connect to your wallet.</p>
-        <Button
-          color="warning"
-          onClick={onConnectWallet}>
+        <Button color='warning' onClick={onConnectWallet}>
           Connect Wallet
         </Button>
       </div>

@@ -1,6 +1,6 @@
-import { NFT } from "../../typings/nft";
-import AssetCard from "../AssetCard";
-import CardEmpty from "../CardEmpty";
+import { NFT } from '../../typings/nft';
+import AssetCard from '../AssetCard';
+import CardEmpty from '../CardEmpty';
 
 export interface AssetGridProps {
   items: Array<NFT>;
@@ -12,7 +12,9 @@ export const AssetGrid = ({ items }: AssetGridProps) => {
       {items.length === 0 ? (
         <CardEmpty />
       ) : (
-        items?.map((item: NFT, index: number) => <AssetCard key={index} item={item} />)
+        items?.map((item: NFT, index: number) => (
+          <AssetCard key={index} item={item} />
+        ))
       )}
     </div>
   );

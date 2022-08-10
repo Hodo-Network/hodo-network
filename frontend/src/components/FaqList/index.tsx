@@ -1,2 +1,2 @@
-import { FaqList } from "./FaqList";
+import { FaqList } from './FaqList';
 export default FaqList;

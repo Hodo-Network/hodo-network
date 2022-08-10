@@ -4,7 +4,6 @@ export interface IFileUploadProps {
 
 export const FileUpload = ({ onUploadFile }: IFileUploadProps) => {
   return (
-
     <div className='col-span-3 flex flex-1 justify-center items-center p-6 border-2 border-bc-muted border-dashed rounded-box'>
       <div className='space-y-1 text-center'>
         <svg
@@ -36,9 +35,7 @@ export const FileUpload = ({ onUploadFile }: IFileUploadProps) => {
           {/* <p className='pl-1'>or drag and drop</p> */}
         </div>
         {/* TODO: update accepted filetypes */}
-        <p className='text-xs text-gray-500'>
-          PNG, JPG, GIF up to 10MB
-        </p>
+        <p className='text-xs text-gray-500'>PNG, JPG, GIF up to 10MB</p>
       </div>
     </div>
   );

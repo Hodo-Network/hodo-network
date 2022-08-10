@@ -1,4 +1,4 @@
-import Button from "../../../base/Button";
+import Button from '../../../base/Button';
 
 export interface PureOnboardingButtonProps {
   label?: string;
@@ -7,12 +7,12 @@ export interface PureOnboardingButtonProps {
 }
 
 export const PureOnboardingButton = ({
-  label = "Connect",
+  label = 'Connect',
   disabled = false,
   onConnect,
 }: PureOnboardingButtonProps) => {
   return (
-    <Button color="primary" onClick={onConnect} disabled={disabled}>
+    <Button color='primary' onClick={onConnect} disabled={disabled}>
       {label}
     </Button>
   );

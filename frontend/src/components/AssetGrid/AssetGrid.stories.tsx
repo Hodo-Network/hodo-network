@@ -1,10 +1,10 @@
-import { Story, Meta } from "@storybook/react";
+import { Meta, Story } from '@storybook/react';
 
-import { AssetGrid, AssetGridProps } from "./AssetGrid";
-import { assets } from "../../data/assets";
+import { assets } from '../../data/assets';
+import { AssetGrid, AssetGridProps } from './AssetGrid';
 
 export default {
-  title: "Components/AssetGrid",
+  title: 'Components/AssetGrid',
   component: AssetGrid,
 } as Meta;
 

@@ -1,4 +1,4 @@
-import Button from "../../base/Button";
+import Button from '../../base/Button';
 
 export interface PureChainInfoProps {
   label?: string;
@@ -6,11 +6,11 @@ export interface PureChainInfoProps {
 }
 
 export const PureChainInfo = ({
-  label = "Get Balances",
-  onClick
+  label = 'Get Balances',
+  onClick,
 }: PureChainInfoProps) => {
   return (
-    <Button color="primary" onClick={onClick}>
+    <Button color='primary' onClick={onClick}>
       {label}
     </Button>
   );

@@ -1,2 +1,2 @@
-import { CollectionGrid } from "./CollectionGrid";
+import { CollectionGrid } from './CollectionGrid';
 export default CollectionGrid;

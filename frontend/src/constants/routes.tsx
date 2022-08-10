@@ -1,14 +1,14 @@
-const ROUTE_ACCOUNT = "/account";
-const ROUTE_COLLECTIONS = "/collections";
-const ROUTE_COLLECTION = "/assets/:contractAddress";
-const ROUTE_COLLECTIBLE = "/assets/:contractAddress/:tokenId";
-const ROUTE_CREATE_COLLECTION = "/collection/create";
-const ROUTE_CREATOR_DASHBOARD = "/creator-dashboard";
-const ROUTE_DEFAULT = "/";
-const ROUTE_EXPLORE = "/explore";
-const ROUTE_FAQ = "/faq";
-const ROUTE_MARKETPLACE = "/assets";
-const ROUTE_ROADMAP = "/roadmap";
+const ROUTE_ACCOUNT = '/account';
+const ROUTE_COLLECTIONS = '/collections';
+const ROUTE_COLLECTION = '/assets/:contractAddress';
+const ROUTE_COLLECTIBLE = '/assets/:contractAddress/:tokenId';
+const ROUTE_CREATE_COLLECTION = '/collection/create';
+const ROUTE_CREATOR_DASHBOARD = '/creator-dashboard';
+const ROUTE_DEFAULT = '/';
+const ROUTE_EXPLORE = '/explore';
+const ROUTE_FAQ = '/faq';
+const ROUTE_MARKETPLACE = '/assets';
+const ROUTE_ROADMAP = '/roadmap';
 
 // Used to pull a convenient name for analytics tracking events. The key must
 // be react-router ready path, and can include params such as :id for popup windows

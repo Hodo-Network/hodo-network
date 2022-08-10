@@ -1,14 +1,16 @@
-import { Story, Meta } from "@storybook/react";
-import { NATIVE_CURRENCY } from "../../constants";
+import { Meta, Story } from '@storybook/react';
+import { NATIVE_CURRENCY } from '../../constants';
 
-import { PureChainBalance, IPureChainBalanceProps } from "./ChainBalance";
+import { IPureChainBalanceProps, PureChainBalance } from './ChainBalance';
 
 export default {
-  title: "Components/ChainBalance",
+  title: 'Components/ChainBalance',
   component: PureChainBalance,
 } as Meta;
 
-const Template: Story<IPureChainBalanceProps> = (args) => <PureChainBalance {...args} />;
+const Template: Story<IPureChainBalanceProps> = (args) => (
+  <PureChainBalance {...args} />
+);
 
 export const Default = Template.bind({});
 Default.args = {};

@@ -1,5 +1,5 @@
-import { TOKENS_BY_NETWORK } from "../../constants";
-import { PureTokenList } from "./TokenList";
+import { TOKENS_BY_NETWORK } from '../../constants';
+import { PureTokenList } from './TokenList';
 
 export interface ITokenListProps {
   chainId: number;

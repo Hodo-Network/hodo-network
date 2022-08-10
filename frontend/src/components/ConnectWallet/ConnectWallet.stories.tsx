@@ -1,9 +1,9 @@
-import { Story, Meta } from "@storybook/react";
+import { Meta, Story } from '@storybook/react';
 
-import { ConnectWallet, ConnectWalletProps } from "./ConnectWallet";
+import { ConnectWallet, ConnectWalletProps } from './ConnectWallet';
 
 export default {
-  title: "Components/ConnectWallet",
+  title: 'Components/ConnectWallet',
   component: ConnectWallet,
 } as Meta;
 
@@ -16,5 +16,5 @@ Default.args = {};
 
 export const NetworkError = Template.bind({});
 NetworkError.args = {
-  networkError: "Error connecting to network."
+  networkError: 'Error connecting to network.',
 };
